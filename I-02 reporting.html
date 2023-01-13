@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section>
+        <div class="classification">
+            <select>
+                <option selected value="">-- Classification --</option>
+                <option value="(B)">Begrenset</option>
+                <option value="(K)">Konfidensielt</option>
+                <option value="(H)">Hemmelig</option>
+                <option value="(NR)">Nato Restricted</option>
+                <option value="(NS)">Nato Secret</option>
+            </select>
+        </div>
+
+        <div class="staticvalues">
+            <label for="from"><b>From:</b></label>
+            <input type="text" placeholder="From callsign" name="from">
+            <label for="to"><b>To:</b></label>
+            <input type="text" placeholder="To callsign" name="to">
+            <label for="writeroperator"><b>Writer/Operator:</b></label>
+            <input type="text" placeholder="Writer/Operator" name="writeroperator">
+            <label for="ownposition"><b>Own position:</b></label>
+            <input type="text" placeholder="MGRS" name="ownposition">
+        </div>
+
+        <div class="bluf">
+            <label for="bluf"><b>Bottom Line Up Front:</b></label><br>
+            <textarea type="text" id="bluf"></textarea>
+        </div>
+
+        <div class="patternoflife">
+            <label for="patternoflife"><b>Pattern of life:</b></label><br>
+            <textarea type="text" id="bluf"></textarea>
+        </div>
+
+        <div class="Static units in NAI">
+            <label for="staticunits"><b>Static units in NAI:</b></label><br>
+            <textarea type="text" id="staticunits"></textarea>
+        </div>
+
+
+
+        <div class="observation">
+            <input id="journalnumber" placeholder="Journal number" type="number"></input><br>
+            <input id="facts" placeholder="Facts"></input><br>
+            <input id="comment" placeholder="Comment"></input><br>
+            <input id="assessment" placeholder="Assessment"></input><br><br>
+        </div>
+
+        <div id="addHere"></div>
+
+        <input 
+            type="button" 
+            id="addJournalNumber" 
+            value="+"
+            onclick="addJournalNumber()"/>
+
+        <input 
+            type="button"
+            id="addJournalNumber"
+            value="-"
+            onclick="removeJournalNumber()"/>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intelligence report</title>
+    <link rel="stylesheet" href="../Ressurser/style.css">
+  </head>
+  <body>
+    <ul>
+      <a href="../Hjemmeside.html">
+        <img src="../Ressurser/logo.png"; alt="insert pic here "; style="float: left; width: 45px; height: 45px"/></a>
+      <li class="dropdown">
+        <a href="../A-Rapporter/Index alpha.html" class="dropbtn">Any</a>
+        <div class="dropdown-content">
+          <a href="../A-Rapporter/A-01.html">A-01 MEDEVACREQ</a>
+          <a href="../A-Rapporter/A-02.html">A-02 MEDREP</a>
+          <a href="../A-Rapporter/A-03.html">A-03 RESUPREQ</a>
+          <a href="../A-Rapporter/A-04.html">A-04 RESUPREP</a>
+          <a href="../A-Rapporter/A-05.html">A-05 CACHEREP</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="../I-Rapporter/index india.html" class="dropbtn">Intelligence</a>
+        <div class="dropdown-content">
+          <a href="../I-Rapporter/I-02.html">I-01/I-02</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="../O-Rapporter/index oscar.html" class="dropbtn">Operational</a>
+        <div class="dropdown-content">
+          <a href="../O-Rapporter/O-01.html">O-01 INIREP</a>
+          <a href="../O-Rapporter/O-02.html">O-02 DOPREP</a>
+          <a href="../O-Rapporter/O-03.html">O-03 INF_EXFREP</a>
+          <a href="../O-Rapporter/O-04.html">O-04 CONREP</a>
+          <a href="../O-Rapporter/O-05.html">O-05 SITREP</a>
+          <a href="../O-Rapporter/O-06.html">O-06 AGTCONREP </a>
+          <a href="../O-Rapporter/O-07.html">O-07 DLBREP </a>
+          <a href="../O-Rapporter/O-08.html">O-08 LUREP </a>
+          <a href="../O-Rapporter/O-09.html">O-09 EXFORD </a>
+          <a href="../O-Rapporter/O-10.html">O-10 SITUPTD</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="../JTAC/index JTAC.html" class="dropbtn">JTAC</a>
+        <div class="dropdown-content">
+          <a href="#">CAS-Brief</a>
+          <a href="#">RW CAS 5-line</a>
+          <a href="#">GFC Coordination</a>
+          <a href="#">RSoF and Check-in</a>
+          <a href="#">Situation Update</a>
+          <a href="#">NOR CFF</a>
+          <a href="#">CAS mission Flow </a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Snarveier</a>
+        <div class="dropdown-content">
+          <a href="../IP shortcuts/Shortcut MINIP MNGMT.html">MINIP</a>
+          <a href="../IP shortcuts/Shortcut JIM C.html">JIM C</a>
+          <a href="../IP shortcuts/Bølgelengde kalk.html">λ Kalkulator</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="../Ressurser/Taktisk sambands folder.pdf" class="dropbtn">SB HOW-TO</a>
+        <div class="dropdown-content">
+          <a href="../Ressurser/Taktisk sambands folder.pdf#page=3">HF</a>
+          <a href="../Ressurser/Taktisk sambands folder.pdf#page=48">Antenner HF</a>
+          <a href="../Ressurser/Taktisk sambands folder.pdf#page=11">MBITR</a>
+          <a href="../Ressurser/Taktisk sambands folder.pdf#page=17">117F</a>
+          <a href="../Ressurser/Taktisk sambands folder.pdf#page=26">DAGR</a>
+          <a href="../Ressurser/Taktisk sambands folder.pdf#page=34">MINIP</a>
+          <a href="../Ressurser/Taktisk sambands folder.pdf#page=37">RASKL</a>
+          <a href="../Ressurser/Taktisk sambands folder.pdf#page=51">KTS</a>
+        </div>
+      </li>
+    </ul>
+    <div>
+        <div>
+          <b>I-01/I-02 Report</b>
+        </div>
+        <select id="selrep">
+          <option selected value="">-- Report type --</option>
+          <option value="I-01">I-01 OBS. REP.</option>
+          <option value="I-02">I-02 SUM REP.</option>
+        </select>
+        <select id="gradering">
+          <option selected value="">-- Classification --</option>
+          <option value="(B)">Begrenset</option>
+          <option value="(K)">Konfidensielt</option>
+          <option value="(H)">Hemmelig</option>
+          <option value="(NR)">Nato Restricted</option>
+          <option value="(NS)">Nato Secret</option>
+        </select>
+        <select id="flash" class="I-01" style="display: none;">
+            <option selected value="no">FLASH = No </option>
+            <option value="yes">Flash = Yes</option>
+            <option value="PrevJNR">Previous FLASH</option>
+          </select>
+            <input type="number" id="JNRFlash" placeholder="Previous JNR" class="flashJNR" style="display: none;" tabindex="-1"/>
+      </div>
+        <div>
+          <b>From:</b>
+          <input type="text" id="From" placeholder="From" style="text-transform: uppercase" />
+          <b>To:</b>
+          <input type="text" id="To" placeholder="To" style="text-transform: uppercase" />
+          <b>Writer/operator:</b>
+          <input type="text" id="writer" placeholder="W/O" style="text-transform: uppercase" />
+          <b>Your POS/MGRS:</b>
+          <input type="text" id="currentpos" placeholder="MGRS" style="text-transform: uppercase"/>
+        </div>
+        <div class="I-02">
+          <b>Information/BLUF:</b><br>
+          <textarea type="text" id="BLUF" placeholder="Bottom line up front" style="text-transform: uppercase" class="textarea resize-ta"></textarea>
+        </div>
+        <div class="I-02" style="display: none;">
+          <b>Pattern of life:</b><br>
+          <textarea type="text" id="POL" placeholder="POL" class="textarea resize-ta" ></textarea>
+        </div>
+        <div class="I-02" style="display: none;">
+          <b>Static units in NAI:</b><br>
+          <textarea type="text" id="staticunits" placeholder="Static units" class="textarea resize-ta" ></textarea>
+        </div>
+        <div class="I-02" style="display: none;">
+          <b>Overall comment:</b><br>
+          <textarea type="text" id="overallcomment" placeholder="Overall comment" class="textarea resize-ta" ></textarea>
+        </div>
+        <div class="I-02" style="display: none;">
+          <b>Overall assessment:</b><br>
+          <textarea type="text" id="overallassessment" placeholder="Overall assessment" class="textarea resize-ta" ></textarea>
+        </div>
+        <div>
+          <b>References:</b>
+          <input id="refrences" type="text" placeholder="References" style="text-transform: uppercase"/>
+          <b>NAI/TAI:</b>
+          <input type="text" id=area placeholder="NAI/TAI" style="text-transform: uppercase" />
+          <b>ENY Grid:</b>
+          <input type="text" id="enygrid" placeholder="MGRS" style="text-transform: uppercase"/>
+          <b>Unit:</b>
+          <input type="text" id="unit" placeholder="UNIT" />
+        </div>
+        <div class="I-02" style="display: none;">
+          <b>Reporting window:(Z)</b><br>
+          <b>DTG</b>
+          <input type="number" id="repwindowfrom" style="text-transform: uppercase" placeholder="XXXXXX" /> <b>to</b>
+          <input type="number" id="repwindowto" style="text-transform: uppercase" placeholder="XXXXXX" /><br>
+          <br>
+          <b>JNR from:</b>
+        <input type="number" id="jnrfromrep" placeholder="XXX" /><b class="I-02" style="display: none;">to</b>
+        <input type="number" id="jnrtorep" placeholder="XXX" class="I-02" style="display: none;"/>
+        </div>
+      <div>
+        <h1>Observations</h1>
+        <b>JNR:</b>
+        <input type="number" id="JNRfrom" placeholder="XXX" />   
+        <b>DTG:(Z)</b>
+        <input type="number" id="DTGobs" placeholder="DDHHMM" />
+        <b class="I-02" style="display: none;">Writer/Operator</b>
+        <input type="text" id="writerJNR" placeholder="Writer/Operator" class="I-02" style="display: none;"/>
+      </div>
+      <div>
+        <b>Facts:</b>
+        <textarea
+          class="textarea resize-ta"
+          id="facts"
+          style="height: 56px"
+          placeholder="Facts"
+        ></textarea>
+      </div>
+      <div>
+        <b>Comment:</b>
+        <textarea
+          class="textarea resize-ta"
+          id="comments"
+          style="height: 56px"
+          placeholder="Comment"
+        ></textarea>
+      </div>
+      <div>
+        <b>Assessment:</b>
+        <textarea
+          class="textarea resize-ta"
+          id="assessment"
+          style="height: 56px"
+          placeholder="Assessment"
+        ></textarea>
+      </div>
+      <div id=addhere></div>
+      <div>
+        <input
+        type="button"
+        tabindex="-1"
+        id="addjnr"
+        value="+"
+        onclick="addJNR()";
+        class ="I-02" style="display: none;"/>
+        <input
+        type="button"
+        tabindex="-1"
+        id="popjnr"
+        value="-"
+        onclick="removeJNR()";
+        class ="I-02" style="display: none;"/>
+      </div>
+       
+         
+
+      <!--Add to button to save the data.-->
+      <div>
+        <input
+          type="button"
+          id="bt"
+          value="Save data to file"
+          tabindex="-1"
+          onclick="saveResponses(), saveFile()"
+        />
+        </div>
+        <div>
+          <input tabindex="-1" type="file" id='filesinput'>
+          <input tabindex="-1" type="button" value="Upload" onclick="press()" />
+        </div>
+  </body>
+  
+  <script> 
+{//variables 
+   var localJNR= 1; 
+   var payload = "";
+   var arr = [];
+   var arrjnr = [];
+}
+
+{//fileinput event listener 
+  var input = document.querySelector('#filesinput');
+
+        input.addEventListener('change', () =>{
+          let files = input.files;
+
+            if(files.length == 0) return;
+
+            const file = files[0];
+
+            let reader = new FileReader();
+
+            reader.onload = (e) => {
+                const file = e.target.result;
+                payload = file;
+            };
+
+            reader.onerror = (e) => alert(e.target.error.name); 
+
+            reader.readAsText(file);
+        });
+}
+
+{//Reupload function
+  var press = function() {
+      arr = payload.split (/\s*}\s*/);
+      arrjnr = arr[21].split(/[~{]/);
+ 
+
+      importjnr = arr[0];
+
+      for(i=1; i<importjnr; i++){
+        addJNR();
+      }
+
+      document.getElementById("selrep").value = arr[1];
+      document.getElementById("gradering").value = arr[2];
+      document.getElementById("flash").value = arr[3];
+      document.getElementById("From").value = arr[4];
+      document.getElementById("To").value = arr[5];
+      document.getElementById("writer").value = arr[6];
+      document.getElementById("currentpos").value = arr[7];
+      document.getElementById("BLUF").value = arr[8];
+      document.getElementById("POL").value = arr[9];
+      document.getElementById("staticunits").value = arr[10];
+      document.getElementById("overallcomment").value = arr[11];
+      document.getElementById("overallassessment").value = arr[12];
+      document.getElementById("refrences").value = arr[13];
+      document.getElementById("area").value = arr[14];
+      document.getElementById("enygrid").value = arr[15];
+      document.getElementById("unit").value = arr[16];
+      document.getElementById("repwindowfrom").value = arr[17];
+      document.getElementById("repwindowto").value = arr[18];
+      document.getElementById("jnrtorep").value = arr[19];
+      document.getElementById("jnrfromrep").value = arr[20];
+      document.getElementById("JNRfrom").value = arrjnr[0];
+      document.getElementById("DTGobs").value = arrjnr[1];
+      document.getElementById("writerJNR").value = arrjnr[2];
+      document.getElementById("facts").value = arrjnr[3];
+      document.getElementById("comments").value = arrjnr[4];
+      document.getElementById("assessment").value = arrjnr[5];
+
+      firstDiv();
+    }
+  }
+
+
+var firstDiv = function() {
+        //adds jnr based on imported jnr values
+        a= document.getElementById('JNRfrom1')
+        var length = arrjnr.length
+        for(i=6; i<=length; i++){
+            a.value = arrjnr[i];
+            b = a.nextElementSibling
+            a = b; 
+}
+}
+
+
+{//Exporting file order and check functions 
+  var saveFile = function() {
+      // Get the data from each element on the form.
+      const selrep = document.getElementById("selrep");
+      const flash = document.getElementById("flash");
+      const from = document.getElementById("From");
+      const to = document.getElementById("To");
+      const currentpos = document.getElementById("currentpos");
+      const JNRfrom = document.getElementById("JNRfrom");
+      const jnrfromrep = document.getElementById("jnrfromrep");
+      const jnrtorep = document.getElementById("jnrtorep");
+      const DTGobs = document.getElementById("DTGobs");
+      const facts = document.getElementById("facts");
+      const comments = document.getElementById("comments");
+      const assessment = document.getElementById("assessment");
+      const refrences = document.getElementById("refrences");
+      const bluf = document.getElementById('BLUF');
+      const area = document.getElementById('area'); 
+      const enygrid = document.getElementById('enygrid');
+      const unit = document.getElementById('unit');
+      const writer = document.getElementById("writer");
+      const repwindowfrom = document.getElementById("repwindowfrom");
+      const repwindowto = document.getElementById("repwindowto");
+      const POL = document.getElementById("POL");
+      const staticunits = document.getElementById("staticunits");
+      const overallcomment = document.getElementById("overallcomment");
+      const overallassessment = document.getElementById("overallassessment");
+      const writerJNR = document.getElementById("writerJNR");
+      var dato = "";
+
+//Getting date and time from local client
+{    var newDate = new Date();
+      var year = newDate.getFullYear();
+      var month = newDate.getMonth();
+      var date = newDate.getDate();
+      
+      var hour = newDate.getHours();
+      var minute = newDate.getMinutes();
+
+      if (month < 10 ){ 
+        month = "0" +(newDate.getMonth()+1)
+      }
+      else {
+        month = (newDate.getMonth()+1)
+      }
+      if (date <10 ){ 
+        date = "0" + newDate.getDate()
+      }
+      else {
+        date = newDate.getDate()
+      }
+      if (hour <10 ){ 
+        hour = "0" + newDate.getHours()
+      }
+      else {
+        hour = newDate.getHours()
+      }
+      if (minute <10 ){ 
+        minute = "0" + newDate.getMinutes()
+      }
+      else {
+        minute = newDate.getMinutes()
+      }
+
+
+      dato = year + "-" + month + "-" + date;
+      DTG = date + "" +  hour + "" + minute + "Z";
+    }
+
+    //capital values
+{    bluf.value = bluf.value.toUpperCase();
+      area.value = area.value.toUpperCase();
+      refrences.value = refrences.value.toUpperCase();
+      writer.value = writer.value.toUpperCase();
+      from.value = from.value.toUpperCase();
+      to.value = to.value.toUpperCase();
+      currentpos.value = currentpos.value.toUpperCase();
+      enygrid.value = enygrid.value.toUpperCase();
+}
+
+//IF's about JNR on report type 
+{    if(selrep.value=="I-02"){
+          FinalJNR=jnrfromrep.value  + "-" + jnrtorep.value 
+            if(jnrfromrep.value >= jnrtorep.value){
+              window.alert('JNR not valid range')
+              return;
+      } 
+        }else {
+          FinalJNR = JNRfrom.value;
+      }
+  }
+
+//selrep value determening dtg value
+{    if(selrep.value=="I-02"){
+          FinalDTG=repwindowfrom.value + "-" + repwindowto.value + "Z";
+        }else if(selrep.value !== "I-02"){
+          FinalDTG=DTG;
+        }}
+     
+//Mandatory field to fill out
+{    if(selrep.value == ""){
+    window.alert('Chose report type')
+    return; 
+  }else if(gradering.value == ""){
+    window.alert('Fill in Classification')
+    return; 
+  }else if(from.value == ""){
+    window.alert('Fill in from who ')
+    return; 
+  }else if(writer.value == ""){
+    window.alert('Fill in writer')
+    return; 
+  }else if(currentpos.value == ""){
+    window.alert('Fill in your position')
+    return; 
+  }else if(JNRfrom.value == ""){
+    window.alert('Fill in JNRfrom')
+    return; 
+  }else if(facts.value == ""){
+    window.alert('Fill in facts')
+    return; 
+  }else if(DTGobs.value == ""){
+    window.alert('Fill in DTGobservation')
+    return; 
+  }
+
+
+     if(selrep.value =="I-02"){
+    if(repwindowfrom.value == ""){
+      window.alert('Fill in Reporting window')
+      return; 
+    }else if(repwindowto.value == ""){
+      window.alert('Fill in Reporting window')
+      return; 
+    }else if(POL.value == ""){
+      window.alert('Fill in POL')
+      return; 
+    }else if(staticunits.value == ""){
+      window.alert('Fill in Static units')
+      return; 
+    }else if(overallassessment.value == ""){
+      window.alert('Fill in Overall assessment')
+      return; 
+    }else if(overallcomment.value == ""){
+      window.alert('Fill in overall comments')
+      return; 
+    }else if(jnrtorep.value == ""){
+      window.alert('Fill inn JNRto ')
+      return; 
+    } 
+  }
+}
+
+     if(writer.value =='STÅLE'){ 
+        document.body.style.backgroundColor = 'red'
+        window.alert('R2B?');
+    }
+
+{ //flash value -> final flash   
+    if(flash.value=="PrevJNR"){
+          FinalFlash=flash.value  + " " + JNRFlash.value 
+        }else {
+            FinalFlash = flash.value;
+      }
+  }
+
+//Data values declared
+var data =[ 
+            localJNR + 
+            "}" +
+            selrep.value +
+            "}" +
+            gradering.value +
+            "}" +
+            FinalFlash + 
+            "}" +
+            from.value +
+            "}" +
+            to.value +
+            "}" +
+            writer.value + 
+            "}" +
+            currentpos.value +
+            "}" +
+            bluf.value +
+            "}" +
+            POL.value +
+            "}" +
+            staticunits.value +
+            "}" +
+            overallcomment.value +
+            "}" +
+            overallassessment.value +
+            "}" +
+            refrences.value +
+            "}" +
+            area.value +
+            "}" +
+            enygrid.value +
+            "}" +
+            unit.value +
+            "}" +
+            repwindowfrom.value +
+            "}" +
+            repwindowto.value +
+            "}" +
+            jnrtorep.value +
+            "}" +
+            jnrfromrep.value + 
+            "}" +
+            JNRfrom.value +
+            "~" +
+            DTGobs.value +
+            "~" +
+            writerJNR.value +
+            "~" +
+            facts.value +
+            "~" +
+            comments.value +
+            "~" +
+            assessment.value
+            ]
+
+{//Push JNR observations to data export CSV 
+  if(localJNR>=2){
+      data.push( JNRfrom1.value + "~" + DTG1.value + "~" + writer1.value + "~" + facts1.value + "~" + comments1.value + "~" + assessment1.value)
+  } if(localJNR>=3){
+      data.push( JNRfrom2.value + "~" + DTG2.value + "~" + writer2.value +  "~" + facts2.value + "~" + comments2.value + "~" + assessment2.value)
+  } if(localJNR>=4){
+      data.push( JNRfrom3.value + "~" + DTG3.value + "~" + writer3.value + "~" + facts3.value + "~" + comments3.value + "~" + assessment3.value)
+  } if(localJNR>=5){
+      data.push( JNRfrom4.value + "~" + DTG4.value + "~" + writer4.value +  "~" + facts4.value + "~" + comments4.value + "~" + assessment4.value)
+  } if(localJNR>=6){
+      data.push( JNRfrom5.value + "~" + DTG5.value + "~" + writer5.value + "~" + facts5.value + "~" + comments5.value + "~" + assessment5.value)
+  } if(localJNR>=7){
+      data.push( JNRfrom6.value + "~" + DTG6.value + "~" + writer6.value + "~" + facts6.value + "~" + comments6.value + "~" + assessment6.value)
+  } if(localJNR>=8){
+      data.push( JNRfrom7.value + "~" + DTG7.value + "~" + writer7.value + "~" + facts7.value + "~" + comments7.value + "~" + assessment7.value)
+  } if(localJNR>=9){
+      data.push( JNRfrom8.value + "~" + DTG8.value + "~" + writer8.value + "~" + facts8.value + "~" + comments8.value + "~" + assessment8.value)
+  } if(localJNR>=10){
+      data.push( JNRfrom9.value + "~" + DTG9.value + "~" + writer9.value + "~" + facts9.value + "~" + comments9.value + "~" + assessment9.value)
+  } if(localJNR>=11){
+      data.push( JNRfrom10.value + "~" + DTG10.value + "~" + writer10.value +  "~" + facts10.value + "~" + comments10.value + "~" + assessment10.value)
+  } if(localJNR>=12){
+      data.push( JNRfrom11.value + "~" + DTG11.value + "~" + writer11.value +  "~" + facts11.value + "~" + comments11.value + "~" + assessment11.value)
+  } if(localJNR>=13){
+      data.push( JNRfrom12.value + "~" + DTG12.value + "~" + writer12.value +  "~" + facts12.value + "~" + comments12.value + "~" + assessment12.value)
+  } if(localJNR>=14){
+      data.push( JNRfrom13.value + "~" + DTG13.value + "~" + writer13.value + "~" + facts13.value + "~" + comments13.value + "~" + assessment13.value)
+  } if(localJNR>=15){
+      data.push( JNRfrom14.value + "~" + DTG14.value + "~" + writer14.value +  "~" + facts14.value + "~" + comments14.value + "~" + assessment14.value)
+  } if(localJNR>=16){
+      data.push( JNRfrom15.value + "~" + DTG15.value + "~" + writer15.value +  "~" + facts15.value + "~" + comments15.value + "~" + assessment15.value)
+  } if(localJNR>=17){
+      data.push( JNRfrom16.value + "~" + DTG16.value + "~" + writer16.value +  "~" + facts16.value + "~" + comments16.value + "~" + assessment16.value)
+  } if(localJNR>=18){
+      data.push( JNRfrom17.value + "~" + DTG17.value + "~" + writer17.value +  "~" + facts17.value + "~" + comments17.value + "~" + assessment17.value)
+  } if(localJNR>=19){
+      data.push( JNRfrom18.value + "~" + DTG18.value + "~" + writer18.value +  "~" + facts18.value + "~" + comments18.value + "~" + assessment18.value)
+  } if(localJNR>=20){
+      data.push( JNRfrom19.value + "~" + DTG19.value + "~" + writer19.value +  "~" + facts19.value + "~" + comments19.value + "~" + assessment19.value)
+  } if(localJNR>=21){
+      data.push( JNRfrom20.value + "~" + DTG20.value + "~" + writer20.value +  "~" + facts20.value + "~" + comments20.value + "~" + assessment20.value)
+  } if(localJNR>=22){
+      data.push( JNRfrom21.value + "~" + DTG21.value + "~" + writer21.value + "~" + facts21.value + "~" + comments21.value + "~" + assessment21.value)
+  } if(localJNR>=23){
+      data.push( JNRfrom22.value + "~" + DTG22.value + "~" + writer22.value +  "~" + facts22.value + "~" + comments22.value + "~" + assessment22.value)
+  } if(localJNR>=24){
+      data.push( JNRfrom23.value + "~" + DTG23.value + "~" + writer23.value + "~" + facts23.value + "~" + comments23.value + "~" + assessment23.value)
+  } if(localJNR>=25){
+      data.push( JNRfrom24.value + "~" + DTG24.value + "~" + writer24.value + "~" + facts24.value + "~" + comments24.value + "~" + assessment24.value)
+  } if(localJNR>=26){
+      data.push( JNRfrom25.value + "~" + DTG25.value + "~" + writer25.value + "~" + facts25.value + "~" + comments25.value + "~" + assessment25.value)
+  } if(localJNR>=27){
+      data.push( JNRfrom26.value + "~" + DTG26.value + "~" + writer25.value + "~" + facts25.value + "~" + comments25.value + "~" + assessment25.value)
+  } if(localJNR>=28){
+      data.push( JNRfrom27.value + "~" + DTG27.value + "~" + writer25.value + "~" + facts25.value + "~" + comments25.value + "~" + assessment25.value)
+  } if(localJNR>=29){
+      data.push( JNRfrom28.value + "~" + DTG28.value + "~" + writer25.value + "~" + facts25.value + "~" + comments25.value + "~" + assessment25.value)
+  } if(localJNR>=30){
+      data.push( JNRfrom29.value + "~" + DTG29.value + "~" + writer25.value + "~" + facts25.value + "~" + comments25.value + "~" + assessment25.value)
+  } if(localJNR>=31){
+      data.push( JNRfrom30.value + "~" + DTG30.value + "~" + writer25.value + "~" + facts25.value + "~" + comments25.value + "~" + assessment25.value)
+  } if(localJNR>=32){
+      data.push( JNRfrom31.value + "~" + DTG31.value + "~" + writer31.value + "~" + facts31.value + "~" + comments31.value + "~" + assessment31.value)
+  } if(localJNR>=33){
+      data.push( JNRfrom32.value + "~" + DTG32.value + "~" + writer32.value + "~" + facts32.value + "~" + comments32.value + "~" + assessment32.value)
+  } if(localJNR>=34){
+      data.push( JNRfrom33.value + "~" + DTG33.value + "~" + writer33.value + "~" + facts33.value + "~" + comments33.value + "~" + assessment33.value)
+  } if(localJNR>=35){
+      data.push( JNRfrom34.value + "~" + DTG34.value + "~" + writer34.value + "~" + facts34.value + "~" + comments34.value + "~" + assessment34.value)
+  } if(localJNR>=36){
+      data.push( JNRfrom35.value + "~" + DTG35.value + "~" + writer35.value + "~" + facts35.value + "~" + comments35.value + "~" + assessment35.value)
+  } if(localJNR>=37){
+      data.push( JNRfrom36.value + "~" + DTG36.value + "~" + writer36.value + "~" + facts36.value + "~" + comments36.value + "~" + assessment36.value)
+  } if(localJNR>=38){
+      data.push( JNRfrom37.value + "~" + DTG37.value + "~" + writer37.value + "~" + facts37.value + "~" + comments37.value + "~" + assessment37.value)
+  } if(localJNR>=39){
+      data.push( JNRfrom38.value + "~" + DTG38.value + "~" + writer38.value + "~" + facts38.value + "~" + comments38.value + "~" + assessment38.value)
+  } if(localJNR>=40){
+      data.push( JNRfrom39.value + "~" + DTG39.value + "~" + writer39.value + "~" + facts39.value + "~" + comments39.value + "~" + assessment39.value)
+  } if(localJNR>=41){
+      data.push( JNRfrom40.value + "~" + DTG40.value + "~" + writer40.value + "~" + facts40.value + "~" + comments40.value + "~" + assessment40.value)
+  } if(localJNR>=42){
+      data.push( JNRfrom41.value + "~" + DTG41.value + "~" + writer41.value + "~" + facts41.value + "~" + comments41.value + "~" + assessment41.value)
+  } if(localJNR>=43){
+      data.push( JNRfrom42.value + "~" + DTG42.value + "~" + writer42.value + "~" + facts42.value + "~" + comments42.value + "~" + assessment42.value)
+  } if(localJNR>=44){
+      data.push( JNRfrom43.value + "~" + DTG43.value + "~" + writer43.value + "~" + facts43.value + "~" + comments43.value + "~" + assessment43.value)
+  } if(localJNR>=45){
+      data.push( JNRfrom44.value + "~" + DTG44.value + "~" + writer44.value + "~" + facts44.value + "~" + comments44.value + "~" + assessment44.value)
+  } if(localJNR>=46){
+      data.push( JNRfrom45.value + "~" + DTG45.value + "~" + writer45.value + "~" + facts45.value + "~" + comments45.value + "~" + assessment45.value)
+  } if(localJNR>=47){
+      data.push( JNRfrom46.value + "~" + DTG46.value + "~" + writer46.value + "~" + facts46.value + "~" + comments46.value + "~" + assessment46.value)
+  } if(localJNR>=48){
+      data.push( JNRfrom47.value + "~" + DTG47.value + "~" + writer47.value + "~" + facts47.value + "~" + comments47.value + "~" + assessment47.value)
+  } if(localJNR>=49){
+      data.push( JNRfrom48.value + "~" + DTG48.value + "~" + writer48.value + "~" + facts48.value + "~" + comments48.value + "~" + assessment48.value)
+  } if(localJNR>=50){
+      data.push( JNRfrom49.value + "~" + DTG49.value + "~" + writer49.value + "~" + facts49.value + "~" + comments49.value + "~" + assessment49.value)
+  } if(localJNR>=51){
+      data.push( JNRfrom50.value + "~" + DTG50.value + "~" + writer50.value + "~" + facts50.value + "~" + comments50.value + "~" + assessment50.value)
+  } if(localJNR>=52){
+      data.push( JNRfrom51.value + "~" + DTG51.value + "~" + writer51.value + "~" + facts51.value + "~" + comments51.value + "~" + assessment51.value)
+  } if(localJNR>=53){
+      data.push( JNRfrom52.value + "~" + DTG52.value + "~" + writer52.value + "~" + facts52.value + "~" + comments52.value + "~" + assessment52.value)
+  } if(localJNR>=54){
+      data.push( JNRfrom53.value + "~" + DTG53.value + "~" + writer53.value + "~" + facts53.value + "~" + comments53.value + "~" + assessment53.value)
+  } if(localJNR>=55){
+      data.push( JNRfrom54.value + "~" + DTG54.value + "~" + writer54.value + "~" + facts54.value + "~" + comments54.value + "~" + assessment54.value)
+  } if(localJNR>=56){
+      data.push( JNRfrom55.value + "~" + DTG55.value + "~" + writer55.value + "~" + facts55.value + "~" + comments55.value + "~" + assessment55.value)
+  } if(localJNR>=57){
+      data.push( JNRfrom56.value + "~" + DTG56.value + "~" + writer56.value + "~" + facts56.value + "~" + comments56.value + "~" + assessment56.value)
+  } if(localJNR>=58){
+      data.push( JNRfrom57.value + "~" + DTG57.value + "~" + writer57.value + "~" + facts57.value + "~" + comments57.value + "~" + assessment57.value)
+  } if(localJNR>=59){
+      data.push( JNRfrom58.value + "~" + DTG58.value + "~" + writer58.value + "~" + facts58.value + "~" + comments58.value + "~" + assessment58.value)
+  } if(localJNR>=60){
+      data.push( JNRfrom59.value + "~" + DTG59.value + "~" + writer59.value + "~" + facts59.value + "~" + comments59.value + "~" + assessment59.value)
+  } if(localJNR>=61){
+      data.push( JNRfrom60.value + "~" + DTG60.value + "~" + writer60.value + "~" + facts60.value + "~" + comments60.value + "~" + assessment60.value)
+  } if(localJNR>=62){
+      data.push( JNRfrom61.value + "~" + DTG61.value + "~" + writer61.value + "~" + facts61.value + "~" + comments61.value + "~" + assessment61.value)
+  } if(localJNR>=63){
+      data.push( JNRfrom62.value + "~" + DTG62.value + "~" + writer62.value + "~" + facts62.value + "~" + comments62.value + "~" + assessment62.value)
+  } if(localJNR>=64){
+      data.push( JNRfrom63.value + "~" + DTG63.value + "~" + writer63.value + "~" + facts63.value + "~" + comments63.value + "~" + assessment63.value)
+  } if(localJNR>=65){
+      data.push( JNRfrom64.value + "~" + DTG64.value + "~" + writer64.value + "~" + facts64.value + "~" + comments64.value + "~" + assessment64.value)
+  } if(localJNR>=66){
+      data.push( JNRfrom65.value + "~" + DTG65.value + "~" + writer65.value + "~" + facts65.value + "~" + comments65.value + "~" + assessment65.value)
+  } if(localJNR>=67){
+      data.push( JNRfrom66.value + "~" + DTG66.value + "~" + writer66.value + "~" + facts66.value + "~" + comments66.value + "~" + assessment66.value)
+  } if(localJNR>=68){
+      data.push( JNRfrom67.value + "~" + DTG67.value + "~" + writer67.value + "~" + facts67.value + "~" + comments67.value + "~" + assessment67.value)
+  } if(localJNR>=69){
+      data.push( JNRfrom68.value + "~" + DTG68.value + "~" + writer68.value + "~" + facts68.value + "~" + comments68.value + "~" + assessment68.value)
+  } if(localJNR>=70){
+      data.push( JNRfrom69.value + "~" + DTG69.value + "~" + writer69.value + "~" + facts69.value + "~" + comments69.value + "~" + assessment69.value)
+  } if(localJNR>=71){
+      data.push( JNRfrom70.value + "~" + DTG70.value + "~" + writer70.value + "~" + facts70.value + "~" + comments70.value + "~" + assessment70.value)
+  } if(localJNR>=72){
+      data.push( JNRfrom71.value + "~" + DTG71.value + "~" + writer71.value + "~" + facts71.value + "~" + comments71.value + "~" + assessment71.value)
+  } if(localJNR>=73){
+      data.push( JNRfrom72.value + "~" + DTG72.value + "~" + writer72.value + "~" + facts72.value + "~" + comments72.value + "~" + assessment72.value)
+  } if(localJNR>=74){
+      data.push( JNRfrom73.value + "~" + DTG73.value + "~" + writer73.value + "~" + facts73.value + "~" + comments73.value + "~" + assessment73.value)
+  } if(localJNR>=75){
+      data.push( JNRfrom74.value + "~" + DTG74.value + "~" + writer74.value + "~" + facts74.value + "~" + comments74.value + "~" + assessment74.value)
+  } if(localJNR>=76){
+      data.push( JNRfrom75.value + "~" + DTG75.value + "~" + writer75.value + "~" + facts75.value + "~" + comments75.value + "~" + assessment75.value)
+  } if(localJNR>=77){
+      data.push( JNRfrom76.value + "~" + DTG76.value + "~" + writer76.value + "~" + facts76.value + "~" + comments76.value + "~" + assessment76.value)
+  } if(localJNR>=78){
+      data.push( JNRfrom77.value + "~" + DTG77.value + "~" + writer77.value + "~" + facts77.value + "~" + comments77.value + "~" + assessment77.value)
+  } if(localJNR>=79){
+      data.push( JNRfrom78.value + "~" + DTG78.value + "~" + writer78.value + "~" + facts78.value + "~" + comments78.value + "~" + assessment78.value)
+  } if(localJNR>=80){
+      data.push( JNRfrom79.value + "~" + DTG79.value + "~" + writer79.value + "~" + facts79.value + "~" + comments79.value + "~" + assessment79.value)
+  } if(localJNR>=81){
+      data.push( JNRfrom80.value + "~" + DTG80.value + "~" + writer80.value + "~" + facts80.value + "~" + comments80.value + "~" + assessment80.value)
+  } if(localJNR>=82){
+      data.push( JNRfrom81.value + "~" + DTG81.value + "~" + writer81.value + "~" + facts81.value + "~" + comments81.value + "~" + assessment81.value)
+  } if(localJNR>=83){
+      data.push( JNRfrom82.value + "~" + DTG82.value + "~" + writer82.value + "~" + facts82.value + "~" + comments82.value + "~" + assessment82.value)
+  } if(localJNR>=84){
+      data.push( JNRfrom83.value + "~" + DTG83.value + "~" + writer83.value + "~" + facts83.value + "~" + comments83.value + "~" + assessment83.value)
+  } if(localJNR>=85){
+      data.push( JNRfrom84.value + "~" + DTG84.value + "~" + writer84.value + "~" + facts84.value + "~" + comments84.value + "~" + assessment84.value)
+  } if(localJNR>=86){
+      data.push( JNRfrom85.value + "~" + DTG85.value + "~" + writer85.value + "~" + facts85.value + "~" + comments85.value + "~" + assessment85.value)
+  } if(localJNR>=87){
+      data.push( JNRfrom86.value + "~" + DTG86.value + "~" + writer86.value + "~" + facts86.value + "~" + comments86.value + "~" + assessment86.value)
+  } if(localJNR>=88){
+      data.push( JNRfrom87.value + "~" + DTG87.value + "~" + writer87.value + "~" + facts87.value + "~" + comments87.value + "~" + assessment87.value)
+  } if(localJNR>=89){
+      data.push( JNRfrom88.value + "~" + DTG88.value + "~" + writer88.value + "~" + facts88.value + "~" + comments88.value + "~" + assessment88.value)
+  } if(localJNR>=90){
+      data.push( JNRfrom89.value + "~" + DTG89.value + "~" + writer89.value + "~" + facts89.value + "~" + comments89.value + "~" + assessment89.value)
+  } if(localJNR>=91){
+      data.push( JNRfrom90.value + "~" + DTG90.value + "~" + writer90.value + "~" + facts90.value + "~" + comments90.value + "~" + assessment90.value)
+  } if(localJNR>=92){
+      data.push( JNRfrom91.value + "~" + DTG91.value + "~" + writer91.value + "~" + facts91.value + "~" + comments91.value + "~" + assessment91.value)
+  } if(localJNR>=93){
+      data.push( JNRfrom92.value + "~" + DTG92.value + "~" + writer92.value + "~" + facts92.value + "~" + comments92.value + "~" + assessment92.value)
+  } if(localJNR>=94){
+      data.push( JNRfrom93.value + "~" + DTG93.value + "~" + writer93.value + "~" + facts93.value + "~" + comments93.value + "~" + assessment93.value)
+  } if(localJNR>=95){
+      data.push( JNRfrom94.value + "~" + DTG94.value + "~" + writer94.value + "~" + facts94.value + "~" + comments94.value + "~" + assessment94.value)
+  } if(localJNR>=96){
+      data.push( JNRfrom95.value + "~" + DTG95.value + "~" + writer95.value + "~" + facts95.value + "~" + comments95.value + "~" + assessment95.value)
+  } if(localJNR>=97){
+      data.push( JNRfrom96.value + "~" + DTG96.value + "~" + writer96.value + "~" + facts96.value + "~" + comments96.value + "~" + assessment96.value)
+  } if(localJNR>=98){
+      data.push( JNRfrom97.value + "~" + DTG97.value + "~" + writer97.value + "~" + facts97.value + "~" + comments97.value + "~" + assessment97.value)
+  } if(localJNR>=99){
+      data.push( JNRfrom98.value + "~" + DTG98.value + "~" + writer98.value + "~" + facts98.value + "~" + comments98.value + "~" + assessment98.value)
+  } if(localJNR>=100){
+      data.push( JNRfrom99.value + "~" + DTG99.value + "~" + writer99.value + "~" + facts99.value + "~" + comments99.value + "~" + assessment99.value)
+  } 
+  };
+
+//Change separators between each JNR and export 
+{    data = data.join('{');
+      
+// This variable stores all the data.
+// Convert the text to BLOB.
+var data =data.replace( /[\r\n]+/gm, " ")
+  
+const textToBLOB = new Blob([data], { type: "text/plain" });
+// The file to save the data.
+const sFileName = dato + " " + gradering.value + " MIBN LRRP " + from.value + " " + selrep.value + " JNR " + FinalJNR + " "+ FinalDTG; 
+
+let newLink = document.createElement("a");
+newLink.download = sFileName;
+
+newLink.href = window.URL.createObjectURL(textToBLOB);
+newLink.style.display = "none";
+document.body.appendChild(newLink);
+
+/* } */
+newLink.click();
+    };
+  }
+}
+ 
+{//Change shown field based on report type
+    var myClasses1 = document.querySelectorAll(".I-01");
+    var myClasses = document.querySelectorAll(".I-02"),
+    l=myClasses.length;
+    l1=myClasses1.length;
+
+  document.addEventListener("click", function () { 
+    selrepShow();
+  });
+
+  var selrepShow = function () {
+    if(selrep.value == "I-02"){
+      i=0;
+      for(i; i<l1; i++){
+        myClasses1[i].style.display="none";
+      }
+      i=0;
+      for(i; i<l; i++){
+        myClasses[i].style.display="";
+      }
+    }else if(selrep.value =="I-01"){ 
+      i=0;
+      for(i; i<l1; i++){
+        myClasses1[i].style.display="";
+      }
+      i=0;
+      for(i; i<l; i++){
+        myClasses[i].style.display="none";
+      }
+    }
+  }
+}
+
+{//Change shown field based on Flash value
+    var myFlash = document.querySelectorAll(".flashJNR");
+    f=myFlash.length;
+
+  document.getElementById("flash").addEventListener("change", function () { 
+    if(flash.value == "PrevJNR"){
+      i=0;
+      for(i; i<=f; i++){
+        myFlash[i].style.display="";
+      }
+    }else if(flash.value == "yes"){ 
+      i=0;
+      for(i; i<=f; i++){
+        myFlash[i].style.display="none";
+      }
+    }
+  });
+}
+
+{//Graderings value
+     document.getElementById("gradering").addEventListener("change", function () {
+      "use strict";
+      var vis = document.querySelector(".vis"),
+        target = document.getElementById(this.value);
+});
+}
+
+{//Flash value
+     document.getElementById("flash").addEventListener("change", function () {
+      "use strict";
+      var vis = document.querySelector(".vis"),
+        target = document.getElementById(this.value);
+});
+}
+
+{//Dynamic input height
+    let input = document.querySelector(".resize-ta");
+    input.addEventListener("keyup", () => {
+      input.style.height = calcHeight(input.value) + "px";
+    });
+}
+
+{//Adding OBS.  
+     var addJNR = function () {       
+    
+      if(localJNR>=100){
+          alert('Error, for mange OBS i en rapport')
+          return;
+        }
+        var container = document.getElementById('addhere'); 
+       
+            document.getElementById('addhere').appendChild(document.createTextNode('JNR:'));
+            var input1 = document.createElement('input');
+            input1.type = 'number'; 
+            input1.id = 'JNRfrom' + localJNR;
+            input1.placeholder = 'XXX'
+            input1.className ='testing'
+            input1.value = localJNR.value;
+            container.style.color = "white";
+            container.appendChild(input1);
+
+            //DTG
+            document.getElementById('addhere').appendChild(document.createTextNode('DTG:')); 
+            var input2 = document.createElement('input');
+            input2.type = 'number'; 
+            input2.id = 'DTG' + localJNR
+            input2.placeholder = 'DDHHMM'
+            container.appendChild(input2);
+
+             //W/O
+            document.getElementById('addhere').appendChild(document.createTextNode('Writer/Operator:')); 
+            var input3 = document.createElement('input');
+            input3.type = 'text'; 
+            input3.id = 'writer' + localJNR
+            input3.placeholder = 'Writer/Operator'
+            container.appendChild(input3);
+            //append a break 
+            //container.appendChild(document.createElement('br'));
+
+            //Facts
+            document.getElementById('addhere').appendChild(document.createTextNode('Facts:')); 
+            var textarea1 = document.createElement('textarea');
+            textarea1.type = 'text'; 
+            textarea1.id = 'facts' + localJNR
+            textarea1.placeholder = 'Facts'
+            container.appendChild(textarea1);
+            //append a break 
+            //container.appendChild(document.createElement('br'));
+
+            //Comment
+            document.getElementById('addhere').appendChild(document.createTextNode('Comment:')); 
+            var textarea2 = document.createElement('textarea');
+            textarea2.type = 'text'; 
+            textarea2.id = ('comments' + localJNR);
+            textarea2.placeholder = 'Comments'
+            container.appendChild(textarea2);
+            //append a break 
+            //container.appendChild(document.createElement('br'));
+
+            //Assessment
+            document.getElementById('addhere').appendChild(document.createTextNode('Assessment:')); 
+            var textarea3 = document.createElement('textarea');
+            textarea3.type = 'text'; 
+            textarea3.id = 'assessment' + localJNR
+            textarea3.placeholder = 'Assessment'
+            container.appendChild(textarea3);
+            //append a break 
+            //container.appendChild(document.createElement('br'));
+            //container.appendChild(document.createElement('br'));
+
+            localJNR += 1; 
+    }
+  }
+
+{//Removing OBS. 
+     var removeJNR = function() {
+
+      /* var container = document.getElementById('addhere'); 
+        var input1 = document.createElement('input'); */
+
+      var popobj = 'JNRfrom' + (localJNR-1);
+
+      var topop =  document.getElementById('addhere').lastChild; 
+      document.getElementById('addhere').removeChild(topop)
+
+      var topop =  document.getElementById('addhere').lastChild; 
+      document.getElementById('addhere').removeChild(topop)
+
+      var topop =  document.getElementById('addhere').lastChild; 
+      document.getElementById('addhere').removeChild(topop)
+
+      var topop =  document.getElementById('addhere').lastChild; 
+      document.getElementById('addhere').removeChild(topop)
+
+      var topop =  document.getElementById('addhere').lastChild; 
+      document.getElementById('addhere').removeChild(topop)
+
+      var topop =  document.getElementById('addhere').lastChild; 
+      document.getElementById('addhere').removeChild(topop)
+
+      var topop =  document.getElementById('addhere').lastChild; 
+      document.getElementById('addhere').removeChild(topop)
+
+      var topop =  document.getElementById('addhere').lastChild; 
+      document.getElementById('addhere').removeChild(topop)
+
+      var topop =  document.getElementById('addhere').lastChild; 
+      document.getElementById('addhere').removeChild(topop)
+
+      var topop =  document.getElementById('addhere').lastChild; 
+      document.getElementById('addhere').removeChild(topop)
+
+      var topop =  document.getElementById('addhere').lastChild; 
+      document.getElementById('addhere').removeChild(topop)
+
+      var topop =  document.getElementById('addhere').lastChild; 
+      document.getElementById('addhere').removeChild(topop)
+
+    localJNR -= 1; 
+    }
+}
+
+{//Force "cookies" function
+     let fromField = document.getElementById('From');
+     let toField = document.getElementById('To');
+     let currentposField = document.getElementById('currentpos');
+
+  function saveResponses() {
+    localStorage.setItem("From", fromField.value);
+    localStorage.setItem("To", toField.value);
+    localStorage.setItem("POS", currentposField.value);
+  }
+
+  function retrieveResponses() {
+    fromField.value = localStorage.getItem('From');
+    toField.value = localStorage.getItem('To');
+    currentposField.value = localStorage.getItem('POS');
+  }
+
+  window.onload = function(e) {
+    e.preventDefault();
+    retrieveResponses();
+  }
+}
+
+</script>
+</html>
