@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
-    <script src="./script.js"></script>
+    <script src="./add&removeJournalNumber.js"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -22,13 +22,16 @@
 
         <div class="staticvalues">
             <label for="from"><b>From:</b></label>
-            <input type="text" placeholder="From callsign" name="from">
+            <input type="text" placeholder="From callsign" name="from" id="from">
+
             <label for="to"><b>To:</b></label>
-            <input type="text" placeholder="To callsign" name="to">
+            <input type="text" placeholder="To callsign" name="to" id="to">
+
             <label for="writeroperator"><b>Writer/Operator:</b></label>
-            <input type="text" placeholder="Writer/Operator" name="writeroperator">
+            <input type="text" placeholder="Writer/Operator" name="writeroperator" id="writeroperator">
+
             <label for="ownposition"><b>Own position:</b></label>
-            <input type="text" placeholder="MGRS" name="ownposition">
+            <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
         </div>
 
         <div class="bluf">
@@ -46,13 +49,18 @@
             <textarea type="text" id="staticunits"></textarea>
         </div>
 
-
-
         <div class="observation">
-            <input id="journalnumber" placeholder="Journal number" type="number"></input><br>
-            <input id="facts" placeholder="Facts"></input><br>
-            <input id="comment" placeholder="Comment"></input><br>
-            <input id="assessment" placeholder="Assessment"></input><br><br>
+            <label for="journalnumber"><b>Journal number:</b></label>
+            <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber"></input><br>
+
+            <label for="facts"><b>Facts:</b></label>
+            <textarea name="facts" id="facts"></textarea><br>
+
+            <label for="comment"><b>Comment:</b></label>
+            <textarea name="comment" id="comment"></textarea><br>
+
+            <label for="assessment"><b>Assessment:</b></label>
+            <textarea name="assessment" id="assessment"></textarea><br><br>
         </div>
 
         <div id="addHere"></div>

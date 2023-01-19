@@ -17,21 +17,21 @@ function addJournalNumber() {
     container.appendChild(document.createElement('br'));
 
     // Creating a new input field for the "Facts" section.
-    var facts = document.createElement("input");
+    var facts = document.createElement("textarea");
     facts.type = 'text';
     facts.placeholder = 'Facts';
     container.appendChild(facts);
     container.appendChild(document.createElement('br'));
 
     // Creating a new input field for the "Comment" section.
-    var comment = document.createElement("input");
+    var comment = document.createElement("textarea");
     comment.type = 'text';
     comment.placeholder = 'Comment';
     container.appendChild(comment);
     container.appendChild(document.createElement('br'));
 
     // Creating a new input field for the assessment section.
-    var assessment = document.createElement("input");
+    var assessment = document.createElement("textarea");
     assessment.type = 'text';
     assessment.placeholder = 'Assessment';
     container.appendChild(assessment);
