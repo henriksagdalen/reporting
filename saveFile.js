@@ -7,7 +7,7 @@ function saveToFile() {
 
     var data = [
         from + '\n',
-        to + '\n'
+        to + '\n',
     ]
 
     // What the fuck is this for
