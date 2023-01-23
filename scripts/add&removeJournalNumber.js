@@ -17,6 +17,13 @@ function addJournalNumber() {
     container.appendChild(journalNumberNext);
     container.appendChild(document.createElement('br'));
 
+    var DTGForNewObservation = document.createElement("input");
+    DTGForNewObservation.type = "text";
+    DTGForNewObservation.placeholder = 'DTG for new observation'
+    DTGForNewObservation.id = 'dtg' + journalNumberCounter;
+    container.appendChild(DTGForNewObservation);
+    container.appendChild(document.createElement('br'));
+
     // Creating a new input field for the "Facts" section.
     var facts = document.createElement("textarea");
     facts.id = 'facts' + journalNumberCounter;

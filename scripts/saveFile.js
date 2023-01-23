@@ -97,7 +97,7 @@ function saveToFile() {
     // Get the last journal number in the report, to use it in the filename.
     let lastJournalNumber = journalNumberFields[journalNumberFields.length - 1].value;
 
-    // Create the filename variable
+    // Create the filename with the previously declared variables.
     var filename = dateOfReport
         + " " 
         + classification 
