@@ -19,7 +19,7 @@ function addJournalNumber() {
 
     // Creating a new input field for the "Facts" section.
     var facts = document.createElement("textarea");
-    facts.id = 'facts' + journalNumberCounter + 1;
+    facts.id = 'facts' + journalNumberCounter;
     facts.type = 'text';
     facts.placeholder = 'Facts';
     container.appendChild(facts);

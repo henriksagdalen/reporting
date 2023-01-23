@@ -21,7 +21,7 @@ function saveToFile() {
     }
     console.log(journalNumberFields)
     // Get the facts, comment, and assessment input fields
-    var facts = document.getElementById("facts").value;
+    //var facts = document.getElementById("facts").value;
     var comment = document.getElementById("comment").value;
     var assessment = document.getElementById("assessment").value;
 
@@ -36,8 +36,12 @@ function saveToFile() {
         + "Static units in NAI: " + staticUnits + "\n\n";
 
         for (var i = 0; i < journalNumbers.length; i++) {
-        fileContent += "Journal number: " + journalNumbers[i] + "\n"
-            + "Facts: " + facts + "\n"
+            var factsID = 'facts' + i;
+            console.log(factsID);
+            var newFacts = document.getElementById(factsID).value;
+            console.log(newFacts);
+            fileContent += "Journal number: " + journalNumbers[i] + "\n"
+            + "Facts: " + newFacts + "\n"
             + "Comment: " + comment + "\n"
             + "Assessment: " + assessment + "\n\n";
     }
