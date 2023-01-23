@@ -22,8 +22,8 @@ function saveToFile() {
     console.log(journalNumberFields)
     // Get the facts, comment, and assessment input fields
     //var facts = document.getElementById("facts").value;
-    var comment = document.getElementById("comment").value;
-    var assessment = document.getElementById("assessment").value;
+    //var comment = document.getElementById("comment").value;
+    //var assessment = document.getElementById("assessment").value;
 
     // Create the text file content
     var fileContent = "Classification: " + classification + "\n\n"
@@ -37,13 +37,17 @@ function saveToFile() {
 
         for (var i = 0; i < journalNumbers.length; i++) {
             var factsID = 'facts' + i;
-            console.log(factsID);
+            var commentID = 'comment' + i;
+            var assessmentID = 'assessment' + i;
+
             var newFacts = document.getElementById(factsID).value;
-            console.log(newFacts);
+            var newComment = document.getElementById(commentID).value;
+            var newAssessment = document.getElementById(assessmentID).value;
+
             fileContent += "Journal number: " + journalNumbers[i] + "\n"
             + "Facts: " + newFacts + "\n"
-            + "Comment: " + comment + "\n"
-            + "Assessment: " + assessment + "\n\n";
+            + "Comment: " + newComment + "\n"
+            + "Assessment: " + newAssessment + "\n\n";
     }
 
     // Create a Blob object with the file content
