@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(186, 186, 186);
+  background-color: rgb(201, 201, 201);
   margin-top: 0;
   margin-left: 0;
   margin-right: 0;
@@ -9,8 +9,8 @@ body {
 /* Background image */
 body::after {
   content: "";
-  background: url(Images/US-Army.png);
-  background-size: 30%;
+  background: url(/ressurser/US-Army.png);
+  background-size: 40%;
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.3;
@@ -20,17 +20,18 @@ body::after {
   right: 0;
   position: absolute;
   position: fixed;
-  z-index: -1;   
+  z-index: -1;
 }
 
 .link {
   display: flex;
-  margin-top: 15%;
+  margin-top: 10%;
   justify-content: center;
 }
+
 .cards {
-  width: 200px;
-  height: 300px;
+  width: 30vh;
+  height: 45vh;
   border-radius: 5px;
   background-color: darkslategrey;
   margin-left: 15px;
@@ -45,21 +46,20 @@ body::after {
 }
 
 .thumbnail {
-  width: 190px;
-  height: 290px;
+  width: 97%;
+  height: 98%;
   border-radius: 5px;
   object-fit: cover;
-  margin-top: 5px;
+  margin-top: 1.5%;
 }
 
 .cards >p {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 4em;
+  font-weight: 900;
   text-transform: uppercase;
   margin: 0;
   color: black;
   position: absolute;
   width: 100%;
-  top: 70%;
-  text-shadow: 0 0 5px greenyellow;
+  top: 45%;
 }
