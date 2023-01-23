@@ -29,7 +29,7 @@ function addJournalNumber() {
     var comment = document.createElement("textarea");
     comment.type = 'text';
     comment.placeholder = 'Comment';
-    comment.id = 'comment' + journalNumberCounter +1;
+    comment.id = 'comment' + journalNumberCounter;
     container.appendChild(comment);
     container.appendChild(document.createElement('br'));
 
@@ -37,7 +37,7 @@ function addJournalNumber() {
     var assessment = document.createElement("textarea");
     assessment.type = 'text';
     assessment.placeholder = 'Assessment';
-    assessment.id = 'assessment' + journalNumberCounter + 1;
+    assessment.id = 'assessment' + journalNumberCounter;
     container.appendChild(assessment);
     container.appendChild(document.createElement('br'));
     container.appendChild(document.createElement('br'));
