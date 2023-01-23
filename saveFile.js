@@ -13,12 +13,13 @@ function saveToFile() {
     var staticUnits = document.getElementById("staticunits").value;
 
     // Get the journal number input fields
-    var journalNumberFields = document.querySelectorAll(".observation input[name='journalnumber']");
+    var journalNumberFields = document.querySelectorAll("#journalnumber");
     var journalNumbers = [];
+    
     for (var i = 0; i < journalNumberFields.length; i++) {
         journalNumbers.push(journalNumberFields[i].value);
     }
-
+    console.log(journalNumberFields)
     // Get the facts, comment, and assessment input fields
     var facts = document.getElementById("facts").value;
     var comment = document.getElementById("comment").value;
@@ -33,7 +34,8 @@ function saveToFile() {
         + "Bottom Line Up Front: " + bluf + "\n\n"
         + "Pattern of life: " + patternOfLife + "\n\n"
         + "Static units in NAI: " + staticUnits + "\n\n";
-    for (var i = 0; i < journalNumbers.length; i++) {
+
+        for (var i = 0; i < journalNumbers.length; i++) {
         fileContent += "Journal number: " + journalNumbers[i] + "\n"
             + "Facts: " + facts + "\n"
             + "Comment: " + comment + "\n"
@@ -54,7 +56,7 @@ function saveToFile() {
     downloadLink.click();
     
     // Remove the link element from the body
-    document.body.removeChild(link);
+    document.body.removeChild(downloadLink);
 }
 
 /*function saveToFile() {
