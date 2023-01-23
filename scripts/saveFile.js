@@ -14,7 +14,11 @@ function saveToFile() {
 
     // Get the journal number input fields
     var journalNumberFields = document.querySelectorAll("#journalnumber");
+
+    // Create journal numbers array.
     var journalNumbers = [];
+
+
     
     // LEGGE TIL FORKLARENDE KOMMENTAR HER.
     for (var i = 0; i < journalNumberFields.length; i++) {
@@ -47,13 +51,74 @@ function saveToFile() {
             + "Assessment: " + newAssessment + "\n\n";
     }
 
+    // Get the date and time from the local computer.
+    var newDate = new Date();
+    var year = newDate.getFullYear();
+    var month = newDate.getMonth();
+    var day = newDate.getDate();
+    var hour = newDate.getHours();
+    var minute = newDate.getMinutes();
+
+    // Check if values are less than 10, and format them correctly if true.
+    if (month < 10) {
+	    month = "0" +(newDate.getMonth() + 1);
+    }
+    else {
+	    month = (newDate.getMonth() + 1);
+    }
+    if (day < 10) {
+	    date = "0" + newDate.getDate();
+    }
+    else {
+	    date = newDate.getDate();
+    }
+    if (hour < 10) {
+	    hour = "0" + newDate.getHours();
+    }
+    else {
+	    hour = newDate.getHours();
+    }
+    if (minute < 10) {
+	    minute = "0" + newDate.getMinutes();
+    }
+    else {
+	    minute = newDate.getMinutes()
+    }
+
+    // Create the date variable that is used in the start of the filename.
+    var dateOfReport = year + "-" + month + "-" + day;
+
+    // Create the DTG variable that is used in the end of the filename, and make it ZULU.
+    var DTGOfReport = day + "" + hour + "" + minute + "Z";
+
+    // Get the first journal number in the report, to use it in the filename.
+    let firstJournalNumber = journalNumberFields[0].value;
+
+    // Get the last journal number in the report, to use it in the filename.
+    let lastJournalNumber = journalNumberFields[journalNumberFields.length - 1].value;
+
+    // Create the filename variable
+    var filename = dateOfReport
+        + " " 
+        + classification 
+        + " MIBN LRRP " 
+        + from 
+        + " I-02 "
+        + "JNR "
+        + firstJournalNumber
+        + "-"
+        + lastJournalNumber
+        + " " 
+        + DTGOfReport;
+
+
     // Create a Blob object with the file content
     var file = new Blob([fileContent], { type: "text/plain" });
 
     // Create a download link for the file
     var downloadLink = document.createElement("a");
     downloadLink.href = URL.createObjectURL(file);
-    downloadLink.download = "report.txt";
+    downloadLink.download = filename;
     downloadLink.style.display = "none";
 
     // Add the download link to the body and click it to start the download
@@ -63,3 +128,4 @@ function saveToFile() {
     // Remove the link element from the body
     document.body.removeChild(downloadLink);
 }
+
