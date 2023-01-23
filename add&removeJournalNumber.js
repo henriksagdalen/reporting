@@ -12,12 +12,14 @@ function addJournalNumber() {
     var journalNumberStart = document.getElementById("journalnumber").value; 
     var journalNumberNext = document.createElement('input'); 
     journalNumberNext.type = 'number';
+    journalNumberNext.id = 'journalnumber';
     journalNumberNext.value = parseInt(journalNumberStart) + journalNumberCounter;
     container.appendChild(journalNumberNext);
     container.appendChild(document.createElement('br'));
 
     // Creating a new input field for the "Facts" section.
     var facts = document.createElement("textarea");
+    facts.id = 'facts' + journalNumberCounter;
     facts.type = 'text';
     facts.placeholder = 'Facts';
     container.appendChild(facts);
@@ -27,6 +29,7 @@ function addJournalNumber() {
     var comment = document.createElement("textarea");
     comment.type = 'text';
     comment.placeholder = 'Comment';
+    comment.id = 'comment' + journalNumberCounter +1;
     container.appendChild(comment);
     container.appendChild(document.createElement('br'));
 
@@ -34,6 +37,7 @@ function addJournalNumber() {
     var assessment = document.createElement("textarea");
     assessment.type = 'text';
     assessment.placeholder = 'Assessment';
+    assessment.id = 'assessment' + journalNumberCounter + 1;
     container.appendChild(assessment);
     container.appendChild(document.createElement('br'));
     container.appendChild(document.createElement('br'));
