@@ -30,14 +30,11 @@
   padding-right: 30px;
 }
 
-.header-logo {
-  font-size: 1.8em;
-  color: white;
-  text-transform: uppercase;
-  margin-left: 10px;
-  letter-spacing: 2px;
+.home-icon {
+  height: 40px;
+  width: 40px;
+  filter: invert(1);
 }
-
 
 .navigation {
   position: relative;
@@ -117,4 +114,15 @@
 
 .menu-item .sub-menu .sub-item:last-child:hover {
   border-radius: 0 0 8px 8px;
+}
+
+.question-mark {
+  height: 40px;
+  width: 40px;
+  filter: invert(1);
+}
+
+.question-mark:hover {
+  filter: invert(0.7);
+  text-shadow: 0 0 10px 10px black;
 }
