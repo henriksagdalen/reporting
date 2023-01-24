@@ -17,6 +17,7 @@ function addJournalNumber() {
     container.appendChild(journalNumberNext);
     container.appendChild(document.createElement('br'));
 
+    // Create a new field for the DTG of the observation
     var DTGForNewObservation = document.createElement("input");
     DTGForNewObservation.type = "text";
     DTGForNewObservation.placeholder = 'DTG for new observation'

@@ -15,14 +15,20 @@ function saveToFile() {
     // Get the journal number input fields
     var journalNumberFields = document.querySelectorAll("#journalnumber");
 
-    // Create journal numbers array.
+    // Create a empty DTG array
+    var arrayOfDTG = [];
+
+    // Create a empty journal numbers array.
     var journalNumbers = [];
 
 
-    
+
     // LEGGE TIL FORKLARENDE KOMMENTAR HER.
     for (var i = 0; i < journalNumberFields.length; i++) {
         journalNumbers.push(journalNumberFields[i].value);
+
+        var DTGValue = document.getElementById('dtg' + i).value;
+        arrayOfDTG.push(DTGValue);
     }
 
     // Create the content for the report.
@@ -40,12 +46,16 @@ function saveToFile() {
         var factsID = 'facts' + i;
         var commentID = 'comment' + i;
         var assessmentID = 'assessment' + i;
+        var dtgID = 'dtg' + i;
 
+            var newDTG = document.getElementById(dtgID).value;
             var newFacts = document.getElementById(factsID).value;
             var newComment = document.getElementById(commentID).value;
             var newAssessment = document.getElementById(assessmentID).value;
+            
 
             fileContent += "Journal number: " + journalNumbers[i] + "\n"
+            + "DTG: " + newDTG + "\n"
             + "Facts: " + newFacts + "\n"
             + "Comment: " + newComment + "\n"
             + "Assessment: " + newAssessment + "\n\n";
@@ -97,6 +107,12 @@ function saveToFile() {
     // Get the last journal number in the report, to use it in the filename.
     let lastJournalNumber = journalNumberFields[journalNumberFields.length - 1].value;
 
+    var firstDTG = arrayOfDTG[0];
+    var lastDTG = arrayOfDTG[arrayOfDTG.length - 1];
+
+    console.log(firstDTG);
+    console.log(lastDTG);
+
     // Create the filename with the previously declared variables.
     var filename = dateOfReport
         + " " 
@@ -109,13 +125,14 @@ function saveToFile() {
         + "-"
         + lastJournalNumber
         + " " 
-        + DTGOfReport;
-
+        + firstDTG
+        + "-"
+        + lastDTG + "Z";
 
     // Create a Blob object with the file content
     var file = new Blob([fileContent], { type: "text/plain" });
 
-    // Create a download link for the file
+    // Create a download link for the file, and set the filename to the filename variable
     var downloadLink = document.createElement("a");
     downloadLink.href = URL.createObjectURL(file);
     downloadLink.download = filename;
