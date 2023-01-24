@@ -21,8 +21,6 @@ function saveToFile() {
     // Create a empty journal numbers array.
     var journalNumbers = [];
 
-
-
     // LEGGE TIL FORKLARENDE KOMMENTAR HER.
     for (var i = 0; i < journalNumberFields.length; i++) {
         journalNumbers.push(journalNumberFields[i].value);
@@ -99,19 +97,29 @@ function saveToFile() {
     var dateOfReport = year + "-" + month + "-" + day;
 
     // Create the DTG variable that is used in the end of the filename, and make it ZULU.
-    var DTGOfReport = day + "" + hour + "" + minute + "Z";
+    // Currently not in use, but will be used in I-01.
+    // var DTGOfReport = day + "" + hour + "" + minute + "Z";
 
-    // Get the first journal number in the report, to use it in the filename.
+    // Get the first and last journal number in the report, to use it in the filename.
     let firstJournalNumber = journalNumberFields[0].value;
-
-    // Get the last journal number in the report, to use it in the filename.
     let lastJournalNumber = journalNumberFields[journalNumberFields.length - 1].value;
 
+    if (firstJournalNumber < 10) {
+        firstJournalNumber = "00" + firstJournalNumber; 
+    }
+    else if (firstJournalNumber < 100) {
+        firstJournalNumber = "0" + firstJournalNumber;
+    }
+    if (lastJournalNumber < 10) {
+        lastJournalNumber = "00" + lastJournalNumber;
+    }
+    else if (lastJournalNumber < 100) {
+        lastJournalNumber = "0" + lastJournalNumber;
+    }
+
+    // Get the first and last DTG in the report, to use it in the filename.
     var firstDTG = arrayOfDTG[0];
     var lastDTG = arrayOfDTG[arrayOfDTG.length - 1];
-
-    console.log(firstDTG);
-    console.log(lastDTG);
 
     // Create the filename with the previously declared variables.
     var filename = dateOfReport
