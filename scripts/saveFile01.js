@@ -60,6 +60,14 @@ function saveToFile01() {
 	    minute = newDate.getMinutes()
     }
 
+    // Format the journal number correctly. 
+    if (journalNumber < 10) {
+        journalNumber = "00" + journalNumber; 
+    }
+    else if (journalNumber < 100) {
+        journalNumber = "0" + journalNumber;
+    }
+    
     // Create the date variable that is used in the start of the filename.
     var dateOfReport = year + "-" + month + "-" + day;
 
