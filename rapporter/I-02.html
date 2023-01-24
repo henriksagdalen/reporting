@@ -33,6 +33,17 @@
 
             <label for="ownposition"><b>Own position:</b></label>
             <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
+
+            <label for="naitai"><b>NAI/TAI:</b></label>
+            <input type="text" placeholder="NAI/TAI" name="naitai" id="naitai"><br>
+
+            <label for="dtgfrom"><b>DTG from:</b></label>
+            <input type="text" placeholder="DTG" name="dtgfrom" id="dtgfrom">
+
+            <label for="dtgto"><b>DTG to:</b></label>
+            <input type="text" placeholder="DTG" name="dtgto" id="dtgto">
+
+            
         </div>
 
         <div class="bluf">
@@ -45,19 +56,33 @@
             <textarea type="text" id="patternoflife"></textarea>
         </div>
 
-        <div class="Static units in NAI">
+        <div class="staticunits">
             <label for="staticunits"><b>Static units in NAI:</b></label><br>
             <textarea type="text" id="staticunits"></textarea>
         </div>
+
+       <div class="overallcomment">
+            <label for="overallcomment"><b>Overall comment:</b></label><br>
+            <textarea type="text" id="overallcomment"></textarea>
+       </div>
+
+       <div class="overallassessment">
+            <label for="overallassessment"><b>Overall assessment:</b></label><br>
+            <textarea type="text" id="overallassessment"></textarea>
+       </div>
+
 
         <div class="observation">
             <label for="journalnumber"><b>Journal number:</b></label>
             <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber"></input><br>
 
+            <label for="dtg"><b>DTG:</b></label>
+            <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation"></input><br>
+
             <label for="facts"><b>Facts:</b></label>
             <textarea name="facts" id="facts0"></textarea><br>
 
-            <label for="comment"><b>Kommentarer:</b></label>
+            <label for="comment"><b>Comment:</b></label>
             <textarea name="comment" id="comment0"></textarea><br>
 
             <label for="assessment"><b>Assessment:</b></label>
