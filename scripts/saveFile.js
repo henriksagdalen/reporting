@@ -11,6 +11,8 @@ function saveToFile() {
     var bluf = document.getElementById("bluf").value;
     var patternOfLife = document.getElementById("patternoflife").value;
     var staticUnits = document.getElementById("staticunits").value;
+    var overallComment = document.getElementById("overallcomment").value;
+    var overallAssessment = document.getElementById("overallassessment").value;
 
     // Get the journal number input fields
     var journalNumberFields = document.querySelectorAll("#journalnumber");
@@ -37,7 +39,9 @@ function saveToFile() {
         + "Own position: " + ownPosition + "\n\n"
         + "Bottom Line Up Front: " + bluf + "\n\n"
         + "Pattern of life: " + patternOfLife + "\n\n"
-        + "Static units in NAI: " + staticUnits + "\n\n";
+        + "Static units in NAI: " + staticUnits + "\n\n"
+        + "Overall comment: " + overallComment + "\n\n"
+        + "Overall assessment: " + overallAssessment + "\n\n";
 
 
     for (var i = 0; i < journalNumbers.length; i++) {
