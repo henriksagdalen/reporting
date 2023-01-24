@@ -1,0 +1,65 @@
+<html>
+<head>
+    <script src="/scripts/saveFile01.js"></script>
+</head>
+<body>
+    <section>
+        <div class="classification">
+            <select>
+                <option selected value="">-- Classification --</option>
+                <option value="(B)">Classification 1</option>
+                <option value="(K)">Classification 2</option>
+                <option value="(H)">Classification 3</option>
+                <option value="(NR)">Classification 4</option>
+                <option value="(NS)">Classification 5</option>
+            </select>
+        </div>
+    
+        <div class="staticvalues">
+            <label for="from"><b>From:</b></label>
+            <input type="text" placeholder="From callsign" name="from" id="from">
+    
+            <label for="to"><b>To:</b></label>
+            <input type="text" placeholder="To callsign" name="to" id="to">
+    
+            <label for="writeroperator"><b>Writer/Operator:</b></label>
+            <input type="text" placeholder="Writer/Operator" name="writeroperator" id="writeroperator">
+    
+            <label for="ownposition"><b>Own position:</b></label>
+            <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
+    
+            <label for="naitai"><b>NAI/TAI:</b></label>
+            <input type="text" placeholder="NAI/TAI" name="naitai" id="naitai"><br>
+        </div>
+        <div class="observation">
+            <label for="journalnumber"><b>Journal number:</b></label>
+            <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber"></input><br>
+
+            <label for="dtg"><b>DTG:</b></label>
+            <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation"></input><br>
+
+            <label for="facts"><b>Facts:</b></label>
+            <textarea name="facts" id="facts0"></textarea><br>
+
+            <label for="comment"><b>Comment:</b></label>
+            <textarea name="comment" id="comment0"></textarea><br>
+
+            <label for="assessment"><b>Assessment:</b></label>
+            <textarea name="assessment" id="assessment0"></textarea><br><br>
+        </div>
+            <div class="buttons">
+                <input 
+                    type="button"
+                    id="saveToFile"
+                    value="Save to file"
+                    onclick="saveToFile01()"/>
+
+                <input
+                    type="button"
+                    id="uploadFromFile"
+                    value="Upload from file"
+                    onclick="uploadFromFile()"/>
+            </div>
+        </section>
+    </body>
+</html>
