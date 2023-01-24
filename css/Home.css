@@ -1,0 +1,70 @@
+body {
+  background-color: rgb(201, 201, 201);
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  font-family: monospace;
+}
+
+/* Background image */
+body::after {
+  content: "";
+  background: url(/ressurser/US-Army.png);
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  position: fixed;
+  z-index: -1;
+}
+
+.link {
+  display: flex;
+  margin-top: 10%;
+  justify-content: center;
+}
+
+.cards {
+  width: 30vh;
+  height: 45vh;
+  border-radius: 5px;
+  background-color: darkslategrey;
+  margin-left: 15px;
+  text-align: center;
+  position: relative;
+  transition: 0.2s;
+}
+
+.cards:hover {
+  cursor: pointer;
+  box-shadow: 0 0 30px 2px rgb(85, 85, 85);
+  transform: scale(1.05);
+  transition: 0.2s;
+  margin-right: 15px;
+  margin-left: 30px;
+}
+
+.thumbnail {
+  width: 97%;
+  height: 98%;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-top: 1.5%;
+}
+
+.cards >p {
+  font-size: 4em;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+  color: white;
+  position: absolute;
+  width: 100%;
+  top: 45%;
+}
+

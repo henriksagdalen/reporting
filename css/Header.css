@@ -1,0 +1,141 @@
+.header-master {
+  background-color: darkslategrey;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 50px;
+  justify-content: space-between;
+  z-index: 900;
+  width: 100%;
+  transition: 0.4s;
+  box-shadow: 0 5px 25px rgb(0, 0, 0, 20%);
+}
+
+.header-left {
+  display: flex;
+  width: 80%;
+  background-color: darkslategrey;
+  align-items: center;
+}
+
+/*Dropdown menu*/
+
+.navigation {
+  position: relative;
+  line-height: 75px;
+  font-size: 16px;
+}
+
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: centet;
+  list-style: none;
+  user-select: none;
+}
+
+.menu-item > a{
+  color: #fff;
+  font-size: 1em;
+  text-decoration: none;
+  margin: 20px;
+  padding: 15px 0;
+}
+
+.sub-item {
+  height: 30px;
+  width: 130px;
+  font-size: 12px;
+}
+
+
+.menu-item:hover a{
+  color: lightcoral;
+  transition: 0.2s;
+  text-shadow: 0 0 2px 2px grey;
+  cursor: pointer;
+}
+
+.menu-item .sub-menu {
+  position: absolute;
+  background-color: #23252B;
+  top: 62px;
+  line-height: 40px;
+  list-style: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 30%);
+  padding-left: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  opacity: 0;
+  text-align: center;
+}
+
+.menu-item:hover .sub-menu {
+  pointer-events: all;
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.menu-item .sub-menu .sub-item {
+  position: relative;
+  padding-bottom: 7px;
+  cursor: pointer;
+  box-shadow: inset 0px -30px 5px -30px rgba(255, 255, 255, 0.2);
+}
+
+.menu-item .sub-menu .sub-item a{
+  color: white;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.sub-item:hover {
+  background-color: darkgreen;
+}
+
+.menu-item .sub-menu .sub-item:last-child:hover {
+  border-radius: 0 0 8px 8px;
+}
+
+/*Header right*/
+
+.header-right {
+  display: flex;
+  width: 100px;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.home-icon {
+  height: 38px;
+  width: 38px;
+  filter: invert(1);
+}
+
+.home-icon:hover {
+  filter: invert(0.8);
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+.question-mark {
+  height: 38px;
+  width: 38px;
+  filter: invert(1);
+}
+
+.question-mark:hover {
+  filter: invert(0.8);
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.2s;
+  
+}
