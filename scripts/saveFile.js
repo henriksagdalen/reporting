@@ -117,9 +117,9 @@ function saveToFile() {
         lastJournalNumber = "0" + lastJournalNumber;
     }
 
-    // Get the first and last DTG in the report, to use it in the filename.
-    var firstDTG = arrayOfDTG[0];
-    var lastDTG = arrayOfDTG[arrayOfDTG.length - 1];
+    // Get the reporting window to use it in the filename.
+    var firstDTG = document.getElementById("dtgfrom").value;
+    var lastDTG = document.getElementById("dtgto").value;
 
     // Create the filename with the previously declared variables.
     var filename = dateOfReport
