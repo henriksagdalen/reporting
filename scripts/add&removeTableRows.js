@@ -25,3 +25,8 @@ function addTableRows() {
     staticUnitsTable.appendChild(row);
 }
 
+function removeTableRows (){
+    var staticUnitsTableLast = document.getElementById("staticunits").lastChild;
+    document.getElementById('staticunits').removeChild(staticUnitsTableLast); 
+}
+

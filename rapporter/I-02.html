@@ -66,16 +66,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" placeholder="Unit" id="unit"></td>
-                        <td><input type="text" placeholder="Since DTG" id="staticdtg"></td>
+                        <td><input type="text" placeholder="Unit" id="staticunit0"></td>
+                        <td><input type="text" placeholder="Since DTG" id="staticdtg0"></td>
                     </tr>
                 </tbody>
             </table>
             <input 
                 type="button" 
-                id="addJournalNumber" 
+                id="addTableRows" 
                 value="+"
                 onclick="addTableRows()"/>
+
+            <input 
+                type="button"
+                id="removeTableRows"
+                value="-"
+                onclick="removeTableRows()">
         </div>
 
        <div class="overallcomment">
