@@ -6,6 +6,7 @@
     <title>Test</title>
     <script src="/scripts/add&removeJournalNumber.js"></script>
     <script src="/scripts/saveFile.js"></script>
+    <script src="/scripts/add&removeTableRows.js"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -42,8 +43,6 @@
 
             <label for="dtgto"><b>DTG to:</b></label>
             <input type="text" placeholder="DTG" name="dtgto" id="dtgto">
-
-            
         </div>
 
         <div class="bluf">
@@ -58,7 +57,25 @@
 
         <div class="staticunits">
             <label for="staticunits"><b>Static units in NAI:</b></label><br>
-            <textarea type="text" id="staticunits"></textarea>
+            <table id="staticunits">
+                <thead>
+                    <tr>
+                        <th colspan="1">Unit</th>
+                        <th colspan="1">Since DTG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="Unit" id="unit"></td>
+                        <td><input type="text" placeholder="Since DTG" id="staticdtg"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <input 
+                type="button" 
+                id="addJournalNumber" 
+                value="+"
+                onclick="addTableRows()"/>
         </div>
 
        <div class="overallcomment">
