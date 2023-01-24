@@ -1,3 +1,5 @@
+var tableRowCounter = 1;
+
 function addTableRows() {
     // Get the table for static units.
     var staticUnitsTable = document.getElementById("staticunits");
@@ -11,7 +13,9 @@ function addTableRows() {
 
     // Create input fields in the table, in order to accept user input. 
     var input1 = document.createElement("input");
+    input1.id = 'staticunit' + tableRowCounter;
     var input2 = document.createElement("input");
+    input2.id = 'staticdtg' + tableRowCounter;
 
     // Place the input fields in the newly created cells.
     cell1.appendChild(input1);
@@ -23,10 +27,15 @@ function addTableRows() {
 
     // Append the row to the table.
     staticUnitsTable.appendChild(row);
+    
+    return tableRowCounter = tableRowCounter + 1;    
 }
 
 function removeTableRows (){
     var staticUnitsTableLast = document.getElementById("staticunits").lastChild;
     document.getElementById('staticunits').removeChild(staticUnitsTableLast); 
+
+    return tableRowCounter = tableRowCounter - 1;
 }
+
 
