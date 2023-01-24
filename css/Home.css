@@ -37,14 +37,14 @@ body::after {
   margin-left: 15px;
   text-align: center;
   position: relative;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .cards:hover {
   cursor: pointer;
   box-shadow: 0 0 30px 2px rgb(85, 85, 85);
   transform: scale(1.05);
-  transition: 0.3s;
+  transition: 0.2s;
   margin-right: 15px;
   margin-left: 30px;
 }

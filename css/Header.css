@@ -21,20 +21,7 @@
   align-items: center;
 }
 
-.header-right {
-  display: flex;
-  width: 100px;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.home-icon {
-  height: 40px;
-  width: 40px;
-  filter: invert(1);
-}
+/*Dropdown menu*/
 
 .navigation {
   position: relative;
@@ -115,9 +102,33 @@
   border-radius: 0 0 8px 8px;
 }
 
+/*Header right*/
+
+.header-right {
+  display: flex;
+  width: 100px;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.home-icon {
+  height: 38px;
+  width: 38px;
+  filter: invert(1);
+}
+
+.home-icon:hover {
+  filter: invert(0.8);
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
 .question-mark {
-  height: 40px;
-  width: 40px;
+  height: 38px;
+  width: 38px;
   filter: invert(1);
 }
 
@@ -126,4 +137,5 @@
   cursor: pointer;
   transform: scale(1.1);
   transition: 0.2s;
+  
 }
