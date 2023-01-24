@@ -100,10 +100,6 @@ function saveToFile() {
     // Create the date variable that is used in the start of the filename.
     var dateOfReport = year + "-" + month + "-" + day;
 
-    // Create the DTG variable that is used in the end of the filename, and make it ZULU.
-    // Currently not in use, but will be used in I-01.
-    // var DTGOfReport = day + "" + hour + "" + minute + "Z";
-
     // Get the first and last journal number in the report, to use it in the filename.
     let firstJournalNumber = journalNumberFields[0].value;
     let lastJournalNumber = journalNumberFields[journalNumberFields.length - 1].value;
