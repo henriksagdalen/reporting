@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   top: 0;
-  height: 50px;
+  height: 60px;
   justify-content: space-between;
   z-index: 900;
   width: 100%;
@@ -26,7 +26,7 @@
 .navigation {
   position: relative;
   line-height: 75px;
-  font-size: 16px;
+  font-size: 24px;
 }
 
 .menu {
@@ -45,10 +45,15 @@
   padding: 15px 0;
 }
 
+.menu-item {
+  width: 140px;
+  text-align: center;
+}
+
 .sub-item {
   height: 30px;
-  width: 130px;
-  font-size: 12px;
+  width: 150px;
+  font-size: 18px;
 }
 
 
@@ -62,7 +67,7 @@
 .menu-item .sub-menu {
   position: absolute;
   background-color: #23252B;
-  top: 62px;
+  top: 67px;
   line-height: 40px;
   list-style: none;
   border-radius: 0 0 8px 8px;
@@ -95,7 +100,7 @@
 }
 
 .sub-item:hover {
-  background-color: darkgreen;
+  background-color: rgb(65, 99, 99);
 }
 
 .menu-item .sub-menu .sub-item:last-child:hover {
