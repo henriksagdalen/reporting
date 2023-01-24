@@ -32,7 +32,7 @@
 .menu {
   position: relative;
   display: flex;
-  justify-content: centet;
+  justify-content: center;
   list-style: none;
   user-select: none;
 }
