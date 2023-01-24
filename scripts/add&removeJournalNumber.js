@@ -57,7 +57,7 @@ function addJournalNumber() {
 // Declaring the function for removing journal numbers. This one is ugly as fuck. Needs revisioning. 
 function removeJournalNumber() {
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 11; i++) {
         var topop = document.getElementById('addHere').lastChild;
         document.getElementById('addHere').removeChild(topop)
     }
