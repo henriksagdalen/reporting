@@ -12,8 +12,9 @@
 </head>
 <body>
     <section>
+        <form id ="myform"onsubmit="event.preventDefault();">
         <div class="classification">
-            <select>
+            <select id="klasser" required>
                 <option selected value="">-- Classification --</option>
                 <option value="(B)">Classification 1</option>
                 <option value="(K)">Classification 2</option>
@@ -115,7 +116,7 @@
         </div>
 
         <div id="addHere"></div>
-
+    </form>
         <input 
             type="button" 
             id="addJournalNumber" 
@@ -131,10 +132,11 @@
             <br>
 
         <input 
-            type="button"
-            id="saveToFile"
+            type="submit"
+            form="myform"
+            id="mysaveToFile"
             value="Save to file"
-            onclick="saveToFile()"/>
+            onclick="saveToFile();"/>
 
         <input
             type="button"
@@ -142,9 +144,7 @@
             value="Upload from file"
             onclick="uploadFromFile()"
         />
-
         </div>
     </section>
-
 </body>
 </html>
