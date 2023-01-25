@@ -8,7 +8,9 @@ label {
   padding-left: 1px;
 }
 
-.classification {
+.select-manu {
+  width: 100px;
+  height: 20px;
 
 }
 
@@ -52,7 +54,18 @@ input:focus {
 .input-box textarea{
   width: 75%;
   height: 15%;
-  font-size: 20px;
-
+  font-size: .8vw;
+  outline: none;
+  border: none;
   margin-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px .2vw 1px rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+}
+
+textarea:hover {
+  box-shadow: 2px 2px .4vw 1px rgb(49, 79, 79, 0.5), 0 0 0 .15vw transparent;
+}
+
+textarea:focus {
+  box-shadow: 2px 2px .4vw 1px rgb(84, 133, 133), 0 0 0 .15vw transparent;
 }
