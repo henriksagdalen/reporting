@@ -24,7 +24,6 @@
         </div>
 
         <div class="staticvalues">
-            <form>
             <label for="from"><b>From:</b></label>
             <input type="text" placeholder="From callsign" name="from" id="from">
 
@@ -41,11 +40,10 @@
             <input type="text" placeholder="NAI/TAI" name="naitai" id="naitai"><br>
 
             <label for="dtgfrom"><b>DTG from:</b></label>
-            <input type="number" placeholder="DTG" name="dtgfrom" id="dtgfrom" required>
+            <input type="text" placeholder="DTG" name="dtgfrom" id="dtgfrom" pattern="\d*" maxlength="6">
 
             <label for="dtgto"><b>DTG to:</b></label>
-            <input type="number" placeholder="DTG" name="dtgto" id="dtgto" required>
-        </form>
+            <input type="text"  placeholder="DTG" name="dtgto" id="dtgto" pattern="\d*" maxlength="6">
         </div>
 
         <div class="bluf">
@@ -70,7 +68,7 @@
                 <tbody>
                     <tr>
                         <td><input type="text" placeholder="Unit" id="staticunit0"></td>
-                        <td><input type="number" placeholder="Since DTG" id="staticdtg0" required></td>
+                        <td><input type="text" placeholder="Since DTG" id="staticdtg0" pattern="\d*" maxlength="6"></td>
                     </tr>
                 </tbody>
             </table>
@@ -100,10 +98,10 @@
 
         <div class="observation">
             <label for="journalnumber"><b>Journal number:</b></label>
-            <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber" required></input><br>
+            <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber"></input><br>
 
             <label for="dtg"><b>DTG:</b></label>
-            <input name="dtg" id="dtg0" type="number" placeholder="DTG of observation" required></input><br>
+            <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation" pattern="\d*" maxlength="6"></input><br>
 
             <label for="facts"><b>Facts:</b></label>
             <textarea name="facts" id="facts0"></textarea><br>
