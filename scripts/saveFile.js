@@ -1,4 +1,7 @@
 function saveToFile() {
+const form = document.getElementById("myform");
+if (form.checkValidity()) {
+    
     // Get the selected classification value for the report.
     var classificationSelect = document.querySelector(".classification select");
     var classification = classificationSelect.options[classificationSelect.selectedIndex].value;
@@ -167,5 +170,8 @@ function saveToFile() {
     
     // Remove the link element from the body
     document.body.removeChild(downloadLink);
+}else {
+    alert("Please fill out all required fields before saving.")
+}
 }
 
