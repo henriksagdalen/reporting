@@ -8,12 +8,6 @@ label {
   padding-left: 1px;
 }
 
-.select-manu {
-  width: 100px;
-  height: 20px;
-
-}
-
 /*Static values*/
 .staticvalues {
   margin-bottom: 30px;
@@ -34,7 +28,7 @@ label {
   border: none;
   outline: none;
   padding: 0.4vw;
-  max-width: 190px;
+  width: 190px;
   transition: .3s;
 }
 
