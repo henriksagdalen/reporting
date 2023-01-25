@@ -44,3 +44,9 @@
   margin-right: 15px;
   margin-left: 30px;
 }
+
+.link-row2 {
+  display: flex;
+  margin-top: 2%;
+  justify-content: center;
+}
