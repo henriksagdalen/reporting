@@ -89,9 +89,6 @@ document.querySelector("[data-indx-select='"+indx+"'] > .icon_select_mate").styl
 
 
 function _select_option(indx,selc){
- if (isMobileDevice()) { 
-selc = selc -1;
-}
     var select_ = document.querySelectorAll("[data-indx-select='"+selc+"'] > select")[0];
 
   var li_s = document.querySelectorAll("[data-indx-select='"+selc+"'] .cont_select_int > li");
@@ -107,5 +104,7 @@ li_s[indx].className = 'active';
 select_optiones[indx].selected = true;
   select_.selectedIndex = indx;
   select_.onchange();
-  salir_select(selc); 
+  salir_select(selc);
 }
+
+
