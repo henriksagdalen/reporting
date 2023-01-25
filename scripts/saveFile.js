@@ -42,7 +42,7 @@ function saveToFile() {
         var staticUnit = document.getElementById(staticUnitID).value;
         var staticDTG = document.getElementById(staticDTGID).value;
 
-        staticUnits += "\n" + staticUnit + " static since " + staticDTG;
+        staticUnits += "\n" + staticUnit + " static since " + staticDTG +"Z";
     }
 
 
@@ -71,7 +71,7 @@ function saveToFile() {
         var newAssessment = document.getElementById(assessmentID).value;
             
         fileContent += "Journal number: " + journalNumbers[i] + "\n"
-        + "DTG: " + newDTG + "\n"
+        + "DTG: " + newDTG +"Z" + "\n"
         + "Facts: " + newFacts + "\n"
         + "Comment: " + newComment + "\n"
         + "Assessment: " + newAssessment + "\n\n";
@@ -84,7 +84,7 @@ function saveToFile() {
     var day = newDate.getDate();
     var hour = newDate.getHours();
     var minute = newDate.getMinutes();
-
+//FIKS DEN HER, DEN ER NASTY.
     // Check if values are less than 10, and format them correctly if true.
     if (month < 10) {
 	    month = "0" +(newDate.getMonth() + 1);
@@ -147,9 +147,9 @@ function saveToFile() {
         + "-"
         + lastJournalNumber
         + " " 
-        + firstDTG
+        + firstDTG +"Z"
         + "-"
-        + lastDTG + "Z";
+        + lastDTG +"Z";
 
     // Create a Blob object with the file content
     var file = new Blob([fileContent], { type: "text/plain" });

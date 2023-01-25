@@ -7,6 +7,7 @@
     <script src="/scripts/add&removeJournalNumber.js"></script>
     <script src="/scripts/saveFile.js"></script>
     <script src="/scripts/add&removeTableRows.js"></script>
+    <script src="/scripts/Regex.js"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -39,10 +40,10 @@
             <input type="text" placeholder="NAI/TAI" name="naitai" id="naitai"><br>
 
             <label for="dtgfrom"><b>DTG from:</b></label>
-            <input type="text" placeholder="DTG" name="dtgfrom" id="dtgfrom">
+            <input type="number" placeholder="DTG" name="dtgfrom" id="dtgfrom">
 
             <label for="dtgto"><b>DTG to:</b></label>
-            <input type="text" placeholder="DTG" name="dtgto" id="dtgto">
+            <input type="number" placeholder="DTG" name="dtgto" id="dtgto">
         </div>
 
         <div class="bluf">
@@ -67,7 +68,7 @@
                 <tbody>
                     <tr>
                         <td><input type="text" placeholder="Unit" id="staticunit0"></td>
-                        <td><input type="text" placeholder="Since DTG" id="staticdtg0"></td>
+                        <td><input type="number" placeholder="Since DTG" id="staticdtg0"></td>
                     </tr>
                 </tbody>
             </table>
@@ -100,7 +101,7 @@
             <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber"></input><br>
 
             <label for="dtg"><b>DTG:</b></label>
-            <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation"></input><br>
+            <input name="dtg" id="dtg0" type="number" placeholder="DTG of observation"></input><br>
 
             <label for="facts"><b>Facts:</b></label>
             <textarea name="facts" id="facts0"></textarea><br>
