@@ -7,6 +7,7 @@
     <script src="/scripts/add&removeJournalNumber.js"></script>
     <script src="/scripts/saveFile.js"></script>
     <script src="/scripts/add&removeTableRows.js"></script>
+    <script src="/scripts/uploadFromFile.js"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -138,11 +139,12 @@
             type="button"
             id="uploadFromFile"
             value="Upload from file"
-            onclick="uploadFromFile()"
-        />
+            onclick="uploadFromFile()"/>
+
+        <input type="file" onchange="previewFile()" /><br />
+        <p class="content"></p>
 
         </div>
     </section>
-
 </body>
 </html>
