@@ -1,9 +1,8 @@
 
+let uploadedFileAsArray = [];
 
 
-var text = "";
-
-function previewFile() {
+function uploadFromFile() {
     const content = document.querySelector('.content');
     const [file] = document.querySelector('input[type=file]').files;
     const reader = new FileReader();
@@ -11,11 +10,21 @@ function previewFile() {
     reader.addEventListener("load", () => {
       // this will then display a text file
       content.innerText = reader.result;
-      text.push(reader.result);
+      uploadedFileAsArray.push(reader.result);
     }, false);
   
     if (file) {
       reader.readAsText(file);
-      console.log(text);
     }
-  }
+
+    //uploadedFileAsArray.push("test");
+    //uploadedFileAsArray.push("test2");
+
+    var text = ["This is some text. \n This is a line break"];
+    
+    console.log(uploadedFileAsArray);
+    console.log(text);
+
+
+
+}
