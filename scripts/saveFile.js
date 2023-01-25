@@ -41,8 +41,9 @@ function saveToFile() {
 
         var staticUnit = document.getElementById(staticUnitID).value;
         var staticDTG = document.getElementById(staticDTGID).value;
-
+        if(staticUnit!=""){
         staticUnits += "\n" + staticUnit + " static since " + staticDTG +"Z";
+        }
     }
 
 
