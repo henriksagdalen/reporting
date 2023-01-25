@@ -8,19 +8,21 @@
   position: absolute;
   top: 9px;
   right: 2%;
-  font-size: 16px;
+  font-size: 22px;
   height: 22px;
   transition: all 275ms;
 }
+
 .classification {
   position: relative;
   float: left;
   width: 10.1vw;
   min-width: 165px;
   height: 40px;
-  font-family: 'Roboto';
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: 700;
   color: rgb(0, 0, 0);
-  font-weight: 300;
   background-color: #fff;
   box-shadow: 1px 1px .2vw 1px rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
   border-radius: 3px;
@@ -28,6 +30,7 @@
   text-align: center;
  /* Oculto el elemento select */
 }
+
 .classification select {
   position: absolute;
   overflow: hidden;
@@ -35,11 +38,13 @@
   opacity: 0;
   z-index: -1;
 }
+
 .cont_list_select_mate {
   position: relative;
   float: left;
   width: 100%;
 }
+
 .cont_select_int {
   position: absolute;
   left: 0px;
@@ -56,6 +61,7 @@
   box-shadow: 1px 4px 10px -2px rgba(0, 0, 0, 0.2);
   transition: all 375ms ease-in-out;
 }
+
 .cont_select_int li {
   position: relative;
   float: left;
@@ -70,10 +76,12 @@
   display: block;
   cursor: pointer;
 }
+
 .cont_select_int li:last-child {
   border-radius: 3px;
   border-bottom: 0px;
 }
+
 .cont_select_int li:hover {
   background-color: rgb(163, 163, 163);
   color: black;
@@ -82,6 +90,7 @@
   background-color: rgb(196, 196, 196);
   color: black;
 }
+
 /* etiqueta <p> con la opcion selecionada */
 .selecionado_opcion {
   padding: 10px 2%;
