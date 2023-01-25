@@ -10,7 +10,7 @@ function saveToFile() {
     var ownPosition = document.getElementById("ownposition").value;
     var bluf = document.getElementById("bluf").value;
     var patternOfLife = document.getElementById("patternoflife").value;
-    var staticUnits = document.getElementById("staticunits").value;
+    //var staticUnits = document.getElementById("staticunits").value;
     var overallComment = document.getElementById("overallcomment").value;
     var overallAssessment = document.getElementById("overallassessment").value;
 
@@ -31,6 +31,21 @@ function saveToFile() {
         arrayOfDTG.push(DTGValue);
     }
 
+    // Get the input fields for the static units table
+    var tableLength = document.getElementById("staticunits").rows.length - 1;
+    var staticUnits = "";
+
+    for (var i = 0; i < tableLength; i++) {
+        var staticUnitID = 'staticunit' + i;
+        var staticDTGID = 'staticdtg' + i;
+
+        var staticUnit = document.getElementById(staticUnitID).value;
+        var staticDTG = document.getElementById(staticDTGID).value;
+
+        staticUnits += "\n" + staticUnit + " static since " + staticDTG;
+    }
+
+
     // Create the content for the report.
     var fileContent = "Classification: " + classification + "\n\n"
         + "From: " + from + "\n"
@@ -50,17 +65,16 @@ function saveToFile() {
         var assessmentID = 'assessment' + i;
         var dtgID = 'dtg' + i;
 
-            var newDTG = document.getElementById(dtgID).value;
-            var newFacts = document.getElementById(factsID).value;
-            var newComment = document.getElementById(commentID).value;
-            var newAssessment = document.getElementById(assessmentID).value;
+        var newDTG = document.getElementById(dtgID).value;
+        var newFacts = document.getElementById(factsID).value;
+        var newComment = document.getElementById(commentID).value;
+        var newAssessment = document.getElementById(assessmentID).value;
             
-
-            fileContent += "Journal number: " + journalNumbers[i] + "\n"
-            + "DTG: " + newDTG + "\n"
-            + "Facts: " + newFacts + "\n"
-            + "Comment: " + newComment + "\n"
-            + "Assessment: " + newAssessment + "\n\n";
+        fileContent += "Journal number: " + journalNumbers[i] + "\n"
+        + "DTG: " + newDTG + "\n"
+        + "Facts: " + newFacts + "\n"
+        + "Comment: " + newComment + "\n"
+        + "Assessment: " + newAssessment + "\n\n";
     }
 
     // Get the date and time from the local computer.
