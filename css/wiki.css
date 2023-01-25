@@ -1,0 +1,9 @@
+.main-info {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.info-box p{
+  font-size: 2vw;
+}
