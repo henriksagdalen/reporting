@@ -1,8 +1,78 @@
 <html>
 <head>
+    <meta charset="utf-8">
+    <title>I-01</title>
+    <link rel="icon" href="../ressurser/radar.png">
+    <link rel="stylesheet" href="../css/Header.css">
+    <link rel="stylesheet" href="../css/Home.css">
+    <link rel="stylesheet" href="../css/static-values.css">
+    <link rel="stylesheet" href="../css/i-01.css">
     <script src="/scripts/saveFile01.js"></script>
 </head>
 <body>
+    <header>
+        <div class="header-master">
+  
+          <div class="header-left">
+  
+            <div class="navigation">
+  
+              <ul class="menu">
+  
+                <li class="menu-item">
+                  <a class="sub-button" href="index-alpha.html">Alpha</a>
+                  <ul class="sub-menu">
+                    <li class="sub-item"> <a href="A-01.html">A-01 MEDEVAC</a></li>
+                    <li class="sub-item"> <a href="A-02.html">A-02 MEDREP</a></li>
+                    <li class="sub-item"> <a href="A-03.html">A-03 RESUPREQ</a></li>
+                    <li class="sub-item"> <a href="A-04.html">A-04</a></li>
+                    <li class="sub-item"> <a href="A-05.html">A-05</a></li>
+                  </ul>
+                </li>
+  
+                <li class="menu-item">
+                  <a class="sub-button" href="index-india.html">
+                    India
+                  </a>
+                  <ul class="sub-menu">
+                    <li class="sub-item"> <a href="I-01.html">I-01</a></li>
+                    <li class="sub-item"> <a href="I-02.html">I-02</a></li>
+                    <li class="sub-item"> <a href="I-03.html">I-03</a></li>
+                    <li class="sub-item"> <a href="I-04.html">I-04</a></li>
+                    <li class="sub-item"> <a href="I-05.html">I-05</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <a class="sub-button" href="index-oscar.html">Oscar
+                  </a>
+                  <ul class="sub-menu">
+                    <li class="sub-item"> <a href="O-01.html">O-01</a></li>
+                    <li class="sub-item"> <a href="O-02.html">O-02</a></li>
+                    <li class="sub-item"> <a href="O-03.html">O-03</a></li>
+                    <li class="sub-item"> <a href="O-04.html">O-04</a></li>
+                    <li class="sub-item"> <a href="O-05.html">O-05</a></li>
+                    <li class="sub-item"> <a href="O-06.html">O-06 AGTCONREP</a></li>
+                    <li class="sub-item"> <a href="O-07.html">O-07</a></li>
+                    <li class="sub-item"> <a href="O-08.html">O-08</a></li>
+                    <li class="sub-item"> <a href="O-09.html">O-09</a></li>
+                    <li class="sub-item"> <a href="O-10.html">O-10</a></li>
+                  </ul>
+                </li>
+              </ul>
+  
+            </div>
+  
+          </div>
+          <div class="header-right">   
+            <a class="home-button" href="../Homepage.html">
+              <img src="../ressurser/home-icon.png" class="home-icon">
+            </a>
+            <a class="home-button" href="../wiki/index-wiki.html">
+              <img src="../ressurser/question-mark.png" class="question-mark">
+            </a>
+          </div>
+        </div>
+      </header>
     <section>
         <div class="classification">
             <select>
@@ -16,36 +86,49 @@
         </div>
     
         <div class="staticvalues">
-            <label for="from"><b>From:</b></label>
-            <input type="text" placeholder="From callsign" name="from" id="from">
-    
-            <label for="to"><b>To:</b></label>
-            <input type="text" placeholder="To callsign" name="to" id="to">
-    
-            <label for="writeroperator"><b>Writer/Operator:</b></label>
-            <input type="text" placeholder="Writer/Operator" name="writeroperator" id="writeroperator">
-    
-            <label for="ownposition"><b>Own position:</b></label>
-            <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
-    
-            <label for="naitai"><b>NAI/TAI:</b></label>
-            <input type="text" placeholder="NAI/TAI" name="naitai" id="naitai"><br>
+            <div class="static-box">
+                <label for="from"><b>From:</b></label><br>
+                <input type="text" placeholder="From callsign" name="from" id="from">
+            </div>
+            <div class="static-box">
+                <label for="to"><b>To:</b></label><br>
+                <input type="text" placeholder="To callsign" name="to" id="to">
+            </div>
+            <div class="static-box">
+                <label for="writeroperator"><b>Writer/Operator:</b></label><br>
+                <input type="text" placeholder="Writer/Operator" name="writeroperator" id="writeroperator">
+            </div>
+            <div class="static-box">
+                <label for="ownposition"><b>Own position:</b></label><br>
+                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
+            </div>
+            <div class="static-box">
+                <label for="naitai"><b>NAI/TAI:</b></label><br>
+                <input type="text" placeholder="NAI/TAI" name="naitai" id="naitai"><br>
+            </div>
         </div>
+
         <div class="observation">
-            <label for="journalnumber"><b>Journal number:</b></label>
-            <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber"></input><br>
-
-            <label for="dtg"><b>DTG:</b></label>
-            <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation"></input><br>
-
-            <label for="facts"><b>Facts:</b></label>
-            <textarea name="facts" id="facts0"></textarea><br>
-
-            <label for="comment"><b>Comment:</b></label>
-            <textarea name="comment" id="comment0"></textarea><br>
-
-            <label for="assessment"><b>Assessment:</b></label>
-            <textarea name="assessment" id="assessment0"></textarea><br><br>
+            <div class="static-box" style="display: inline-block; margin-right: 43px; margin-bottom: 10;">
+                <label for="journalnumber"><b>Journal number:</b></label><br>
+                <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber"></input>
+            </div>
+            <div class="static-box" style="display: inline-block; margin-left: 0; margin-bottom: 10px;">
+                <label for="dtg"><b>DTG:</b></label><br>
+                <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation"></input><br>
+            </div>
+            <div class="input-box">
+                <label for="facts"><b>Facts:</b></label><br>
+                <textarea name="facts" id="facts0"></textarea>
+            </div>
+            <div class="input-box">
+                <label for="comment"><b>Comment:</b></label><br>
+                <textarea name="comment" id="comment0"></textarea><br>
+            </div>
+            <div class="input-box">
+                <label for="assessment"><b>Assessment:</b></label><br>
+                <textarea name="assessment" id="assessment0"></textarea><br>
+            </div>
         </div>
             <div class="buttons">
                 <input 
