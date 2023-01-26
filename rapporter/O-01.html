@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="../css/Header.css">
     <link rel="stylesheet" href="../css/Home.css">
     <link rel="stylesheet" href="../css/static-values.css">
-    <link rel="stylesheet" href="../css/i-01.css">
+    <link rel="stylesheet" href="../css/default-rapport.css">
     <link rel="stylesheet" href="../css/gradering.css">
+    <link rel="stylesheet" href="../css/oscar-rapporter.css">
     <script src="/scripts/dropdowns.js"></script>
+    <script src="/scripts/disabletextarea.js"></script>
     <script src="/scripts/saveFileO-01.js"></script>
 </head>
 <body>
@@ -156,10 +158,14 @@
             <textarea name="effectivedtg" id="effectivedtg0"></textarea>
           </div>
           <div class="checkbox">
-            <input checked="" type="checkbox" id="_checkbox">
+            <input onclick="enableTextBox()" type="checkbox" id="_checkbox">
               <label for="_checkbox">
                 <div id="tick_mark"></div>
               </label>
+          </div>
+          <div class="input-box-small">
+            <label for="photoattatchemnt"><b>Photos attatched?</b></label><br>
+            <textarea disabled name="photoattatchemnt" id="photoattatchment0" placeholder="How many?"></textarea>
           </div>  
         </div>
             <div class="buttons">
