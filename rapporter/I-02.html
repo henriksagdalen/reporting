@@ -7,12 +7,14 @@
     <script src="/scripts/add&removeJournalNumber.js"></script>
     <script src="/scripts/saveFile.js"></script>
     <script src="/scripts/add&removeTableRows.js"></script>
+    <script src="/scripts/Regex.js"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <section>
+        <form id ="myform"onsubmit="event.preventDefault();">
         <div class="classification">
-            <select>
+            <select id="klasser" required>
                 <option selected value="">-- Classification --</option>
                 <option value="(B)">Classification 1</option>
                 <option value="(K)">Classification 2</option>
@@ -24,7 +26,7 @@
 
         <div class="staticvalues">
             <label for="from"><b>From:</b></label>
-            <input type="text" placeholder="From callsign" name="from" id="from">
+            <input type="text" placeholder="From callsign" name="from" id="from" required>
 
             <label for="to"><b>To:</b></label>
             <input type="text" placeholder="To callsign" name="to" id="to">
@@ -39,10 +41,11 @@
             <input type="text" placeholder="NAI/TAI" name="naitai" id="naitai"><br>
 
             <label for="dtgfrom"><b>DTG from:</b></label>
-            <input type="text" placeholder="DTG" name="dtgfrom" id="dtgfrom">
+            <input type="text" placeholder="DTG" name="dtgfrom" id="dtgfrom" maxlength = "6" required>
 
             <label for="dtgto"><b>DTG to:</b></label>
-            <input type="text" placeholder="DTG" name="dtgto" id="dtgto">
+            <input type="text" placeholder="DTG" name="dtgto" id="dtgto" maxlength="6" required>
+
         </div>
 
         <div class="bluf">
@@ -67,7 +70,7 @@
                 <tbody>
                     <tr>
                         <td><input type="text" placeholder="Unit" id="staticunit0"></td>
-                        <td><input type="text" placeholder="Since DTG" id="staticdtg0"></td>
+                        <td><input type="text" placeholder="Since DTG" id="staticdtg0" maxlength="6"></td>
                     </tr>
                 </tbody>
             </table>
@@ -97,23 +100,23 @@
 
         <div class="observation">
             <label for="journalnumber"><b>Journal number:</b></label>
-            <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber"></input><br>
+            <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber" required></input><br>
 
             <label for="dtg"><b>DTG:</b></label>
-            <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation"></input><br>
+            <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation" maxlength="6"></input><br>
 
             <label for="facts"><b>Facts:</b></label>
-            <textarea name="facts" id="facts0"></textarea><br>
+            <textarea type = text name ="facts" id="facts0" required></textarea><br>
 
             <label for="comment"><b>Comment:</b></label>
             <textarea name="comment" id="comment0"></textarea><br>
 
             <label for="assessment"><b>Assessment:</b></label>
-            <textarea name="assessment" id="assessment0"></textarea><br><br>
+            <textarea type = text name="assessment" id="assessment0" required></textarea><br><br>
         </div>
 
         <div id="addHere"></div>
-
+    </form>
         <input 
             type="button" 
             id="addJournalNumber" 
@@ -129,10 +132,11 @@
             <br>
 
         <input 
-            type="button"
-            id="saveToFile"
+            type="submit"
+            form="myform"
+            id="mysaveToFile"
             value="Save to file"
-            onclick="saveToFile()"/>
+            onclick="saveToFile();"/>
 
         <input
             type="button"
@@ -140,9 +144,7 @@
             value="Upload from file"
             onclick="uploadFromFile()"
         />
-
         </div>
     </section>
-
 </body>
 </html>
