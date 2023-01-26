@@ -63,10 +63,10 @@ function uploadFromFile() {
       naitai.value = arrayWithoutEmptyElements[5].slice(9,100);
 
       var dtgFrom = document.getElementById("dtgfrom");
-      dtgFrom = arrayWithoutEmptyElements[6].slice(9,100);
+      dtgFrom.value = arrayWithoutEmptyElements[6].slice(9,100);
 
       var dtgTo = document.getElementById("dtgto");
-      dtgTo = arrayWithoutEmptyElements[7].slice(9,100);
+      dtgTo.value = arrayWithoutEmptyElements[7].slice(9,100);
 
     }, false);
     if (file) {
