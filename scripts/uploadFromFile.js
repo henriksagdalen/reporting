@@ -29,19 +29,44 @@ function uploadFromFile() {
       // Create an array of all available classifications
       var allClassifications = document.querySelector(".classification select");
       var allClassificationsArray = [];
+      // Push all the values from the query selector as string values to an array.
       for (var i = 1; i < allClassifications.length; i++) {
         allClassificationsArray.push(allClassifications.options[i].value);
       }
 
-      // 
+      // Check if the classification from the report matches one of the possible classifications, and set the report classification to the matched value.
       for (var i = 0; i < allClassificationsArray.length; i++) {
         if (allClassificationsArray[i] == arrayWithoutEmptyElements[0].slice(16,19)) {
-          console.log(allClassificationsArray[i]);
-          var classif = document.getElementById("klasser");
-          classif.value = allClassificationsArray[i];
+          var classificationSelect = document.getElementById("klasser");
+          classificationSelect.value = allClassificationsArray[i];
         }
       }
 
+      // Get the "from" value from the report, and put it in the from-field. 
+      var from = document.getElementById("from");
+      from.value = arrayWithoutEmptyElements[1].slice(6,100);
+
+      // Get the "to" value from the report, and put it in the to-field.
+      var to = document.getElementById("to");
+      to.value = arrayWithoutEmptyElements[2].slice(4,100);
+
+      // Get the "writer/operator" from the report, and put it in the writer/operator field.
+      var writerOperator = document.getElementById("writeroperator");
+      writerOperator.value = arrayWithoutEmptyElements[3].slice(17,100);
+
+      // Get the "own position" from the report, and put it in the "own position" field.
+      var ownPosition = document.getElementById("ownposition");
+      ownPosition.value = arrayWithoutEmptyElements[4].slice(14,100);
+
+      // Get the NAI/TAI from the report, and put it in the NAI/TAI position field.
+      var naitai = document.getElementById("naitai");
+      naitai.value = arrayWithoutEmptyElements[5].slice(9,100);
+
+      var dtgFrom = document.getElementById("dtgfrom");
+      dtgFrom = arrayWithoutEmptyElements[6].slice(9,100);
+
+      var dtgTo = document.getElementById("dtgto");
+      dtgTo = arrayWithoutEmptyElements[7].slice(9,100);
 
     }, false);
     if (file) {

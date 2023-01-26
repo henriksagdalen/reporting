@@ -11,11 +11,16 @@ if (form.checkValidity()) {
     var to = document.getElementById("to").value;
     var writerOperator = document.getElementById("writeroperator").value;
     var ownPosition = document.getElementById("ownposition").value;
+    var naitai = document.getElementById("naitai").value;
     var bluf = document.getElementById("bluf").value;
     var patternOfLife = document.getElementById("patternoflife").value;
     //var staticUnits = document.getElementById("staticunits").value;
     var overallComment = document.getElementById("overallcomment").value;
     var overallAssessment = document.getElementById("overallassessment").value;
+
+    // Get the reporting window to use it in the filename.
+    var firstDTG = document.getElementById("dtgfrom").value;
+    var lastDTG = document.getElementById("dtgto").value;
 
     // Get the journal number input fields
     var journalNumberFields = document.querySelectorAll("#journalnumber");
@@ -56,6 +61,9 @@ if (form.checkValidity()) {
         + "To: " + to + "\n"
         + "Writer/Operator: " + writerOperator + "\n"
         + "Own position: " + ownPosition + "\n\n"
+        + "NAI/TAI: " + naitai + "\n\n"
+        + "DTG from: " + firstDTG + "\n"
+        + "DTG to: " + lastDTG + "\n\n"
         + "Bottom Line Up Front: " + bluf + "\n\n"
         + "Pattern of life: " + patternOfLife + "\n\n"
         + "Static units in NAI: " + staticUnits + "\n\n"
@@ -135,9 +143,7 @@ if (form.checkValidity()) {
         lastJournalNumber = "0" + lastJournalNumber;
     }
 
-    // Get the reporting window to use it in the filename.
-    var firstDTG = document.getElementById("dtgfrom").value;
-    var lastDTG = document.getElementById("dtgto").value;
+    
 
     // Create the filename with the previously declared variables.
     var filename = dateOfReport
