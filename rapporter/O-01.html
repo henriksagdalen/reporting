@@ -18,7 +18,7 @@
         <div class="header-master">
   
           <div class="header-left">
-  
+
             <div class="navigation">
   
               <ul class="menu">
@@ -78,6 +78,9 @@
         </div>
       </header>
     <section>
+      <div class="page-title">
+        <div class="page-title-text">O-01 Initial report</div> 
+      </div>
       <div class="cont_select_center">
         <div class="classification" data-mate-select="active" >
           <select onclick="return false;" id="">
@@ -121,11 +124,7 @@
             <div class="static-box">
               <label for="dtg"><b>DTG:</b></label><br>
               <input name="dtg" id="dtg0" type="text" placeholder="DTG"></input><br>
-          </div>
-            <div class="static-box">
-              <label for="journalnumber"><b>Journal number:</b></label><br>
-              <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber"></input>
-          </div>
+            </div>
         </div>
 
         <div class="rapport">
@@ -151,36 +150,46 @@
           </div>
           <div class="input-box">
             <label for="obsarea"><b>Observation area:</b></label><br>
-            <textarea name="obsarea" id="obsarea"></textarea><br>
+            <textarea name="obsarea" id="obsarea0"></textarea><br>
           </div>
           <div class="input-box-small">
             <label for="effectivedtg"><b>OP effective DTG:</b></label><br>
             <textarea name="effectivedtg" id="effectivedtg0"></textarea>
           </div>
-          <div class="checkbox">
-            <input onclick="enableTextBox()" type="checkbox" id="_checkbox">
-              <label for="_checkbox">
-                <div id="tick_mark"></div>
+          <div class="photos-attatched">
+            <div id="photos-attatched-label">Photos attatched:</div>
+            <div class="checkbox">
+              <label class="button" for="toggle">
+                <input id="toggle" type="checkbox">
+                <span class="slider"></span>
               </label>
-          </div>
-          <div class="input-box-small">
-            <label for="photoattatchemnt"><b>Photos attatched?</b></label><br>
-            <textarea disabled name="photoattatchemnt" id="photoattatchment0" placeholder="How many?"></textarea>
-          </div>  
-        </div>
-            <div class="buttons">
-                <input
-                    type="button"
-                    id="saveToFile"
-                    value="Save to file"
-                    onclick="saveToFile01()"/>
-
-                <input
-                    type="button"
-                    id="uploadFromFile"
-                    value="Upload from file"
-                    onclick="uploadFromFile()"/>
             </div>
+          </div><br><br><br><hr><br><br><br>
+          <div class="input-box">
+            <label for="overallcomment"><b>Overall comment:</b></label><br>
+            <textarea name="overallcomment" id="overallcomment0"></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="overallassessment"><b>Overall assessment:</b></label><br>
+            <textarea name="overallassessment" id="overallassessment0"></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="references"><b>References:</b></label><br>
+            <textarea name="references" id="references0"></textarea><br>
+          </div>
+          <div class="buttons">
+              <input
+                  type="button"
+                  id="saveToFile"
+                  value="Save to file"
+                  onclick="saveToFile01()"/>
+
+              <input
+                  type="button"
+                  id="uploadFromFile"
+                  value="Upload from file"
+                  onclick="uploadFromFile()"/>
+          </div>
         </section>
     </body>
 </html>

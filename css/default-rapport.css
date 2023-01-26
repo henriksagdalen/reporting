@@ -4,8 +4,20 @@ section {
 }
 
 label {
-  font-size: 1.1vw;
+  font-size: 1.3vw;
   padding-left: 1px;
+}
+
+.page-title { 
+  display: flex;
+  justify-content: center;
+  height: 2.1vw;
+  margin-bottom: 40px;
+}
+
+.page-title-text {
+  font-size: 1.9vw;
+  font-weight: 550;
 }
 
 /*Static values*/
@@ -46,7 +58,7 @@ input:focus {
 }
 
 .input-box textarea{
-  width: 80%;
+  width: 98%;
   height: 8%;
   font-size: .9vw;
   font-weight: 550;
