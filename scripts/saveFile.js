@@ -1,6 +1,6 @@
 function saveToFile() {
-const form = document.getElementById("myform");
-if (form.checkValidity()) {
+const india02form = document.getElementById("india02form");
+if (india02form.checkValidity()) {
     
     // Get the selected classification value for the report.
     var classificationSelect = document.querySelector(".classification select");

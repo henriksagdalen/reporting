@@ -76,9 +76,10 @@
         </div>
       </header>
     <section>
+        <form id ="india01form" onsubmit="event.preventDefault();">
       <div class="cont_select_center">
         <div class="classification" data-mate-select="active" >
-          <select onclick="return false;" id="">
+          <select required onclick="return false;" id="">
             <option value="">Classification</option>
             <option value="(B)">Classification 1</option>
             <option value="(K)">Classification 2</option>
@@ -102,7 +103,7 @@
         <div class="staticvalues">
             <div class="static-box">
                 <label for="from"><b>From:</b></label><br>
-                <input type="text" placeholder="From callsign" name="from" id="from">
+                <input type="text" placeholder="From callsign" name="from" id="from" required>
             </div>
             <div class="static-box">
                 <label for="to"><b>To:</b></label><br>
@@ -121,11 +122,6 @@
                 <input type="text" placeholder="NAI/TAI" name="naitai" id="naitai"><br>
             </div>
         </div>
- 5-regex-på-input-felter
-        
-
-
-        main
         <div class="observation">
             <div class="static-box" style="display: inline-block; margin-right: 2vw; margin-bottom: 10;">
                 <label for="journalnumber"><b>Journal number:</b></label><br>
@@ -133,11 +129,11 @@
             </div>
             <div class="static-box" style="display: inline-block; margin-left: 0; margin-bottom: 10px;">
                 <label for="dtg"><b>DTG:</b></label><br>
-                <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation" maxlength ="6"></input><br>
+                <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation" maxlength ="6" required></input><br>
             </div>
             <div class="input-box">
                 <label for="facts"><b>Facts:</b></label><br>
-                <textarea name="facts" id="facts0"></textarea>
+                <textarea name="facts" id="facts0" required></textarea>
             </div>
             <div class="input-box">
                 <label for="comment"><b>Comment:</b></label><br>
@@ -145,13 +141,15 @@
             </div>
             <div class="input-box">
                 <label for="assessment"><b>Assessment:</b></label><br>
-                <textarea name="assessment" id="assessment0"></textarea><br>
+                <textarea name="assessment" id="assessment0" required></textarea><br>
             </div>
         </div>
+    </form>
             <div class="buttons">
                 <input
                     type="button"
                     id="saveToFile"
+                    form="india01form"
                     value="Save to file"
                     onclick="saveToFile01()"/>
 
