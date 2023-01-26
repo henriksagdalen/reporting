@@ -66,11 +66,3 @@ textarea:focus {
   box-shadow: 2px 2px .4vw 1px rgb(56, 78, 78), 0 0 0 .15vw transparent;
   transition: 0.3s;
 }
-
-input:invalid{
-  background-color: antiquewhite;
-  
-}
-textarea:invalid{
-  background-color: antiquewhite;
-}

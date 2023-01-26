@@ -98,9 +98,12 @@ function saveToFile01() {
         document.body.removeChild(downloadLink);
     } else {
         alert("Please fill out all required fields before saving.");
-        var color = window.getComputedStyle(
-            document.querySelector('.input'), ':invalid'
-        ).getPropertyValue('backgroundcolor')
+        var requiredFields = document.querySelectorAll("[required]");
+    for (var i = 0; i < requiredFields.length; i++) {
+        if (!requiredFields[i].checkValidity()) {
+        requiredFields[i].style.backgroundColor = "antiquewhite";
+         }
+    }
         
 }
 }

@@ -168,5 +168,11 @@ function saveToFile() {
         document.body.removeChild(downloadLink);
     } else {
         alert("Please fill out all required fields before saving.")
+        var requiredFields = document.querySelectorAll("[required]");
+        for (var i = 0; i < requiredFields.length; i++) {
+            if (!requiredFields[i].checkValidity()) {
+            requiredFields[i].style.backgroundColor = "antiquewhite";
+             }
+        }
     }
 }

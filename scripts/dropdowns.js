@@ -1,5 +1,5 @@
 window.onload = function() {
-    crear_select();
+    create_select();
 }
 
 function isMobileDevice() {
@@ -8,7 +8,7 @@ function isMobileDevice() {
 
 var li = new Array();
 
-function crear_select() {
+function create_select() {
     var div_cont_select = document.querySelectorAll("[data-mate-select='active']");
     var select_ = '';
     for (var e = 0; e < div_cont_select.length; e++) {
@@ -21,14 +21,14 @@ function crear_select() {
                 _select_option(select_.selectedIndex, e);
             });
         }
-        var select_optiones = select_.options;
-        document.querySelectorAll("[data-indx-select='" + e + "']  > .selecionado_opcion ")[0].setAttribute('data-n-select', e);
+        var Select_options1 = select_.options;
+        document.querySelectorAll("[data-indx-select='" + e + "']  > .selectoption ")[0].setAttribute('data-n-select', e);
         document.querySelectorAll("[data-indx-select='" + e + "']  > .icon_select_mate ")[0].setAttribute('data-n-select', e);
-        for (var i = 0; i < select_optiones.length; i++) {
+        for (var i = 0; i < Select_options1.length; i++) {
             li[i] = document.createElement('li');
-            if (select_optiones[i].selected == true || select_.value == select_optiones[i].innerHTML) {
+            if (Select_options1[i].selected == true || select_.value == Select_options1[i].innerHTML) {
                 li[i].className = 'active';
-                document.querySelector("[data-indx-select='" + e + "']  > .selecionado_opcion ").innerHTML = select_optiones[i].innerHTML;
+                document.querySelector("[data-indx-select='" + e + "']  > .selectoption ").innerHTML = Select_options1[i].innerHTML;
             };
             li[i].setAttribute('data-index', i);
             li[i].setAttribute('data-selec-index', e);
@@ -37,12 +37,12 @@ function crear_select() {
                 _select_option(this.getAttribute('data-index'), this.getAttribute('data-selec-index'));
             });
 
-            li[i].innerHTML = select_optiones[i].innerHTML;
+            li[i].innerHTML = Select_options1[i].innerHTML;
             ul_cont[0].appendChild(li[i]);
 
-        }; // Fin For select_optiones
-    }; // fin for divs_cont_select
-} // Fin Function 
+        }; 
+    }; 
+}
 
 
 
@@ -81,9 +81,9 @@ function open_select(idx) {
         }
     }
 
-} // fin function open_select
+}
 
-function salir_select(indx) {
+function drop_select(indx) {
     var select_ = document.querySelectorAll("[data-indx-select='" + indx + "'] > select")[0];
     document.querySelectorAll("[data-indx-select='" + indx + "'] > .cont_list_select_mate > ul")[0].style.height = "0px";
     document.querySelector("[data-indx-select='" + indx + "'] > .icon_select_mate").style.transform = 'rotate(0deg)';
@@ -95,8 +95,8 @@ function _select_option(indx, selc) {
     var select_ = document.querySelectorAll("[data-indx-select='" + selc + "'] > select")[0];
 
     var li_s = document.querySelectorAll("[data-indx-select='" + selc + "'] .cont_select_int > li");
-    var p_act = document.querySelectorAll("[data-indx-select='" + selc + "'] > .selecionado_opcion")[0].innerHTML = li_s[indx].innerHTML;
-    var select_optiones = document.querySelectorAll("[data-indx-select='" + selc + "'] > select > option");
+    var p_act = document.querySelectorAll("[data-indx-select='" + selc + "'] > .selectoption")[0].innerHTML = li_s[indx].innerHTML;
+    var select_options = document.querySelectorAll("[data-indx-select='" + selc + "'] > select > option");
     for (var i = 0; i < li_s.length; i++) {
         if (li_s[i].className == 'active') {
             li_s[i].className = '';
@@ -104,8 +104,8 @@ function _select_option(indx, selc) {
         li_s[indx].className = 'active';
 
     };
-    select_optiones[indx].selected = true;
+    select_options[indx].selected = true;
     select_.selectedIndex = indx;
     select_.onchange();
-    salir_select(selc);
+    _select_option(selc);
 }
