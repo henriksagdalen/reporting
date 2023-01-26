@@ -1,4 +1,7 @@
 function saveToFile() {
+const form = document.getElementById("myform");
+if (form.checkValidity()) {
+    
     // Get the selected classification value for the report.
     var classificationSelect = document.querySelector(".classification select");
     var classification = classificationSelect.options[classificationSelect.selectedIndex].value;
@@ -41,8 +44,9 @@ function saveToFile() {
 
         var staticUnit = document.getElementById(staticUnitID).value;
         var staticDTG = document.getElementById(staticDTGID).value;
-
-        staticUnits += "\n" + staticUnit + " static since " + staticDTG;
+        if(staticUnit!=""){
+        staticUnits += "\n" + staticUnit + " static since " + staticDTG +"Z";
+        }
     }
 
 
@@ -71,7 +75,7 @@ function saveToFile() {
         var newAssessment = document.getElementById(assessmentID).value;
             
         fileContent += "Journal number: " + journalNumbers[i] + "\n"
-        + "DTG: " + newDTG + "\n"
+        + "DTG: " + newDTG +"Z" + "\n"
         + "Facts: " + newFacts + "\n"
         + "Comment: " + newComment + "\n"
         + "Assessment: " + newAssessment + "\n\n";
@@ -84,7 +88,7 @@ function saveToFile() {
     var day = newDate.getDate();
     var hour = newDate.getHours();
     var minute = newDate.getMinutes();
-
+//FIKS DEN HER, DEN ER NASTY.
     // Check if values are less than 10, and format them correctly if true.
     if (month < 10) {
 	    month = "0" +(newDate.getMonth() + 1);
@@ -147,9 +151,9 @@ function saveToFile() {
         + "-"
         + lastJournalNumber
         + " " 
-        + firstDTG
+        + firstDTG +"Z"
         + "-"
-        + lastDTG + "Z";
+        + lastDTG +"Z";
 
     // Create a Blob object with the file content
     var file = new Blob([fileContent], { type: "text/plain" });
@@ -166,5 +170,8 @@ function saveToFile() {
     
     // Remove the link element from the body
     document.body.removeChild(downloadLink);
+}else {
+    alert("Please fill out all required fields before saving.")
+}
 }
 
