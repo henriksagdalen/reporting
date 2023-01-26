@@ -37,7 +37,8 @@ function uploadFromFile() {
       for (var i = 0; i < allClassificationsArray.length; i++) {
         if (allClassificationsArray[i] == arrayWithoutEmptyElements[0].slice(16,19)) {
           console.log(allClassificationsArray[i]);
-          
+          var classif = document.getElementById("klasser");
+          classif.value = allClassificationsArray[i];
         }
       }
 
