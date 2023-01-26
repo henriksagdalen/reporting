@@ -62,9 +62,11 @@ function uploadFromFile() {
       var naitai = document.getElementById("naitai");
       naitai.value = arrayWithoutEmptyElements[5].slice(9,100);
 
+      // Get the "DTG from" the report, and put it in the DTG-from field.
       var dtgFrom = document.getElementById("dtgfrom");
       dtgFrom.value = arrayWithoutEmptyElements[6].slice(9,100);
 
+      // Get the "DTG to" the report, and put it in the DTG-to field.
       var dtgTo = document.getElementById("dtgto");
       dtgTo.value = arrayWithoutEmptyElements[7].slice(9,100);
 
