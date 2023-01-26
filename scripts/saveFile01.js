@@ -97,7 +97,10 @@ function saveToFile01() {
         // Remove the link element from the body
         document.body.removeChild(downloadLink);
     } else {
-        alert("Please fill out all required fields before saving.")
-
-    }
+        alert("Please fill out all required fields before saving.");
+        var color = window.getComputedStyle(
+            document.querySelector('.input'), ':invalid'
+        ).getPropertyValue('backgroundcolor')
+        
+}
 }
