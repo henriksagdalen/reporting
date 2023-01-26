@@ -23,7 +23,11 @@ function uploadFromFile() {
       }
 
       console.log(arrayWithoutEmptyElements);
-      // In the new array, join all elements from one input field to the next, to one element. 
+
+      // In the new array, join all elements from one input field to the next. 
+      var indexOfClassification = arrayWithoutEmptyElements.indexOf();
+      console.log(indexOfClassification);
+
 
       // Extract the classification from text file, and set the classification option to the correct option.
       var allClassifications = document.querySelector(".classification select");
