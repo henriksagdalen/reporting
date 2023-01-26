@@ -11,33 +11,36 @@ function uploadFromFile() {
       //content.innerText = reader.result;
       uploadedFileAsString = reader.result;
 
+      // Split the string into an array, separated by line breaks.
       var stringSplittedToArray = uploadedFileAsString.split(/\r?\n/);
       console.log(stringSplittedToArray);
       
       // Search trough the array and remove every item that has a empty string value. Return it as a new array.
       var arrayWithoutEmptyElements = [];
-      for (var i = 0; i <= stringSplittedToArray.length; i++) {
+      for (var i = 0; i < stringSplittedToArray.length; i++) {
         if (stringSplittedToArray[i] !== "") {
           arrayWithoutEmptyElements.push(stringSplittedToArray[i])
         }
       }
 
+      // Write the new array without empty elements to console.
       console.log(arrayWithoutEmptyElements);
 
-      // In the new array, join all elements from one input field to the next. 
-      var indexOfClassification = arrayWithoutEmptyElements.indexOf();
-      console.log(indexOfClassification);
-
-
-      // Extract the classification from text file, and set the classification option to the correct option.
+      // Create an array of all available classifications
       var allClassifications = document.querySelector(".classification select");
       var allClassificationsArray = [];
-      let reportClassification = uploadedFileAsString.slice(16,19);
-      console.log(reportClassification);
-
-      for (var i = 1; i < 5; i++) {
+      for (var i = 1; i < allClassifications.length; i++) {
         allClassificationsArray.push(allClassifications.options[i].value);
       }
+
+      // 
+      for (var i = 0; i < allClassificationsArray.length; i++) {
+        if (allClassificationsArray[i] == arrayWithoutEmptyElements[0].slice(16,19)) {
+          console.log(allClassificationsArray[i]);
+          
+        }
+      }
+
 
     }, false);
     if (file) {
