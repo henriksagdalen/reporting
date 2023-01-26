@@ -1,7 +1,6 @@
 
 let uploadedFileAsString = "";
 
-
 function uploadFromFile() {
     // const content = document.querySelector('.content');
     const [file] = document.querySelector('input[type=file]').files;
@@ -11,10 +10,16 @@ function uploadFromFile() {
       // this will then display a text file
       //content.innerText = reader.result;
       uploadedFileAsString = reader.result;
-      console.log(uploadedFileAsString);
 
-      var stringSplitted = uploadedFileAsString.split(/\r?\n/);
-      console.log(stringSplitted);
+      var stringSplittedToArray = uploadedFileAsString.split(/\r?\n/);
+      console.log(stringSplittedToArray);
+      
+      // Search trough the array and remove every item that has a empty string value. Return it as a new array.
+      var arrayWithoutEmptyElements = [];
+      for (var i = 0; i <= stringSplittedToArray.length; i++) {
+        
+      }
+      // In the new array, join all elements from one input field to the next, to one element. 
 
       // Extract the classification from text file, and set the classification option to the correct option.
       var allClassifications = document.querySelector(".classification select");
