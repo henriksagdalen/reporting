@@ -17,8 +17,12 @@ function uploadFromFile() {
       // Search trough the array and remove every item that has a empty string value. Return it as a new array.
       var arrayWithoutEmptyElements = [];
       for (var i = 0; i <= stringSplittedToArray.length; i++) {
-        
+        if (stringSplittedToArray[i] !== "") {
+          arrayWithoutEmptyElements.push(stringSplittedToArray[i])
+        }
       }
+
+      console.log(arrayWithoutEmptyElements);
       // In the new array, join all elements from one input field to the next, to one element. 
 
       // Extract the classification from text file, and set the classification option to the correct option.
