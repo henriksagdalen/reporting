@@ -70,6 +70,33 @@ function uploadFromFile() {
       var dtgTo = document.getElementById("dtgto");
       dtgTo.value = arrayWithoutEmptyElements[7].slice(9,100);
 
+      // Find the array elements that contains the BLUF information. Probably excessive because bluf will always start at array-index 8.
+      var blufStartsAtIndex = "";
+      for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i] == "Bottom Line Up Front:") {
+          blufStartsAtIndex = i + 1;
+        }
+      }
+      console.log(blufStartsAtIndex);
+      
+      var blufEndsAtIndex = "";
+      for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i] == "Pattern of life:") {
+          blufEndsAtIndex = i;
+        }
+      }
+      console.log(blufEndsAtIndex);
+      
+      var blufContent = "";
+      for (var i = blufStartsAtIndex; i < blufEndsAtIndex; i++) {
+        blufContent = blufContent + arrayWithoutEmptyElements[i];
+      }
+
+      console.log(blufContent);
+      var blufValueFromFile = document.getElementById("bluf");
+      blufValueFromFile.value = blufContent;
+      
+
     }, false);
     if (file) {
       reader.readAsText(file);
