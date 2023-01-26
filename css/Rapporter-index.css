@@ -1,0 +1,52 @@
+/*Report-links*/
+
+.rapport-cards {
+  width: 20vh;
+  height: 20vh;
+  border-radius: 5px;
+  background-color: darkslategrey;
+  margin-left: 15px;
+  text-align: center;
+  transition: 0.2s;  
+  text-decoration: none;
+}
+
+.background-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20%;
+}
+
+.rapport-code {
+  font-size: 6vh;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+  color: white;
+  display: inline-block;
+}
+
+.rapport-name {
+  font-size: 2vh;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+  color: white;
+  display: inline-block;
+}
+
+.rapport-cards:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px 2px rgb(85, 85, 85);
+  transform: scale(1.05);
+  transition: 0.2s;
+  margin-right: 15px;
+  margin-left: 30px;
+}
+
+.link-row2 {
+  display: flex;
+  margin-top: 2%;
+  justify-content: center;
+}
