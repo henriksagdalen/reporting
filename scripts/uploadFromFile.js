@@ -128,6 +128,28 @@ function uploadFromFile() {
       patternOfLife.value = polContent;
 //#endregion
 
+//#region STATIC UNITS IN NAI
+      // Find the start of the elements that belongs to "Static Units in NAI".
+      var staticUnitsStartsAtIndex = polEndsAtIndex + 1;
+
+      // Find the array element that contains "Overall comment".
+      var staticUnitsEndsAtIndex = "";
+      for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i] == "Overall comment:") {
+          staticUnitsEndsAtIndex = i;
+        }
+      }
+      console.log(staticUnitsEndsAtIndex);
+
+      // Iterate trough the elements in the array that contains information about static units, and write it to the table in the report.
+      var staticUnits;
+      for (var i = staticUnitsStartsAtIndex; i < staticUnitsEndsAtIndex; i++) {
+        staticUnits = arrayWithoutEmptyElements[i].split(" ");
+      }
+      console.log(staticUnits);
+//#endregion
+
+
     }, false);
     if (file) {
       reader.readAsText(file);
