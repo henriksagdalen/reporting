@@ -236,9 +236,11 @@ function uploadFromFile() {
       overallCommentElement.value = overallCommentContent;
 //#endregion
 
+//#region OVERALL ASSESSMENT
+      // Get the index of where the content for "Overall assessment" starts.
+      var overallAssessmentStartsAtIndex = overallCommentEndsAtIndex + 1;
 
-
-
+      
 
 
 
