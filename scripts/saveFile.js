@@ -66,7 +66,7 @@ if (form.checkValidity()) {
         + "DTG to: " + lastDTG + "\n\n"
         + "Bottom Line Up Front:" + "\n" + bluf + "\n\n"
         + "Pattern of life:" + "\n" + patternOfLife + "\n\n"
-        + "Static units in NAI: " + staticUnits + "\n\n"
+        + "Static units in NAI:" + staticUnits + "\n\n"
         + "Overall comment: " + overallComment + "\n\n"
         + "Overall assessment: " + overallAssessment + "\n\n";
 

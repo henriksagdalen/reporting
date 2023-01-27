@@ -26,6 +26,7 @@ function uploadFromFile() {
       // Write the new array without empty elements to console.
       console.log(arrayWithoutEmptyElements);
 
+//#region CLASSIFICATIONS
       // Create an array of all available classifications
       var allClassifications = document.querySelector(".classification select");
       var allClassificationsArray = [];
@@ -42,6 +43,9 @@ function uploadFromFile() {
         }
       }
 
+//#endregion
+
+//#region STATIC VALUES
       // Get the "from" value from the report, and put it in the from-field. 
       var from = document.getElementById("from");
       from.value = arrayWithoutEmptyElements[1].slice(6,100);
@@ -69,33 +73,60 @@ function uploadFromFile() {
       // Get the "DTG to" the report, and put it in the DTG-to field.
       var dtgTo = document.getElementById("dtgto");
       dtgTo.value = arrayWithoutEmptyElements[7].slice(9,100);
+//#endregion
 
-      // Find the array elements that contains the BLUF information. Probably excessive because bluf will always start at array-index 8.
+//#region BLUF
+      // Find the array elements that contains the BLUF information. Probably excessive because bluf will always start at array-index 8 for now.
       var blufStartsAtIndex = "";
       for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
         if (arrayWithoutEmptyElements[i] == "Bottom Line Up Front:") {
           blufStartsAtIndex = i + 1;
         }
       }
-      console.log(blufStartsAtIndex);
       
+      // Find the array element that contains pattern of life. This will indicate where the BLUF information ends.
       var blufEndsAtIndex = "";
       for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
         if (arrayWithoutEmptyElements[i] == "Pattern of life:") {
           blufEndsAtIndex = i;
         }
       }
-      console.log(blufEndsAtIndex);
       
+      // Iterate trough the elements in the array that contains the BLUF information, and write it to a string. 
       var blufContent = "";
       for (var i = blufStartsAtIndex; i < blufEndsAtIndex; i++) {
         blufContent = blufContent + arrayWithoutEmptyElements[i];
+        blufContent = blufContent + "\n";
       }
 
-      console.log(blufContent);
-      var blufValueFromFile = document.getElementById("bluf");
-      blufValueFromFile.value = blufContent;
+      // Input the string in the BLUF-field in the report.
+      var bluf = document.getElementById("bluf");
+      bluf.value = blufContent;
+//#endregion
+
+//#region PATTERN OF LIFE
+      // Find the array element that contains "Pattern of life"-string value. This will indicate the start of "Pattern of life"-information.
+      var polStartsAtIndex = blufEndsAtIndex + 1;
+
+      // Find the array element that contains "static units in NAI".
+      var polEndsAtIndex = "";
+      for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i] == "Static units in NAI:") {
+          polEndsAtIndex = i;
+        }
+      }
+
+      // Iterate trough the elements in the array that contains the POL information, and write it to a string.
+      var polContent = "";
+      for (var i = polStartsAtIndex; i < polEndsAtIndex; i++) {
+        polContent = polContent + arrayWithoutEmptyElements[i];
+        polContent = polContent + "\n";
+      }
       
+      // Input the string in the POL-field in the report. 
+      var patternOfLife = document.getElementById("patternoflife");
+      patternOfLife.value = polContent;
+//#endregion
 
     }, false);
     if (file) {
