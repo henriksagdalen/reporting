@@ -142,30 +142,61 @@ function uploadFromFile() {
 
       // Iterate trough the elements in the array that contains information about static units, and write it to the table in the report.
       var staticUnits = [];
+
+      // Calculate how many rows that are needed in the table
       var tableRowCounter = staticUnitsEndsAtIndex - staticUnitsStartsAtIndex;
+
+      // Split each of the strings into separate arrays, to make it easier to extract the text we need.
       for (var i = staticUnitsStartsAtIndex; i < staticUnitsEndsAtIndex; i++) {
         staticUnits.push(arrayWithoutEmptyElements[i].split(" "));
       }
       
+      // Get the table from the HTML-document
       var staticUnitsTable = document.getElementById("staticunits");
-      for (var i = 0; i < tableRowCounter; i++) {
-        var row = document.createElement("tr");
-        staticUnitsTable.appendChild(row);
-        // Lage celler, og input felter i cellene.
 
+      // Create the needed amount of rows and cells, based on the row counter.
+      for (var i = 0; i < tableRowCounter; i++) {
+
+        // Create a table row.
+        var row = document.createElement("tr");
+        
+        // Create the cells that store the input fields.
+        var cell1 = document.createElement("td");
+        var cell2 = document.createElement("td");
+
+        // Create the input fields, and make an incremental id-value
+        var input1 = document.createElement("input");
+        input1.id = 'staticunit' + (i + 1);
+        var input2 = document.createElement("input");
+        input2.id = 'staticdtg' + (i + 1);
+
+        // Append the input-fields to the cells
+        cell1.appendChild(input1);
+        cell2.appendChild(input2);
+
+        // Append the cells to the new row.
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+
+        // Append the row to the table
+        staticUnitsTable.appendChild(row);
+        // Repeat the process for all rows of static units.
       }
 
+
+      // Declare a variable to store the value for static unit, and dtg.
       var staticUnitValue;
       var staticDTGValue;
 
+      // 
       for (var i = 0; i < tableRowCounter; i++) {
         var staticUnitID = "staticunit" + i;
         var staticDTGID = "staticdtg" + i;
         console.log(staticUnitID);
           staticUnitValue = document.getElementById(staticUnitID);
           staticDTGValue = document.getElementById(staticDTGID);
-          //staticUnitValue.value = staticUnits[i][0];
-          //staticDTGValue.value = staticUnits[i][2];
+          staticUnitValue.value = staticUnits[i][0];
+          staticDTGValue.value = staticUnits[i][3];
           
       }
 
