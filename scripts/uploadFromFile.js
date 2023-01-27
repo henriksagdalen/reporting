@@ -188,19 +188,58 @@ function uploadFromFile() {
       var staticUnitValue;
       var staticDTGValue;
 
-      // 
+      // Iterate trough all array elements that contain static units, and input the values in the table cells.
       for (var i = 0; i < tableRowCounter; i++) {
         var staticUnitID = "staticunit" + i;
         var staticDTGID = "staticdtg" + i;
-        console.log(staticUnitID);
           staticUnitValue = document.getElementById(staticUnitID);
           staticDTGValue = document.getElementById(staticDTGID);
+
+          // Only extract the "Unit" and the "DTG" from the array.
           staticUnitValue.value = staticUnits[i][0];
           staticDTGValue.value = staticUnits[i][3];
-          
       }
 
 //#endregion
+
+//#region OVERALL COMMENT
+
+      // Find the array index of where "Overall comment"-content is stored
+      var overallCommentStartsAtIndex;
+      for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i] == "Overall comment:") {
+          overallCommentStartsAtIndex = i + 1;
+        }
+      }
+
+      // Find the array index of where "Overall comment"-content ends.
+      var overallCommentEndsAtIndex;
+      for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i] == "Overall assessment:") {
+          overallCommentEndsAtIndex = i;
+        }
+      }
+
+      // Declare a variable for storing the content of the "Overall comment".
+      var overallCommentContent = "";
+
+      // Iterate trough the elements that belongs to "Overall comment", and assign them to the "Overall comment"-field.
+      for (var i = overallCommentStartsAtIndex; i < overallCommentEndsAtIndex; i++) {
+        overallCommentContent = overallCommentContent + arrayWithoutEmptyElements[i];
+        overallCommentContent = overallCommentContent + "\n";
+      }
+
+      // Get the element that will display the overall comment
+      var overallCommentElement = document.getElementById("overallcomment");
+
+      // Set the value of the element equal to the content of the "Overall comment"-array elements. 
+      overallCommentElement.value = overallCommentContent;
+//#endregion
+
+
+
+
+
 
 
     }, false);

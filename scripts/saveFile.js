@@ -68,7 +68,7 @@ if (form.checkValidity()) {
         + "Pattern of life:" + "\n" + patternOfLife + "\n\n"
         + "Static units in NAI:" + staticUnits + "\n\n"
         + "Overall comment:" + "\n" + overallComment + "\n\n"
-        + "Overall assessment: " + overallAssessment + "\n\n";
+        + "Overall assessment:" + "\n" + overallAssessment + "\n\n";
 
 
     for (var i = 0; i < journalNumbers.length; i++) {
