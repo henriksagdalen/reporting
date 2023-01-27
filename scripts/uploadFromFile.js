@@ -139,14 +139,36 @@ function uploadFromFile() {
           staticUnitsEndsAtIndex = i;
         }
       }
-      console.log(staticUnitsEndsAtIndex);
 
       // Iterate trough the elements in the array that contains information about static units, and write it to the table in the report.
-      var staticUnits;
+      var staticUnits = [];
+      var tableRowCounter = staticUnitsEndsAtIndex - staticUnitsStartsAtIndex;
       for (var i = staticUnitsStartsAtIndex; i < staticUnitsEndsAtIndex; i++) {
-        staticUnits = arrayWithoutEmptyElements[i].split(" ");
+        staticUnits.push(arrayWithoutEmptyElements[i].split(" "));
       }
-      console.log(staticUnits);
+      
+      var staticUnitsTable = document.getElementById("staticunits");
+      for (var i = 0; i < tableRowCounter; i++) {
+        var row = document.createElement("tr");
+        staticUnitsTable.appendChild(row);
+        // Lage celler, og input felter i cellene.
+
+      }
+
+      var staticUnitValue;
+      var staticDTGValue;
+
+      for (var i = 0; i < tableRowCounter; i++) {
+        var staticUnitID = "staticunit" + i;
+        var staticDTGID = "staticdtg" + i;
+        console.log(staticUnitID);
+          staticUnitValue = document.getElementById(staticUnitID);
+          staticDTGValue = document.getElementById(staticDTGID);
+          //staticUnitValue.value = staticUnits[i][0];
+          //staticDTGValue.value = staticUnits[i][2];
+          
+      }
+
 //#endregion
 
 
