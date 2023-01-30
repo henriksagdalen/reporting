@@ -92,7 +92,7 @@
 }
 
 /* etiqueta <p> con la opcion selecionada */
-.selecionado_opcion {
+.selectoption {
   padding: 10px 2%;
   width: 96%;
   display: block;

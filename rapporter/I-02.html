@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,104 +8,121 @@
     <script src="/scripts/add&removeJournalNumber.js"></script>
     <script src="/scripts/saveFile.js"></script>
     <script src="/scripts/add&removeTableRows.js"></script>
-
     <script src="/scripts/uploadFromFile.js"></script>
 
     <script src="/scripts/Regex.js"></script>
-
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <section>
-        <form id ="myform"onsubmit="event.preventDefault();">
-        <div class="classification">
-            <select id="klasser" required>
-                <option selected value="">-- Classification --</option>
-                <option value="(B)">Classification 1</option>
-                <option value="(K)">Classification 2</option>
-                <option value="(H)">Classification 3</option>
-                <option value="(NR)">Classification 4</option>
-                <option value="(NS)">Classification 5</option>
-            </select>
-        </div>
+        <form id="india02form" onsubmit="event.preventDefault();">
+            <div class="classification">
+                <select id="klasser" required>
+                    <option selected value="">-- Classification --</option>
+                    <option value="(B)">Classification 1</option>
+                    <option value="(K)">Classification 2</option>
+                    <option value="(H)">Classification 3</option>
+                    <option value="(NR)">Classification 4</option>
+                    <option value="(NS)">Classification 5</option>
+                </select>
+            </div>
 
-        <div class="staticvalues">
-            <label for="from"><b>From:</b></label>
-            <input type="text" placeholder="From callsign" name="from" id="from" required>
+            <div class="staticvalues">
+                <label for="from"><b>From:</b></label>
+                <input type="text" placeholder="From callsign" name="from" id="from" required>
 
-            <label for="to"><b>To:</b></label>
-            <input type="text" placeholder="To callsign" name="to" id="to">
+                <label for="to"><b>To:</b></label>
+                <input type="text" placeholder="To callsign" name="to" id="to">
 
-            <label for="writeroperator"><b>Writer/Operator:</b></label>
-            <input type="text" placeholder="Writer/Operator" name="writeroperator" id="writeroperator">
+                <label for="writeroperator"><b>Writer/Operator:</b></label>
+                <input type="text" placeholder="Writer/Operator" name="writeroperator" id="writeroperator">
 
-            <label for="ownposition"><b>Own position:</b></label>
-            <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
+                <label for="ownposition"><b>Own position:</b></label>
+                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
 
-            <label for="naitai"><b>NAI/TAI:</b></label>
-            <input type="text" placeholder="NAI/TAI" name="naitai" id="naitai"><br>
+                <label for="naitai"><b>NAI/TAI:</b></label>
+                <input type="text" placeholder="NAI/TAI" name="naitai" id="naitai"><br>
 
-            <label for="dtgfrom"><b>DTG from:</b></label>
-            <input type="text" placeholder="DTG" name="dtgfrom" id="dtgfrom" maxlength = "6" required>
+                <label for="dtgfrom"><b>DTG from:</b></label>
+                <input type="text" placeholder="DTG" name="dtgfrom" id="dtgfrom" maxlength="6" required>
 
-            <label for="dtgto"><b>DTG to:</b></label>
-            <input type="text" placeholder="DTG" name="dtgto" id="dtgto" maxlength="6" required>
+                <label for="dtgto"><b>DTG to:</b></label>
+                <input type="text" placeholder="DTG" name="dtgto" id="dtgto" maxlength="6" required>
 
-        </div>
+            </div>
 
-        <div class="bluf">
-            <label for="bluf"><b>Bottom Line Up Front:</b></label><br>
-            <textarea type="text" id="bluf"></textarea>
-        </div>
+            <div class="bluf">
+                <label for="bluf"><b>Bottom Line Up Front:</b></label><br>
+                <textarea type="text" id="bluf"></textarea>
+            </div>
 
-        <div class="patternoflife">
-            <label for="patternoflife"><b>Pattern of life:</b></label><br>
-            <textarea type="text" id="patternoflife"></textarea>
-        </div>
+            <div class="patternoflife">
+                <label for="patternoflife"><b>Pattern of life:</b></label><br>
+                <textarea type="text" id="patternoflife"></textarea>
+            </div>
 
-        <div class="staticunits">
-            <label for="staticunits"><b>Static units in NAI:</b></label><br>
-            <table id="staticunits">
-                <thead>
-                    <tr>
-                        <th colspan="1">Unit</th>
-                        <th colspan="1">Since DTG</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="text" placeholder="Unit" id="staticunit0"></td>
-                        <td><input type="text" placeholder="Since DTG" id="staticdtg0" maxlength="6"></td>
-                    </tr>
-                </tbody>
-            </table>
-            <input 
-                type="button" 
-                id="addTableRows" 
-                value="+"
-                onclick="addTableRows()"/>
+            <div class="staticunits">
+                <label for="staticunits"><b>Static units in NAI:</b></label><br>
+                <table id="staticunits">
+                    <thead>
+                        <tr>
+                            <th colspan="1">Unit</th>
+                            <th colspan="1">Since DTG</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" placeholder="Unit" id="staticunit0"></td>
+                            <td><input type="text" placeholder="Since DTG" id="staticdtg0" maxlength="6"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                 
+            </div>
 
-            <input 
-                type="button"
-                id="removeTableRows"
-                value="-"
-                onclick="removeTableRows()">
-        </div>
+            <div class="overallcomment">
+                <label for="overallcomment"><b>Overall comment:</b></label><br>
+                <textarea type="text" id="overallcomment"></textarea>
+            </div>
 
-       <div class="overallcomment">
-            <label for="overallcomment"><b>Overall comment:</b></label><br>
-            <textarea type="text" id="overallcomment"></textarea>
-       </div>
-
-       <div class="overallassessment">
-            <label for="overallassessment"><b>Overall assessment:</b></label><br>
-            <textarea type="text" id="overallassessment"></textarea>
-       </div>
+            <div class="overallassessment">
+                <label for="overallassessment"><b>Overall assessment:</b></label><br>
+                <textarea type="text" id="overallassessment"></textarea>
+            </div>
 
 
-        <div class="observation">
-            <label for="journalnumber"><b>Journal number:</b></label>
-            <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber" required></input><br>
+            <div class="observation">
+                <label for="journalnumber"><b>Journal number:</b></label>
+                <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber" required></input><br>
+
+                <label for="dtg"><b>DTG:</b></label>
+                <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation" maxlength="6"></input><br>
+
+                <label for="facts"><b>Facts:</b></label>
+                <textarea type=text name="facts" id="facts0" required></textarea><br>
+
+                <label for="comment"><b>Comment:</b></label>
+                <textarea name="comment" id="comment0"></textarea><br>
+
+                <label for="assessment"><b>Assessment:</b></label>
+                <textarea type=text name="assessment" id="assessment0"></textarea><br><br>
+            </div>
+
+            <div id="addHere"></div>
+        </form>
+        
+        <input type="button" id="addTableRows" value="+" onclick="addTableRows()" />
+
+        <input type="button" id="removeTableRows" value="-" onclick="removeTableRows()">
+
+        <input type="button" id="addJournalNumber" value="+" onclick="addJournalNumber()" />
+
+        <input type="button" id="removeJournalNumber" value="-" onclick="removeJournalNumber()" />
+
+        <br>
+
+        <input type="submit" form="india02form" id="mysaveToFile" value="Save to file" onclick="saveToFile();" />
 
             <label for="dtg"><b>DTG:</b></label>
             <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation" maxlength="6"></input><br>
@@ -149,7 +167,9 @@
             onclick="uploadFromFile()"/>
         <input type="file" onchange="uploadFromFile()" /><br />
         <p class="content"></p>
+        <input type="button" id="uploadFromFile" value="Upload from file" onclick="uploadFromFile()" />
         </div>
     </section>
 </body>
+
 </html>
