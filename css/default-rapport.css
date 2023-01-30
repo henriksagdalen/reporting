@@ -11,13 +11,16 @@ label {
 .page-title { 
   display: flex;
   justify-content: center;
-  height: 2.1vw;
   margin-bottom: 40px;
 }
 
 .page-title-text {
-  font-size: 1.9vw;
+  font-size: 2.5vw;
   font-weight: 550;
+
+  background-image: linear-gradient(to left, #243a2b, #434745);
+  color: transparent;
+  -webkit-background-clip: text;
 }
 
 /*Static values*/
