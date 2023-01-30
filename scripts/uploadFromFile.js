@@ -256,8 +256,52 @@ function uploadFromFile() {
         overallAssessmentContent = overallAssessmentContent + "\n";
       }
 
+      // Get the overall assessment field from the report, and add the content to the field. 
       var overallAssessmentValue = document.getElementById("overallassessment");
       overallAssessmentValue.value = overallAssessmentContent;
+//#endregion
+
+//#region JOURNAL NUMBERS
+      // Find the element that contains the first "Journal number:" for the report. This is the same index as where "overall assessment" ends.
+      var journalNumberStartIndex = overallAssessmentEndsAtIndex;
+
+      // Calculate how many journal numbers it is in the report. 
+      var journalNumberCounter = 0;
+      for (var i = journalNumberStartIndex; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i].substring(0,15) == "Journal number:") {
+          journalNumberCounter = journalNumberCounter + 1;
+        }
+      }
+
+      // Display the content for the first observation in the input fields.
+      var firstJournalNumber = document.getElementById("journalnumber");
+      var firstDTG = document.getElementById("dtg0");
+      firstJournalNumber.value = arrayWithoutEmptyElements[journalNumberStartIndex].substring(16,100);
+      firstDTG.value = arrayWithoutEmptyElements[journalNumberStartIndex + 1].substring(5,100);
+
+      var firstFactsIndexStart = journalNumberStartIndex + 2;
+      var firstFactsIndexEnd;
+      console.log(firstFactsIndexStart)
+
+      var arraySliced = arrayWithoutEmptyElements[firstFactsIndexStart].slice(7);
+
+      console.log(arraySliced);
+      console.log(arrayWithoutEmptyElements[33]);
+
+      for (var i = journalNumberStartIndex; i < arrayWithoutEmptyElements.length; i++) {
+        
+      }
+
+      /*
+      var container = document.getElementById("addHere");
+
+      for (var i = 0; i < journalNumberCounter; i++) {
+        // Create a new input field to display the journal number for the observation.
+        var journalNumber = document.createElement('input');
+        journalNumber.type = 'number';
+        journalNumber.id = 'journalnumber' + i + 1;
+      }
+      */
 
 
     }, false);
