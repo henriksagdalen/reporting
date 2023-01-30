@@ -76,9 +76,6 @@
                         </tr>
                     </tbody>
                 </table>
-                <input type="button" id="addTableRows" value="+" onclick="addTableRows()" />
-
-                <input type="button" id="removeTableRows" value="-" onclick="removeTableRows()">
             </div>
 
             <div class="overallcomment">
@@ -111,29 +108,10 @@
 
             <div id="addHere"></div>
         </form>
-        <input type="button" id="addJournalNumber" value="+" onclick="addJournalNumber()" />
+        <input type="button" id="addTableRows" value="+" onclick="addTableRows()" />
 
-        <input type="button" id="removeJournalNumber" value="-" onclick="removeJournalNumber()" />
+        <input type="button" id="removeTableRows" value="-" onclick="removeTableRows()">
 
-        <br>
-
-        <input type="submit" form="india02form" id="mysaveToFile" value="Save to file" onclick="saveToFile();" />
-
-            <label for="dtg"><b>DTG:</b></label>
-            <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation" maxlength="6"></input><br>
-
-            <label for="facts"><b>Facts:</b></label>
-            <textarea type = text name ="facts" id="facts0" required></textarea><br>
-
-            <label for="comment"><b>Comment:</b></label>
-            <textarea name="comment" id="comment0"></textarea><br>
-
-            <label for="assessment"><b>Assessment:</b></label>
-            <textarea type = text name="assessment" id="assessment0" required></textarea><br><br>
-        </div>
-
-        <div id="addHere"></div>
-    </form>
         <input 
             type="button" 
             id="addJournalNumber" 
@@ -155,14 +133,8 @@
             value="Save to file"
             onclick="saveToFile();"/>
 
-        <input
-            type="button"
-            id="uploadFromFile"
-            value="Upload from file"
-            onclick="uploadFromFile()"/>
         <input type="file" onchange="uploadFromFile()" /><br />
         <p class="content"></p>
-        <input type="button" id="uploadFromFile" value="Upload from file" onclick="uploadFromFile()" />
         </div>
     </section>
 </body>
