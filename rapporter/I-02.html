@@ -8,7 +8,7 @@
     <script src="/scripts/add&removeJournalNumber.js"></script>
     <script src="/scripts/saveFile.js"></script>
     <script src="/scripts/add&removeTableRows.js"></script>
-    <script src="/scripts/uploadFromFile.js"></script>
+    <script src="/scripts/Regex.js"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -76,7 +76,9 @@
                         </tr>
                     </tbody>
                 </table>
-                 
+                <input type="button" id="addTableRows" value="+" onclick="addTableRows()" />
+
+                <input type="button" id="removeTableRows" value="-" onclick="removeTableRows()">
             </div>
 
             <div class="overallcomment">
@@ -109,11 +111,6 @@
 
             <div id="addHere"></div>
         </form>
-        
-        <input type="button" id="addTableRows" value="+" onclick="addTableRows()" />
-
-        <input type="button" id="removeTableRows" value="-" onclick="removeTableRows()">
-
         <input type="button" id="addJournalNumber" value="+" onclick="addJournalNumber()" />
 
         <input type="button" id="removeJournalNumber" value="-" onclick="removeJournalNumber()" />
