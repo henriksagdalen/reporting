@@ -8,7 +8,7 @@
     <script src="/scripts/add&removeJournalNumber.js"></script>
     <script src="/scripts/saveFile.js"></script>
     <script src="/scripts/add&removeTableRows.js"></script>
-    <script src="/scripts/Regex.js"></script>
+    <script src="/scripts/Set&getLocalValues.js"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -134,6 +134,7 @@
             onclick="saveToFile();"/>
 
         <input type="file" onchange="uploadFromFile()" /><br />
+        <button id="save-button" onclick="saveToLocal()">Save Values</button>
         <p class="content"></p>
         </div>
     </section>
