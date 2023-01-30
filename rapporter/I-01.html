@@ -16,7 +16,7 @@
 <body>
     <header>
         <div class="header-master">
-
+  
           <div class="header-left">
   
             <div class="navigation">
@@ -124,142 +124,41 @@
             </div>
         </div>
         
-            <div class="header-left">
-
-                <div class="navigation">
-
-                    <ul class="menu">
-
-                        <li class="menu-item">
-                            <a class="sub-button" href="index-alpha.html">Alpha</a>
-                            <ul class="sub-menu">
-                                <li class="sub-item"> <a href="A-01.html">A-01 MEDEVAC</a></li>
-                                <li class="sub-item"> <a href="A-02.html">A-02 MEDREP</a></li>
-                                <li class="sub-item"> <a href="A-03.html">A-03 RESUPREQ</a></li>
-                                <li class="sub-item"> <a href="A-04.html">A-04</a></li>
-                                <li class="sub-item"> <a href="A-05.html">A-05</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="menu-item">
-                            <a class="sub-button" href="index-india.html">
-                                India
-                            </a>
-                            <ul class="sub-menu">
-                                <li class="sub-item"> <a href="I-01.html">I-01</a></li>
-                                <li class="sub-item"> <a href="I-02.html">I-02</a></li>
-                                <li class="sub-item"> <a href="I-03.html">I-03</a></li>
-                                <li class="sub-item"> <a href="I-04.html">I-04</a></li>
-                                <li class="sub-item"> <a href="I-05.html">I-05</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a class="sub-button" href="index-oscar.html">Oscar
-                            </a>
-                            <ul class="sub-menu">
-                                <li class="sub-item"> <a href="O-01.html">O-01</a></li>
-                                <li class="sub-item"> <a href="O-02.html">O-02</a></li>
-                                <li class="sub-item"> <a href="O-03.html">O-03</a></li>
-                                <li class="sub-item"> <a href="O-04.html">O-04</a></li>
-                                <li class="sub-item"> <a href="O-05.html">O-05</a></li>
-                                <li class="sub-item"> <a href="O-06.html">O-06 AGTCONREP</a></li>
-                                <li class="sub-item"> <a href="O-07.html">O-07</a></li>
-                                <li class="sub-item"> <a href="O-08.html">O-08</a></li>
-                                <li class="sub-item"> <a href="O-09.html">O-09</a></li>
-                                <li class="sub-item"> <a href="O-10.html">O-10</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                </div>
-
+        <div class="observation">
+            <div class="static-box" style="display: inline-block; margin-right: 2vw; margin-bottom: 10;">
+                <label for="journalnumber"><b>Journal number:</b></label><br>
+                <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber"></input>
             </div>
-            <div class="header-right">
-                <a class="home-button" href="../Homepage.html">
-                    <img src="../ressurser/home-icon.png" class="home-icon">
-                </a>
-                <a class="home-button" href="../wiki/index-wiki.html">
-                    <img src="../ressurser/question-mark.png" class="question-mark">
-                </a>
+            <div class="static-box" style="display: inline-block; margin-left: 0; margin-bottom: 10px;">
+                <label for="dtg"><b>DTG:</b></label><br>
+                <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation" maxlength ="6"></input><br>
+            </div>
+            <div class="input-box">
+                <label for="facts"><b>Facts:</b></label><br>
+                <textarea name="facts" id="facts0"></textarea>
+            </div>
+            <div class="input-box">
+                <label for="comment"><b>Comment:</b></label><br>
+                <textarea name="comment" id="comment0"></textarea><br>
+            </div>
+            <div class="input-box">
+                <label for="assessment"><b>Assessment:</b></label><br>
+                <textarea name="assessment" id="assessment0"></textarea><br>
             </div>
         </div>
-    </header>
-    <section>
-        <form id="india01form" onsubmit="event.preventDefault();">
-            <div class="cont_select_center">
-                <div class="classification" data-mate-select="active">
-                    <select required onclick="return false;" id="">
-                        <option value="">Classification</option>
-                        <option value="(B)">Classification 1</option>
-                        <option value="(K)">Classification 2</option>
-                        <option value="(H)">Classification 3</option>
-                        <option value="(NR)">Classification 4</option>
-                        <option value="(NS)">Classification 5</option>
-                    </select>
-                    <p class="selectoption" onclick="open_select(this)"></p>
-                    <span onclick="open_select(this)" class="icon_select_mate">
-                        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24">
-                            <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
-                            <path d="M0-.75h24v24H0z" fill="none" />
-                        </svg>
-                    </span>
-                    <div class="cont_list_select_mate">
-                        <ul class="cont_select_int"> </ul>
-                    </div>
-                </div>
-            </div>
-            <br><br><br>
-            <div class="staticvalues">
-                <div class="static-box">
-                    <label for="from"><b>From:</b></label><br>
-                    <input type="text" placeholder="From callsign" name="from" id="from" required>
-                </div>
-                <div class="static-box">
-                    <label for="to"><b>To:</b></label><br>
-                    <input type="text" placeholder="To callsign" name="to" id="to">
-                </div>
-                <div class="static-box">
-                    <label for="writeroperator"><b>Writer/Operator:</b></label><br>
-                    <input type="text" placeholder="Initials" name="writeroperator" id="writeroperator">
-                </div>
-                <div class="static-box">
-                    <label for="ownposition"><b>Own position:</b></label><br>
-                    <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
-                </div>
-                <div class="static-box">
-                    <label for="naitai"><b>NAI/TAI:</b></label><br>
-                    <input type="text" placeholder="NAI/TAI" name="naitai" id="naitai"><br>
-                </div>
-            </div>
-            <div class="observation">
-                <div class="static-box" style="display: inline-block; margin-right: 2vw; margin-bottom: 10;">
-                    <label for="journalnumber"><b>Journal number:</b></label><br>
-                    <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber" required></input>
-                </div>
-                <div class="static-box" style="display: inline-block; margin-left: 0; margin-bottom: 10px;">
-                    <label for="dtg"><b>DTG:</b></label><br>
-                    <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation" maxlength="6" required></input><br>
-                </div>
-                <div class="input-box">
-                    <label for="facts"><b>Facts:</b></label><br>
-                    <textarea name="facts" id="facts0" required></textarea>
-                </div>
-                <div class="input-box">
-                    <label for="comment"><b>Comment:</b></label><br>
-                    <textarea name="comment" id="comment0"></textarea><br>
-                </div>
-                <div class="input-box">
-                    <label for="assessment"><b>Assessment:</b></label><br>
-                    <textarea name="assessment" id="assessment0"></textarea><br>
-                </div>
-            </div>
-        </form>
-        <div class="buttons">
-            <input type="button" id="saveToFile" form="india01form" value="Save to file" onclick="saveToFile01()" />
+            <div class="buttons">
+                <input
+                    type="button"
+                    id="saveToFile"
+                    value="Save to file"
+                    onclick="saveToFile01()"/>
 
-            <input type="button" id="uploadFromFile" value="Upload from file" onclick="uploadFromFile()" />
-        </div>
-    </section>
-</body>
-
+                <input
+                    type="button"
+                    id="uploadFromFile"
+                    value="Upload from file"
+                    onclick="uploadFromFile()"/>
+            </div>
+        </section>
+    </body>
 </html>
