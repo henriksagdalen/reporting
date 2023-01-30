@@ -183,7 +183,6 @@ function uploadFromFile() {
         // Repeat the process for all rows of static units.
       }
 
-
       // Declare a variable to store the value for static unit, and dtg.
       var staticUnitValue;
       var staticDTGValue;
@@ -239,9 +238,26 @@ function uploadFromFile() {
 //#region OVERALL ASSESSMENT
       // Get the index of where the content for "Overall assessment" starts.
       var overallAssessmentStartsAtIndex = overallCommentEndsAtIndex + 1;
-
       
+      // Search for the first element that contains the string "Journal number:". Break the loop when it finds the first string that matches the value. 
+      // Set the "Overall assessment"-end index equal to the index given from the match above.
+      var overallAssessmentEndsAtIndex;
+      for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i].substring(0,15) == "Journal number:") {
+          overallAssessmentEndsAtIndex = i;
+          break;
+        }
+      }
 
+      // Iterate trough all the elements that contains content for the Overall assessment, and append them to the string. 
+      var overallAssessmentContent = "";
+      for (var i = overallAssessmentStartsAtIndex; i < overallAssessmentEndsAtIndex; i++) {
+        overallAssessmentContent = overallAssessmentContent + arrayWithoutEmptyElements[i];
+        overallAssessmentContent = overallAssessmentContent + "\n";
+      }
+
+      var overallAssessmentValue = document.getElementById("overallassessment");
+      overallAssessmentValue.value = overallAssessmentContent;
 
 
     }, false);
