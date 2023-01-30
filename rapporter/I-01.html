@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/gradering.css">
     <script src="/scripts/dropdowns.js"></script>
     <script src="/scripts/saveFile01.js"></script>
+    <script src="/scripts/Set&getLocalValues.js"></script>
 </head>
 
 <body>
@@ -79,28 +80,28 @@
       </header>
     <section>
       <form id="india01form" onsubmit="event.preventDefault();">
-      <div class="classification-dropdown">
-        <div class="classification" data-mate-select="active" >
-          <select onclick="return false;" id="">
-            <option value="">Classification</option>
-            <option value="(B)">Classification 1</option>
-            <option value="(K)">Classification 2</option>
-            <option value="(H)">Classification 3</option>
-            <option value="(NR)">Classification 4</option>
-            <option value="(NS)">Classification 5</option>
-          </select>
-          <p class="selectoption"  onclick="open_select(this)" ></p>
-          <span onclick="open_select(this)" class="icon_select_mate" >
-            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24">
-              <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-              <path d="M0-.75h24v24H0z" fill="none"/>
-            </svg>
-          </span>
-          <div class="cont_list_select_mate">
-            <ul class="cont_select_int">  </ul> 
+        <div class="cont_select_center">
+          <div class="classification" data-mate-select="active" >
+            <select onclick="return false;" id="">
+              <option value="">Classification</option>
+              <option value="(B)">Classification 1</option>
+              <option value="(K)">Classification 2</option>
+              <option value="(H)">Classification 3</option>
+              <option value="(NR)">Classification 4</option>
+              <option value="(NS)">Classification 5</option>
+            </select>
+            <p class="selectoption"  onclick="open_select(this)" ></p>
+            <span onclick="open_select(this)" class="icon_select_mate" >
+              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                <path d="M0-.75h24v24H0z" fill="none"/>
+              </svg>
+            </span>
+            <div class="cont_list_select_mate">
+              <ul class="cont_select_int">  </ul> 
+            </div>
           </div>
         </div>
-      </div>
       <br><br><br>
         <div class="staticvalues">
             <div class="static-box">
