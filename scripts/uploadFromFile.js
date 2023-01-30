@@ -264,44 +264,153 @@ function uploadFromFile() {
 //#region JOURNAL NUMBERS
       // Find the element that contains the first "Journal number:" for the report. This is the same index as where "overall assessment" ends.
       var journalNumberStartIndex = overallAssessmentEndsAtIndex;
-
-      // Calculate how many journal numbers it is in the report. 
-      var journalNumberCounter = 0;
-      for (var i = journalNumberStartIndex; i < arrayWithoutEmptyElements.length; i++) {
-        if (arrayWithoutEmptyElements[i].substring(0,15) == "Journal number:") {
-          journalNumberCounter = journalNumberCounter + 1;
-        }
-      }
-
+      
       // Display the content for the first observation in the input fields.
       var firstJournalNumber = document.getElementById("journalnumber");
       var firstDTG = document.getElementById("dtg0");
       firstJournalNumber.value = arrayWithoutEmptyElements[journalNumberStartIndex].substring(16,100);
       firstDTG.value = arrayWithoutEmptyElements[journalNumberStartIndex + 1].substring(5,100);
 
-      var firstFactsIndexStart = journalNumberStartIndex + 2;
-      var firstFactsIndexEnd;
-      console.log(firstFactsIndexStart)
+      // Find the index of where the array elements for the first fact in the report starts.
+      var firstFactsIndexStart = journalNumberStartIndex + 2; // Equal to +2 since journalnumber and DTG takes up one array element each.
+      var firstFactsIndexEnd; // Declared but not assigned yet.
 
-      var arraySliced = arrayWithoutEmptyElements[firstFactsIndexStart].slice(7);
+      // Assign the facts-content to a string variable, and slice out the generic part ("Facts:"). Add line break at the end.
+      var firstFactsContent = arrayWithoutEmptyElements[firstFactsIndexStart].slice(7) + "\n";
 
-      console.log(arraySliced);
-      console.log(arrayWithoutEmptyElements[33]);
-
-      for (var i = journalNumberStartIndex; i < arrayWithoutEmptyElements.length; i++) {
-        
+      // Find the index of where "Comment:"-content starts, to know where facts-content ends.
+      for (i = firstFactsIndexStart; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i].substring(0,8) == "Comment:") {
+          firstFactsIndexEnd = i;
+          break;
+        }
       }
 
-      /*
+      // Get the content for the first facts field, by iterating trough the array elements that contains the facts.
+      for (var i = firstFactsIndexStart + 1; i < firstFactsIndexEnd; i++) {
+        firstFactsContent = firstFactsContent + arrayWithoutEmptyElements[i];
+        firstFactsContent = firstFactsContent + "\n";
+      }
+      
+      // Get the facts element from the HTML, and assign the content to display it in the browser.
+      var factsContent = document.getElementById("facts0");
+      factsContent.value = firstFactsContent;
+      
+      // Find the array index of where the comment content starts.
+      var firstCommentIndexStart = firstFactsIndexEnd;
+
+      // Find the index of where "Assessment:"-content starts, to know where comment-content ends.
+      var firstCommentIndexEnd;
+      for (i = firstCommentIndexStart; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i].substring(0,11) == "Assessment:") {
+          firstCommentIndexEnd = i;
+          break;
+        }
+      }
+
+      // Slice out the first part of the Comment-content.
+      var firstCommentContent = arrayWithoutEmptyElements[firstCommentIndexStart].slice(9) + "\n";
+      
+      // Iterate trough the rest of the array-elements that contains the assessment-contents.
+      for (var i = firstCommentIndexStart + 1; i < firstCommentIndexEnd; i++) {
+        firstCommentContent = firstCommentContent + arrayWithoutEmptyElements[i];
+        firstCommentContent = firstCommentContent + "\n";
+      }
+
+      // Get the "Comment:"-element from the HTML, and assign the content to the element to display it in the browser.
+      var commentContent = document.getElementById("comment0");
+      commentContent.value = firstCommentContent;
+
+      // Find the index of where "Assessment:"-content starts, to know where comment-content ends.
+      var firstAssessmentIndexStart = firstCommentIndexEnd;
+
+      // Find the index of where "Assessment:"-content ends.
+      var firstAssessmentIndexEnd;
+      for (i = firstAssessmentIndexStart; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i].substring(0,15) == "Journal number:") {
+          firstAssessmentIndexEnd = i;
+          break;
+        }
+      }
+
+
+      // Slice out the first part of the assessment-content. 
+      var firstAssessmentContent = arrayWithoutEmptyElements[firstAssessmentIndexStart].slice(12) + "\n"
+
+      // Iterate trough the array elements that contains the content for the assessment. 
+      for (var i = firstAssessmentIndexStart + 1; i < firstAssessmentIndexEnd; i++) {
+        firstAssessmentContent = firstAssessmentContent + arrayWithoutEmptyElements[i];
+        firstAssessmentContent = firstAssessmentContent + "\n";
+      }
+
+      console.log(firstAssessmentIndexEnd);
+      // Get the HTML-element and assign the assessment-content to the element to display it in the browser.
+      var assessmentContent = document.getElementById("assessment0");
+      assessmentContent.value = firstAssessmentContent;
+
+
+      // Calculate the journal numbers in the report.
+      var journalNumberCounter = 0;
+      for (var i = journalNumberStartIndex; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i].substring(0,15) == "Journal number:") {
+          journalNumberCounter = journalNumberCounter + 1;
+        }
+      }
+      console.log(journalNumberCounter)
+      
+      // Get the HTML-element where all newly created HTML-fields are to be appended.
       var container = document.getElementById("addHere");
 
-      for (var i = 0; i < journalNumberCounter; i++) {
+      // Iterate trough all the remaining journal numbers.
+      for (var i = 1; i < journalNumberCounter; i++) {
         // Create a new input field to display the journal number for the observation.
-        var journalNumber = document.createElement('input');
-        journalNumber.type = 'number';
-        journalNumber.id = 'journalnumber' + i + 1;
+        var createJournalNumber = document.createElement('input');
+        createJournalNumber.type = 'number';
+        createJournalNumber.id = 'journalnumber' + i + 1;
+        createJournalNumber.placeholder = 'Journal number'
+        container.appendChild(createJournalNumber);
+        container.appendChild(document.createElement('br'));
+
+        var createDTG = document.createElement('input');
+        createDTG.type = 'text';
+        createDTG.id = 'dtg' + i + 1;
+        createDTG.placeholder = 'DTG';
+        container.appendChild(createDTG);
+        container.appendChild(document.createElement('br'));
+
+        var createFacts = document.createElement('textarea');
+        createFacts.type = 'text';
+        createFacts.id = 'facts' + i + 1;
+        createFacts.placeholder = 'Facts'
+        container.appendChild(createFacts);
+        container.appendChild(document.createElement('br'));
+
+        var createComment = document.createElement('textarea');
+        createComment.type = 'text';
+        createComment.id = 'comment' + i + 1;
+        createComment.placeholder = 'Comment'
+        container.appendChild(createComment);
+        container.appendChild(document.createElement('br'));
+
+        var createAssessment = document.createElement('textarea');
+        createAssessment.type = 'text';
+        createAssessment.id = 'assessment' + i + 1;
+        createAssessment.placeholder = 'Assessment'
+        container.appendChild(createAssessment);
+        container.appendChild(document.createElement('br'));
+        container.appendChild(document.createElement('br'));
       }
-      */
+
+      for (var i = parseInt(firstJournalNumber.value) + 1; i <= journalNumberCounter; i++) {
+        var journalNumberID = 'journalnumber' + i;
+        console.log(journalNumberID);
+        var journalNumber = document.getElementById(journalNumberID);
+        journalNumber.value = i;
+      }
+
+
+
+
 
 
     }, false);
