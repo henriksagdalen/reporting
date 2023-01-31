@@ -6,6 +6,17 @@ body {
   font-family: monospace;
 }
 
+.easter-egg p{
+  font-size: 8px;
+  font-weight: 550;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  bottom: 0;
+  right:0;
+  text-align: right;
+  margin-top: 30px;
+}
+
 /* Background image */
 body::after {
   content: "";
