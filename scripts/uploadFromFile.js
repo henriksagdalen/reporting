@@ -48,31 +48,31 @@ function uploadFromFile() {
 //#region STATIC VALUES
       // Get the "from" value from the report, and put it in the from-field. 
       var from = document.getElementById("from");
-      from.value = arrayWithoutEmptyElements[1].slice(6,100);
+      from.value = arrayWithoutEmptyElements[1].slice(6);
 
       // Get the "to" value from the report, and put it in the to-field.
       var to = document.getElementById("to");
-      to.value = arrayWithoutEmptyElements[2].slice(4,100);
+      to.value = arrayWithoutEmptyElements[2].slice(4);
 
       // Get the "writer/operator" from the report, and put it in the writer/operator field.
       var writerOperator = document.getElementById("writeroperator");
-      writerOperator.value = arrayWithoutEmptyElements[3].slice(17,100);
+      writerOperator.value = arrayWithoutEmptyElements[3].slice(17);
 
       // Get the "own position" from the report, and put it in the "own position" field.
       var ownPosition = document.getElementById("ownposition");
-      ownPosition.value = arrayWithoutEmptyElements[4].slice(14,100);
+      ownPosition.value = arrayWithoutEmptyElements[4].slice(14);
 
       // Get the NAI/TAI from the report, and put it in the NAI/TAI position field.
       var naitai = document.getElementById("naitai");
-      naitai.value = arrayWithoutEmptyElements[5].slice(9,100);
+      naitai.value = arrayWithoutEmptyElements[5].slice(9);
 
       // Get the "DTG from" the report, and put it in the DTG-from field.
       var dtgFrom = document.getElementById("dtgfrom");
-      dtgFrom.value = arrayWithoutEmptyElements[6].slice(9,100);
+      dtgFrom.value = arrayWithoutEmptyElements[6].slice(10);
 
       // Get the "DTG to" the report, and put it in the DTG-to field.
       var dtgTo = document.getElementById("dtgto");
-      dtgTo.value = arrayWithoutEmptyElements[7].slice(9,100);
+      dtgTo.value = arrayWithoutEmptyElements[7].slice(8);
 //#endregion
 
 //#region BLUF
@@ -343,7 +343,7 @@ function uploadFromFile() {
         firstAssessmentContent = firstAssessmentContent + "\n";
       }
 
-      console.log(firstAssessmentIndexEnd);
+      
       // Get the HTML-element and assign the assessment-content to the element to display it in the browser.
       var assessmentContent = document.getElementById("assessment0");
       assessmentContent.value = firstAssessmentContent;
@@ -351,62 +351,159 @@ function uploadFromFile() {
 
       // Calculate the journal numbers in the report.
       var journalNumberCounter = 0;
+      var journalNumberArray = [];
       for (var i = journalNumberStartIndex; i < arrayWithoutEmptyElements.length; i++) {
         if (arrayWithoutEmptyElements[i].substring(0,15) == "Journal number:") {
+          journalNumberArray.push(i);
           journalNumberCounter = journalNumberCounter + 1;
         }
       }
-      console.log(journalNumberCounter)
       
       // Get the HTML-element where all newly created HTML-fields are to be appended.
       var container = document.getElementById("addHere");
 
       // Iterate trough all the remaining journal numbers.
       for (var i = 1; i < journalNumberCounter; i++) {
-        // Create a new input field to display the journal number for the observation.
+        // Creates all the HTML elements based on the number of observations in the report.
         var createJournalNumber = document.createElement('input');
         createJournalNumber.type = 'number';
-        createJournalNumber.id = 'journalnumber' + i + 1;
+        createJournalNumber.id = 'journalnumber' + parseInt(i);
         createJournalNumber.placeholder = 'Journal number'
         container.appendChild(createJournalNumber);
         container.appendChild(document.createElement('br'));
 
         var createDTG = document.createElement('input');
         createDTG.type = 'text';
-        createDTG.id = 'dtg' + i + 1;
+        createDTG.id = 'dtg' + parseInt(i);
         createDTG.placeholder = 'DTG';
         container.appendChild(createDTG);
         container.appendChild(document.createElement('br'));
 
         var createFacts = document.createElement('textarea');
         createFacts.type = 'text';
-        createFacts.id = 'facts' + i + 1;
+        createFacts.id = 'facts' + parseInt(i);
         createFacts.placeholder = 'Facts'
         container.appendChild(createFacts);
         container.appendChild(document.createElement('br'));
 
         var createComment = document.createElement('textarea');
         createComment.type = 'text';
-        createComment.id = 'comment' + i + 1;
+        createComment.id = 'comment' + parseInt(i);
         createComment.placeholder = 'Comment'
         container.appendChild(createComment);
         container.appendChild(document.createElement('br'));
 
         var createAssessment = document.createElement('textarea');
         createAssessment.type = 'text';
-        createAssessment.id = 'assessment' + i + 1;
+        createAssessment.id = 'assessment' + parseInt(i);
         createAssessment.placeholder = 'Assessment'
         container.appendChild(createAssessment);
         container.appendChild(document.createElement('br'));
         container.appendChild(document.createElement('br'));
       }
 
-      for (var i = parseInt(firstJournalNumber.value) + 1; i <= journalNumberCounter; i++) {
-        var journalNumberID = 'journalnumber' + i;
-        console.log(journalNumberID);
+      // Set the rest of the journal numbers based on the first journal number.
+      for (var i = parseInt(firstJournalNumber.value); i < journalNumberCounter; i++) {
+        console.log(i);
+        var journalNumberID = 'journalnumber' + parseInt(i);
         var journalNumber = document.getElementById(journalNumberID);
-        journalNumber.value = i;
+        journalNumber.value = i + 1;
       }
+
+      // Find the DTG's of the rest of the report
+      var DTG = [];
+      for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i].substring(0,4) == "DTG:") {
+          DTG.push(arrayWithoutEmptyElements[i].substring(5));
+        }
+      }
+
+      // Get the ID for the DTG HTML elements
+      for (var i = 1; i < journalNumberCounter; i++) {
+        var dtgID = 'dtg' + parseInt(i);
+        var dtgValue = document.getElementById(dtgID);
+        dtgValue.value = DTG[i];
+      }
+
+      var factsIndexes = [];
+      for (var i = firstAssessmentIndexEnd; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i].substring(0,6) == "Facts:") {
+          factsIndexes.push(i);
+        }
+      }
+      
+      var commentIndexes = [];
+      for (var i = firstAssessmentIndexEnd; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i].substring(0,8) == "Comment:") {
+          commentIndexes.push(i);
+        }
+      }
+
+      var assessmentIndexes = [];
+      for (var i = firstAssessmentIndexEnd; i < arrayWithoutEmptyElements.length; i++) {
+        if (arrayWithoutEmptyElements[i].substring(0,11) == "Assessment:") {
+          assessmentIndexes.push(i);
+        }
+      }
+
+      console.log(factsIndexes);
+      console.log(commentIndexes);
+      console.log(assessmentIndexes);
+
+      var counter1 = 1;
+      for (var i = 0; i < factsIndexes.length; i++) {
+        var facts = "";
+        
+        for (var a = factsIndexes[i]; a < commentIndexes[i]; a++) {
+          facts = facts + arrayWithoutEmptyElements[a] + "\n";
+        }
+        var factsID = 'facts' + counter1;
+        var factsElement = document.getElementById(factsID);
+        factsElement.value = facts.substring(7);
+        counter1 = counter1 + 1;
+      }
+
+      var counter2 = 1;
+      for (var i = 0; i < factsIndexes.length; i++) {
+        var comment = "";
+        
+        for (var a = commentIndexes[i]; a < assessmentIndexes[i]; a++) {
+          comment = comment + arrayWithoutEmptyElements[a] + "\n";
+        }
+        var commentID = 'comment' + counter2;
+        var commentElement = document.getElementById(commentID);
+        commentElement.value = comment.substring(9);
+        counter2 = counter2 + 1;
+      }
+
+
+
+
+
+      console.log(journalNumberArray[journalNumberArray.length - 1]);
+    
+
+      var assessment = "";
+
+      for (j = 0; j < assessmentIndexes.length; j++) {
+        var f = 2;
+        for (var i = assessmentIndexes[j]; i < parseInt(journalNumberArray[f]) && journalNumberArray[f] <= parseInt(journalNumberArray[journalNumberArray.length - 1]); i++) {
+          assessment = assessment + arrayWithoutEmptyElements[i] + "\n";
+          console.log(parseInt(journalNumberArray[f]));
+          console.log(parseInt(journalNumberArray[journalNumberArray.length - 1]));
+          f+=1;
+        }
+        
+      console.log(assessment);
+
+      }
+    
+
+
+
+
+
+
 
 
 
