@@ -485,14 +485,17 @@ function uploadFromFile() {
       
       var f = 2;
       var counter3 = 1;
+
       for (j = 0; j < assessmentIndexes.length; j++) {
-      var assessment = "";
-        for (var i = assessmentIndexes[j]; i < parseInt(journalNumberArray[f]) && journalNumberArray[f] <= parseInt(journalNumberArray[journalNumberArray.length - 1]); i++) {
-          assessment = assessment + arrayWithoutEmptyElements[i] + "\n";
-          console.log(parseInt(journalNumberArray[f]));
-          console.log(parseInt(journalNumberArray[journalNumberArray.length - 1]));
-          
-        } 
+        var assessment = "";
+          for (var i = assessmentIndexes[j]; i < parseInt(journalNumberArray[f]) && journalNumberArray[f] <= parseInt(journalNumberArray[journalNumberArray.length - 1]); i++) {
+           assessment = assessment + arrayWithoutEmptyElements[i] + "\n";
+         }
+         if(assessmentIndexes[j] == assessmentIndexes[assessmentIndexes.length - 1]){
+            for (var g = assessmentIndexes[assessmentIndexes.length - 1]; g < arrayWithoutEmptyElements.length; g++ ) {
+              assessment = assessment + arrayWithoutEmptyElements[g] + "\n";
+            }
+          }
         f++;
         console.log(assessment);
         var assessmentID = 'assessment' + counter3;
@@ -500,6 +503,7 @@ function uploadFromFile() {
         assessmentElement.value = assessment.substring(12);
         counter3++; 
       }
+
     
 
 
