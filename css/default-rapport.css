@@ -68,7 +68,7 @@ input:focus {
 .input-box textarea{
   width: 98%;
   height: 8%;
-  font-size: .9vw;
+  font-size: calc(12px + 0.3vw);
   font-weight: 550;
   outline: none;
   border: none;
@@ -88,7 +88,7 @@ input:focus {
   width: 20vw;
   height: 40px;
 
-  font-size: 0.9vw;
+  font-size: calc(12px + 0.3vw);
   font-weight: 550;
 
   background-color: rgb(255, 255, 255);
@@ -100,10 +100,11 @@ input:focus {
 }
 
 .input-box-minimal textarea {
-  width: 100%;
+  width: 12vw;
+  min-width: 140px;
   height: 35px;
 
-  font-size: 0.9vw;
+  font-size: calc(12px + 0.3vw);
   font-weight: 550;
   
   background-color: rgb(255, 255, 255);
