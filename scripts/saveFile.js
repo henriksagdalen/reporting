@@ -1,17 +1,17 @@
 function saveToFile() {
     var keysToRemove = [];
     for (var i = 0; i < localStorage.length; i++) {
-    var key = localStorage.key(i);
-    if (key.startsWith('facts') || key.startsWith('comment') || key.startsWith('assessment')|| key.startsWith('dtg')) {
-        keysToRemove.push(key);
+        var key = localStorage.key(i);
+        if (key.startsWith('facts') || key.startsWith('comment') || key.startsWith('assessment') || key.startsWith('dtg')) {
+            keysToRemove.push(key);
+        }
     }
-}
 
-for (var i = 0; i < keysToRemove.length; i++) {
-    localStorage.removeItem(keysToRemove[i]);
-}
+    for (var i = 0; i < keysToRemove.length; i++) {
+        localStorage.removeItem(keysToRemove[i]);
+    }
 
-    
+
     const india02form = document.getElementById("india02form");
     if (india02form.checkValidity()) {
 
@@ -184,8 +184,8 @@ for (var i = 0; i < keysToRemove.length; i++) {
         var requiredFields = document.querySelectorAll("[required]");
         for (var i = 0; i < requiredFields.length; i++) {
             if (!requiredFields[i].checkValidity()) {
-            requiredFields[i].style.backgroundColor = "antiquewhite";
-             }
+                requiredFields[i].style.backgroundColor = "antiquewhite";
+            }
         }
     }
 }
