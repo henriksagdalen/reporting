@@ -20,7 +20,7 @@
   min-width: 165px;
   height: 40px;
   font-family: monospace;
-  font-size: .85vw;
+  font-size: calc(11px + 0.3vw);
   font-weight: 700;
   color: rgb(0, 0, 0);
   background-color: #fff;
@@ -28,7 +28,6 @@
   border-radius: 3px;
   transition: all 375ms ease-in-out;
   text-align: center;
- /* Oculto el elemento select */
 }
 
 .classification select {
@@ -91,7 +90,6 @@
   color: black;
 }
 
-/* etiqueta <p> con la opcion selecionada */
 .selectoption {
   padding: 10px 2%;
   width: 96%;
