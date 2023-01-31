@@ -3,7 +3,7 @@ window.onload = function() {
 }
 
 function isMobileDevice() {
-  return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 };
 
 var li = new Array();
@@ -40,8 +40,8 @@ function create_select() {
             li[i].innerHTML = Select_options1[i].innerHTML;
             ul_cont[0].appendChild(li[i]);
 
-        }; 
-    }; 
+        };
+    };
 }
 
 
