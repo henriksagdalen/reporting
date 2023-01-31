@@ -6,7 +6,7 @@ window.saveToLocal = function() {
 };
 
 // Get values from local storage on page load
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function() {
     if(localStorage.getItem("from")) {
         document.getElementById("from").value = localStorage.getItem("from");
     }
@@ -16,10 +16,11 @@ window.onload = function() {
     if(localStorage.getItem("ownposition")) {
         document.getElementById("ownposition").value = localStorage.getItem("ownposition");
     }
-};
+});
 
 
 document.getElementById("india02form").onsubmit = function() {
     saveToLocal();
 };
+
 

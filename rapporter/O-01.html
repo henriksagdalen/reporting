@@ -12,6 +12,7 @@
     <script src="/scripts/dropdowns.js"></script>
     <script src="/scripts/disabletextarea.js"></script>
     <script src="/scripts/saveFileO01.js"></script>
+    <script src="/scripts/Set&getLocalValues.js"></script>
 </head>
 <body>
     <header>
@@ -81,6 +82,7 @@
       <div class="page-title">
         <div class="page-title-text">O-01 Initial report</div> 
       </div>
+      <form id="oscar01form" onsubmit="event.preventDefault();">
       <div class="cont_select_center">
         <div class="classification" data-mate-select="active" >
           <select onclick="return false;" id="">
@@ -107,7 +109,7 @@
         <div class="staticvalues">
             <div class="static-box">
                 <label for="from"><b>From:</b></label><br>
-                <input type="text" placeholder="From callsign" name="from" id="from">
+                <input type="text" placeholder="From callsign" name="from" id="from" required>
             </div>
             <div class="static-box">
                 <label for="to"><b>To:</b></label><br>
@@ -119,7 +121,7 @@
             </div>
             <div class="static-box">
                 <label for="ownposition"><b>Own position:</b></label><br>
-                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
+                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition" required>
             </div>
             <div class="static-box">
               <label for="dtg"><b>DTG:</b></label><br>
@@ -130,7 +132,7 @@
         <div class="rapport">
           <div class="input-box">
               <label for="op-base"><b>OP/Base description:</b></label><br>
-              <textarea name="op-base" id="op-base0"></textarea>
+              <textarea name="op-base" id="op-base0" required></textarea>
           </div>
           <div class="input-box">
               <label for="primarypup"><b>Primary PUP:</b></label><br>
@@ -177,9 +179,12 @@
             <label for="references"><b>References:</b></label><br>
             <textarea name="references" id="references0"></textarea><br>
           </div>
+        </form>
+
           <div class="buttons">
               <input
                   type="button"
+                  
                   id="saveToFile"
                   value="Save to file"
                   onclick="saveToFileO01()"/>
