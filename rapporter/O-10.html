@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/oscar-rapporter.css">
     <script src="/scripts/dropdowns.js"></script>
     <script src="/scripts/disabletextarea.js"></script>
-    <script src="/scripts/saveFileO05.js"></script>
+    <script src="/scripts/saveFileO10.js"></script>
 </head>
 <body>
     <header>
@@ -79,7 +79,7 @@
       </header>
     <section>
       <div class="page-title">
-        <div class="page-title-text">O-05 Initial report</div> 
+        <div class="page-title-text">O-10 Initial report</div> 
       </div>
       <div class="cont_select_center">
         <div class="classification" data-mate-select="active" >
@@ -129,31 +129,60 @@
 
         <div class="rapport">
           <div class="input-box">
-              <label for="status"><b>Status:</b></label><br>
-              <textarea name="status" id="status0"></textarea>
+              <label for="ownsituation"><b>Own situation:</b></label><br>
+              <textarea name="ownsituation" id="ownsituation0"></textarea>
           </div>
           <div class="input-box">
-              <label for="enemyposition"><b>Enemy position:</b></label><br>
-              <textarea name="enemyposition" id="enemyposition0"></textarea><br>
+              <label for="enemysituation"><b>Enemy situation:</b></label><br>
+              <textarea name="enemysituation" id="enemysituation0"></textarea><br>
           </div>
           <div class="input-box">
-              <label for="actionsincelast"><b>Actions since last SITREP:</b></label><br>
-              <textarea name="actionsincelast" id="actionsincelast0"></textarea><br>
+              <label for="enemycoa"><b>Enemy COA next 24h:</b></label><br>
+              <textarea name="enemycoa" id="enemycoa0"></textarea><br>
+          </div>
+          <div class="weather-title">Weather next 24h:</div>
+          <div class="input-box-minimal">
+            <label for="templowhigh"><b>Temprature low-high:</b></label><br>
+            <textarea name="templowhigh" id="templowhigh0"></textarea>
+          </div>
+          <div class="input-box-minimal">
+            <label for="windlowhigh"><b>Wind low-high:</b></label><br>
+            <textarea name="windlowhigh" id="windlowhigh0"></textarea>
+          </div>
+          <div class="input-box-minimal">
+            <label for="precipitationlowhigh"><b>Precipitation low-high:</b></label><br>
+            <textarea name="precipitationlowhigh" id="precipitationlowhigh0"></textarea>
+          </div>
+          <div class="input-box-minimal">
+            <label for="cloudcoverage"><b>Cloud coverage:</b></label><br>
+            <textarea name="cloudcoverage" id="cloudcoverage0"></textarea>
+          </div>
+          <div class="input-box-minimal">
+            <label for="sunrisesunset"><b>Sunrise/Sunset:</b></label><br>
+            <textarea name="sunrisesunset" id="sunrisesunset0"></textarea>
           </div>
           <div class="input-box">
-            <label for="ownplan"><b>Own plan of action:</b></label><br>
-            <textarea name="ownplan" id="ownplan0"></textarea><br>
+            <label for="opsmessage"><b>Message from OPS:</b></label><br>
+            <textarea name="opsmessage" id="opsmessage0"></textarea><br>
           </div>
           <div class="input-box">
-            <label for="additionalinfo"><b>Additional information:</b></label><br>
-            <textarea name="additionalinfo" id="additionalinfo0"></textarea><br>
+            <label for="sdamessage"><b>Message from SDA:</b></label><br>
+            <textarea name="sdamessage" id="sdamessage0"></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="reference"><b>Reference:</b></label><br>
+            <textarea name="reference" id="reference0"></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="inothernews"><b>In other news:</b></label><br>
+            <textarea name="inothernews" id="inothernews0"></textarea><br>
           </div>
           <div class="buttons">
               <input
                   type="button"
                   id="saveToFile"
                   value="Save to file"
-                  onclick="saveToFileO05()"/>
+                  onclick="saveToFileO10()"/>
 
               <input
                   type="button"

@@ -66,3 +66,10 @@ hr {
   border-color: #04c745;
   transform: translateX(25px) rotate(360deg);
  }
+
+ .weather-title {
+  font-size: calc(20px + 0.4vw);
+  font-weight: 700;
+  padding-left: 1px;
+  margin-bottom: 10px;
+ }
