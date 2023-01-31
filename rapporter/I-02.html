@@ -9,6 +9,7 @@
     <script src="/scripts/saveFile.js"></script>
     <script src="/scripts/add&removeTableRows.js"></script>
     <script src="/scripts/Set&getLocalValues.js"></script>
+    <script src="/scripts/saveI02observation.js"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -134,6 +135,7 @@
 
         <input type="file" onchange="uploadFromFile()" /><br />
         <button id="save-button" onclick="saveToLocal()">Save Values</button>
+        <input type="button" value="Save Observation" id="saveButton" onclick="setLocalobservations()">
         <p class="content"></p>
         </div>
     </section>
