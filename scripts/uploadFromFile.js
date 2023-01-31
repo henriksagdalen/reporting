@@ -1,4 +1,3 @@
-
 let uploadedFileAsString = "";
 
 function uploadFromFile() {
@@ -483,19 +482,23 @@ function uploadFromFile() {
       console.log(journalNumberArray[journalNumberArray.length - 1]);
     
 
-      var assessment = "";
-
+      
+      var f = 2;
+      var counter3 = 1;
       for (j = 0; j < assessmentIndexes.length; j++) {
-        var f = 2;
+      var assessment = "";
         for (var i = assessmentIndexes[j]; i < parseInt(journalNumberArray[f]) && journalNumberArray[f] <= parseInt(journalNumberArray[journalNumberArray.length - 1]); i++) {
           assessment = assessment + arrayWithoutEmptyElements[i] + "\n";
           console.log(parseInt(journalNumberArray[f]));
           console.log(parseInt(journalNumberArray[journalNumberArray.length - 1]));
-          f+=1;
-        }
-        
-      console.log(assessment);
-
+          
+        } 
+        f++;
+        console.log(assessment);
+        var assessmentID = 'assessment' + counter3;
+        var assessmentElement = document.getElementById(assessmentID);
+        assessmentElement.value = assessment.substring(12);
+        counter3++; 
       }
     
 
