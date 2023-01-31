@@ -1,4 +1,17 @@
 function saveToFile() {
+    var keysToRemove = [];
+    for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    if (key.startsWith('facts') || key.startsWith('comment') || key.startsWith('assessment')|| key.startsWith('dtg')) {
+        keysToRemove.push(key);
+    }
+}
+
+for (var i = 0; i < keysToRemove.length; i++) {
+    localStorage.removeItem(keysToRemove[i]);
+}
+
+    
     const india02form = document.getElementById("india02form");
     if (india02form.checkValidity()) {
 
