@@ -194,8 +194,8 @@ function uploadFromFile() {
           staticDTGValue = document.getElementById(staticDTGID);
 
           // Only extract the "Unit" and the "DTG" from the array.
-          staticUnitValue.value = staticUnits[i][0];
-          staticDTGValue.value = staticUnits[i][3];
+          staticUnitValue.value = staticUnits[i][0] + " " + staticUnits[i][1];
+          staticDTGValue.value = staticUnits[i][4].substring(0,6);
       }
 
 //#endregion
@@ -267,8 +267,8 @@ function uploadFromFile() {
       // Display the content for the first observation in the input fields.
       var firstJournalNumber = document.getElementById("journalnumber");
       var firstDTG = document.getElementById("dtg0");
-      firstJournalNumber.value = arrayWithoutEmptyElements[journalNumberStartIndex].substring(16,100);
-      firstDTG.value = arrayWithoutEmptyElements[journalNumberStartIndex + 1].substring(5,100);
+      firstJournalNumber.value = arrayWithoutEmptyElements[journalNumberStartIndex].substring(16);
+      firstDTG.value = arrayWithoutEmptyElements[journalNumberStartIndex + 1].substring(5,11);
 
       // Find the index of where the array elements for the first fact in the report starts.
       var firstFactsIndexStart = journalNumberStartIndex + 2; // Equal to +2 since journalnumber and DTG takes up one array element each.
@@ -413,7 +413,7 @@ function uploadFromFile() {
       var DTG = [];
       for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
         if (arrayWithoutEmptyElements[i].substring(0,4) == "DTG:") {
-          DTG.push(arrayWithoutEmptyElements[i].substring(5));
+          DTG.push(arrayWithoutEmptyElements[i].substring(5,11));
         }
       }
 
