@@ -77,6 +77,7 @@
   transform: translateY(20px);
   opacity: 0;
   text-align: center;
+  z-index: 900;
 }
 
 .menu-item:hover .sub-menu {

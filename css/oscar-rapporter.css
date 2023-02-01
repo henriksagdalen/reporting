@@ -4,26 +4,6 @@ hr {
   background-color: rgb(109, 109, 109);
 }
 
-.input-box-small {
-  margin-right: 180px;
-  margin-bottom: 20px;
-}
-
-.input-box-small textarea{
-  width: 25vw;
-  height: 40px;
-
-  font-size: 0.9vw;
-  font-weight: 550;
-
-  background-color: rgb(255, 255, 255);
-  box-shadow: 1px 1px .2vw 1px rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
-  border: none;
-  outline: none;
-  padding: 0.4vw;
-  transition: .3s;
-}
-
 .photos-attatched {
   display: inline-block;
   width: 300px;
@@ -85,4 +65,11 @@ hr {
   background-color: #05ae3e;
   border-color: #04c745;
   transform: translateX(25px) rotate(360deg);
+ }
+
+ .weather-title {
+  font-size: calc(20px + 0.4vw);
+  font-weight: 700;
+  padding-left: 1px;
+  margin-bottom: 10px;
  }
