@@ -267,8 +267,8 @@ function uploadFromFile() {
       // Display the content for the first observation in the input fields.
       var firstJournalNumber = document.getElementById("journalnumber");
       var firstDTG = document.getElementById("dtg0");
-      firstJournalNumber.value = arrayWithoutEmptyElements[journalNumberStartIndex].substring(16,100);
-      firstDTG.value = arrayWithoutEmptyElements[journalNumberStartIndex + 1].substring(5,100);
+      firstJournalNumber.value = arrayWithoutEmptyElements[journalNumberStartIndex].substring(16);
+      firstDTG.value = arrayWithoutEmptyElements[journalNumberStartIndex + 1].substring(5,11);
 
       // Find the index of where the array elements for the first fact in the report starts.
       var firstFactsIndexStart = journalNumberStartIndex + 2; // Equal to +2 since journalnumber and DTG takes up one array element each.
