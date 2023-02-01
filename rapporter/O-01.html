@@ -91,7 +91,7 @@
                         <option value="">Classification</option>
                         <option value="(B)">Classification 1</option>
                         <option value="(K)">Classification 2</option>
-                        <option value="(H)">Classification 3</option>
+                        <option value="(H)" selected>Classification 3</option>
                         <option value="(NR)">Classification 4</option>
                         <option value="(NS)">Classification 5</option>
                     </select>
@@ -164,7 +164,7 @@
                     <div id="photos-attatched-label">Photos attatched:</div>
                     <div class="checkbox">
                         <label class="button" for="toggle">
-                            <input id="toggle" type="checkbox">
+                            <input id="toggle" type="checkbox" onchange="updateTextFile(this)">
                             <span class="slider"></span>
                         </label>
                     </div>
