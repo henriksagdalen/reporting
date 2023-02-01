@@ -3,7 +3,7 @@ var journalNumberCounter = 1;
 
 // Declaring the function for adding a new journal number to a report.
 function addJournalNumber() {
-
+if(document.getElementById("journalnumber").value.length!=0){
     // Declaring the container. This element will display all new journal number entries, and place them above the plus/minus buttons.
     var container = document.getElementById('addHere');
 
@@ -51,6 +51,7 @@ function addJournalNumber() {
 
     // Increment the journal number counter.
     return journalNumberCounter = journalNumberCounter + 1;
+}
 }
 
 // Declaring the function for removing journal numbers. This one is ugly as fuck. Needs revisioning. 
