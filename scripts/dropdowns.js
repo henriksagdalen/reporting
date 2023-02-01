@@ -1,3 +1,12 @@
+/*This code creates a custom select dropdown in JavaScript. When the window object loads, the function create_select is executed. 
+This function loops through all elements with the attribute data-mate-select='active' and converts them into custom select dropdowns. 
+The function isMobileDevice is used to check if the device is a mobile device or not.
+For each custom select dropdown, a ul element is created and all options from the corresponding select element are appended as li elements to the ul. 
+The class active is assigned to the li element that corresponds to the selected option. 
+When a li element is clicked, the function _select_option is called with two arguments - the index of the selected li and the index of the custom select dropdown.
+ The function open_select is used to open the custom select dropdown. 
+This function toggles the height of the ul element and rotates the icon to indicate whether the select dropdown is open or closed.
+*/
 window.onload = function() {
     create_select();
 }
@@ -12,6 +21,14 @@ function create_select() {
     var div_cont_select = document.querySelectorAll("[data-mate-select='active']");
     var select_ = '';
     for (var e = 0; e < div_cont_select.length; e++) {
+        div_cont_select[e].addEventListener('mouseout', function(event) {
+            if (!event.relatedTarget || !event.currentTarget.contains(event.relatedTarget)) {
+              var idx1 = this.getAttribute('data-indx-select');
+              document.querySelectorAll("[data-indx-select='" + idx1 + "']")[0].setAttribute('data-selec-open', 'false');
+              document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .cont_list_select_mate > ul")[0].style.height = '0px';
+              document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .icon_select_mate")[0].style.transform = 'rotate(0deg)';
+            }
+          });
         div_cont_select[e].setAttribute('data-indx-select', e);
         div_cont_select[e].setAttribute('data-selec-open', 'false');
         var ul_cont = document.querySelectorAll("[data-indx-select='" + e + "'] > .cont_list_select_mate > ul");
@@ -91,21 +108,19 @@ function drop_select(indx) {
 }
 
 
-function _select_option(indx, selc) {
-    var select_ = document.querySelectorAll("[data-indx-select='" + selc + "'] > select")[0];
-
-    var li_s = document.querySelectorAll("[data-indx-select='" + selc + "'] .cont_select_int > li");
-    var p_act = document.querySelectorAll("[data-indx-select='" + selc + "'] > .selectoption")[0].innerHTML = li_s[indx].innerHTML;
-    var select_options = document.querySelectorAll("[data-indx-select='" + selc + "'] > select > option");
-    for (var i = 0; i < li_s.length; i++) {
-        if (li_s[i].className == 'active') {
-            li_s[i].className = '';
-        };
-        li_s[indx].className = 'active';
-
-    };
-    select_options[indx].selected = true;
+function _select_option(indx, selec_index) {
+    var idx1 = selec_index;
+    var select_ = document.querySelectorAll("[data-indx-select='" + idx1 + "'] >select")[0];
     select_.selectedIndex = indx;
-    select_.onchange();
-    _select_option(selc);
-}
+    document.querySelector("[data-indx-select='" + idx1 + "'] > .selectoption").innerHTML = select_.options[indx].innerHTML;
+    document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .cont_list_select_mate > ul > li")[indx].classList.add("active");
+    var li_s = document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .cont_list_select_mate > ul > li");
+    for (var i = 0; i < li_s.length; i++) {
+      if (i != indx) {
+        li_s[i].classList.remove("active");
+      };
+    };
+    document.querySelectorAll("[data-indx-select='" + idx1 + "']")[0].setAttribute('data-selec-open', 'false');
+    document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .cont_list_select_mate > ul")[0].style.height = '0px';
+    document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .icon_select_mate")[0].style.transform = 'rotate(0deg)';
+  };
