@@ -413,7 +413,7 @@ function uploadFromFile() {
       var DTG = [];
       for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
         if (arrayWithoutEmptyElements[i].substring(0,4) == "DTG:") {
-          DTG.push(arrayWithoutEmptyElements[i].substring(5));
+          DTG.push(arrayWithoutEmptyElements[i].substring(5,11));
         }
       }
 
