@@ -14,12 +14,11 @@ if(document.getElementById("journalnumber").value.length!=0){
     journalNumberNext.id = 'journalnumber';
     journalNumberNext.value = parseInt(journalNumberStart) + journalNumberCounter;
     container.appendChild(journalNumberNext);
-    container.appendChild(document.createElement('br'));
 
     // Create a new field for the DTG of the observation
     var DTGForNewObservation = document.createElement("input");
     DTGForNewObservation.type = "text";
-    DTGForNewObservation.placeholder = 'DTG for new observation'
+    DTGForNewObservation.placeholder = 'DTG for observation'
     DTGForNewObservation.id = 'dtg' + journalNumberCounter;
     container.appendChild(DTGForNewObservation);
     container.appendChild(document.createElement('br'));
@@ -49,8 +48,15 @@ if(document.getElementById("journalnumber").value.length!=0){
     container.appendChild(document.createElement('br'));
     container.appendChild(document.createElement('br'));
 
+    //Create a break line before new observation
+    container.appendChild(document.createElement('hr'));
+    container.appendChild(document.createElement('br'));
+
     // Increment the journal number counter.
     return journalNumberCounter = journalNumberCounter + 1;
+}else{
+    alert("fuck off");
+    document.getElementById("journalnumber").style.backgroundColor ="antiquewhite";
 }
 }
 
