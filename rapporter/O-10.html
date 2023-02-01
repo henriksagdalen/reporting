@@ -12,6 +12,7 @@
     <script src="/scripts/dropdowns.js"></script>
     <script src="/scripts/disabletextarea.js"></script>
     <script src="/scripts/saveFileO10.js"></script>
+    <script src="/scripts/Set&getLocalValues.js"></script>
 </head>
 <body>
     <header>
@@ -78,6 +79,7 @@
         </div>
       </header>
     <section>
+      <form id="oscar10form" onsubmit="event.preventDefault();"></form>
       <div class="page-title">
         <div class="page-title-text">O-10 Initial report</div> 
       </div>
@@ -87,7 +89,7 @@
             <option value="">Classification</option>
             <option value="(B)">Classification 1</option>
             <option value="(K)">Classification 2</option>
-            <option value="(H)">Classification 3</option>
+            <option value="(H)" selected>Classification 3</option>
             <option value="(NR)">Classification 4</option>
             <option value="(NS)">Classification 5</option>
           </select>
@@ -107,7 +109,7 @@
         <div class="staticvalues">
             <div class="static-box">
                 <label for="from"><b>From:</b></label><br>
-                <input type="text" placeholder="From callsign" name="from" id="from">
+                <input type="text" placeholder="From callsign" name="from" id="from" required>
             </div>
             <div class="static-box">
                 <label for="to"><b>To:</b></label><br>
@@ -119,7 +121,7 @@
             </div>
             <div class="static-box">
                 <label for="ownposition"><b>Own position:</b></label><br>
-                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
+                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition" required>
             </div>
             <div class="static-box">
               <label for="dtg"><b>DTG:</b></label><br>
@@ -179,6 +181,7 @@
             <label for="inothernews"><b>In other news:</b></label><br>
             <textarea name="inothernews" id="inothernews0"></textarea><br>
           </div>
+        </form>
           <div class="buttons">
               <input
                   type="button"

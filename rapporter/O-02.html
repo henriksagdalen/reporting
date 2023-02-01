@@ -12,6 +12,7 @@
     <script src="/scripts/dropdowns.js"></script>
     <script src="/scripts/disabletextarea.js"></script>
     <script src="/scripts/saveFileO02.js"></script>
+    <script src="/scripts/Set&getLocalValues.js"></script>
 </head>
 <body>
     <header>
@@ -78,6 +79,7 @@
         </div>
       </header>
     <section>
+      <form id="oscar02form" onsubmit="event.preventDefault();">
       <div class="page-title">
         <div class="page-title-text">O-02 Initial report</div> 
       </div>
@@ -87,7 +89,7 @@
             <option value="">Classification</option>
             <option value="(B)">Classification 1</option>
             <option value="(K)">Classification 2</option>
-            <option value="(H)">Classification 3</option>
+            <option value="(H)" selected>Classification 3</option>
             <option value="(NR)">Classification 4</option>
             <option value="(NS)">Classification 5</option>
           </select>
@@ -107,7 +109,7 @@
         <div class="staticvalues">
             <div class="static-box">
                 <label for="from"><b>From:</b></label><br>
-                <input type="text" placeholder="From callsign" name="from" id="from">
+                <input type="text" placeholder="From callsign" name="from" id="from" required>
             </div>
             <div class="static-box">
                 <label for="to"><b>To:</b></label><br>
@@ -145,6 +147,7 @@
             <textarea name="problemsaction" id="problemsaction0"></textarea><br>
           </div>
         </div>
+      </form>
         <div class="buttons">
             <input
                 type="button"
