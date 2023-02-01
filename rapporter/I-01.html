@@ -12,6 +12,7 @@
     <script src="/scripts/dropdowns.js"></script>
     <script src="/scripts/saveFile01.js"></script>
     <script src="/scripts/Set&getLocalValues.js"></script>
+    <script src="/scripts/uploadFromFileI-01.js"></script>
 </head>
 
 <body>
@@ -82,8 +83,8 @@
         <form id="india01form" onsubmit="event.preventDefault();">
             <div class="cont_select_center">
                 <div class="classification" data-mate-select="active">
-                    <select onclick="return false;" id="">
-                        <option value="">Classification</option>
+                    <select onclick="return false;" id="classification">
+                        <option selected value="">-- Classification --</option>
                         <option value="(B)">Classification 1</option>
                         <option value="(K)">Classification 2</option>
                         <option value="(H)" selected>Classification 3</option>
@@ -152,7 +153,7 @@
         <div class="buttons">
             <input type="button" id="saveToFile" value="Save to file" form="india01form" onclick="saveToFile01()" />
 
-            <input type="button" id="uploadFromFile" value="Upload from file" onclick="uploadFromFile()" />
+            <input type="file" id="uploadFromFile" onchange="uploadFromFile()" />
             <button id="save-button" onclick="saveToLocal()">Save Values</button>
         </div>
     </section>

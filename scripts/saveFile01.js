@@ -10,6 +10,7 @@ function saveToFile01() {
         var to = document.getElementById("to").value;
         var writerOperator = document.getElementById("writeroperator").value;
         var ownPosition = document.getElementById("ownposition").value;
+        var naitai = document.getElementById("naitai").value;
         var journalNumber = document.getElementById("journalnumber").value;
         var dtgOfObservation = document.getElementById("dtg0").value;
         var facts = document.getElementById("facts0").value;
@@ -21,12 +22,13 @@ function saveToFile01() {
             "From: " + from + "\n" +
             "To: " + to + "\n" +
             "Writer/Operator: " + writerOperator + "\n" +
-            "Own position: " + ownPosition + "\n\n" +
+            "Own position: " + ownPosition + "\n" +
+            "NAI/TAI: " + naitai + "\n\n" +
             "Journal number: " + journalNumber + "\n" +
             "DTG: " + dtgOfObservation + "\n\n" +
             "Facts: " + facts + "\n\n" +
             "Comment: " + comment + "\n\n" +
-            "Assessment " + assessment + "\n\n";
+            "Assessment: " + assessment + "\n\n";
 
         // Get the date and time from the local computer.
         var newDate = new Date();
