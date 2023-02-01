@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>O-01</title>
@@ -12,187 +13,184 @@
     <script src="/scripts/dropdowns.js"></script>
     <script src="/scripts/disabletextarea.js"></script>
     <script src="/scripts/saveFileO01.js"></script>
+    <script src="/scripts/Set&getLocalValues.js"></script>
 </head>
+
 <body>
     <header>
         <div class="header-master">
-  
-          <div class="header-left">
 
-            <div class="navigation">
-  
-              <ul class="menu">
-  
-                <li class="menu-item">
-                  <a class="sub-button" href="index-alpha.html">Alpha</a>
-                  <ul class="sub-menu">
-                    <li class="sub-item"> <a href="A-01.html">A-01 MEDEVAC</a></li>
-                    <li class="sub-item"> <a href="A-02.html">A-02 MEDREP</a></li>
-                    <li class="sub-item"> <a href="A-03.html">A-03 RESUPREQ</a></li>
-                    <li class="sub-item"> <a href="A-04.html">A-04</a></li>
-                    <li class="sub-item"> <a href="A-05.html">A-05</a></li>
-                  </ul>
-                </li>
-  
-                <li class="menu-item">
-                  <a class="sub-button" href="index-india.html">
-                    India
-                  </a>
-                  <ul class="sub-menu">
-                    <li class="sub-item"> <a href="I-01.html">I-01</a></li>
-                    <li class="sub-item"> <a href="I-02.html">I-02</a></li>
-                    <li class="sub-item"> <a href="I-03.html">I-03</a></li>
-                    <li class="sub-item"> <a href="I-04.html">I-04</a></li>
-                    <li class="sub-item"> <a href="I-05.html">I-05</a></li>
-                  </ul>
-                </li>
-                <li class="menu-item">
-                  <a class="sub-button" href="index-oscar.html">Oscar
-                  </a>
-                  <ul class="sub-menu">
-                    <li class="sub-item"> <a href="O-01.html">O-01</a></li>
-                    <li class="sub-item"> <a href="O-02.html">O-02</a></li>
-                    <li class="sub-item"> <a href="O-03.html">O-03</a></li>
-                    <li class="sub-item"> <a href="O-04.html">O-04</a></li>
-                    <li class="sub-item"> <a href="O-05.html">O-05</a></li>
-                    <li class="sub-item"> <a href="O-06.html">O-06 AGTCONREP</a></li>
-                    <li class="sub-item"> <a href="O-07.html">O-07</a></li>
-                    <li class="sub-item"> <a href="O-08.html">O-08</a></li>
-                    <li class="sub-item"> <a href="O-09.html">O-09</a></li>
-                    <li class="sub-item"> <a href="O-10.html">O-10</a></li>
-                  </ul>
-                </li>
-              </ul>
-  
+            <div class="header-left">
+
+                <div class="navigation">
+
+                    <ul class="menu">
+
+                        <li class="menu-item">
+                            <a class="sub-button" href="index-alpha.html">Alpha</a>
+                            <ul class="sub-menu">
+                                <li class="sub-item"> <a href="A-01.html">A-01 MEDEVAC</a></li>
+                                <li class="sub-item"> <a href="A-02.html">A-02 MEDREP</a></li>
+                                <li class="sub-item"> <a href="A-03.html">A-03 RESUPREQ</a></li>
+                                <li class="sub-item"> <a href="A-04.html">A-04</a></li>
+                                <li class="sub-item"> <a href="A-05.html">A-05</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-item">
+                            <a class="sub-button" href="index-india.html">
+                                India
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="sub-item"> <a href="I-01.html">I-01</a></li>
+                                <li class="sub-item"> <a href="I-02.html">I-02</a></li>
+                                <li class="sub-item"> <a href="I-03.html">I-03</a></li>
+                                <li class="sub-item"> <a href="I-04.html">I-04</a></li>
+                                <li class="sub-item"> <a href="I-05.html">I-05</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a class="sub-button" href="index-oscar.html">Oscar
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="sub-item"> <a href="O-01.html">O-01</a></li>
+                                <li class="sub-item"> <a href="O-02.html">O-02</a></li>
+                                <li class="sub-item"> <a href="O-03.html">O-03</a></li>
+                                <li class="sub-item"> <a href="O-04.html">O-04</a></li>
+                                <li class="sub-item"> <a href="O-05.html">O-05</a></li>
+                                <li class="sub-item"> <a href="O-06.html">O-06 AGTCONREP</a></li>
+                                <li class="sub-item"> <a href="O-07.html">O-07</a></li>
+                                <li class="sub-item"> <a href="O-08.html">O-08</a></li>
+                                <li class="sub-item"> <a href="O-09.html">O-09</a></li>
+                                <li class="sub-item"> <a href="O-10.html">O-10</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+
             </div>
-  
-          </div>
-          <div class="header-right">   
-            <a class="home-button" href="../Homepage.html">
-              <img src="../ressurser/home-icon.png" class="home-icon">
-            </a>
-            <a class="home-button" href="../wiki/index-wiki.html">
-              <img src="../ressurser/question-mark.png" class="question-mark">
-            </a>
-          </div>
+            <div class="header-right">
+                <a class="home-button" href="../Homepage.html">
+                    <img src="../ressurser/home-icon.png" class="home-icon">
+                </a>
+                <a class="home-button" href="../wiki/index-wiki.html">
+                    <img src="../ressurser/question-mark.png" class="question-mark">
+                </a>
+            </div>
         </div>
-      </header>
+    </header>
     <section>
-      <div class="page-title">
-        <div class="page-title-text">O-01 Initial report</div> 
-      </div>
-      <div class="cont_select_center">
-        <div class="classification" data-mate-select="active" >
-          <select onclick="return false;" id="">
-            <option value="">Classification</option>
-            <option value="(B)">Classification 1</option>
-            <option value="(K)">Classification 2</option>
-            <option value="(H)">Classification 3</option>
-            <option value="(NR)">Classification 4</option>
-            <option value="(NS)">Classification 5</option>
-          </select>
-          <p class="selectoption"  onclick="open_select(this)" ></p>
-          <span onclick="open_select(this)" class="icon_select_mate" >
-            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24">
-              <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-              <path d="M0-.75h24v24H0z" fill="none"/>
-            </svg>
-          </span>
-          <div class="cont_list_select_mate">
-            <ul class="cont_select_int">  </ul> 
-          </div>
+        <div class="page-title">
+            <div class="page-title-text">O-01 Initial report</div>
         </div>
-      </div>
-      <br><br><br>
-        <div class="staticvalues">
-            <div class="static-box">
-                <label for="from"><b>From:</b></label><br>
-                <input type="text" placeholder="From callsign" name="from" id="from">
+        <form id="oscar01form" onsubmit="event.preventDefault();">
+            <div class="cont_select_center">
+                <div class="classification" data-mate-select="active">
+                    <select onclick="return false;" id="">
+                        <option value="">Classification</option>
+                        <option value="(B)">Classification 1</option>
+                        <option value="(K)">Classification 2</option>
+                        <option value="(H)">Classification 3</option>
+                        <option value="(NR)">Classification 4</option>
+                        <option value="(NS)">Classification 5</option>
+                    </select>
+                    <p class="selectoption" onclick="open_select(this)"></p>
+                    <span onclick="open_select(this)" class="icon_select_mate">
+                        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24">
+                            <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                            <path d="M0-.75h24v24H0z" fill="none" />
+                        </svg>
+                    </span>
+                    <div class="cont_list_select_mate">
+                        <ul class="cont_select_int"> </ul>
+                    </div>
+                </div>
             </div>
-            <div class="static-box">
-                <label for="to"><b>To:</b></label><br>
-                <input type="text" placeholder="To callsign" name="to" id="to">
+            <br><br><br>
+            <div class="staticvalues">
+                <div class="static-box">
+                    <label for="from"><b>From:</b></label><br>
+                    <input type="text" placeholder="From callsign" name="from" id="from" required>
+                </div>
+                <div class="static-box">
+                    <label for="to"><b>To:</b></label><br>
+                    <input type="text" placeholder="To callsign" name="to" id="to">
+                </div>
+                <div class="static-box">
+                    <label for="writeroperator"><b>Writer/Operator:</b></label><br>
+                    <input type="text" placeholder="Initials" name="writeroperator" id="writeroperator">
+                </div>
+                <div class="static-box">
+                    <label for="ownposition"><b>Own position:</b></label><br>
+                    <input type="text" placeholder="MGRS" name="ownposition" id="ownposition" required>
+                </div>
+                <div class="static-box">
+                    <label for="dtg"><b>DTG:</b></label><br>
+                    <input name="dtg" id="dtg0" type="text" placeholder="DTG"></input><br>
+                </div>
             </div>
-            <div class="static-box">
-                <label for="writeroperator"><b>Writer:</b></label><br>
-                <input type="text" placeholder="Initials" name="writeroperator" id="writeroperator">
-            </div>
-            <div class="static-box">
-                <label for="ownposition"><b>Own position:</b></label><br>
-                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
-            </div>
-            <div class="static-box">
-              <label for="dtg"><b>DTG:</b></label><br>
-              <input name="dtg" id="dtg0" type="text" placeholder="DTG"></input><br>
-            </div>
+
+            <div class="rapport">
+                <div class="input-box">
+                    <label for="op-base"><b>OP/Base description:</b></label><br>
+                    <textarea name="op-base" id="op-base0" required></textarea>
+                </div>
+                <div class="input-box">
+                    <label for="primarypup"><b>Primary PUP:</b></label><br>
+                    <textarea name="primarypup" id="primarypup0"></textarea><br>
+                </div>
+                <div class="input-box">
+                    <label for="secondarypup"><b>Secondary PUP:</b></label><br>
+                    <textarea name="secondarypup" id="secondarypup0"></textarea><br>
+                </div>
+                <div class="input-box">
+                    <label for="suggesteddop"><b>Suggested DZ/DOP for resupply:</b></label><br>
+                    <textarea name="suggesteddop" id="suggesteddop0"></textarea><br>
+                </div>
+                <div class="input-box">
+                    <label for="referencepoint"><b>Reference point:</b></label><br>
+                    <textarea name="referencepoint" id="referencepoint0"></textarea><br>
+                </div>
+                <div class="input-box">
+                    <label for="obsarea"><b>Observation area:</b></label><br>
+                    <textarea name="obsarea" id="obsarea0"></textarea><br>
+                </div>
+                <div class="input-box-small">
+                    <label for="effectivedtg"><b>OP effective DTG:</b></label><br>
+                    <textarea name="effectivedtg" id="effectivedtg0"></textarea>
+                </div>
+                <div class="photos-attatched">
+                    <div id="photos-attatched-label">Photos attatched:</div>
+                    <div class="checkbox">
+                        <label class="button" for="toggle">
+                            <input id="toggle" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div><br><br><br>
+                <hr><br><br><br>
+                <div class="input-box">
+                    <label for="overallcomment"><b>Overall comment:</b></label><br>
+                    <textarea name="overallcomment" id="overallcomment0"></textarea><br>
+                </div>
+                <div class="input-box">
+                    <label for="overallassessment"><b>Overall assessment:</b></label><br>
+                    <textarea name="overallassessment" id="overallassessment0"></textarea><br>
+                </div>
+                <div class="input-box">
+                    <label for="references"><b>References:</b></label><br>
+                    <textarea name="references" id="references0"></textarea><br>
+                </div>
+        </form>
+
+        <div class="buttons">
+            <input type="button" id="saveToFile" value="Save to file" onclick="saveToFileO01()" />
+
+            <input type="button" id="uploadFromFile" value="Upload from file" onclick="uploadFromFile()" />
+            <button id="save-button" onclick="saveToLocal()">Save Values</button>
         </div>
+    </section>
+</body>
 
-        <div class="rapport">
-          <div class="input-box">
-              <label for="op-base"><b>OP/Base description:</b></label><br>
-              <textarea name="op-base" id="op-base0"></textarea>
-          </div>
-          <div class="input-box">
-              <label for="primarypup"><b>Primary PUP:</b></label><br>
-              <textarea name="primarypup" id="primarypup0"></textarea><br>
-          </div>
-          <div class="input-box">
-              <label for="secondarypup"><b>Secondary PUP:</b></label><br>
-              <textarea name="secondarypup" id="secondarypup0"></textarea><br>
-          </div>
-          <div class="input-box">
-            <label for="suggesteddop"><b>Suggested DZ/DOP for resupply:</b></label><br>
-            <textarea name="suggesteddop" id="suggesteddop0"></textarea><br>
-          </div>
-          <div class="input-box">
-            <label for="referencepoint"><b>Reference point:</b></label><br>
-            <textarea name="referencepoint" id="referencepoint0"></textarea><br>
-          </div>
-          <div class="input-box">
-            <label for="obsarea"><b>Observation area:</b></label><br>
-            <textarea name="obsarea" id="obsarea0"></textarea><br>
-          </div>
-          <div class="input-box-small">
-            <label for="effectivedtg"><b>OP effective DTG:</b></label><br>
-            <textarea name="effectivedtg" id="effectivedtg0"></textarea>
-          </div>
-          <div class="photos-attatched">
-            <div id="photos-attatched-label">Photos attatched:</div>
-            <div class="checkbox">
-              <label class="button" for="toggle">
-                <input id="toggle" type="checkbox">
-                <span class="slider"></span>
-              </label>
-            </div>
-          </div>
-
-          <br><br><br><hr><br><br><br>
-
-          <div class="input-box">
-            <label for="overallcomment"><b>Overall comment:</b></label><br>
-            <textarea name="overallcomment" id="overallcomment0"></textarea><br>
-          </div>
-          <div class="input-box">
-            <label for="overallassessment"><b>Overall assessment:</b></label><br>
-            <textarea name="overallassessment" id="overallassessment0"></textarea><br>
-          </div>
-          <div class="input-box">
-            <label for="references"><b>References:</b></label><br>
-            <textarea name="references" id="references0"></textarea><br>
-          </div>
-          <div class="buttons">
-              <input
-                  type="button"
-                  id="saveToFile"
-                  value="Save to file"
-                  onclick="saveToFileO01()"/>
-
-              <input
-                  type="button"
-                  id="uploadFromFile"
-                  value="Upload from file"
-                  onclick="uploadFromFile()"/>
-          </div>
-        </section>
-    </body>
 </html>

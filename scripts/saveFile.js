@@ -1,4 +1,17 @@
 function saveToFile() {
+    var keysToRemove = [];
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        if (key.startsWith('facts') || key.startsWith('comment') || key.startsWith('assessment') || key.startsWith('dtg')) {
+            keysToRemove.push(key);
+        }
+    }
+
+    for (var i = 0; i < keysToRemove.length; i++) {
+        localStorage.removeItem(keysToRemove[i]);
+    }
+
+
     const india02form = document.getElementById("india02form");
     if (india02form.checkValidity()) {
 
@@ -6,16 +19,21 @@ function saveToFile() {
         var classificationSelect = document.querySelector(".classification select");
         var classification = classificationSelect.options[classificationSelect.selectedIndex].value;
 
-        // Get the static values from the input fields in the report.
-        var from = document.getElementById("from").value;
-        var to = document.getElementById("to").value;
-        var writerOperator = document.getElementById("writeroperator").value;
-        var ownPosition = document.getElementById("ownposition").value;
-        var bluf = document.getElementById("bluf").value;
-        var patternOfLife = document.getElementById("patternoflife").value;
-        //var staticUnits = document.getElementById("staticunits").value;
-        var overallComment = document.getElementById("overallcomment").value;
-        var overallAssessment = document.getElementById("overallassessment").value;
+    // Get the static values from the input fields in the report.
+    var from = document.getElementById("from").value;
+    var to = document.getElementById("to").value;
+    var writerOperator = document.getElementById("writeroperator").value;
+    var ownPosition = document.getElementById("ownposition").value;
+    var naitai = document.getElementById("naitai").value;
+    var bluf = document.getElementById("bluf").value;
+    var patternOfLife = document.getElementById("patternoflife").value;
+    //var staticUnits = document.getElementById("staticunits").value;
+    var overallComment = document.getElementById("overallcomment").value;
+    var overallAssessment = document.getElementById("overallassessment").value;
+
+    // Get the reporting window to use it in the filename.
+    var firstDTG = document.getElementById("dtgfrom").value;
+    var lastDTG = document.getElementById("dtgto").value;
 
         // Get the journal number input fields
         var journalNumberFields = document.querySelectorAll("#journalnumber");
@@ -50,17 +68,20 @@ function saveToFile() {
         }
 
 
-        // Create the content for the report.
-        var fileContent = "Classification: " + classification + "\n\n" +
-            "From: " + from + "\n" +
-            "To: " + to + "\n" +
-            "Writer/Operator: " + writerOperator + "\n" +
-            "Own position: " + ownPosition + "\n\n" +
-            "Bottom Line Up Front: " + bluf + "\n\n" +
-            "Pattern of life: " + patternOfLife + "\n\n" +
-            "Static units in NAI: " + staticUnits + "\n\n" +
-            "Overall comment: " + overallComment + "\n\n" +
-            "Overall assessment: " + overallAssessment + "\n\n";
+    // Create the content for the report.
+    var fileContent = "Classification: " + classification + "\n\n"
+        + "From: " + from + "\n"
+        + "To: " + to + "\n"
+        + "Writer/Operator: " + writerOperator + "\n"
+        + "Own position: " + ownPosition + "\n\n"
+        + "NAI/TAI: " + naitai + "\n\n"
+        + "DTG from: " + firstDTG + "\n"
+        + "DTG to: " + lastDTG + "\n\n"
+        + "Bottom Line Up Front:" + "\n" + bluf + "\n\n"
+        + "Pattern of life:" + "\n" + patternOfLife + "\n\n"
+        + "Static units in NAI:" + staticUnits + "\n\n"
+        + "Overall comment:" + "\n" + overallComment + "\n\n"
+        + "Overall assessment:" + "\n" + overallAssessment + "\n\n";
 
 
         for (var i = 0; i < journalNumbers.length; i++) {
@@ -129,9 +150,7 @@ function saveToFile() {
             lastJournalNumber = "0" + lastJournalNumber;
         }
 
-        // Get the reporting window to use it in the filename.
-        var firstDTG = document.getElementById("dtgfrom").value;
-        var lastDTG = document.getElementById("dtgto").value;
+    
 
         // Create the filename with the previously declared variables.
         var filename = dateOfReport +
@@ -171,8 +190,8 @@ function saveToFile() {
         var requiredFields = document.querySelectorAll("[required]");
         for (var i = 0; i < requiredFields.length; i++) {
             if (!requiredFields[i].checkValidity()) {
-            requiredFields[i].style.backgroundColor = "antiquewhite";
-             }
+                requiredFields[i].style.backgroundColor = "antiquewhite";
+            }
         }
     }
 }

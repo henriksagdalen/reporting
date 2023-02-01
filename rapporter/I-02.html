@@ -8,7 +8,9 @@
     <script src="/scripts/add&removeJournalNumber.js"></script>
     <script src="/scripts/saveFile.js"></script>
     <script src="/scripts/add&removeTableRows.js"></script>
-    <script src="/scripts/Regex.js"></script>
+    <script src="/scripts/Set&getLocalValues.js"></script>
+    <script src="/scripts/saveI02observation.js"></script>
+    <script src="/scripts/uploadFromFile.js"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -112,28 +114,17 @@
 
         <input type="button" id="removeTableRows" value="-" onclick="removeTableRows()">
 
-        <input 
-            type="button" 
-            id="addJournalNumber" 
-            value="+"
-            onclick="addJournalNumber()"/>
+        <input type="button" id="addJournalNumber" value="+" onclick="addJournalNumber()" />
 
-        <input 
-            type="button"
-            id="removeJournalNumber"
-            value="-"
-            onclick="removeJournalNumber()"/>
+        <input type="button" id="removeJournalNumber" value="-" onclick="removeJournalNumber()" />
 
-            <br>
+        <br>
 
-        <input 
-            type="submit"
-            form="myform"
-            id="mysaveToFile"
-            value="Save to file"
-            onclick="saveToFile();"/>
+        <input type="submit" id="mysaveToFile" value="Save to file" onclick="saveToFile();" />
 
         <input type="file" onchange="uploadFromFile()" /><br />
+        <button id="save-button" onclick="saveToLocal()">Save Values</button>
+        <input type="button" value="Save Observation" id="saveButton" onclick="setLocalobservations()">
         <p class="content"></p>
         </div>
     </section>
