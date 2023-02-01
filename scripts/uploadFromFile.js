@@ -4,26 +4,26 @@ function uploadFromFile() {
     // const content = document.querySelector('.content');
     const [file] = document.querySelector('input[type=file]').files;
     const reader = new FileReader();
-  
+
     reader.addEventListener("load", () => {
-      // this will then display a text file
-      //content.innerText = reader.result;
-      uploadedFileAsString = reader.result;
+        // this will then display a text file
+        //content.innerText = reader.result;
+        uploadedFileAsString = reader.result;
 
-      // Split the string into an array, separated by line breaks.
-      var stringSplittedToArray = uploadedFileAsString.split(/\r?\n/);
-      console.log(stringSplittedToArray);
-      
-      // Search trough the array and remove every item that has a empty string value. Return it as a new array.
-      var arrayWithoutEmptyElements = [];
-      for (var i = 0; i < stringSplittedToArray.length; i++) {
-        if (stringSplittedToArray[i] !== "") {
-          arrayWithoutEmptyElements.push(stringSplittedToArray[i])
+        // Split the string into an array, separated by line breaks.
+        var stringSplittedToArray = uploadedFileAsString.split(/\r?\n/);
+        console.log(stringSplittedToArray);
+
+        // Search trough the array and remove every item that has a empty string value. Return it as a new array.
+        var arrayWithoutEmptyElements = [];
+        for (var i = 0; i < stringSplittedToArray.length; i++) {
+            if (stringSplittedToArray[i] !== "") {
+                arrayWithoutEmptyElements.push(stringSplittedToArray[i])
+            }
         }
-      }
 
-      // Write the new array without empty elements to console.
-      console.log(arrayWithoutEmptyElements);
+        // Write the new array without empty elements to console.
+        console.log(arrayWithoutEmptyElements);
 
 //#region CLASSIFICATIONS
       // Create an array of all available classifications
@@ -519,6 +519,6 @@ function uploadFromFile() {
 
     }, false);
     if (file) {
-      reader.readAsText(file);
+        reader.readAsText(file);
     }
 }

@@ -1,0 +1,88 @@
+hr {
+  width: 95%;
+  height: 1px;
+  background-color: rgb(109, 109, 109);
+}
+
+.input-box-small {
+  margin-right: 180px;
+  margin-bottom: 20px;
+}
+
+.input-box-small textarea{
+  width: 25vw;
+  height: 40px;
+
+  font-size: 0.9vw;
+  font-weight: 550;
+
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px .2vw 1px rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+  border: none;
+  outline: none;
+  padding: 0.4vw;
+  transition: .3s;
+}
+
+.photos-attatched {
+  display: inline-block;
+  width: 300px;
+  margin:0;
+}
+
+#photos-attatched-label{
+  display: inline-block;
+  display: flex;
+  font-size: 1.3vw;
+  font-weight: 550;
+  margin-bottom: 5px;
+}
+
+/*Photos attatched button*/
+.checkbox {
+  display: inline-block;
+}
+
+.button {
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 0;
+ }
+ 
+ #toggle {
+  display: none;
+ }
+ 
+ .slider {
+  display: block;
+  font-size: 12px;
+  position: relative;
+ }
+ 
+ .slider::after {
+  content: 'NO';
+  width: 25px;
+  height: 25px;
+  background-color: #e03c3c;
+  border: 2px solid #e62121;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+  position: absolute;
+  top: -5px;
+  left: -2px;
+  display: grid;
+  place-content: center;
+  line-height: 0;
+  transition: background-color .25s, transform .25s, border-color .3s ease-in;
+ }
+ 
+ #toggle:checked + .slider::after {
+  content: 'YES';
+  background-color: #05ae3e;
+  border-color: #04c745;
+  transform: translateX(25px) rotate(360deg);
+ }

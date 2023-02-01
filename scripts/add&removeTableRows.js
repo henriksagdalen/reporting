@@ -27,15 +27,13 @@ function addTableRows() {
 
     // Append the row to the table.
     staticUnitsTable.appendChild(row);
-    
-    return tableRowCounter = tableRowCounter + 1;    
+
+    return tableRowCounter = tableRowCounter + 1;
 }
 
-function removeTableRows (){
+function removeTableRows() {
     var staticUnitsTableLast = document.getElementById("staticunits").lastChild;
-    document.getElementById('staticunits').removeChild(staticUnitsTableLast); 
+    document.getElementById('staticunits').removeChild(staticUnitsTableLast);
 
     return tableRowCounter = tableRowCounter - 1;
 }
-
-

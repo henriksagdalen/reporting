@@ -1,4 +1,3 @@
-
 // Declaring a variable to be used as a counter inside the addJournalNumber-function.
 var journalNumberCounter = 1;
 
@@ -9,8 +8,8 @@ function addJournalNumber() {
     var container = document.getElementById('addHere');
 
     // Creating a new field to display the journal number for the observation. 
-    var journalNumberStart = document.getElementById("journalnumber").value; 
-    var journalNumberNext = document.createElement('input'); 
+    var journalNumberStart = document.getElementById("journalnumber").value;
+    var journalNumberNext = document.createElement('input');
     journalNumberNext.type = 'number';
     journalNumberNext.id = 'journalnumber';
     journalNumberNext.value = parseInt(journalNumberStart) + journalNumberCounter;
@@ -64,6 +63,3 @@ function removeJournalNumber() {
 
     return journalNumberCounter = journalNumberCounter - 1;
 }
-
-
-
