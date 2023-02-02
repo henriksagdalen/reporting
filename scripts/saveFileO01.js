@@ -39,7 +39,7 @@ function saveToFileO01() {
           "Effective DTG: " + effectiveDTG + "\n" +
           "Photos attached: " + photosAttached + "\n\n" +
           "Overall comment: " + overallComment + "\n" +
-          "Overall assessment " + overallAssessment + "\n" +
+          "Overall assessment: " + overallAssessment + "\n" +
           "References: " + references + "\n\n";
 
       // Get the date and time from the local computer.

@@ -1,6 +1,14 @@
 let uploadedFileAsString = "";
 
-function uploadFromFile() {
+function getReportContent(indexStart, indexEnd, content, array, elementID) {
+    for (var i = indexStart; i <= indexEnd; i++) {
+        content = content + array[i] + "\n";
+    }
+    var element = document.getElementById(elementID);
+    element.value = content;
+}
+
+function fileContentToArray() {
     // const content = document.querySelector('.content');
     const [file] = document.querySelector('input[type=file]').files;
     const reader = new FileReader();
@@ -51,18 +59,23 @@ function uploadFromFile() {
       var from = document.getElementById("from");
       from.value = arrayWithoutEmptyElements[1].slice(6);
 
+      // Get the "to" value from the report, and put it in the to field.
       var to = document.getElementById("to");
       to.value = arrayWithoutEmptyElements[2].slice(4);
 
+      // Get the writer/operator value from the report, and put it in the writer/operator field.
       var writerOperator = document.getElementById("writeroperator");
       writerOperator.value = arrayWithoutEmptyElements[3].slice(17);
 
+      // Get the own position value from the report, and put it in the own position field.
       var ownPosition = document.getElementById("ownposition");
       ownPosition.value = arrayWithoutEmptyElements[4].slice(14);
 
+      // Get the DTG for the report, and put it in the DTG position field.
       var dtg = document.getElementById("dtg0");
       dtg.value = arrayWithoutEmptyElements[5].slice(5);
 
+      // Declare all the variables that stores the starting and ending indexes for the different content.
       var baseDescriptionIndexStart;
       var baseDescriptionIndexEnd;
 
@@ -70,7 +83,7 @@ function uploadFromFile() {
       var primaryPUPIndexEnd;
 
       var secondaryPUPIndexStart;
-      var primaryPUPIndexEnd;
+      var secondaryPUPIndexEnd;
 
       var suggestedDOPIndexStart;
       var suggestedDOPIndexEnd;
@@ -93,6 +106,7 @@ function uploadFromFile() {
       var referencesIndexStart;
       var referencesIndexEnd;
 
+    // Iterate trough all the elements in the array, and find the starting indexes of all the different contents.
       for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
         if (arrayWithoutEmptyElements[i].substring(0,15) == "OP description:") {
             baseDescriptionIndexStart = i;
@@ -109,11 +123,48 @@ function uploadFromFile() {
         if (arrayWithoutEmptyElements[i].substring(0,16) == "Reference point:") {
             referencePointIndexStart = i;
         }
+        if (arrayWithoutEmptyElements[i].substring(0,17) == "Observation area:") {
+            observationAreaIndexStart = i;
+        }
+        if (arrayWithoutEmptyElements[i].substring(0,14) == "Effective DTG:") {
+            OPEffectiveIndexStart = i;
+        }
+        if (arrayWithoutEmptyElements[i].substring(0,16) == "Overall comment:") {
+            overallCommentIndexStart = i;
+        }
+        if (arrayWithoutEmptyElements[i].substring(0,19) == "Overall assessment:") {
+            overallAssessmentIndexStart = i;
+        }
+        if (arrayWithoutEmptyElements[i].substring(0,11) == "References:") {
+            referencesIndexStart = i;
+        }
       }
-      console.log(referencePointIndexStart);
+      
+      // Get the content for the OP/Base description field.
+      var baseDescriptionContent = "";
+      baseDescriptionIndexEnd = primaryPUPIndexStart - 1;
+      for (var i = baseDescriptionIndexStart; i <= baseDescriptionIndexEnd; i++) {
+        baseDescriptionContent = baseDescriptionContent + arrayWithoutEmptyElements[i] + "\n";
+      }
+      var baseDescriptionElement = document.getElementById("op-base0");
+      baseDescriptionElement.value = baseDescriptionContent.substring(16);
+
+      // Get the content for the Primary PUP field.
+      var primaryPUPContent = "";
+      primaryPUPIndexEnd = secondaryPUPIndexStart - 1;
+      for (var i = primaryPUPIndexStart; i <= primaryPUPIndexEnd; i++) {
+        primaryPUPContent = primaryPUPContent + arrayWithoutEmptyElements[i] + "\n"; 
+      }
+      var primaryPUPElement = document.getElementById("primarypup0");
+      primaryPUPElement.value = primaryPUPContent.substring(13);
+      
 
     }, false);
     if (file) {
         reader.readAsText(file);
     }
+}
+
+function uploadFromFile() {
+    fileContentToArray();
 }
