@@ -113,7 +113,7 @@
 }
 
 /*Save observation button*/
-#saveButton {
+#saveObsButton {
     background-color: rgb(255, 127, 80);
     border: none;
     border-radius: 5px;
@@ -127,7 +127,7 @@
     margin-bottom: 20px;
 }
 
-#saveButton:hover {
+#saveObsButton:hover {
     scale: 1.01;
     box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.438);
     cursor: pointer;
