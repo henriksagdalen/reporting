@@ -1,20 +1,23 @@
 // Declaring a variable to be used as a counter inside the addJournalNumber-function.
 var journalNumberCounter = 1;
-
 // Declaring the function for adding a new journal number to a report.
 function addJournalNumber() {
 if(document.getElementById("journalnumber").value.length!=0){
+
     // Declaring the container. This element will display all new journal number entries, and place them above the plus/minus buttons.
     var container = document.getElementById('addHere');
+    var countUploadedJournalNumbers = container.querySelectorAll("[type=number]").length + 1;
+    console.log(countUploadedJournalNumbers);
 
     // Creating a new field to display the journal number for the observation. 
     var journalNumberStart = document.getElementById("journalnumber").value;
     var journalNumberNext = document.createElement('input');
     journalNumberNext.type = 'number';
     journalNumberNext.id = 'journalnumber';
-    journalNumberNext.value = parseInt(journalNumberStart) + journalNumberCounter;
+    journalNumberNext.value = parseInt(journalNumberStart) + countUploadedJournalNumbers;
     container.appendChild(journalNumberNext);
     container.appendChild(document.createElement('br'));
+
 
     // Create a new field for the DTG of the observation
     var DTGForNewObservation = document.createElement("input");
@@ -52,11 +55,11 @@ if(document.getElementById("journalnumber").value.length!=0){
     container.appendChild(document.createElement('br'));
 
     // Increment the journal number counter.
-    return journalNumberCounter = journalNumberCounter + 1;
+    //return journalNumberCounter = journalNumberCounter + 1;
 }
 }
 
-// Declaring the function for removing journal numbers. This one is ugly as fuck. Needs revisioning. 
+// Declaring the function for removing journal numbers
 function removeJournalNumber() {
 
     for (let i = 0; i < 11; i++) {
@@ -64,5 +67,6 @@ function removeJournalNumber() {
         document.getElementById('addHere').removeChild(topop)
     }
 
-    return journalNumberCounter = journalNumberCounter - 1;
+    //return journalNumberCounter = journalNumberCounter - 1;
 }
+

@@ -332,7 +332,6 @@ function uploadFromFile() {
         }
       }
 
-
       // Slice out the first part of the assessment-content. 
       var firstAssessmentContent = arrayWithoutEmptyElements[firstAssessmentIndexStart].slice(12) + "\n"
 
@@ -403,7 +402,6 @@ function uploadFromFile() {
 
       // Set the rest of the journal numbers based on the first journal number.
       for (var i = parseInt(firstJournalNumber.value); i < journalNumberCounter; i++) {
-        console.log(i);
         var journalNumberID = 'journalnumber' + parseInt(i);
         var journalNumber = document.getElementById(journalNumberID);
         journalNumber.value = i + 1;
@@ -445,10 +443,6 @@ function uploadFromFile() {
         }
       }
 
-      console.log(factsIndexes);
-      console.log(commentIndexes);
-      console.log(assessmentIndexes);
-
       var counter1 = 1;
       for (var i = 0; i < factsIndexes.length; i++) {
         var facts = "";
@@ -474,14 +468,6 @@ function uploadFromFile() {
         commentElement.value = comment.substring(9);
         counter2 = counter2 + 1;
       }
-
-
-
-
-
-      console.log(journalNumberArray[journalNumberArray.length - 1]);
-    
-
       
       var f = 2;
       var counter3 = 1;
@@ -497,25 +483,11 @@ function uploadFromFile() {
             }
           }
         f++;
-        console.log(assessment);
         var assessmentID = 'assessment' + counter3;
         var assessmentElement = document.getElementById(assessmentID);
         assessmentElement.value = assessment.substring(12);
         counter3++; 
       }
-
-    
-
-
-
-
-
-
-
-
-
-
-
 
     }, false);
     if (file) {
