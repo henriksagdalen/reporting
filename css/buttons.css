@@ -23,7 +23,7 @@
 /*Add or remove table rows*/
 .table-row{
     position: absolute;
-    top: calc(480px + 26vh);
+    top: calc(530px + 26vh);
     left: 850px;
 }
 /*Add table row button*/
@@ -208,4 +208,9 @@
     box-shadow: 1px 1px .2vw 1px rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
     margin-left: 41px;
     margin-bottom: 20px;
+}
+
+/*Template dropdown*/
+#bluePrintsReporting {
+    margin-left: 20px;
 }

@@ -8,7 +8,7 @@ window.addEventListener("load", function() {
       let popup;
   
       if (selectedOption === "WHATS") {
-        const popup = window.open("/ressurser/report-templates/whats.html", "", "width=400,height=200,top=200,left=200");
+        const popup = window.open("/ressurser/report-templates/whats.html", "", "width=400,height=200,top=200,left=200,location=yes");
       } else if (selectedOption === "WEFTAS") {
         const popup = window.open("/rapporter/I-01.html", "", "width=400,height=200,top=200,left=200");
       } else if (selectedOption === "MASHS") {
