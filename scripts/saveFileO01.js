@@ -34,12 +34,12 @@ function saveToFileO01() {
           "Primary PUP: " + primaryPUP + "\n" +
           "Secondary PUP: " + secondaryPUP + "\n" +
           "Suggested DOP: " + suggestedDOP + "\n" +
-          "Referance point: " + referencePoint + "\n" +
+          "Reference point: " + referencePoint + "\n" +
           "Observation area: " + obsArea + "\n" +
           "Effective DTG: " + effectiveDTG + "\n" +
           "Photos attached: " + photosAttached + "\n\n" +
           "Overall comment: " + overallComment + "\n" +
-          "Overall assessment " + overallAssessment + "\n" +
+          "Overall assessment: " + overallAssessment + "\n" +
           "References: " + references + "\n\n";
 
       // Get the date and time from the local computer.
