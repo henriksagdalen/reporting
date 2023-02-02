@@ -13,6 +13,7 @@
     <script src="/scripts/saveFile01.js"></script>
     <script src="/scripts/Set&getLocalValues.js"></script>
     <script src="/scripts/uploadFromFileI-01.js"></script>
+    <script src="/scripts/reportBlueprintsI-01.js"></script>
 </head>
 
 <body>
@@ -153,9 +154,19 @@
                 </div>
             </div>
         </form>
+
+        <select id="bluePrintsReporting01">
+            <option value="WHATS">WHATS</option>
+            <option value="WEFTAS">WEFTAS</option>
+            <option value="MASHS">MASHS</option>
+            <option value="SCRIM">SCRIM</option>
+            <option value="A-H">A-H</option>
+          </select>
+
+          <button id="copyButton01">Vis mal</button>
+
         <div class="buttons">
             <input type="button" id="saveToFile" value="Save to file" form="india01form" onclick="saveToFile01()" />
-
             <input type="file" id="uploadFromFile" onchange="uploadFromFile()" />
             <button id="save-button" onclick="saveToLocal()">Save Values</button>
         </div>
