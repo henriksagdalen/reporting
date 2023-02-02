@@ -6,6 +6,7 @@ function getReportContent(indexStart, indexEnd, content, array, elementID) {
     }
     var element = document.getElementById(elementID);
     element.value = content;
+    return content;
 }
 
 function fileContentToArray() {
@@ -97,6 +98,9 @@ function fileContentToArray() {
       var OPEffectiveIndexStart;
       var OPEffectiveIndexEnd;
 
+      var photosIndexStart;
+      var photosIndexEnd;
+
       var overallCommentIndexStart;
       var overallCommentIndexEnd;
 
@@ -129,6 +133,9 @@ function fileContentToArray() {
         if (arrayWithoutEmptyElements[i].substring(0,14) == "Effective DTG:") {
             OPEffectiveIndexStart = i;
         }
+        if (arrayWithoutEmptyElements[i].substring(0,16) == "Photos attached:") {
+            photosIndexStart = i;
+        }
         if (arrayWithoutEmptyElements[i].substring(0,16) == "Overall comment:") {
             overallCommentIndexStart = i;
         }
@@ -158,6 +165,65 @@ function fileContentToArray() {
       var primaryPUPElement = document.getElementById("primarypup0");
       primaryPUPElement.value = primaryPUPContent.substring(13);
       
+      // Get the content for the secondary PUP field.
+      var secondaryPUPContent = "";
+      secondaryPUPIndexEnd = suggestedDOPIndexStart - 1;
+      for (var i = secondaryPUPIndexStart; i <= secondaryPUPIndexEnd; i++) {
+        secondaryPUPContent = secondaryPUPContent + arrayWithoutEmptyElements[i] + "\n"; 
+      }
+      var secondaryPUPElement = document.getElementById("secondarypup0");
+      secondaryPUPElement.value = secondaryPUPContent.substring(15);
+
+      // Get the content for the suggested DOP field.
+      var suggestedDOPContent = "";
+      suggestedDOPIndexEnd = referencePointIndexStart - 1;
+      for (var i = suggestedDOPIndexStart; i <= suggestedDOPIndexEnd; i++) {
+        suggestedDOPContent = suggestedDOPContent + arrayWithoutEmptyElements[i] + "\n"; 
+      }
+      var suggestedDOPElement = document.getElementById("suggesteddop0");
+      suggestedDOPElement.value = suggestedDOPContent.substring(15);
+
+      // Get the content for the reference point field.
+      var referencePointContent = "";
+      referencePointIndexEnd = observationAreaIndexStart - 1;
+      for (var i = referencePointIndexStart; i <= referencePointIndexEnd; i++) {
+        referencePointContent = referencePointContent + arrayWithoutEmptyElements[i] + "\n"; 
+      }
+      var referencePointElement = document.getElementById("referencepoint0");
+      referencePointElement.value = referencePointContent.substring(17);
+
+      // Get the content for the observation area field.
+      var observationAreaContent = "";
+      observationAreaIndexEnd = OPEffectiveIndexStart - 1;
+      for (var i = observationAreaIndexStart; i <= observationAreaIndexEnd; i++) {
+        observationAreaContent = observationAreaContent + arrayWithoutEmptyElements[i] + "\n"; 
+      }
+      var observationAreaElement = document.getElementById("obsarea0");
+      observationAreaElement.value = observationAreaContent.substring(18);
+
+      // Get the content for the suggested DOP field.
+      var OPEffectiveContent = "";
+      OPEffectiveIndexEnd = photosIndexStart - 1;
+      for (var i = OPEffectiveIndexStart; i <= OPEffectiveIndexEnd; i++) {
+        OPEffectiveContent = OPEffectiveContent + arrayWithoutEmptyElements[i] + "\n"; 
+      }
+      var OPEffectiveElement = document.getElementById("effectivedtg0");
+      OPEffectiveElement.value = OPEffectiveContent.substring(15);
+
+      // Get the value for "Photos attached". 
+      photosContent = "";
+      photosIndexEnd = overallCommentIndexStart - 1;
+      for (var i = photosIndexStart; i <= photosIndexEnd; i++) {
+        photosContent = photosContent + arrayWithoutEmptyElements[i];
+      }
+
+      if (photosContent.slice(17) == "Yes") {
+        var toggleButton = document.getElementById("toggle");
+        toggleButton.checked = true;
+      }
+
+      
+
 
     }, false);
     if (file) {
