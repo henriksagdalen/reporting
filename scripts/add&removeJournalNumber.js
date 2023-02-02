@@ -69,7 +69,7 @@ if(document.getElementById("journalnumber").value.length!=0){
 // Declaring the function for removing journal numbers
 function removeJournalNumber() {
 
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 13; i++) {
         var topop = document.getElementById('addHere').lastChild;
         document.getElementById('addHere').removeChild(topop)
     }
