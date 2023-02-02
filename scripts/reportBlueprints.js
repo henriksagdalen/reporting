@@ -5,23 +5,22 @@ window.addEventListener("load", function() {
     
     function popupWindow(){
       const selectedOption = select.value;
-      let popupText = "";
+      let popup;
   
       if (selectedOption === "WHATS") {
-        popupText = "Wheels:\nHull:\nArmaments:\nTurret:\nSpecial Recognition features:";
+        const popup = window.open("/ressurser/report-templates/whats.html", "", "width=400,height=200,top=200,left=200");
       } else if (selectedOption === "WEFTAS") {
-        popupText = "Wings:\nEngines:\nFuselage:\nTail:\nArmament:\nSpecial recognition features:";
+        const popup = window.open("/rapporter/I-01.html", "", "width=400,height=200,top=200,left=200");
       } else if (selectedOption === "MASHS") {
         popupText = "Mast:\nArmament:\nSuperstructure:\nHull:\nSpecial Recognition Features:";
       } else if (selectedOption === "SCRIM") {
         popupText = "Shape:\nColor:\nRegistration:\nIdentifying marks:\nMake/model:";
       } else if (selectedOption === "A-H") {
-        popupText = "Age:\nBuild:\nClothing:\nDistingushing Marks:\nElevation:\nFace:\nGait:\nHair:";
+        const popup = window.open("/ressurser/report-templates/atoh.html", "", "width=400,height=200,top=200,left=200");
       }
   
-      const popup = window.open("", "", "width=400,height=200");
-      window.moveTo(1000,500);
-      popup.document.write("<pre>" + popupText + "</pre>");
+      
+      //popup.document.write("<pre>" + popupText + "</pre>");
     }
   });
-  
+ 
