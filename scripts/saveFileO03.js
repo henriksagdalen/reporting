@@ -1,4 +1,6 @@
 function saveToFileO03() {
+    const oscar03form = document.getElementById("oscar03form");
+    if (oscar03form.checkValidity()) {
     // Get the selected classification value for the report.
     var classificationSelect = document.querySelector(".classification select");
     var classification = classificationSelect.options[classificationSelect.selectedIndex].value;
@@ -82,4 +84,13 @@ function saveToFileO03() {
     
     // Remove the link element from the body
     document.body.removeChild(downloadLink);
-  }
+  }else {
+    alert("Please fill out all required fields before saving.");
+    var requiredFields = document.querySelectorAll("[required]");
+    for (var i = 0; i < requiredFields.length; i++) {
+        if (!requiredFields[i].checkValidity()) {
+            requiredFields[i].style.backgroundColor = "antiquewhite";
+        }
+    }
+}
+}

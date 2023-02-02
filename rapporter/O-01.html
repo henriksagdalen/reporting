@@ -91,7 +91,7 @@
                         <option value="">Classification</option>
                         <option value="(B)">Classification 1</option>
                         <option value="(K)">Classification 2</option>
-                        <option value="(H)">Classification 3</option>
+                        <option value="(H)" selected>Classification 3</option>
                         <option value="(NR)">Classification 4</option>
                         <option value="(NS)">Classification 5</option>
                     </select>
@@ -119,7 +119,7 @@
                 </div>
                 <div class="static-box">
                     <label for="writeroperator"><b>Writer/Operator:</b></label><br>
-                    <input type="text" placeholder="Initials" name="writeroperator" id="writeroperator">
+                    <input type="text" placeholder="Initials" name="writeroperator" id="writeroperator" required>
                 </div>
                 <div class="static-box">
                     <label for="ownposition"><b>Own position:</b></label><br>
@@ -127,7 +127,7 @@
                 </div>
                 <div class="static-box">
                     <label for="dtg"><b>DTG:</b></label><br>
-                    <input name="dtg" id="dtg0" type="text" placeholder="DTG"></input><br>
+                    <input name="dtg" id="dtg0" type="text" placeholder="DTG" required></input><br>
                 </div>
             </div>
 
@@ -138,7 +138,7 @@
                 </div>
                 <div class="input-box">
                     <label for="primarypup"><b>Primary PUP:</b></label><br>
-                    <textarea name="primarypup" id="primarypup0"></textarea><br>
+                    <textarea name="primarypup" id="primarypup0" required></textarea><br>
                 </div>
                 <div class="input-box">
                     <label for="secondarypup"><b>Secondary PUP:</b></label><br>
@@ -146,7 +146,7 @@
                 </div>
                 <div class="input-box">
                     <label for="suggesteddop"><b>Suggested DZ/DOP for resupply:</b></label><br>
-                    <textarea name="suggesteddop" id="suggesteddop0"></textarea><br>
+                    <textarea name="suggesteddop" id="suggesteddop0" required></textarea><br>
                 </div>
                 <div class="input-box">
                     <label for="referencepoint"><b>Reference point:</b></label><br>
@@ -154,17 +154,17 @@
                 </div>
                 <div class="input-box">
                     <label for="obsarea"><b>Observation area:</b></label><br>
-                    <textarea name="obsarea" id="obsarea0"></textarea><br>
+                    <textarea name="obsarea" id="obsarea0" required></textarea><br>
                 </div>
                 <div class="input-box-small">
                     <label for="effectivedtg"><b>OP effective DTG:</b></label><br>
-                    <textarea name="effectivedtg" id="effectivedtg0"></textarea>
+                    <textarea name="effectivedtg" id="effectivedtg0" required></textarea>
                 </div>
                 <div class="photos-attatched">
                     <div id="photos-attatched-label">Photos attatched:</div>
                     <div class="checkbox">
                         <label class="button" for="toggle">
-                            <input id="toggle" type="checkbox">
+                            <input id="toggle" type="checkbox" onchange="updateTextFile(this)">
                             <span class="slider"></span>
                         </label>
                     </div>

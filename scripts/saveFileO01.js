@@ -22,6 +22,7 @@ function saveToFileO01() {
       var overallAssessment = document.getElementById("overallassessment0").value;
       var references = document.getElementById("references0").value;
 
+      var photosAttached = toggle.checked ? "Yes" : "No";
       // Create the content for the report.
       var fileContent = "Classification: " + classification + "\n\n" +
           "From: " + from + "\n" +
@@ -35,7 +36,8 @@ function saveToFileO01() {
           "Suggested DOP: " + suggestedDOP + "\n" +
           "Referance point: " + referencePoint + "\n" +
           "Observation area: " + obsArea + "\n" +
-          "Effective DTG: " + effectiveDTG + "\n\n" +
+          "Effective DTG: " + effectiveDTG + "\n" +
+          "Photos attached: " + photosAttached + "\n\n" +
           "Overall comment: " + overallComment + "\n" +
           "Overall assessment " + overallAssessment + "\n" +
           "References: " + references + "\n\n";

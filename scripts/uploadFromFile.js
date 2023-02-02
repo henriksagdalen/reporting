@@ -194,8 +194,8 @@ function uploadFromFile() {
           staticDTGValue = document.getElementById(staticDTGID);
 
           // Only extract the "Unit" and the "DTG" from the array.
-          staticUnitValue.value = staticUnits[i][0];
-          staticDTGValue.value = staticUnits[i][3];
+          staticUnitValue.value = staticUnits[i][0] + " " + staticUnits[i][1];
+          staticDTGValue.value = staticUnits[i][4].substring(0,6);
       }
 
 //#endregion
@@ -267,8 +267,8 @@ function uploadFromFile() {
       // Display the content for the first observation in the input fields.
       var firstJournalNumber = document.getElementById("journalnumber");
       var firstDTG = document.getElementById("dtg0");
-      firstJournalNumber.value = arrayWithoutEmptyElements[journalNumberStartIndex].substring(16,100);
-      firstDTG.value = arrayWithoutEmptyElements[journalNumberStartIndex + 1].substring(5,100);
+      firstJournalNumber.value = arrayWithoutEmptyElements[journalNumberStartIndex].substring(16);
+      firstDTG.value = arrayWithoutEmptyElements[journalNumberStartIndex + 1].substring(5,11);
 
       // Find the index of where the array elements for the first fact in the report starts.
       var firstFactsIndexStart = journalNumberStartIndex + 2; // Equal to +2 since journalnumber and DTG takes up one array element each.
@@ -331,7 +331,6 @@ function uploadFromFile() {
           break;
         }
       }
-
 
       // Slice out the first part of the assessment-content. 
       var firstAssessmentContent = arrayWithoutEmptyElements[firstAssessmentIndexStart].slice(12) + "\n"
@@ -403,7 +402,6 @@ function uploadFromFile() {
 
       // Set the rest of the journal numbers based on the first journal number.
       for (var i = parseInt(firstJournalNumber.value); i < journalNumberCounter; i++) {
-        console.log(i);
         var journalNumberID = 'journalnumber' + parseInt(i);
         var journalNumber = document.getElementById(journalNumberID);
         journalNumber.value = i + 1;
@@ -413,7 +411,7 @@ function uploadFromFile() {
       var DTG = [];
       for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
         if (arrayWithoutEmptyElements[i].substring(0,4) == "DTG:") {
-          DTG.push(arrayWithoutEmptyElements[i].substring(5));
+          DTG.push(arrayWithoutEmptyElements[i].substring(5,11));
         }
       }
 
@@ -445,10 +443,6 @@ function uploadFromFile() {
         }
       }
 
-      console.log(factsIndexes);
-      console.log(commentIndexes);
-      console.log(assessmentIndexes);
-
       var counter1 = 1;
       for (var i = 0; i < factsIndexes.length; i++) {
         var facts = "";
@@ -474,14 +468,6 @@ function uploadFromFile() {
         commentElement.value = comment.substring(9);
         counter2 = counter2 + 1;
       }
-
-
-
-
-
-      console.log(journalNumberArray[journalNumberArray.length - 1]);
-    
-
       
       var f = 2;
       var counter3 = 1;
@@ -497,25 +483,11 @@ function uploadFromFile() {
             }
           }
         f++;
-        console.log(assessment);
         var assessmentID = 'assessment' + counter3;
         var assessmentElement = document.getElementById(assessmentID);
         assessmentElement.value = assessment.substring(12);
         counter3++; 
       }
-
-    
-
-
-
-
-
-
-
-
-
-
-
 
     }, false);
     if (file) {
