@@ -15,7 +15,7 @@ label {
 }
 
 .page-title-text {
-  font-size: 3vw;
+  font-size: calc(30px + 2vw);
   font-weight: 550;
 
   background-image: linear-gradient(to left, #243a2b, #434745);

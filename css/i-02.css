@@ -1,5 +1,6 @@
+/*Static Units Table*/
 .table-box {
-    width: 500px;
+    width: 775px;
 }
 
 table {
@@ -22,7 +23,9 @@ tr {
 }
 th {
     font-size: calc(15px + 0.3vw);
-    background-color: darkslategray;
+    table-layout: fixed;
+    width: 600px 200px;
+    background-color: #2f4f4f;
     color: white;
 }
 
@@ -59,12 +62,13 @@ td input:focus {
     outline: none;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
     background-color: rgb(255, 255, 255);
 }
 
 tr:hover{
     background-color: rgba(55, 90, 59, 0.363);
+    transition: 0.15s;
 }
 
 tbody {
