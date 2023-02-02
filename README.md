@@ -1,3 +1,3 @@
 # reporting
 if you know you know
-- Ståle
+- Ståle (Styggsterk)
