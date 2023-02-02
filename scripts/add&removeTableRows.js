@@ -15,6 +15,7 @@ function addTableRows() {
     var input1 = document.createElement("input");
     input1.id = 'staticunit' + tableRowCounter;
     var input2 = document.createElement("input");
+    input2.maxLength = "6";
     input2.id = 'staticdtg' + tableRowCounter;
 
     // Place the input fields in the newly created cells.

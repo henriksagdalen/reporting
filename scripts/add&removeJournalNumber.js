@@ -19,6 +19,8 @@ if(document.getElementById("journalnumber").value.length!=0){
     // Create a new field for the DTG of the observation
     var DTGForNewObservation = document.createElement("input");
     DTGForNewObservation.type = "text";
+    DTGForNewObservation.required = "true";
+    DTGForNewObservation.maxLength= "6";
     DTGForNewObservation.placeholder = 'DTG for new observation'
     DTGForNewObservation.id = 'dtg' + journalNumberCounter;
     container.appendChild(DTGForNewObservation);
