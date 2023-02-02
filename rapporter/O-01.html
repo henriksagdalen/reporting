@@ -14,6 +14,7 @@
     <script src="/scripts/disabletextarea.js"></script>
     <script src="/scripts/saveFileO01.js"></script>
     <script src="/scripts/Set&getLocalValues.js"></script>
+    <script src="/scripts/uploadFromFileO-01.js"></script>
 </head>
 
 <body>
@@ -87,7 +88,7 @@
         <form id="oscar01form" onsubmit="event.preventDefault();">
             <div class="cont_select_center">
                 <div class="classification" data-mate-select="active">
-                    <select onclick="return false;" id="">
+                    <select onclick="return false;" id="classification">
                         <option value="">Classification</option>
                         <option value="(B)">Classification 1</option>
                         <option value="(K)">Classification 2</option>
@@ -187,7 +188,7 @@
         <div class="buttons">
             <input type="button" id="saveToFile" value="Save to file" onclick="saveToFileO01()" />
 
-            <input type="button" id="uploadFromFile" value="Upload from file" onclick="uploadFromFile()" />
+            <input type="file" onchange="uploadFromFile()" />
             <button id="save-button" onclick="saveToLocal()">Save Values</button>
         </div>
     </section>

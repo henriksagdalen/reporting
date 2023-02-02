@@ -34,7 +34,7 @@ function saveToFileO01() {
           "Primary PUP: " + primaryPUP + "\n" +
           "Secondary PUP: " + secondaryPUP + "\n" +
           "Suggested DOP: " + suggestedDOP + "\n" +
-          "Referance point: " + referencePoint + "\n" +
+          "Reference point: " + referencePoint + "\n" +
           "Observation area: " + obsArea + "\n" +
           "Effective DTG: " + effectiveDTG + "\n" +
           "Photos attached: " + photosAttached + "\n\n" +
