@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Save values to local storage
 const form = document.querySelector("form");
-const saveButton = document.getElementById("saveButton");
+const saveButton = document.getElementById("saveObsButton");
 
 function setLocalobservations() {
     const journalnumber = document.getElementById("journalnumber").value;

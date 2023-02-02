@@ -54,15 +54,22 @@ if(document.getElementById("journalnumber").value.length!=0){
     container.appendChild(document.createElement('br'));
     container.appendChild(document.createElement('br'));
 
+    //Create a break line before new observation
+    container.appendChild(document.createElement('hr'));
+    container.appendChild(document.createElement('br'));
+
     // Increment the journal number counter.
-    //return journalNumberCounter = journalNumberCounter + 1;
+    return journalNumberCounter = journalNumberCounter + 1;
+}else{
+    alert("Missing journalnumber");
+    document.getElementById("journalnumber").style.backgroundColor ="antiquewhite";
 }
 }
 
 // Declaring the function for removing journal numbers
 function removeJournalNumber() {
 
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 13; i++) {
         var topop = document.getElementById('addHere').lastChild;
         document.getElementById('addHere').removeChild(topop)
     }

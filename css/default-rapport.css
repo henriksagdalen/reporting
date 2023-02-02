@@ -15,10 +15,10 @@ label {
 }
 
 .page-title-text {
-  font-size: 3vw;
+  font-size: calc(30px + 2vw);
   font-weight: 550;
 
-  background-image: linear-gradient(to left, #243a2b, #434745);
+  background-image: linear-gradient(to left, #364B44, #2f4f4f);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -36,6 +36,7 @@ label {
 .static-box {
   margin-right: 2.4vw;
   float: left;
+  padding-bottom: 10px;
 }
 
 .static-box input {
@@ -157,6 +158,25 @@ textarea:hover {
 textarea:focus {
   box-shadow: 2px 2px .4vw 1px rgb(56, 78, 78), 0 0 0 .15vw transparent;
   transition: 0.3s;
+}
+
+.input-box-simple {
+  display: inline-block;
+  margin-right: 2.4vw;
+  margin-bottom: 20px;
+}
+.input-box-simple input{
+  font-weight: 550;
+  font-size: calc(12px + 0.3vw);
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px .2vw 1px rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+  border: none;
+  outline: none;
+  padding: 0.4vw;
+  width: 10vw;
+  min-width: 180px;
+  transition: .3s;
 }
 
 /* Save and upload buttons*/

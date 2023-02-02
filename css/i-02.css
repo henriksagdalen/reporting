@@ -1,0 +1,131 @@
+/*Static Units Table*/
+.table-box {
+    width: 775px;
+}
+
+table {
+    border-radius: 6px 6px 0px 0px;
+    border-collapse: collapse;
+
+    background-color: rgb(230, 230, 230);
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#staticunits {
+    width: 100%;
+}
+
+tr {
+    width: 100%;
+    height: 32px;
+}
+th {
+    font-size: calc(15px + 0.3vw);
+    table-layout: fixed;
+    width: 600px 200px;
+    background-color: #2f4f4f;
+    color: white;
+}
+
+#th-left {
+    border-radius: 5px 0px 0px 0px;
+}
+
+#th-right {
+    border-radius: 0px 5px 0px 0px;
+}
+td{
+    border-bottom: 1px solid grey;
+    font-size: calc(12px + 0.3vw);
+    background-color: transparent;
+}
+
+td input{
+    border:none;
+    margin: none;
+    background-color: transparent;
+    width: 100%;
+    font-family: monospace;
+    font-weight: 550;
+    font-size: 100%;
+}
+
+td input:hover {
+    box-shadow: none;
+}
+
+td input:focus {
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(255, 255, 255);
+}
+
+tr:hover{
+    background-color: rgba(55, 90, 59, 0.363);
+    transition: 0.15s;
+}
+
+tbody {
+    background-color: rgb(255, 255, 255);
+}
+
+/*Textarea for added observations*/ 
+.single-observation textarea {
+    width: 98%;
+    height: 8%;
+    font-size: calc(12px + 0.3vw);
+    font-weight: 550;
+    outline: none;
+    border: none;
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px .2vw 1px rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+}
+
+.single-observation textarea:hover {
+    box-shadow: 2px 2px .4vw 1px rgb(49, 79, 79, 0.5), 0 0 0 .15vw transparent;
+}
+
+.single-observation textarea:focus {
+    box-shadow: 2px 2px .4vw 1px rgb(56, 78, 78), 0 0 0 .15vw transparent;
+}
+
+/*Input for added observation*/
+.single-observation input {
+    font-weight: 550;
+    font-size: calc(12px + 0.3vw);
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px .2vw 1px rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+    border: none;
+    outline: none;
+    padding: 0.4vw;
+    width: 10vw;
+    min-width: 180px;
+    transition: .3s;
+    margin-bottom: 20px;
+    margin-right: 2.4vw;
+}
+
+.single-observation input:hover {
+    box-shadow: 2px 2px .4vw 1px rgb(49, 79, 79, 0.5), 0 0 0 .15vw transparent;
+}
+
+.single-observation input:focus {
+    box-shadow: 2px 2px .4vw 1px rgb(56, 78, 78), 0 0 0 .15vw transparent;
+}
+
+/*Label for added observation*/
+.single-observation label{
+    font-size: calc(20px + 0.4vw);
+}
+
+.main-section {
+    position: relative;
+}

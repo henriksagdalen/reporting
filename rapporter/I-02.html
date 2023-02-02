@@ -12,105 +12,214 @@
     <script src="/scripts/saveI02observation.js"></script>
     <script src="/scripts/uploadFromFile.js"></script>
     <script src="/scripts/reportBlueprints.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
+    <script src="/scripts/dropdowns.js"></script>
+    <link rel="stylesheet" href="/css/default-rapport.css">
+    <link rel="stylesheet" href="/css/Header.css">
+    <link rel="stylesheet" href="/css/gradering.css">
+    <link rel="stylesheet" href="/css/Home.css">
+    <link rel="stylesheet" href="/css/i-02.css">
+    <link rel="stylesheet" href="/css/buttons.css">
 </head>
 
 <body>
+    <header>
+        <div class="header-master">
+
+            <div class="header-left">
+
+                <div class="navigation">
+
+                    <ul class="menu">
+
+                        <li class="menu-item">
+                            <a class="sub-button" href="index-alpha.html">Alpha</a>
+                            <ul class="sub-menu">
+                                <li class="sub-item"> <a href="A-01.html">A-01 MEDEVAC</a></li>
+                                <li class="sub-item"> <a href="A-02.html">A-02 MEDREP</a></li>
+                                <li class="sub-item"> <a href="A-03.html">A-03 RESUPREQ</a></li>
+                                <li class="sub-item"> <a href="A-04.html">A-04</a></li>
+                                <li class="sub-item"> <a href="A-05.html">A-05</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-item">
+                            <a class="sub-button" href="index-india.html">
+                                India
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="sub-item"> <a href="I-01.html">I-01</a></li>
+                                <li class="sub-item"> <a href="I-02.html">I-02</a></li>
+                                <li class="sub-item"> <a href="I-03.html">I-03</a></li>
+                                <li class="sub-item"> <a href="I-04.html">I-04</a></li>
+                                <li class="sub-item"> <a href="I-05.html">I-05</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a class="sub-button" href="index-oscar.html">Oscar
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="sub-item"> <a href="O-01.html">O-01</a></li>
+                                <li class="sub-item"> <a href="O-02.html">O-02</a></li>
+                                <li class="sub-item"> <a href="O-03.html">O-03</a></li>
+                                <li class="sub-item"> <a href="O-04.html">O-04</a></li>
+                                <li class="sub-item"> <a href="O-05.html">O-05</a></li>
+                                <li class="sub-item"> <a href="O-06.html">O-06 AGTCONREP</a></li>
+                                <li class="sub-item"> <a href="O-07.html">O-07</a></li>
+                                <li class="sub-item"> <a href="O-08.html">O-08</a></li>
+                                <li class="sub-item"> <a href="O-09.html">O-09</a></li>
+                                <li class="sub-item"> <a href="O-10.html">O-10</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="header-right">
+                <a class="home-button" href="../Homepage.html">
+                    <img src="../ressurser/home-icon.png" class="home-icon">
+                </a>
+                <a class="home-button" href="../wiki/index-wiki.html">
+                    <img src="../ressurser/question-mark.png" class="question-mark">
+                </a>
+            </div>
+        </div>
+    </header>
     <section>
-        <form id="india02form" onsubmit="event.preventDefault();">
-            <div class="classification">
-                <select id="klasser" required>
-                    <option selected value="">-- Classification --</option>
-                    <option value="(B)">Classification 1</option>
-                    <option value="(K)">Classification 2</option>
-                    <option value="(H)">Classification 3</option>
-                    <option value="(NR)">Classification 4</option>
-                    <option value="(NS)">Classification 5</option>
-                </select>
+        <div class="main-section">
+            <div class="page-title">
+                <div class="page-title-text">I-02 Initial report</div> 
             </div>
+            <form id="india02form" onsubmit="event.preventDefault();">
+                <div class="cont_select_center">
+                    <div class="classification" data-mate-select="active">
+                        <select onclick="return false;" id="">
+                            <option value="">Classification</option>
+                            <option value="(B)">Classification 1</option>
+                            <option value="(K)">Classification 2</option>
+                            <option value="(H)">Classification 3</option>
+                            <option value="(NR)">Classification 4</option>
+                            <option value="(NS)">Classification 5</option>
+                        </select>
+                        <p class="selectoption" onclick="open_select(this)"></p>
+                        <span onclick="open_select(this)" class="icon_select_mate">
+                            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24">
+                                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                                <path d="M0-.75h24v24H0z" fill="none" />
+                            </svg>
+                        </span>
+                        <div class="cont_list_select_mate">
+                            <ul class="cont_select_int"> </ul>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="staticvalues">
+                    <div class="static-box">
+                        <label for="from"><b>From:</b></label><br>
+                        <input type="text" placeholder="From callsign" name="from" id="from" required>
+                    </div>
 
-            <div class="staticvalues">
-                <label for="from"><b>From:</b></label>
-                <input type="text" placeholder="From callsign" name="from" id="from" required>
+                    <div class="static-box">
+                        <label for="to"><b>To:</b></label><br>
+                        <input type="text" placeholder="To callsign" name="to" id="to">
+                    </div>
 
-                <label for="to"><b>To:</b></label>
-                <input type="text" placeholder="To callsign" name="to" id="to">
+                    <div class="static-box">
+                        <label for="writeroperator"><b>Writer:</b></label><br>
+                        <input type="text" placeholder="Writer/Operator" name="writeroperator" id="writeroperator">
+                    </div>
 
-                <label for="writeroperator"><b>Writer/Operator:</b></label>
-                <input type="text" placeholder="Writer/Operator" name="writeroperator" id="writeroperator">
+                    <div class="static-box">
+                        <label for="ownposition"><b>Own position:</b></label><br>
+                        <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
+                    </div>
 
-                <label for="ownposition"><b>Own position:</b></label>
-                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
+                    <div class="static-box">
+                        <label for="naitai"><b>NAI/TAI:</b></label><br>
+                        <input type="text" placeholder="NAI/TAI" name="naitai" id="naitai"><br>
+                    </div>
 
-                <label for="naitai"><b>NAI/TAI:</b></label>
-                <input type="text" placeholder="NAI/TAI" name="naitai" id="naitai"><br>
+                    <div class="static-box">
+                        <label for="dtgfrom"><b>DTG from:</b></label><br>
+                        <input type="text" placeholder="DTG" name="dtgfrom" id="dtgfrom" maxlength="6" required>
+                    </div>
 
-                <label for="dtgfrom"><b>DTG from:</b></label>
-                <input type="text" placeholder="DTG" name="dtgfrom" id="dtgfrom" maxlength="6" required>
+                    <div class="static-box">
+                        <label for="dtgto"><b>DTG to:</b></label><br>
+                        <input type="text" placeholder="DTG" name="dtgto" id="dtgto" maxlength="6" required>
+                    </div>
+                </div>
+                <div class="observation">
+                    <div class="input-box">
+                        <label for="bluf"><b>Bottom Line Up Front:</b></label><br>
+                        <textarea type="text" id="bluf"></textarea>
+                    </div>
 
-                <label for="dtgto"><b>DTG to:</b></label>
-                <input type="text" placeholder="DTG" name="dtgto" id="dtgto" maxlength="6" required>
+                    <div class="input-box">
+                        <label for="patternoflife"><b>Pattern of life:</b></label><br>
+                        <textarea type="text" id="patternoflife"></textarea>
+                    </div>
 
-            </div>
+                    <div class="table-box">
+                        <label for="staticunits"><b>Static units in NAI:</b></label><br>
+                        <table id="staticunits">
+                            <col style="width:75%;">
+                            <col style="border-left: 1px solid grey;">
+                            <thead>
+                                <tr>
+                                    <th id="th-left" colspan="1">Unit</th>
+                                    <th id="th-right" colspan="1">Since DTG</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="text" placeholder="Unit" id="staticunit0"></td>
+                                    <td><input type="text" placeholder="Since DTG" id="staticdtg0" maxlength="6"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <div class="bluf">
-                <label for="bluf"><b>Bottom Line Up Front:</b></label><br>
-                <textarea type="text" id="bluf"></textarea>
-            </div>
+                    <div class="input-box">
+                        <label for="overallcomment"><b>Overall comment:</b></label><br>
+                        <textarea type="text" id="overallcomment"></textarea>
+                    </div>
 
-            <div class="patternoflife">
-                <label for="patternoflife"><b>Pattern of life:</b></label><br>
-                <textarea type="text" id="patternoflife"></textarea>
-            </div>
+                    <div class="input-box">
+                        <label for="overallassessment"><b>Overall assessment:</b></label><br>
+                        <textarea type="text" id="overallassessment"></textarea>
+                    </div>
 
-            <div class="staticunits">
-                <label for="staticunits"><b>Static units in NAI:</b></label><br>
-                <table id="staticunits">
-                    <thead>
-                        <tr>
-                            <th colspan="1">Unit</th>
-                            <th colspan="1">Since DTG</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="text" placeholder="Unit" id="staticunit0"></td>
-                            <td><input type="text" placeholder="Since DTG" id="staticdtg0" maxlength="6"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <br><br><br>
 
-            <div class="overallcomment">
-                <label for="overallcomment"><b>Overall comment:</b></label><br>
-                <textarea type="text" id="overallcomment"></textarea>
-            </div>
+                    <div class="observation">
+                        <div class="input-box-simple">
+                            <label for="journalnumber"><b>Journal number:</b></label><br>
+                            <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber" required></input><br>
+                        </div>
+                        <div class="input-box-simple">
+                            <label for="dtg"><b>DTG:</b></label><br>
+                            <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation" maxlength="6"></input><br>
+                        </div>
+                        <div class="input-box">
+                            <label for="facts"><b>Facts:</b></label>
+                            <textarea type=text name="facts" id="facts0" required></textarea><br>
+                        </div>
+                        <div class="input-box">
+                            <label for="comment"><b>Comment:</b></label>
+                            <textarea name="comment" id="comment0"></textarea><br>
+                        </div>
+                        <div class="input-box">
+                            <label for="assessment"><b>Assessment:</b></label>
+                            <textarea type=text name="assessment" id="assessment0"></textarea><br><br>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
 
-            <div class="overallassessment">
-                <label for="overallassessment"><b>Overall assessment:</b></label><br>
-                <textarea type="text" id="overallassessment"></textarea>
-            </div>
-
-
-            <div class="observation">
-                <label for="journalnumber"><b>Journal number:</b></label>
-                <input id="journalnumber" placeholder="Journal number" type="number" name="journalnumber" required></input><br>
-
-                <label for="dtg"><b>DTG:</b></label>
-                <input name="dtg" id="dtg0" type="text" placeholder="DTG of observation" maxlength="6"></input><br>
-
-                <label for="facts"><b>Facts:</b></label>
-                <textarea type=text name="facts" id="facts0" required></textarea><br>
-
-                <label for="comment"><b>Comment:</b></label>
-                <textarea name="comment" id="comment0"></textarea><br>
-
-                <label for="assessment"><b>Assessment:</b></label>
-                <textarea type=text name="assessment" id="assessment0"></textarea><br><br>
-            </div>
-
-            <div id="addHere"></div>
-        </form>
+                <div id="addHere" class="single-observation"></div>
+            </form>
         <select id="bluePrintsReporting">
             <option value="WHATS">WHATS</option>
             <option value="WEFTAS">WEFTAS</option>
@@ -121,24 +230,28 @@
 
         <button id="copyButton">Vis mal</button>
 
-        <input type="button" id="addTableRows" value="+" onclick="addTableRows()" />
-
-        <input type="button" id="removeTableRows" value="-" onclick="removeTableRows()">
-
-        <input type="button" id="addJournalNumber" value="+" onclick="addJournalNumber()" />
-
-        <input type="button" id="removeJournalNumber" value="-" onclick="removeJournalNumber()" />
-
-        <br>
-
-        <input type="submit" id="mysaveToFile" value="Save to file" onclick="saveToFile();" />
-
-        <input type="file" onchange="uploadFromFile()" /><br />
-        <button id="save-button" onclick="saveToLocal()">Save Values</button>
-        <input type="button" value="Save Observation" id="saveButton" onclick="setLocalobservations()">
-        <p class="content"></p>
+            
+        </div>     
+        <div class="table-row">
+            <input type="button" id="addTableRows" value="+" onclick="addTableRows()" />
+    
+            <input type="button" id="removeTableRows" value="-" onclick="removeTableRows()">
         </div>
+        <button id="save-button" onclick="saveToLocal()">Save Values</button>
+        
     </section>
+        <div class="observation-buttons">
+            <input type="button" id="addJournalNumber" value="Add" onclick="addJournalNumber()" />
+
+            <input type="button" id="removeJournalNumber" value="Remove" onclick="removeJournalNumber()" />
+        </div>
+        <input type="button" value="Save Observation" id="saveObsButton" onclick="setLocalobservations()">
+        <br>
+        <input type="submit" id="mysaveToFile" value="Save to file" onclick="saveToFile();" />
+        <div class="uploadfilebutton">
+            <div class="uploadbuttondesign">Upload file</div>
+            <input type="file" id="uploadFromFile" onchange="uploadFromFile()" /><br><br><br><br>
+        </div>
 </body>
 
 </html>
