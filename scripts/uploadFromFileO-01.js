@@ -222,7 +222,33 @@ function fileContentToArray() {
         toggleButton.checked = true;
       }
 
-      
+      // Get the content for the overall comment field.
+      var overallCommentContent = "";
+      overallCommentIndexEnd = overallAssessmentIndexStart - 1;
+      for (var i = overallCommentIndexStart; i <= overallCommentIndexEnd; i++) {
+        overallCommentContent = overallCommentContent + arrayWithoutEmptyElements[i] + "\n"; 
+      }
+      var overallCommentElement = document.getElementById("overallcomment0");
+      overallCommentElement.value = overallCommentContent.substring(17);
+
+      // Get the content for the overall assessment field.
+      var overallAssessmentContent = "";
+      overallAssessmentIndexEnd = referencesIndexStart - 1;
+      for (var i = overallAssessmentIndexStart; i <= overallAssessmentIndexEnd; i++) {
+        overallAssessmentContent = overallAssessmentContent + arrayWithoutEmptyElements[i] + "\n"; 
+      }
+      var overallAssessmentElement = document.getElementById("overallassessment0");
+      overallAssessmentElement.value = overallAssessmentContent.substring(20);
+
+      // Get the content for the references field.
+      var referencesContent = "";
+      referencesIndexEnd = arrayWithoutEmptyElements.length - 1;
+      for (var i = referencesIndexStart; i <= referencesIndexEnd; i++) {
+        referencesContent = referencesContent + arrayWithoutEmptyElements[i] + "\n"; 
+      }
+      var referencesElement = document.getElementById("references0");
+      referencesElement.value = referencesContent.substring(12);
+
 
 
     }, false);
