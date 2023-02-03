@@ -1,27 +1,25 @@
 window.addEventListener("load", function() {
-    const copyButton = document.getElementById("copyButton01");
-    const select = document.getElementById("bluePrintsReporting01");
-    copyButton.addEventListener("click", popupWindow01);
-    
-    function popupWindow01(){
-      const selectedOption = select.value;
-      let popupText = "";
+  const copyButton = document.getElementById("copyButton01");
+  const select = document.getElementById("bluePrintsReporting01");
+  copyButton.addEventListener("click", popupWindow);
   
-      if (selectedOption === "WHATS") {
-        popupText = "Wheels:\nHull:\nArmaments:\nTurret:\nSpecial Recognition features:";
-      } else if (selectedOption === "WEFTAS") {
-        popupText = "Wings:\nEngines:\nFuselage:\nTail:\nArmament:\nSpecial recognition features:";
-      } else if (selectedOption === "MASHS") {
-        popupText = "Mast:\nArmament:\nSuperstructure:\nHull:\nSpecial Recognition Features:";
-      } else if (selectedOption === "SCRIM") {
-        popupText = "Shape:\nColor:\nRegistration:\nIdentifying marks:\nMake/model:";
-      } else if (selectedOption === "A-H") {
-        popupText = "Age:\nBuild:\nClothing:\nDistingushing Marks:\nElevation:\nFace:\nGait:\nHair:";
-      }
-  
-      const popup = window.open("", "", "width=400,height=200");
-      window.moveTo(1000,500);
-      popup.document.write("<pre>" + popupText + "</pre>");
+  function popupWindow(){
+    const selectedOption = select.value;
+    let popup;
+
+    if (selectedOption === "WHATS") {
+      const popup = window.open("/ressurser/report-templates/whats.html", "", "width=400,height=200,top=200,left=200");
+    } else if (selectedOption === "WEFTAS") {
+      const popup = window.open("/rapporter/I-01.html", "", "width=400,height=200,top=200,left=200");
+    } else if (selectedOption === "MASHS") {
+      popupText = "Mast:\nArmament:\nSuperstructure:\nHull:\nSpecial Recognition Features:";
+    } else if (selectedOption === "SCRIM") {
+      popupText = "Shape:\nColor:\nRegistration:\nIdentifying marks:\nMake/model:";
+    } else if (selectedOption === "A-H") {
+      const popup = window.open("/ressurser/report-templates/atoh.html", "", "width=400,height=200,top=200,left=200");
     }
-  });
-  
+
+    
+    //popup.document.write("<pre>" + popupText + "</pre>");
+  }
+});
