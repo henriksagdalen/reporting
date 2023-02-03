@@ -106,7 +106,7 @@ function uploadFromFile() {
         factsContent = factsContent + arrayWithoutEmptyElements[i] + "\n";
       }
       var factsElement = document.getElementById("facts0");
-      factsElement.value = factsContent;
+      factsElement.value = factsContent.substring(7);
 
       // Retrieve the content for the comment field.
       var commentContent = "";
@@ -114,7 +114,7 @@ function uploadFromFile() {
         commentContent = commentContent + arrayWithoutEmptyElements[i] + "\n";
       }
       var commentElement = document.getElementById("comment0");
-      commentElement.value = commentContent;
+      commentElement.value = commentContent.substring(9);
 
       // Retrieve the content for the assessment field.
       var assessmentContent = "";
@@ -122,7 +122,7 @@ function uploadFromFile() {
         assessmentContent = assessmentContent + arrayWithoutEmptyElements[i] + "\n";
       }
       var assessmentElement = document.getElementById("assessment0");
-      assessmentElement.value = assessmentContent;
+      assessmentElement.value = assessmentContent.substring(12);
 
     }, false);
     if (file) {
