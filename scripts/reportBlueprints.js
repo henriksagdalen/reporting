@@ -10,13 +10,13 @@ window.addEventListener("load", function() {
       if (selectedOption === "WHATS") {
         const popup = window.open("/ressurser/report-templates/whats.html", "", "width=400,height=200,top=200,left=200,location=yes");
       } else if (selectedOption === "WEFTAS") {
-        const popup = window.open("/rapporter/I-01.html", "", "width=400,height=200,top=200,left=200");
+        const popup = window.open("/ressurser/report-template/weftas.html", "", "width=400,height=200,top=200,left=200");
       } else if (selectedOption === "MASHS") {
-        popupText = "Mast:\nArmament:\nSuperstructure:\nHull:\nSpecial Recognition Features:";
+        const popup = window.open("/ressurser/report-template/mash.html", "", "width=400,height=200,top=200,left=200");
       } else if (selectedOption === "SCRIM") {
-        popupText = "Shape:\nColor:\nRegistration:\nIdentifying marks:\nMake/model:";
+        const popup = window.open("/ressurser/report-template/scrim.html", "", "width=400,height=200,top=200,left=200");
       } else if (selectedOption === "A-H") {
-        const popup = window.open("/ressurser/report-templates/atoh.html", "", "width=400,height=200,top=200,left=200");
+        const popup = window.open("/ressurser/report-template/atoh.html", "", "width=400,height=200,top=200,left=200");
       }
   
       
