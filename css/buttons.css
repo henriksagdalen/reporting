@@ -23,7 +23,7 @@
 /*Add or remove table rows*/
 .table-row{
     position: absolute;
-    top: calc(450px + 26vh);
+    top: calc(530px + 26vh);
     left: 850px;
 }
 /*Add table row button*/
@@ -63,8 +63,6 @@
     box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.438);
     cursor: pointer;
 }
-
-/*Report template*/
 
 /*Observation buttons*/
 
@@ -193,4 +191,26 @@
     height: 100%;
     width: 120px;
     left: 0;
+}
+
+/*Template button*/
+#copyButton {
+    background-color: rgb(255, 127, 80);
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 70px;
+    font-size: 16px;
+    font-weight: 550;
+    transition: 0.3s;
+    box-shadow: 1px 1px .2vw 1px rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+    margin-left: 41px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#copyButton:hover {
+    scale: 1.01;
+    box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.438);
 }

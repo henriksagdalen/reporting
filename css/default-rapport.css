@@ -68,7 +68,7 @@ input:focus {
 
 .input-box textarea{
   width: 98%;
-  height: 8%;
+  height: 60px;
   font-size: calc(12px + 0.3vw);
   font-weight: 550;
   outline: none;
