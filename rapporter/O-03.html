@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="../css/default-rapport.css">
     <link rel="stylesheet" href="../css/gradering.css">
     <link rel="stylesheet" href="../css/oscar-rapporter.css">
+    <link rel="stylesheet" href="../css/buttons.css">
     <script src="/scripts/dropdowns.js"></script>
     <script src="/scripts/disabletextarea.js"></script>
     <script src="/scripts/saveFileO03.js"></script>
     <script src="/scripts/Set&getLocalValues.js"></script>
+    <script src="/scripts/uploadFromFileO-03.js"></script>
 </head>
 <body>
     <header>
@@ -140,19 +142,12 @@
           </div>
         </div>
       </form>
-        <div class="buttons">
-            <input
-                type="button"
-                id="saveToFile"
-                value="Save to file"
-                onclick="saveToFileO03()"/>
-
-            <input
-                type="button"
-                id="uploadFromFile"
-                value="Upload from file"
-                onclick="uploadFromFile()"/>
-        </div>
     </section>
+    <button id="save-button" onclick="saveToLocal()">Save Values</button>
+    <input type="submit" id="mysaveToFile" value="Save to file" onclick="saveToFileO03();" />
+    <div class="uploadfilebutton">
+        <div class="uploadbuttondesign">Upload file</div>
+        <input type="file" id="uploadFromFile" onchange="uploadFromFile()" /><br><br><br><br>
+    </div>
     </body>
 </html>

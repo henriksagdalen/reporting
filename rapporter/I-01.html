@@ -163,27 +163,18 @@
             <option value="SCRIM">SCRIM</option>
             <option value="A-H">A-H</option>
           </select>
-          <p class="selectoption" onclick="open_select(this)"></p>
-          <span onclick="open_select(this)" class="icon_select_mate">
-              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24">
-                  <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
-                  <path d="M0-.75h24v24H0z" fill="none" />
-              </svg>
-          </span>
-          <div class="cont_list_select_mate">
-              <ul class="cont_select_int"> </ul>
-          </div>
-      </div>
-  </div>
 
           <button id="copyButton">Vis mal</button>
 
-        <div class="buttons">
-            <input type="button" id="saveToFile" value="Save to file" form="india01form" onclick="saveToFile01()" />
-            <input type="file" id="uploadFromFile" onchange="uploadFromFile()" />
-            <button id="save-button" onclick="saveToLocal()">Save Values</button>
-        </div>
+        <button id="save-button" onclick="saveToLocal()">Save Values</button>
     </section>
+
+    <input type="submit" id="mysaveToFile" value="Save to file" onclick="saveToFile01();" />
+    <div class="uploadfilebutton">
+        <div class="uploadbuttondesign">Upload file</div>
+        <input type="file" id="uploadFromFile" onchange="uploadFromFile()" /><br><br><br><br>
+    </div>
+        
 </body>
 
 </html>
