@@ -52,6 +52,7 @@ body::after {
 .template-link-text {
   color: black;
   text-decoration: none;
+  margin-top: 2px;
 }
 
 .copy-text {
