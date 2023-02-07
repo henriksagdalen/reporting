@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>O-03</title>
+    <title>O-04</title>
     <link rel="icon" href="../ressurser/radar.png">
     <link rel="stylesheet" href="../css/Header.css">
     <link rel="stylesheet" href="../css/Home.css">
@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="../css/buttons.css">
     <script src="/scripts/dropdowns.js"></script>
     <script src="/scripts/disabletextarea.js"></script>
-    <script src="/scripts/saveFileO03.js"></script>
+    <script src="/scripts/saveFileO04.js"></script>
     <script src="/scripts/Set&getLocalValues.js"></script>
-    <script src="/scripts/uploadFromFileO-03.js"></script>
+    <script src="/scripts/uploadFromFileO-04.js"></script>
 </head>
 <body>
     <header>
@@ -81,9 +81,9 @@
         </div>
       </header>
     <section>
-      <form id="oscar03form" onsubmit="event.preventDefault();">
+      <form id="oscar04form" onsubmit="event.preventDefault();">
       <div class="page-title">
-        <div class="page-title-text">O-03 Initial report</div> 
+        <div class="page-title-text">O-04 Contact report</div> 
       </div>
       <div class="cont_select_center">
         <div class="classification" data-mate-select="active" >
@@ -123,7 +123,7 @@
             </div>
             <div class="static-box">
                 <label for="ownposition"><b>Own position:</b></label><br>
-                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
+                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition" required>
             </div>
             <div class="static-box">
               <label for="dtg"><b>DTG:</b></label><br>
@@ -133,18 +133,46 @@
     
         <div class="rapport">
           <div class="input-box">
-              <label for="status"><b>Status:</b></label><br>
-              <textarea name="status" id="status0" ></textarea>
+              <label for="where"><b>Where:</b></label><br>
+              <textarea name="where" id="where0" ></textarea>
           </div>
           <div class="input-box">
-              <label for="ownaction"><b>Own action:</b></label><br>
-              <textarea name="ownaction" id="ownaction0" ></textarea><br>
+              <label for="typeofcontact"><b>Type of contact:</b></label><br>
+              <textarea name="typeofcontact" id="typeofcontact0" ></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="enemyloss"><b>Enemy loss/Casualties:</b></label><br>
+            <textarea name="enemyloss" id="enemyloss0" ></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="ownloss"><b>Own loss/Casualties:</b></label><br>
+            <textarea name="ownloss" id="ownloss0" ></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="enemysize"><b>Enemy size:</b></label><br>
+            <textarea name="enemysize" id="enemysize0" ></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="enemypos"><b>Assumed enemy position now:</b></label><br>
+            <textarea name="enemypos" id="enemypos0" ></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="enemyvehicles"><b>Enemy vehicles, weapons and equipment:</b></label><br>
+            <textarea name="enemyvehicles" id="enemyvehicles0" ></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="ownplanofaction"><b>Own plan of action:</b></label><br>
+            <textarea name="ownplanofaction" id="ownplanofaction0" ></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="needforsupport"><b>Need for support:</b></label><br>
+            <textarea name="needforsupport" id="needforsupport0" ></textarea><br>
           </div>
         </div>
       </form>
     </section>
     <button id="save-button" onclick="saveToLocal()">Save Values</button>
-    <input type="submit" id="mysaveToFile" value="Save to file" onclick="saveToFileO03();" />
+    <input type="submit" id="mysaveToFile" value="Save to file" onclick="saveToFileO04();" />
     <div class="uploadfilebutton">
         <div class="uploadbuttondesign">Upload file</div>
         <input type="file" id="uploadFromFile" onchange="uploadFromFile()" /><br><br><br><br>
