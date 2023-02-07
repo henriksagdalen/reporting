@@ -1,6 +1,6 @@
-function saveToFileO06() {
-  const oscar06form = document.getElementById("oscar06form");
-  if (oscar06form.checkValidity()) {
+function saveToFileO07() {
+  const oscar07form = document.getElementById("oscar07form");
+  if (oscar07form.checkValidity()) {
   // Get the selected classification value for the report.
   var classificationSelect = document.querySelector(".classification select");
   var classification = classificationSelect.options[classificationSelect.selectedIndex].value;
@@ -11,10 +11,11 @@ function saveToFileO06() {
   var writerOperator = document.getElementById("writeroperator").value;
   var ownPosition = document.getElementById("ownposition").value;
   var dtgOfObservation = document.getElementById("dtg0").value;
-  var timeframe = document.getElementById("timeframe0").value;
-  var locationAgtCon = document.getElementById("locationagtcon0").value;
-  var descriptionOfAgent = document.getElementById("descriptionofagent0").value;
-  var contactProcedure = document.getElementById("contactprocedure0").value;
+  var posDlb = document.getElementById("posdlb0").value;
+  var descriptionDlb = document.getElementById("descriptionofdlb0").value;
+  var timeframeDlb = document.getElementById("timeframedlb0").value;
+  var procedureDlb = document.getElementById("proceduredlb0").value;
+  var autenticationDlb= document.getElementById("autenicationdlb0").value;
   var additionalInfo = document.getElementById("additionalinfo0").value;
 
   // Create the content for the report.
@@ -24,10 +25,11 @@ function saveToFileO06() {
       + "Writer/Operator: " + writerOperator + "\n"
       + "Own position: " + ownPosition + "\n"
       + "DTG: " + dtgOfObservation + "\n\n"
-      + "Timeframe from-to (DTG): " + timeframe + "\n"
-      + "Location AGTCON: " + locationAgtCon + "\n"
-      + "Description of agent: " + descriptionOfAgent + "\n"
-      + "Contact procedure: " + contactProcedure + "\n\n"
+      + "Position of DLB: " + posDlb + "\n"
+      + "Description of DLB: " + descriptionDlb + "\n"
+      + "Timeframe of opening of DLB: " + timeframeDlb + "\n"
+      + "Procedure of opening the DLB: " + procedureDlb + "\n"
+      + "Autentication of content in DLB: " + autenticationDlb + "\n\n"
       + "Additional information: " + additionalInfo + "\n"
 
   // Get the date and time from the local computer.
@@ -72,7 +74,7 @@ function saveToFileO06() {
       + classification 
       + " MIBN LRRP " 
       + from 
-      + " O-06 "
+      + " O-07 "
       + dtgOfObservation + "Z";
 
   // Create a Blob object with the file content
