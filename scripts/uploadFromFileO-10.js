@@ -245,7 +245,7 @@ function fileContentToArrayO10() {
 
       // Get the content for the references field.
       var referencesContent = "";
-      referencesIndexEnd = arrayWithoutEmptyElements.length - 1;
+      referencesIndexEnd = newsIndexStart - 1;
       for (var i = referencesIndexStart; i <= referencesIndexEnd; i++) {
         referencesContent = referencesContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
