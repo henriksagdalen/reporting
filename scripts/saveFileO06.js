@@ -1,5 +1,5 @@
 function saveToFileO06() {
-  const oscar06form = document.getElementById("oscar03form");
+  const oscar06form = document.getElementById("oscar06form");
   if (oscar06form.checkValidity()) {
   // Get the selected classification value for the report.
   var classificationSelect = document.querySelector(".classification select");
