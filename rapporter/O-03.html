@@ -13,6 +13,7 @@
     <script src="/scripts/disabletextarea.js"></script>
     <script src="/scripts/saveFileO03.js"></script>
     <script src="/scripts/Set&getLocalValues.js"></script>
+    <script src="/scripts/uploadFromFileO-03.js"></script>
 </head>
 <body>
     <header>
@@ -147,11 +148,7 @@
                 value="Save to file"
                 onclick="saveToFileO03()"/>
 
-            <input
-                type="button"
-                id="uploadFromFile"
-                value="Upload from file"
-                onclick="uploadFromFile()"/>
+                <input type="file" onchange="uploadFromFileO03()" />
         </div>
     </section>
     </body>

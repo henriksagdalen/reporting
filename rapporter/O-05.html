@@ -5,7 +5,6 @@
     <link rel="icon" href="../ressurser/radar.png">
     <link rel="stylesheet" href="../css/Header.css">
     <link rel="stylesheet" href="../css/Home.css">
-    <link rel="stylesheet" href="../css/static-values.css">
     <link rel="stylesheet" href="../css/default-rapport.css">
     <link rel="stylesheet" href="../css/gradering.css">
     <link rel="stylesheet" href="../css/oscar-rapporter.css">
@@ -13,6 +12,7 @@
     <script src="/scripts/disabletextarea.js"></script>
     <script src="/scripts/saveFileO05.js"></script>
     <script src="/scripts/Set&getLocalValues.js"></script>
+    <script src="/scripts/uploadFromFileO-05.js"></script>
 </head>
 <body>
     <header>
@@ -159,11 +159,7 @@
                   value="Save to file"
                   onclick="saveToFileO05()"/>
 
-              <input
-                  type="button"
-                  id="uploadFromFile"
-                  value="Upload from file"
-                  onclick="uploadFromFile()"/>
+                  <input type="file" onchange="uploadFromFileO05()" />
           </div>
         </section>
     </body>
