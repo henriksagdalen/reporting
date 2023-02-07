@@ -124,127 +124,124 @@ function fileContentToArray() {
         if (arrayWithoutEmptyElements[i].substring(0,19) == "Enemy COA next 24h:") {
             enemyCOAIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0,14) == "Temprature low-high:") {
+        if (arrayWithoutEmptyElements[i].substring(0,21) == "Temperature low-high:") {
             temperatureIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0,16) == "Wind low-high:") {
+        if (arrayWithoutEmptyElements[i].substring(0,14) == "Wind low-high:") {
             windIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0,17) == "Precipitation low-high:") {
+        if (arrayWithoutEmptyElements[i].substring(0,23) == "Precipitation low-high:") {
             precipitationIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0,14) == "Cloud coverage:") {
+        if (arrayWithoutEmptyElements[i].substring(0,15) == "Cloud coverage:") {
             cloudCoverageIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0,16) == "Sunrise/Sunset:") {
+        if (arrayWithoutEmptyElements[i].substring(0,15) == "Sunrise/Sunset:") {
             sunIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0,16) == "Message from OPS:") {
+        if (arrayWithoutEmptyElements[i].substring(0,17) == "Message from OPS:") {
             messageFromOpsIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0,19) == "Message from SDA:") {
+        if (arrayWithoutEmptyElements[i].substring(0,17) == "Message from SDA:") {
             messageFromSDAIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0,11) == "Reference:") {
+        if (arrayWithoutEmptyElements[i].substring(0,11) == "References:") {
             referencesIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0,11) == "In other news:") {
+        if (arrayWithoutEmptyElements[i].substring(0,14) == "In other news:") {
           newsIndexStart = i;
       }
       }
       
-      // Get the content for the OP/Base description field.
-      var baseDescriptionContent = "";
-      baseDescriptionIndexEnd = primaryPUPIndexStart - 1;
-      for (var i = baseDescriptionIndexStart; i <= baseDescriptionIndexEnd; i++) {
-        baseDescriptionContent = baseDescriptionContent + arrayWithoutEmptyElements[i] + "\n";
+      // Get the content for the own situation field.
+      var ownSituationContent = "";
+      ownSituationIndexEnd = enemySituationIndexStart - 1;
+      for (var i = ownSituationIndexStart; i <= ownSituationIndexEnd; i++) {
+        ownSituationContent = ownSituationContent + arrayWithoutEmptyElements[i] + "\n";
       }
-      var baseDescriptionElement = document.getElementById("op-base0");
-      baseDescriptionElement.value = baseDescriptionContent.substring(16);
+      var ownSituationElement = document.getElementById("ownsituation0");
+      ownSituationElement.value = ownSituationContent.substring(15);
 
-      // Get the content for the Primary PUP field.
-      var primaryPUPContent = "";
-      primaryPUPIndexEnd = secondaryPUPIndexStart - 1;
-      for (var i = primaryPUPIndexStart; i <= primaryPUPIndexEnd; i++) {
-        primaryPUPContent = primaryPUPContent + arrayWithoutEmptyElements[i] + "\n"; 
+      // Get the content for the enemy situation field.
+      var enemySituationContent = "";
+      enemySituationIndexEnd = enemyCOAIndexStart - 1;
+      for (var i = enemySituationIndexStart; i <= enemySituationIndexEnd; i++) {
+        enemySituationContent = enemySituationContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var primaryPUPElement = document.getElementById("primarypup0");
-      primaryPUPElement.value = primaryPUPContent.substring(13);
+      var enemySituationElement = document.getElementById("enemysituation0");
+      enemySituationElement.value = enemySituationContent.substring(17);
       
-      // Get the content for the secondary PUP field.
-      var secondaryPUPContent = "";
-      secondaryPUPIndexEnd = suggestedDOPIndexStart - 1;
-      for (var i = secondaryPUPIndexStart; i <= secondaryPUPIndexEnd; i++) {
-        secondaryPUPContent = secondaryPUPContent + arrayWithoutEmptyElements[i] + "\n"; 
+      // Get the content for the enemy COA field.
+      var enemyCOAContent = "";
+      enemyCOAIndexEnd = temperatureIndexStart - 1;
+      for (var i = enemyCOAIndexStart; i <= enemyCOAIndexEnd; i++) {
+        enemyCOAContent = enemyCOAContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var secondaryPUPElement = document.getElementById("secondarypup0");
-      secondaryPUPElement.value = secondaryPUPContent.substring(15);
+      var enemyCOAElement = document.getElementById("enemycoa0");
+      enemyCOAElement.value = enemyCOAContent.substring(20);
 
-      // Get the content for the suggested DOP field.
-      var suggestedDOPContent = "";
-      suggestedDOPIndexEnd = referencePointIndexStart - 1;
-      for (var i = suggestedDOPIndexStart; i <= suggestedDOPIndexEnd; i++) {
-        suggestedDOPContent = suggestedDOPContent + arrayWithoutEmptyElements[i] + "\n"; 
+      // Get the content for the Temperature lo/hi field.
+      var temperatureContent = "";
+      temperatureIndexEnd = windIndexStart - 1;
+      for (var i = temperatureIndexStart; i <= temperatureIndexEnd; i++) {
+        temperatureContent = temperatureContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var suggestedDOPElement = document.getElementById("suggesteddop0");
-      suggestedDOPElement.value = suggestedDOPContent.substring(15);
+      var temperatureElement = document.getElementById("templowhigh0");
+      temperatureElement.value = temperatureContent.substring(22);
 
-      // Get the content for the reference point field.
-      var referencePointContent = "";
-      referencePointIndexEnd = observationAreaIndexStart - 1;
-      for (var i = referencePointIndexStart; i <= referencePointIndexEnd; i++) {
-        referencePointContent = referencePointContent + arrayWithoutEmptyElements[i] + "\n"; 
+      // Get the content for the wind lo/hi field.
+      var windContent = "";
+      windIndexEnd = precipitationIndexStart - 1;
+      for (var i = windIndexStart; i <= windIndexEnd; i++) {
+        windContent = windContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var referencePointElement = document.getElementById("referencepoint0");
-      referencePointElement.value = referencePointContent.substring(17);
+      var windElement = document.getElementById("windlowhigh0");
+      windElement.value = windContent.substring(15);
 
-      // Get the content for the observation area field.
+      // Get the content for the precipitation lo/hi field.
       var observationAreaContent = "";
       observationAreaIndexEnd = OPEffectiveIndexStart - 1;
       for (var i = observationAreaIndexStart; i <= observationAreaIndexEnd; i++) {
         observationAreaContent = observationAreaContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var observationAreaElement = document.getElementById("obsarea0");
-      observationAreaElement.value = observationAreaContent.substring(18);
+      var observationAreaElement = document.getElementById("precipitationlowhigh0");
+      observationAreaElement.value = observationAreaContent.substring(24);
 
-      // Get the content for the suggested DOP field.
+      // Get the content for the cloud coverage field.
       var OPEffectiveContent = "";
       OPEffectiveIndexEnd = photosIndexStart - 1;
       for (var i = OPEffectiveIndexStart; i <= OPEffectiveIndexEnd; i++) {
         OPEffectiveContent = OPEffectiveContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var OPEffectiveElement = document.getElementById("effectivedtg0");
-      OPEffectiveElement.value = OPEffectiveContent.substring(15);
+      var OPEffectiveElement = document.getElementById("cloudcoverage0");
+      OPEffectiveElement.value = OPEffectiveContent.substring(16);
 
-      // Get the value for "Photos attached". 
-      photosContent = "";
-      photosIndexEnd = overallCommentIndexStart - 1;
-      for (var i = photosIndexStart; i <= photosIndexEnd; i++) {
-        photosContent = photosContent + arrayWithoutEmptyElements[i];
+      // Get the content for the Sunrise/sunset field.
+      var OPEffectiveContent = "";
+      OPEffectiveIndexEnd = photosIndexStart - 1;
+      for (var i = OPEffectiveIndexStart; i <= OPEffectiveIndexEnd; i++) {
+        OPEffectiveContent = OPEffectiveContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
+      var OPEffectiveElement = document.getElementById("sunrisesunset0");
+      OPEffectiveElement.value = OPEffectiveContent.substring(16);
 
-      if (photosContent.slice(17) == "Yes") {
-        var toggleButton = document.getElementById("toggle");
-        toggleButton.checked = true;
-      }
-
-      // Get the content for the overall comment field.
+      // Get the content for the Message From OPS field.
       var overallCommentContent = "";
       overallCommentIndexEnd = overallAssessmentIndexStart - 1;
       for (var i = overallCommentIndexStart; i <= overallCommentIndexEnd; i++) {
         overallCommentContent = overallCommentContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var overallCommentElement = document.getElementById("overallcomment0");
-      overallCommentElement.value = overallCommentContent.substring(17);
+      var overallCommentElement = document.getElementById("opsmessage0");
+      overallCommentElement.value = overallCommentContent.substring(18);
 
-      // Get the content for the overall assessment field.
+      // Get the content for the Message from SDA field.
       var overallAssessmentContent = "";
       overallAssessmentIndexEnd = referencesIndexStart - 1;
       for (var i = overallAssessmentIndexStart; i <= overallAssessmentIndexEnd; i++) {
         overallAssessmentContent = overallAssessmentContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var overallAssessmentElement = document.getElementById("overallassessment0");
-      overallAssessmentElement.value = overallAssessmentContent.substring(20);
+      var overallAssessmentElement = document.getElementById("sdamessage0");
+      overallAssessmentElement.value = overallAssessmentContent.substring(18);
 
       // Get the content for the references field.
       var referencesContent = "";
@@ -254,6 +251,15 @@ function fileContentToArray() {
       }
       var referencesElement = document.getElementById("references0");
       referencesElement.value = referencesContent.substring(12);
+      
+      // Get the content for the in other news field.
+      var referencesContent = "";
+      referencesIndexEnd = arrayWithoutEmptyElements.length - 1;
+      for (var i = referencesIndexStart; i <= referencesIndexEnd; i++) {
+        referencesContent = referencesContent + arrayWithoutEmptyElements[i] + "\n"; 
+      }
+      var referencesElement = document.getElementById("inothernews0");
+      referencesElement.value = referencesContent.substring(15);
 
 
 
