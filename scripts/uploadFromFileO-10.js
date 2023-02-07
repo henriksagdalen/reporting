@@ -1,6 +1,6 @@
 let uploadedFileAsString = "";
 
-function getReportContent(indexStart, indexEnd, content, array, elementID) {
+function getReportContentO10(indexStart, indexEnd, content, array, elementID) {
     for (var i = indexStart; i <= indexEnd; i++) {
         content = content + array[i] + "\n";
     }
@@ -9,7 +9,7 @@ function getReportContent(indexStart, indexEnd, content, array, elementID) {
     return content;
 }
 
-function fileContentToArray() {
+function fileContentToArrayO10() {
     // const content = document.querySelector('.content');
     const [file] = document.querySelector('input[type=file]').files;
     const reader = new FileReader();
@@ -199,49 +199,49 @@ function fileContentToArray() {
       windElement.value = windContent.substring(15);
 
       // Get the content for the precipitation lo/hi field.
-      var observationAreaContent = "";
-      observationAreaIndexEnd = OPEffectiveIndexStart - 1;
-      for (var i = observationAreaIndexStart; i <= observationAreaIndexEnd; i++) {
-        observationAreaContent = observationAreaContent + arrayWithoutEmptyElements[i] + "\n"; 
+      var precipitationContent = "";
+      precipitationIndexEnd = cloudCoverageIndexStart - 1;
+      for (var i = precipitationIndexStart; i <= precipitationIndexEnd; i++) {
+        precipitationContent = precipitationContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var observationAreaElement = document.getElementById("precipitationlowhigh0");
-      observationAreaElement.value = observationAreaContent.substring(24);
+      var precipitationElement = document.getElementById("precipitationlowhigh0");
+      precipitationElement.value = precipitationContent.substring(24);
 
       // Get the content for the cloud coverage field.
-      var OPEffectiveContent = "";
-      OPEffectiveIndexEnd = photosIndexStart - 1;
-      for (var i = OPEffectiveIndexStart; i <= OPEffectiveIndexEnd; i++) {
-        OPEffectiveContent = OPEffectiveContent + arrayWithoutEmptyElements[i] + "\n"; 
+      var cloudCoverageContent = "";
+      cloudCoverageIndexEnd = sunIndexStart - 1;
+      for (var i = cloudCoverageIndexStart; i <= cloudCoverageIndexEnd; i++) {
+        cloudCoverageContent = cloudCoverageContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var OPEffectiveElement = document.getElementById("cloudcoverage0");
-      OPEffectiveElement.value = OPEffectiveContent.substring(16);
+      var cloudCoverageElement = document.getElementById("cloudcoverage0");
+      cloudCoverageElement.value = cloudCoverageContent.substring(16);
 
       // Get the content for the Sunrise/sunset field.
-      var OPEffectiveContent = "";
-      OPEffectiveIndexEnd = photosIndexStart - 1;
-      for (var i = OPEffectiveIndexStart; i <= OPEffectiveIndexEnd; i++) {
-        OPEffectiveContent = OPEffectiveContent + arrayWithoutEmptyElements[i] + "\n"; 
+      var sunContent = "";
+      sunIndexEnd = messageFromOpsIndexStart - 1;
+      for (var i = sunIndexStart; i <= sunIndexEnd; i++) {
+        sunContent = sunContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var OPEffectiveElement = document.getElementById("sunrisesunset0");
-      OPEffectiveElement.value = OPEffectiveContent.substring(16);
+      var sunElement = document.getElementById("sunrisesunset0");
+      sunElement.value = sunContent.substring(16);
 
       // Get the content for the Message From OPS field.
-      var overallCommentContent = "";
-      overallCommentIndexEnd = overallAssessmentIndexStart - 1;
-      for (var i = overallCommentIndexStart; i <= overallCommentIndexEnd; i++) {
-        overallCommentContent = overallCommentContent + arrayWithoutEmptyElements[i] + "\n"; 
+      var messageFromOpsContent = "";
+      messageFromOpsIndexEnd = messageFromSDAIndexStart - 1;
+      for (var i = messageFromOpsIndexStart; i <= messageFromOpsIndexEnd; i++) {
+        messageFromOpsContent = messageFromOpsContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var overallCommentElement = document.getElementById("opsmessage0");
-      overallCommentElement.value = overallCommentContent.substring(18);
+      var messageFromOpsElement = document.getElementById("opsmessage0");
+      messageFromOpsElement.value = messageFromOpsContent.substring(18);
 
       // Get the content for the Message from SDA field.
-      var overallAssessmentContent = "";
-      overallAssessmentIndexEnd = referencesIndexStart - 1;
-      for (var i = overallAssessmentIndexStart; i <= overallAssessmentIndexEnd; i++) {
-        overallAssessmentContent = overallAssessmentContent + arrayWithoutEmptyElements[i] + "\n"; 
+      var messageFromSDAContent = "";
+      messageFromSDAIndexEnd = referencesIndexStart - 1;
+      for (var i = messageFromSDAIndexStart; i <= messageFromSDAIndexEnd; i++) {
+        messageFromSDAContent = messageFromSDAContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var overallAssessmentElement = document.getElementById("sdamessage0");
-      overallAssessmentElement.value = overallAssessmentContent.substring(18);
+      var messageFromSDAElement = document.getElementById("sdamessage0");
+      messageFromSDAElement.value = messageFromSDAContent.substring(18);
 
       // Get the content for the references field.
       var referencesContent = "";
@@ -249,17 +249,17 @@ function fileContentToArray() {
       for (var i = referencesIndexStart; i <= referencesIndexEnd; i++) {
         referencesContent = referencesContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var referencesElement = document.getElementById("references0");
+      var referencesElement = document.getElementById("reference0");
       referencesElement.value = referencesContent.substring(12);
       
       // Get the content for the in other news field.
-      var referencesContent = "";
-      referencesIndexEnd = arrayWithoutEmptyElements.length - 1;
-      for (var i = referencesIndexStart; i <= referencesIndexEnd; i++) {
-        referencesContent = referencesContent + arrayWithoutEmptyElements[i] + "\n"; 
+      var inOtherNewsContent = "";
+      newsIndexEnd = arrayWithoutEmptyElements.length - 1;
+      for (var i = newsIndexStart; i <= newsIndexEnd; i++) {
+        inOtherNewsContent = inOtherNewsContent + arrayWithoutEmptyElements[i] + "\n"; 
       }
-      var referencesElement = document.getElementById("inothernews0");
-      referencesElement.value = referencesContent.substring(15);
+      var inOtherNewsElement = document.getElementById("inothernews0");
+      inOtherNewsElement.value = inOtherNewsContent.substring(15);
 
 
 
@@ -269,6 +269,6 @@ function fileContentToArray() {
     }
 }
 
-function uploadFromFile() {
-    fileContentToArray();
+function uploadFromFileO10() {
+    fileContentToArrayO10();
 }
