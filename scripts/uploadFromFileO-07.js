@@ -97,19 +97,19 @@ function fileContentToArrayO07() {
 
     // Iterate through all the elements in the array, and find the starting indexes of all the different contents.
     for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
-      if (arrayWithoutEmptyElements[i].substring(0,20) == "Position of DLB:") {
+      if (arrayWithoutEmptyElements[i].substring(0,16) == "Position of DLB:") {
           positionOfDLBIndexStart = i;
       }
-      if (arrayWithoutEmptyElements[i].substring(0,22) == "Description of DLB:") {
+      if (arrayWithoutEmptyElements[i].substring(0,19) == "Description of DLB:") {
           descriptionOfDLBIndexStart = i;
       }
-      if (arrayWithoutEmptyElements[i].substring(0,23) == "TimeFrame of DLB (DTG):") {
+      if (arrayWithoutEmptyElements[i].substring(0,28) == "Timeframe of opening of DLB:") {
           timeFrameOfDLBIndexStart = i;
       }
-      if (arrayWithoutEmptyElements[i].substring(0,25) == "Procedure of opening DLB:") {
+      if (arrayWithoutEmptyElements[i].substring(0,29) == "Procedure of opening the DLB:") {
           procedureOfDLBIndexStart = i;
       }
-      if (arrayWithoutEmptyElements[i].substring(0,32) == "Authentication of content in DLB:") {
+      if (arrayWithoutEmptyElements[i].substring(0,33) == "Authentication of content in DLB:") {
         authenticationOfDLBIndexStart = i;
       }
       if (arrayWithoutEmptyElements[i].substring(0,23) == "Additional information:") {
@@ -123,8 +123,8 @@ function fileContentToArrayO07() {
     for (var i = positionOfDLBIndexStart; i <= positionOfDLBIndexEnd; i++) {
       positionOfDLBContent = positionOfDLBContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var positionOfDLBElement = document.getElementById("positionofdlb0");
-    positionOfDLBElement.value = positionOfDLBContent.substring(20);
+    var positionOfDLBElement = document.getElementById("posdlb0");
+    positionOfDLBElement.value = positionOfDLBContent.substring(17);
 
     // Get the content for the Description of DLB field.
     var descriptionOfDLBContent = "";
@@ -133,7 +133,7 @@ function fileContentToArrayO07() {
       descriptionOfDLBContent = descriptionOfDLBContent + arrayWithoutEmptyElements[i] + "\n"; 
     }
     var descriptionOfDLBElement = document.getElementById("descriptionofdlb0");
-    descriptionOfDLBElement.value = descriptionOfDLBContent.substring(22);
+    descriptionOfDLBElement.value = descriptionOfDLBContent.substring(20);
 
     // Get the content for the time frame of opening DLB field.
     var timeFrameOpeningDLBContent = "";
@@ -141,7 +141,7 @@ function fileContentToArrayO07() {
     for (var i = timeFrameOfDLBIndexStart; i <= timeFrameOfDLBIndexEnd; i++) {
       timeFrameOpeningDLBContent = timeFrameOpeningDLBContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var timeFrameOfOpeningDLBElement = document.getElementById("timeframeofopeningdlb0");
+    var timeFrameOfOpeningDLBElement = document.getElementById("timeframedlb0");
     timeFrameOfOpeningDLBElement.value = timeFrameOpeningDLBContent.substring(29);
 
     // Get the content for the procedure of opening DLB field.
@@ -150,8 +150,8 @@ function fileContentToArrayO07() {
     for (var i = procedureOfDLBIndexStart; i <= procedureOfDLBIndexEnd; i++) {
       procedureOfOpeningDLBContent = procedureOfOpeningDLBContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var procedureOfOpeningDLBElement = document.getElementById("procedureofopeningdlb0");
-    procedureOfOpeningDLBElement.value = procedureOfOpeningDLBContent.substring(29);
+    var procedureOfOpeningDLBElement = document.getElementById("proceduredlb0");
+    procedureOfOpeningDLBElement.value = procedureOfOpeningDLBContent.substring(30);
 
     // Get the content for the authentication of content in DLB field.
     var authenticationOfContentInDLBContent = "";
@@ -159,8 +159,8 @@ function fileContentToArrayO07() {
     for (var i = authenticationOfDLBIndexStart; i <= authenticationOfDLBIndexEnd; i++) {
       authenticationOfContentInDLBContent = authenticationOfContentInDLBContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var authenticationOfContentInDLBElement = document.getElementById("authenticationofcontentindlb0");
-    authenticationOfContentInDLBElement.value = authenticationOfContentInDLBContent.substring(36);
+    var authenticationOfContentInDLBElement = document.getElementById("autenicationdlb0");
+    authenticationOfContentInDLBElement.value = authenticationOfContentInDLBContent.substring(34);
 
     // Get the content for the additional information field.
     var additionalInformationContent = "";
@@ -168,7 +168,7 @@ function fileContentToArrayO07() {
     for (var i = additionalInfoIndexStart; i <= additionalInfoIndexEnd; i++) {
       additionalInformationContent = additionalInformationContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var additionalInformationElement = document.getElementById("additionalinformation0");
+    var additionalInformationElement = document.getElementById("additionalinfo0");
     additionalInformationElement.value = additionalInformationContent.substring(24);
 
     }, false);

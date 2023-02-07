@@ -31,7 +31,7 @@ function saveToFileO08() {
       + "To: " + to + "\n"
       + "Writer/Operator: " + writerOperator + "\n"
       + "Own position: " + ownPosition + "\n"
-      + "DTG"
+      + "DTG: " + dtgOfObservation + "\n"
       + "Grid primary link-up point: " + gridPrimaryLup + "\n"
       + "Grid secondary link-up point: " + gridSecondaryLup + "\n"
       + "Direction into link-up point: " + directionIntoLup + "\n"

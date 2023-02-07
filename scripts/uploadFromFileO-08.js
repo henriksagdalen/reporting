@@ -77,7 +77,7 @@ function fileContentToArrayO08() {
       dtg.value = arrayWithoutEmptyElements[5].slice(5);
 
       // Declare all the variables that stores the starting and ending indexes for the different content.
-      var GridPrimaryLinkUpPointIndexStart;
+var GridPrimaryLinkUpPointIndexStart;
 var GridPrimaryLinkUpPointIndexEnd;
 
 var GridSecondaryLinkUpPointIndexStart;
@@ -113,37 +113,37 @@ var additionalInfoIndexEnd;
 
 // Iterate through all the elements in the array, and find the starting indexes of all the different contents.
 for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
-  if (arrayWithoutEmptyElements[i].substring(0, 26) == "Grid Primary Link up point:") {
+  if (arrayWithoutEmptyElements[i].substring(0, 27) == "Grid primary link-up point:") {
     GridPrimaryLinkUpPointIndexStart = i;
   }
-  if (arrayWithoutEmptyElements[i].substring(0, 28) == "Grid Secondary link up point:") {
+  if (arrayWithoutEmptyElements[i].substring(0, 29) == "Grid Secondary link-up point:") {
     GridSecondaryLinkUpPointIndexStart = i;
   }
-  if (arrayWithoutEmptyElements[i].substring(0, 27) == "Direction into link up point:") {
+  if (arrayWithoutEmptyElements[i].substring(0, 29) == "Direction into link-up point:") {
     DirectionIntoLinkUpPointIndexStart = i;
   }
-  if (arrayWithoutEmptyElements[i].substring(0, 12) == "DTG link up:") {
+  if (arrayWithoutEmptyElements[i].substring(0, 12) == "DTG link-up:") {
     DTGLinkUpIndexStart = i;
   }
-  if (arrayWithoutEmptyElements[i].substring(0, 16) == "Who is host patrol:") {
+  if (arrayWithoutEmptyElements[i].substring(0, 19) == "Who is host patrol:") {
     WhoIsHostPatrolIndexStart = i;
   }
-  if (arrayWithoutEmptyElements[i].substring(0, 22) == "Means of communication:") {
+  if (arrayWithoutEmptyElements[i].substring(0, 37) == "Means of communication/freq/Callsign:") {
     MeansOfCommunicationIndexStart = i;
   }
-  if (arrayWithoutEmptyElements[i].substring(0, 8) == "ID long:") {
+  if (arrayWithoutEmptyElements[i].substring(0, 8) == "ID Long:") {
     IDLongIndexStart = i;
   }
-  if (arrayWithoutEmptyElements[i].substring(0, 9) == "ID short:") {
+  if (arrayWithoutEmptyElements[i].substring(0, 9) == "ID Short:") {
     IDShortIndexStart = i;
   }
-  if (arrayWithoutEmptyElements[i].substring(0, 18) == "Authentication word:") {
+  if (arrayWithoutEmptyElements[i].substring(0, 20) == "Authentication word:") {
     authenticationWordIndexStart = i;
   }
-  if (arrayWithoutEmptyElements[i].substring(0, 20) == "Action if link up failed:") {
+  if (arrayWithoutEmptyElements[i].substring(0, 25) == "Action if link-up failed:") {
     actionIfLinkUpFailedIndexStart = i;
   }
-  if (arrayWithoutEmptyElements[i].substring(0, 15) == "Additional info:") {
+  if (arrayWithoutEmptyElements[i].substring(0, 23) == "Additional information:") {
     additionalInfoIndexStart = i;
   }
 }
@@ -154,8 +154,8 @@ GridPrimaryLinkUpPointIndexEnd = GridSecondaryLinkUpPointIndexStart - 1;
 for (var i = GridPrimaryLinkUpPointIndexStart; i <= GridPrimaryLinkUpPointIndexEnd; i++) {
   GridPrimaryLinkUpPointContent = GridPrimaryLinkUpPointContent + arrayWithoutEmptyElements[i] + "\n"; 
 }
-var GridPrimaryLinkUpPointElement = document.getElementById("GridPrimaryLinkUpPoint0");
-GridPrimaryLinkUpPointElement.value = GridPrimaryLinkUpPointContent.substring(30);
+var GridPrimaryLinkUpPointElement = document.getElementById("gridprimarylup0");
+GridPrimaryLinkUpPointElement.value = GridPrimaryLinkUpPointContent.substring(28);
 
 // Get the content for the Grid Secondary Link Up Point field.
 var GridSecondaryLinkUpPointContent = "";
@@ -163,8 +163,8 @@ GridSecondaryLinkUpPointIndexEnd = DirectionIntoLinkUpPointIndexStart - 1;
 for (var i = GridSecondaryLinkUpPointIndexStart; i <= GridSecondaryLinkUpPointIndexEnd; i++) {
   GridSecondaryLinkUpPointContent = GridSecondaryLinkUpPointContent + arrayWithoutEmptyElements[i] + "\n"; 
 }
-var GridSecondaryLinkUpPointElement = document.getElementById("GridSecondaryLinkUpPoint0");
-GridSecondaryLinkUpPointElement.value = GridSecondaryLinkUpPointContent.substring(32);
+var GridSecondaryLinkUpPointElement = document.getElementById("gridsecondarylup0");
+GridSecondaryLinkUpPointElement.value = GridSecondaryLinkUpPointContent.substring(30);
 
 // Get the content for the Direction into Link Up Point field.
 var DirectionIntoLinkUpPointContent = "";
@@ -172,8 +172,8 @@ DirectionIntoLinkUpPointIndexEnd = DTGLinkUpIndexStart - 1;
 for (var i = DirectionIntoLinkUpPointIndexStart; i <= DirectionIntoLinkUpPointIndexEnd; i++) {
   DirectionIntoLinkUpPointContent = DirectionIntoLinkUpPointContent + arrayWithoutEmptyElements[i] + "\n"; 
 }
-var DirectionIntoLinkUpPointElement = document.getElementById("DirectionIntoLinkUpPoint0");
-DirectionIntoLinkUpPointElement.value = DirectionIntoLinkUpPointContent.substring(26);
+var DirectionIntoLinkUpPointElement = document.getElementById("directionintolup0");
+DirectionIntoLinkUpPointElement.value = DirectionIntoLinkUpPointContent.substring(30);
 
 // Get the content for the DTG Link Up field.
 var DTGLinkUpContent = "";
@@ -181,8 +181,8 @@ DTGLinkUpIndexEnd = WhoIsHostPatrolIndexStart - 1;
 for (var i = DTGLinkUpIndexStart; i <= DTGLinkUpIndexEnd; i++) {
   DTGLinkUpContent = DTGLinkUpContent + arrayWithoutEmptyElements[i] + "\n"; 
 }
-var DTGLinkUpElement = document.getElementById("DTGLinkUp0");
-DTGLinkUpElement.value = DTGLinkUpContent.substring(12);
+var DTGLinkUpElement = document.getElementById("dtglup0");
+DTGLinkUpElement.value = DTGLinkUpContent.substring(13);
 
 // Get the content for the Who is Host Patrol field.
 var WhoIsHostPatrolContent = "";
@@ -190,35 +190,36 @@ WhoIsHostPatrolIndexEnd = MeansOfCommunicationIndexStart - 1;
 for (var i = WhoIsHostPatrolIndexStart; i <= WhoIsHostPatrolIndexEnd; i++) {
   WhoIsHostPatrolContent = WhoIsHostPatrolContent + arrayWithoutEmptyElements[i] + "\n"; 
 }
-var WhoIsHostPatrolElement = document.getElementById("WhoIsHostPatrol0");
-WhoIsHostPatrolElement.value = WhoIsHostPatrolContent.substring(17);
+var WhoIsHostPatrolElement = document.getElementById("hostpatrol0");
+WhoIsHostPatrolElement.value = WhoIsHostPatrolContent.substring(20);
 
 // Get the content for the Means of Communication/Frequency/Callsign field.
 var MeansOfCommunicationContent = "";
-MeansOfCommunicationIndexEnd = authenticationWordIndexStart - 1;
+MeansOfCommunicationIndexEnd = IDLongIndexStart - 1;
 for (var i = MeansOfCommunicationIndexStart; i <= MeansOfCommunicationIndexEnd; i++) {
 MeansOfCommunicationContent = MeansOfCommunicationContent + arrayWithoutEmptyElements[i] + "\n";
 }
-var MeansOfCommunicationElement = document.getElementById("MeansOfCommunicationFrequencyCallsign0");
-MeansOfCommunicationElement.value = MeansOfCommunicationContent.substring(44);
-
-// Get the content for the ID Short field
-var IDShortContent = "";
-IDShortIndexEnd = IDLongIndexStart - 1;
-for (var i = IDShortIndexStart; i <= IDShortIndexEnd; i++) {
-IDShortContent = IDShortContent + arrayWithoutEmptyElements[i] + "\n";
-}
-var IDShortElement = document.getElementById("IDShort0");
-IDShortElement.value = IDShortContent.substring(44);
+var MeansOfCommunicationElement = document.getElementById("meansofcoms0");
+MeansOfCommunicationElement.value = MeansOfCommunicationContent.substring(38);
 
 // Get the content for the ID Long field
 var IDLongContent = "";
-IDLongIndexEnd = authenticationWordIndexStart - 1;
+IDLongIndexEnd = IDShortIndexStart - 1;
 for (var i = IDLongIndexStart; i <= IDLongIndexEnd; i++) {
 IDLongContent = IDLongContent + arrayWithoutEmptyElements[i] + "\n";
 }
-var IDLongElement = document.getElementById("IDLong0");
-IDLongElement.value = IDLongContent.substring(44);
+var IDLongElement = document.getElementById("idlong0");
+IDLongElement.value = IDLongContent.substring(9);
+
+// Get the content for the ID Short field
+var IDShortContent = "";
+IDShortIndexEnd = authenticationWordIndexStart - 1;
+for (var i = IDShortIndexStart; i <= IDShortIndexEnd; i++) {
+IDShortContent = IDShortContent + arrayWithoutEmptyElements[i] + "\n";
+}
+var IDShortElement = document.getElementById("idshort0");
+IDShortElement.value = IDShortContent.substring(10);
+
 
 // Get the content for the Authentication Word field.
 var authenticationWordContent = "";
@@ -227,7 +228,7 @@ for (var i = authenticationWordIndexStart; i <= authenticationWordIndexEnd; i++)
 authenticationWordContent = authenticationWordContent + arrayWithoutEmptyElements[i] + "\n";
 }
 var authenticationWordElement = document.getElementById("authenticationword0");
-authenticationWordElement.value = authenticationWordContent.substring(22);
+authenticationWordElement.value = authenticationWordContent.substring(21);
 
 // Get the content for the Action if Link Up Failed field.
 var actionIfLinkUpFailedContent = "";
@@ -235,7 +236,7 @@ actionIfLinkUpFailedIndexEnd = additionalInfoIndexStart - 1;
 for (var i = actionIfLinkUpFailedIndexStart; i <= actionIfLinkUpFailedIndexEnd; i++) {
 actionIfLinkUpFailedContent = actionIfLinkUpFailedContent + arrayWithoutEmptyElements[i] + "\n";
 }
-var actionIfLinkUpFailedElement = document.getElementById("actioniflinkupfailed0");
+var actionIfLinkUpFailedElement = document.getElementById("actioniflupdfailed0");
 actionIfLinkUpFailedElement.value = actionIfLinkUpFailedContent.substring(26);
 
 // Get the content for the Additional Info field.
@@ -245,7 +246,7 @@ for (var i = additionalInfoIndexStart; i <= additionalInfoIndexEnd; i++) {
 additionalInfoContent = additionalInfoContent + arrayWithoutEmptyElements[i] + "\n";
 }
 var additionalInfoElement = document.getElementById("additionalinfo0");
-additionalInfoElement.value = additionalInfoContent.substring(23);
+additionalInfoElement.value = additionalInfoContent.substring(24);
     
 }, false);
     if (file) {
