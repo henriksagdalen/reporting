@@ -1,6 +1,6 @@
 let uploadedFileAsString = "";
 
-function getReportContentO08(indexStart, indexEnd, content, array, elementID) {
+function getReportContentO09(indexStart, indexEnd, content, array, elementID) {
     for (var i = indexStart; i <= indexEnd; i++) {
         content = content + array[i] + "\n";
     }
@@ -9,7 +9,7 @@ function getReportContentO08(indexStart, indexEnd, content, array, elementID) {
     return content;
 }
 
-function fileContentToArrayO08() {
+function fileContentToArrayO09() {
     // const content = document.querySelector('.content');
     const [file] = document.querySelector('input[type=file]').files;
     const reader = new FileReader();
@@ -176,7 +176,7 @@ function fileContentToArrayO08() {
     for (var i = opEffectiveToDTGIndexStart; i <= opEffectiveToDTGIndexEnd; i++) {
       opEffectiveToDTGContent = opEffectiveToDTGContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var opEffectiveToDTGElement = document.getElementById("opeffectivetodtg0");
+    var opEffectiveToDTGElement = document.getElementById("opeffectivedtg0");
     opEffectiveToDTGElement.value = opEffectiveToDTGContent.substring(17);
 
     // Get the content for the "exfil method" field.
@@ -194,7 +194,7 @@ function fileContentToArrayO08() {
     for (var i = routeIndexStart; i <= routeIndexEnd; i++) {
       routeContent = routeContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var routeElement = document.getElementById("route0");
+    var routeElement = document.getElementById("exfilroute0");
     routeElement.value = routeContent.substring(7);
 
     // Get the content for the "extraction method" field.
@@ -212,7 +212,7 @@ function fileContentToArrayO08() {
     for (var i = primaryPickUpPointIndexStart; i <= primaryPickUpPointIndexEnd; i++) {
       primaryPickUpPointContent = primaryPickUpPointContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var primaryPickUpPointElement = document.getElementById("primarypickuppoint0");
+    var primaryPickUpPointElement = document.getElementById("primaryexfilpup0");
     primaryPickUpPointElement.value = primaryPickUpPointContent.substring(24);
 
     // Get the content for the "Secondary Pick Up Point" field.
@@ -221,7 +221,7 @@ function fileContentToArrayO08() {
     for (var i = secondaryPickUpPointIndexStart; i <= secondaryPickUpPointIndexEnd; i++) {
       secondaryPickUpPointContent = secondaryPickUpPointContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var secondaryPickUpPointElement = document.getElementById("secondarypick-uppoint0");
+    var secondaryPickUpPointElement = document.getElementById("secondaryexfilpup0");
     secondaryPickUpPointElement.value = secondaryPickUpPointContent.substring(24);
 
     // Get the content for the "Primary Time Frame" field.
@@ -239,7 +239,7 @@ function fileContentToArrayO08() {
     for (var i = secondaryTimeframeIndexStart; i <= secondaryTimeframeIndexEnd; i++) {
       SecondaryTimeFrameContent = SecondaryTimeFrameContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var secondaryTimeframeElement = document.getElementById("seconddarytimeframe0");
+    var secondaryTimeframeElement = document.getElementById("secondarytimeframe0");
     secondaryTimeframeElement.value = SecondaryTimeFrameContent.substring(24);
 
     // Get the content for the "Link Up Procedure" field.
@@ -248,7 +248,7 @@ function fileContentToArrayO08() {
     for (var i = linkUpProcedureIndexStart; i <= linkUpProcedureIndexEnd; i++) {
       linkUpProcedureContent = linkUpProcedureContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var linkUpProcedureElement= document.getElementById("linkupProcedure");
+    var linkUpProcedureElement= document.getElementById("meansofcoms0");
     linkUpProcedureElement.value = linkUpProcedureContent.substring(24);
 
     // Get the content for the "Communication means" field.
@@ -293,7 +293,7 @@ function fileContentToArrayO08() {
         for (var i = actionIfLinkUpFailedIndexStart; i <= actionIfLinkUpFailedIndexEnd; i++) {
           actionIfLinkUpFailedContent = actionIfLinkUpFailedContent + arrayWithoutEmptyElements[i] + "\n";
         }
-        var actionIfLinkUpFailedElement = document.getElementById("actioniflinkupfailed0");
+        var actionIfLinkUpFailedElement = document.getElementById("actioniflupfailed0");
         actionIfLinkUpFailedElement.value = actionIfLinkUpFailedContent.substring(24);
         
         // Get the content for the additional info field.
@@ -312,6 +312,6 @@ function fileContentToArrayO08() {
     }
 }
 
-function uploadFromFileO08() {
-    fileContentToArrayO08();
+function uploadFromFileO09() {
+    fileContentToArrayO09();
 }
