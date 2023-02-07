@@ -1,6 +1,6 @@
 let uploadedFileAsString = "";
 
-function getReportContentO08(indexStart, indexEnd, content, array, elementID) {
+function getReportContentO09(indexStart, indexEnd, content, array, elementID) {
     for (var i = indexStart; i <= indexEnd; i++) {
         content = content + array[i] + "\n";
     }
@@ -9,7 +9,7 @@ function getReportContentO08(indexStart, indexEnd, content, array, elementID) {
     return content;
 }
 
-function fileContentToArrayO08() {
+function fileContentToArrayO09() {
     // const content = document.querySelector('.content');
     const [file] = document.querySelector('input[type=file]').files;
     const reader = new FileReader();
@@ -312,6 +312,6 @@ function fileContentToArrayO08() {
     }
 }
 
-function uploadFromFileO08() {
-    fileContentToArrayO08();
+function uploadFromFileO09() {
+    fileContentToArrayO09();
 }
