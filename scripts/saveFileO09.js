@@ -1,6 +1,6 @@
-function saveToFileO06() {
-  const oscar06form = document.getElementById("oscar06form");
-  if (oscar06form.checkValidity()) {
+function saveToFileO09() {
+  const oscar09form = document.getElementById("oscar09form");
+  if (oscar09form.checkValidity()) {
   // Get the selected classification value for the report.
   var classificationSelect = document.querySelector(".classification select");
   var classification = classificationSelect.options[classificationSelect.selectedIndex].value;
@@ -11,11 +11,21 @@ function saveToFileO06() {
   var writerOperator = document.getElementById("writeroperator").value;
   var ownPosition = document.getElementById("ownposition").value;
   var dtgOfObservation = document.getElementById("dtg0").value;
-  var timeframe = document.getElementById("timeframe0").value;
-  var locationAgtCon = document.getElementById("locationagtcon0").value;
-  var descriptionOfAgent = document.getElementById("descriptionofagent0").value;
-  var contactProcedure = document.getElementById("contactprocedure0").value;
+  var opEffectiveDtg = document.getElementById("opeffectivedtg0").value;
+  var exfilMethod = document.getElementById("exfilmethod0").value;
+  var exfilRoute = document.getElementById("exfilroute0").value;
+  var extractionMethod = document.getElementById("extractionmethod0").value;
+  var primaryExfilPup= document.getElementById("primaryexfilpup0").value;
+  var secondaryExfilPup = document.getElementById("secondaryexfilpup0").value;
+  var primaryTimeframe = document.getElementById("primarytimeframe0").value;
+  var secondaryTimeframe = document.getElementById("secondarytimeframe0").value;
+  var meansOfComs = document.getElementById("meansofcoms0").value;
+  var idLong = document.getElementById("idlong0").value;
+  var idShort = document.getElementById("idshort0").value;
+  var authenticationWord = document.getElementById("authenticationword0").value;
+  var actionIfLupFailed = document.getElementById("actioniflupfailed0").value;
   var additionalInfo = document.getElementById("additionalinfo0").value;
+
 
   // Create the content for the report.
   var fileContent = "Classification: " + classification + "\n\n"
@@ -23,11 +33,21 @@ function saveToFileO06() {
       + "To: " + to + "\n"
       + "Writer/Operator: " + writerOperator + "\n"
       + "Own position: " + ownPosition + "\n"
-      + "DTG: " + dtgOfObservation + "\n\n"
-      + "Timeframe from-to (DTG): " + timeframe + "\n"
-      + "Location AGTCON: " + locationAgtCon + "\n"
-      + "Description of agent: " + descriptionOfAgent + "\n"
-      + "Contact procedure: " + contactProcedure + "\n\n"
+      + "DTG: " + opEffectiveDtg + "\n\n"
+      + "Exfil method: " + exfilMethod + "\n"
+      + "Exfil route: " + exfilRoute + "\n\n"
+      + "Extraction" + "\n" 
+      + "Method: " + extractionMethod + "\n"
+      + "Primary pick-up point: " + primaryExfilPup + "\n"
+      + "Secondary pick-up point: " + secondaryExfilPup + "\n"
+      + "Primary timeframe: " + primaryTimeframe + "\n"
+      + "Secondary timeframe: " + secondaryTimeframe + "\n\n"
+      + "Link-up procedure" + "\n"
+      + "Means of communication/freq/callsign: " + meansOfComs + "\n"
+      + "ID Long: " + idLong + "\n"
+      + "ID Short: " + idShort + "\n"
+      + "Autentication word: " + authenticationWord + "\n"
+      + "Action if link-up failed: " + actionIfLupFailed + "\n"
       + "Additional information: " + additionalInfo + "\n"
 
   // Get the date and time from the local computer.
@@ -72,7 +92,7 @@ function saveToFileO06() {
       + classification 
       + " MIBN LRRP " 
       + from 
-      + " O-06 "
+      + " O-09 "
       + dtgOfObservation + "Z";
 
   // Create a Blob object with the file content

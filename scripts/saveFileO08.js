@@ -1,6 +1,6 @@
-function saveToFileO06() {
-  const oscar06form = document.getElementById("oscar06form");
-  if (oscar06form.checkValidity()) {
+function saveToFileO08() {
+  const oscar08form = document.getElementById("oscar08form");
+  if (oscar08form.checkValidity()) {
   // Get the selected classification value for the report.
   var classificationSelect = document.querySelector(".classification select");
   var classification = classificationSelect.options[classificationSelect.selectedIndex].value;
@@ -11,11 +11,19 @@ function saveToFileO06() {
   var writerOperator = document.getElementById("writeroperator").value;
   var ownPosition = document.getElementById("ownposition").value;
   var dtgOfObservation = document.getElementById("dtg0").value;
-  var timeframe = document.getElementById("timeframe0").value;
-  var locationAgtCon = document.getElementById("locationagtcon0").value;
-  var descriptionOfAgent = document.getElementById("descriptionofagent0").value;
-  var contactProcedure = document.getElementById("contactprocedure0").value;
+  var gridPrimaryLup = document.getElementById("gridprimarylup0").value;
+  var gridSecondaryLup = document.getElementById("gridsecondarylup0").value;
+  var directionIntoLup = document.getElementById("directionintolup0").value;
+  var dtgLup = document.getElementById("dtglup0").value;
+  var hostPatrol = document.getElementById("hostpatrol0").value;
+  var meansOfComs = document.getElementById("meansofcoms0").value;
+  var idLong = document.getElementById("idlong0").value;
+  var idShort = document.getElementById("idshort0").value;
+  var authenticationWord = document.getElementById("authenticationword0").value;
+  var actionIfLupFailed = document.getElementById("actioniflupdfailed0").value;
   var additionalInfo = document.getElementById("additionalinfo0").value;
+
+
 
   // Create the content for the report.
   var fileContent = "Classification: " + classification + "\n\n"
@@ -23,12 +31,19 @@ function saveToFileO06() {
       + "To: " + to + "\n"
       + "Writer/Operator: " + writerOperator + "\n"
       + "Own position: " + ownPosition + "\n"
-      + "DTG: " + dtgOfObservation + "\n\n"
-      + "Timeframe from-to (DTG): " + timeframe + "\n"
-      + "Location AGTCON: " + locationAgtCon + "\n"
-      + "Description of agent: " + descriptionOfAgent + "\n"
-      + "Contact procedure: " + contactProcedure + "\n\n"
+      + "DTG"
+      + "Grid primary link-up point: " + gridPrimaryLup + "\n"
+      + "Grid secondary link-up point: " + gridSecondaryLup + "\n"
+      + "Direction into link-up point: " + directionIntoLup + "\n"
+      + "DTG link-up: " + dtgLup + "\n"
+      + "Who is host patrol: " + hostPatrol + "\n"
+      + "Means of communication/freq/Callsign: " + meansOfComs + "\n"
+      + "ID Long: " + idLong + "\n"
+      + "ID Short: " + idShort + "\n"
+      + "Authentication word: " + authenticationWord + "\n"
+      + "Action if link-up failed: " + actionIfLupFailed + "\n\n"
       + "Additional information: " + additionalInfo + "\n"
+
 
   // Get the date and time from the local computer.
   var newDate = new Date();
@@ -72,7 +87,7 @@ function saveToFileO06() {
       + classification 
       + " MIBN LRRP " 
       + from 
-      + " O-06 "
+      + " O-08 "
       + dtgOfObservation + "Z";
 
   // Create a Blob object with the file content
