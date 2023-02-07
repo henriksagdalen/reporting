@@ -40,6 +40,17 @@ body::after {
   justify-content: center;
 }
 
+@keyframes dropDownFromTop {
+  0% {
+    transform: translateY(-15%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .cards {
   width: 30vh;
   height: 45vh;
@@ -49,6 +60,7 @@ body::after {
   text-align: center;
   position: relative;
   transition: 0.2s;
+  animation: .5s ease-out 0s 1 dropDownFromTop;
 }
 
 .cards:hover {
