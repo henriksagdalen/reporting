@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>O-03</title>
+    <title>O-06</title>
     <link rel="icon" href="../ressurser/radar.png">
     <link rel="stylesheet" href="../css/Header.css">
     <link rel="stylesheet" href="../css/Home.css">
@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="../css/buttons.css">
     <script src="/scripts/dropdowns.js"></script>
     <script src="/scripts/disabletextarea.js"></script>
-    <script src="/scripts/saveFileO03.js"></script>
+    <script src="/scripts/saveFileO06.js"></script>
     <script src="/scripts/Set&getLocalValues.js"></script>
-    <script src="/scripts/uploadFromFileO-03.js"></script>
+    <script src="/scripts/uploadFromFileO-06.js"></script>
 </head>
 <body>
     <header>
@@ -81,9 +81,9 @@
         </div>
       </header>
     <section>
-      <form id="oscar03form" onsubmit="event.preventDefault();">
+      <form id="oscar06form" onsubmit="event.preventDefault();">
       <div class="page-title">
-        <div class="page-title-text">O-03 Initial report</div> 
+        <div class="page-title-text">O-06 Agent contact report</div> 
       </div>
       <div class="cont_select_center">
         <div class="classification" data-mate-select="active" >
@@ -123,31 +123,45 @@
             </div>
             <div class="static-box">
                 <label for="ownposition"><b>Own position:</b></label><br>
-                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
+                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition" required>
             </div>
             <div class="static-box">
               <label for="dtg"><b>DTG:</b></label><br>
               <input name="dtg" id="dtg0" type="text" placeholder="DTG"></input><br>
             </div>
         </div>
-    
+
         <div class="rapport">
           <div class="input-box">
-              <label for="status"><b>Status:</b></label><br>
-              <textarea name="status" id="status0" ></textarea>
+              <label for="timeframe"><b>Timeframe from-to (DTG):</b></label><br>
+              <textarea name="timeframe" id="timeframe0" required></textarea>
           </div>
           <div class="input-box">
-              <label for="ownaction"><b>Own action:</b></label><br>
-              <textarea name="ownaction" id="ownaction0" ></textarea><br>
+              <label for="locationagtcon"><b>Location AGTCON:</b></label><br>
+              <textarea name="locationagtcon" id="locationagtcon0"></textarea><br>
           </div>
+          <div class="input-box">
+              <label for="descriptionofagent"><b>Description of agent:</b></label><br>
+              <textarea name="descriptionofagent" id="descriptionofagent0"></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="contactprocedure"><b>Contact procedure:</b></label><br>
+            <textarea name="contactprocedure" id="contactprocedure0" required></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="additionalinfo"><b>Additional information:</b></label><br>
+            <textarea name="additionalinfo" id="additionalinfo0"></textarea><br>
+          </div>
+
+        </form>
+        </section>
+        <button id="save-button" onclick="saveToLocal()">Save Values</button>
+
+        <input type="submit" id="mysaveToFile" value="Save to file" onclick="saveToFileO06();" />
+        
+        <div class="uploadfilebutton">
+            <div class="uploadbuttondesign">Upload file</div>
+            <input type="file" id="uploadFromFile" onchange="uploadFromFile()" /><br><br><br><br>
         </div>
-      </form>
-    </section>
-    <button id="save-button" onclick="saveToLocal()">Save Values</button>
-    <input type="submit" id="mysaveToFile" value="Save to file" onclick="saveToFileO03();" />
-    <div class="uploadfilebutton">
-        <div class="uploadbuttondesign">Upload file</div>
-        <input type="file" id="uploadFromFile" onchange="uploadFromFile()" /><br><br><br><br>
-    </div>
     </body>
 </html>
