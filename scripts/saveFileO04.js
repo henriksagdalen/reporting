@@ -31,10 +31,10 @@ function saveToFileO04() {
       + "Where: " + where + "\n"
       + "Type of contact: " + typeOfContact + "\n"
       + "Enemy loss/Casualties: " + enemyLoss + "\n"
-      + "Own loss/Casualties: " + ownLoss + "\n"
+      + "Own loss/Casualties: " + ownLoss + "\n\n"
       + "Enemy size: " + enemySize + "\n"
       + "Assumed enemy position now: " + enemyPosition + "\n"
-      + "Enemy vehicles, weapons and equipment: " + enemyVehicles + "\n"
+      + "Enemy vehicles, weapons and equipment: " + enemyVehicles + "\n\n"
       + "Own plan of action: " + ownPlanOfAction + "\n"
       + "Need for support: " + needForSupport + "\n"
 

@@ -1,6 +1,6 @@
 function saveToFileO06() {
   const oscar03form = document.getElementById("oscar03form");
-  if (oscar04form.checkValidity()) {
+  if (oscar06form.checkValidity()) {
   // Get the selected classification value for the report.
   var classificationSelect = document.querySelector(".classification select");
   var classification = classificationSelect.options[classificationSelect.selectedIndex].value;
@@ -27,7 +27,7 @@ function saveToFileO06() {
       + "Timeframe from-to (DTG): " + timeframe + "\n"
       + "Location AGTCON: " + locationAgtCon + "\n"
       + "Description of agent: " + descriptionOfAgent + "\n"
-      + "Contact procedure: " + contactProcedure + "\n"
+      + "Contact procedure: " + contactProcedure + "\n\n"
       + "Additional information: " + additionalInfo + "\n"
 
   // Get the date and time from the local computer.
