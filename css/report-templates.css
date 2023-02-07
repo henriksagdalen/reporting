@@ -1,0 +1,62 @@
+body::after {
+  content: "";
+  background: url(/ressurser/US-Army.png);
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  position: fixed;
+  z-index: -1;
+}
+
+.template-links {
+  height: 75px;
+  width: 75px;
+
+  background-color: coral;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  font-family: monospace;
+  font-weight: 550;
+  font-size: 16px;
+
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.template-links:hover {
+  scale: 1.05;
+  box-shadow: 2px 2px 10px 1px rgb(49, 79, 79, 0.5), 0 0 0 .15vw transparent;
+}
+
+
+.template-img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+
+}
+
+.template-link-text {
+  color: black;
+  text-decoration: none;
+  margin-top: 2px;
+}
+
+.copy-text {
+  font-family: monospace;
+  font-weight: 550;
+  font-size: 16px;
+}

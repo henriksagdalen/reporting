@@ -1,19 +1,20 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>O-05</title>
+    <title>O-04</title>
     <link rel="icon" href="../ressurser/radar.png">
     <link rel="stylesheet" href="../css/Header.css">
     <link rel="stylesheet" href="../css/Home.css">
+    <link rel="stylesheet" href="../css/static-values.css">
     <link rel="stylesheet" href="../css/default-rapport.css">
     <link rel="stylesheet" href="../css/gradering.css">
     <link rel="stylesheet" href="../css/oscar-rapporter.css">
     <link rel="stylesheet" href="../css/buttons.css">
     <script src="/scripts/dropdowns.js"></script>
     <script src="/scripts/disabletextarea.js"></script>
-    <script src="/scripts/saveFileO10.js"></script>
+    <script src="/scripts/saveFileO04.js"></script>
     <script src="/scripts/Set&getLocalValues.js"></script>
-    <script src="/scripts/uploadFromFileO-10.js"></script>
+    <script src="/scripts/uploadFromFileO-04.js"></script>
 </head>
 <body>
     <header>
@@ -80,9 +81,9 @@
         </div>
       </header>
     <section>
-      <form id="oscar10form" onsubmit="event.preventDefault();"></form>
+      <form id="oscar04form" onsubmit="event.preventDefault();">
       <div class="page-title">
-        <div class="page-title-text">O-10 Initial report</div> 
+        <div class="page-title-text">O-04 Contact report</div> 
       </div>
       <div class="cont_select_center">
         <div class="classification" data-mate-select="active" >
@@ -122,76 +123,59 @@
             </div>
             <div class="static-box">
                 <label for="ownposition"><b>Own position:</b></label><br>
-                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition">
+                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition" required>
             </div>
             <div class="static-box">
               <label for="dtg"><b>DTG:</b></label><br>
               <input name="dtg" id="dtg0" type="text" placeholder="DTG"></input><br>
             </div>
         </div>
-
+    
         <div class="rapport">
           <div class="input-box">
-              <label for="ownsituation"><b>Own situation:</b></label><br>
-              <textarea name="ownsituation" id="ownsituation0"></textarea>
+              <label for="where"><b>Where:</b></label><br>
+              <textarea name="where" id="where0" ></textarea>
           </div>
           <div class="input-box">
-              <label for="enemysituation"><b>Enemy situation:</b></label><br>
-              <textarea name="enemysituation" id="enemysituation0"></textarea><br>
+              <label for="typeofcontact"><b>Type of contact:</b></label><br>
+              <textarea name="typeofcontact" id="typeofcontact0" ></textarea><br>
           </div>
           <div class="input-box">
-              <label for="enemycoa"><b>Enemy COA next 24h:</b></label><br>
-              <textarea name="enemycoa" id="enemycoa0"></textarea><br>
-          </div>
-          <div class="weather-title">Weather next 24h:</div>
-          <div class="input-box-minimal">
-            <label for="templowhigh"><b>Temp low-high:</b></label><br>
-            <textarea name="templowhigh" id="templowhigh0"></textarea>
-          </div>
-          <div class="input-box-minimal">
-            <label for="windlowhigh"><b>Wind low-high:</b></label><br>
-            <textarea name="windlowhigh" id="windlowhigh0"></textarea>
-          </div>
-          <div class="input-box-minimal">
-            <label for="precipitationlowhigh"><b>Precipitation low-high:</b></label><br>
-            <textarea name="precipitationlowhigh" id="precipitationlowhigh0"></textarea>
-          </div>
-          <br>
-          <div class="input-box-minimal">
-            <label for="cloudcoverage"><b>Cloud coverage:</b></label><br>
-            <textarea name="cloudcoverage" id="cloudcoverage0"></textarea>
-          </div>
-          <div class="input-box-minimal">
-            <label for="sunrisesunset"><b>Sunrise/Sunset:</b></label><br>
-            <textarea name="sunrisesunset" id="sunrisesunset0"></textarea>
+            <label for="enemyloss"><b>Enemy loss/Casualties:</b></label><br>
+            <textarea name="enemyloss" id="enemyloss0" ></textarea><br>
           </div>
           <div class="input-box">
-            <label for="opsmessage"><b>Message from OPS:</b></label><br>
-            <textarea name="opsmessage" id="opsmessage0"></textarea><br>
+            <label for="ownloss"><b>Own loss/Casualties:</b></label><br>
+            <textarea name="ownloss" id="ownloss0" ></textarea><br>
           </div>
           <div class="input-box">
-            <label for="sdamessage"><b>Message from SDA:</b></label><br>
-            <textarea name="sdamessage" id="sdamessage0"></textarea><br>
+            <label for="enemysize"><b>Enemy size:</b></label><br>
+            <textarea name="enemysize" id="enemysize0" ></textarea><br>
           </div>
           <div class="input-box">
-            <label for="reference"><b>Reference:</b></label><br>
-            <textarea name="reference" id="reference0"></textarea>
+            <label for="enemypos"><b>Assumed enemy position now:</b></label><br>
+            <textarea name="enemypos" id="enemypos0" ></textarea><br>
           </div>
-          <br><br><br><hr><br><br><br>
           <div class="input-box">
-            <label for="inothernews"><b>In other news:</b></label><br>
-            <textarea name="inothernews" id="inothernews0"></textarea><br>
+            <label for="enemyvehicles"><b>Enemy vehicles, weapons and equipment:</b></label><br>
+            <textarea name="enemyvehicles" id="enemyvehicles0" ></textarea><br>
           </div>
-        </form>
-        </section>
-
-        <button id="save-button" onclick="saveToLocal()">Save Values</button>
-        
-        <input type="submit" id="mysaveToFile" value="Save to file" onclick="saveToFileO10();" />
-        
-        <div class="uploadfilebutton">
-            <div class="uploadbuttondesign">Upload file</div>
-            <input type="file" id="uploadFromFile" onchange="uploadFromFile()" /><br><br><br><br>
+          <div class="input-box">
+            <label for="ownplanofaction"><b>Own plan of action:</b></label><br>
+            <textarea name="ownplanofaction" id="ownplanofaction0" ></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="needforsupport"><b>Need for support:</b></label><br>
+            <textarea name="needforsupport" id="needforsupport0" ></textarea><br>
+          </div>
         </div>
+      </form>
+    </section>
+    <button id="save-button" onclick="saveToLocal()">Save Values</button>
+    <input type="submit" id="mysaveToFile" value="Save to file" onclick="saveToFileO04();" />
+    <div class="uploadfilebutton">
+        <div class="uploadbuttondesign">Upload file</div>
+        <input type="file" id="uploadFromFile" onchange="uploadFromFile()" /><br><br><br><br>
+    </div>
     </body>
 </html>
