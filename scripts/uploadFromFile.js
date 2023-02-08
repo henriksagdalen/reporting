@@ -194,9 +194,10 @@ function uploadFromFile() {
           staticDTGValue = document.getElementById(staticDTGID);
 
           // Only extract the "Unit" and the "DTG" from the array.
-          staticUnitValue.value = staticUnits[i][0] + " " + staticUnits[i][1];
-          staticDTGValue.value = staticUnits[i][4].substring(0,6);
+          staticUnitValue.value = staticUnits[i][0];
+          staticDTGValue.value = staticUnits[i][3];
       }
+      console.log(staticUnits);
 
 //#endregion
 
