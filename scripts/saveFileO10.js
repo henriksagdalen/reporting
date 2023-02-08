@@ -36,14 +36,14 @@ function saveToFileO10() {
         + "Enemy situation: " + enemySituation + "\n"
         + "Enemy COA next 24h: " + enemyCOA + "\n\n"
         + "Weather next 24h:" + "\n"
-        + "Temprature low-high:" + tempLowHigh + "\n"
+        + "Temperature low-high: " + tempLowHigh + "\n"
         + "Wind low-high: " + windLowHigh + "\n"
-        + "Precipitation low-high" + precipitationLowHigh + "\n"
+        + "Precipitation low-high: " + precipitationLowHigh + "\n"
         + "Cloud coverage: " + cloudCoverage + "\n"
         + "Sunrise/Sunset: " + sunriseSunset + "\n\n"
         + "Message from OPS: " + opsMessage + "\n"
         + "Message from SDA: " + sdaMessage + "\n"
-        + "Reference: " + reference + "\n\n"
+        + "References: " + reference + "\n\n"
         + "In other news: " + inOtherNews + "\n"
   
     // Get the date and time from the local computer.

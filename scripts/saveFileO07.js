@@ -29,7 +29,7 @@ function saveToFileO07() {
       + "Description of DLB: " + descriptionDlb + "\n"
       + "Timeframe of opening of DLB: " + timeframeDlb + "\n"
       + "Procedure of opening the DLB: " + procedureDlb + "\n"
-      + "Autentication of content in DLB: " + autenticationDlb + "\n\n"
+      + "Authentication of content in DLB: " + autenticationDlb + "\n\n"
       + "Additional information: " + additionalInfo + "\n"
 
   // Get the date and time from the local computer.
