@@ -101,8 +101,6 @@ function fileContentToArrayO09() {
       var secondaryTimeframeIndexStart;
       var secondaryTimeframeIndexEnd;
       
-      var linkUpProcedureIndexStart;
-      var linkUpProcedureIndexEnd;
       
       var meansOfCommunicationIndexStart;
       var meansOfCommunicationIndexEnd;
@@ -124,34 +122,31 @@ function fileContentToArrayO09() {
       
       // Iterate through all the elements in the array, and find the starting indexes of all the different contents.
       for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
-        if (arrayWithoutEmptyElements[i].substring(0, 20) == "OP effective to DTG:") {
+        if (arrayWithoutEmptyElements[i].substring(0, 4) == "DTG:") {
           opEffectiveToDTGIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0, 12) == "Exfil method:") {
+        if (arrayWithoutEmptyElements[i].substring(0, 13) == "Exfil method:") {
           exfilMethodIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0, 6) == "Route:") {
+        if (arrayWithoutEmptyElements[i].substring(0, 12) == "Exfil route:") {
           routeIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0, 17) == "Extraction method:") {
+        if (arrayWithoutEmptyElements[i].substring(0, 7) == "Method:") {
           extractionMethodIndexStart = i;
         }
         if (arrayWithoutEmptyElements[i].substring(0, 22) == "Primary pick-up point:") {
           primaryPickUpPointIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0, 25) == "Secondary pick-up point:") {
+        if (arrayWithoutEmptyElements[i].substring(0, 24) == "Secondary pick-up point:") {
           secondaryPickUpPointIndexStart = i;
         }
         if (arrayWithoutEmptyElements[i].substring(0, 18) == "Primary timeframe:") {
           primaryTimeframeIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0, 21) == "Secondary time frame:") {
+        if (arrayWithoutEmptyElements[i].substring(0, 20) == "Secondary timeframe:") {
           secondaryTimeframeIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0, 16) == "Link-up procedure:") {
-          linkUpProcedureIndexStart = i;
-        }
-        if (arrayWithoutEmptyElements[i].substring(0, 31) == "Means of communication/freq/callsign:") {
+        if (arrayWithoutEmptyElements[i].substring(0, 37) == "Means of communication/freq/callsign:") {
           meansOfCommunicationIndexStart = i;
         }
         if (arrayWithoutEmptyElements[i].substring(0, 8) == "ID long:") {
@@ -160,13 +155,13 @@ function fileContentToArrayO09() {
         if (arrayWithoutEmptyElements[i].substring(0, 9) == "ID short:") {
           idShortIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0, 18) == "Authentication word:") {
+        if (arrayWithoutEmptyElements[i].substring(0, 20) == "Authentication word:") {
           authenticationWordIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0, 23) == "Action if link-up failed:") {
+        if (arrayWithoutEmptyElements[i].substring(0, 25) == "Action if link-up failed:") {
           actionIfLinkUpFailedIndexStart = i;
         }
-        if (arrayWithoutEmptyElements[i].substring(0, 22) == "Additional information:") {
+        if (arrayWithoutEmptyElements[i].substring(0, 23) == "Additional information:") {
           additionalInformationIndexStart = i;
         }
       }
@@ -176,8 +171,8 @@ function fileContentToArrayO09() {
     for (var i = opEffectiveToDTGIndexStart; i <= opEffectiveToDTGIndexEnd; i++) {
       opEffectiveToDTGContent = opEffectiveToDTGContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var opEffectiveToDTGElement = document.getElementById("opeffectivetodtg0");
-    opEffectiveToDTGElement.value = opEffectiveToDTGContent.substring(17);
+    var opEffectiveToDTGElement = document.getElementById("opeffectivedtg0");
+    opEffectiveToDTGElement.value = opEffectiveToDTGContent.substring(5);
 
     // Get the content for the "exfil method" field.
     var exfilMethodContent = "";
@@ -186,7 +181,7 @@ function fileContentToArrayO09() {
       exfilMethodContent = exfilMethodContent + arrayWithoutEmptyElements[i] + "\n";
     }
     var exfilMethodElement = document.getElementById("exfilmethod0");
-    exfilMethodElement.value = exfilMethodContent.substring(13);
+    exfilMethodElement.value = exfilMethodContent.substring(14);
 
     // Get the content for the "route" field.
     var routeContent = "";
@@ -194,7 +189,7 @@ function fileContentToArrayO09() {
     for (var i = routeIndexStart; i <= routeIndexEnd; i++) {
       routeContent = routeContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var routeElement = document.getElementById("route0");
+    var routeElement = document.getElementById("exfilroute0");
     routeElement.value = routeContent.substring(7);
 
     // Get the content for the "extraction method" field.
@@ -204,7 +199,7 @@ function fileContentToArrayO09() {
       extractionMethodContent = extractionMethodContent + arrayWithoutEmptyElements[i] + "\n";
     }
     var extractionMethodElement = document.getElementById("extractionmethod0");
-    extractionMethodElement.value = extractionMethodContent.substring(17);
+    extractionMethodElement.value = extractionMethodContent.substring(8);
 
     // Get the content for the "Primary pick-up point" field.
     var primaryPickUpPointContent = "";
@@ -212,8 +207,8 @@ function fileContentToArrayO09() {
     for (var i = primaryPickUpPointIndexStart; i <= primaryPickUpPointIndexEnd; i++) {
       primaryPickUpPointContent = primaryPickUpPointContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var primaryPickUpPointElement = document.getElementById("primarypickuppoint0");
-    primaryPickUpPointElement.value = primaryPickUpPointContent.substring(24);
+    var primaryPickUpPointElement = document.getElementById("primaryexfilpup0");
+    primaryPickUpPointElement.value = primaryPickUpPointContent.substring(23);
 
     // Get the content for the "Secondary Pick Up Point" field.
     var secondaryPickUpPointContent = "";
@@ -221,8 +216,8 @@ function fileContentToArrayO09() {
     for (var i = secondaryPickUpPointIndexStart; i <= secondaryPickUpPointIndexEnd; i++) {
       secondaryPickUpPointContent = secondaryPickUpPointContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var secondaryPickUpPointElement = document.getElementById("secondarypick-uppoint0");
-    secondaryPickUpPointElement.value = secondaryPickUpPointContent.substring(24);
+    var secondaryPickUpPointElement = document.getElementById("secondaryexfilpup0");
+    secondaryPickUpPointElement.value = secondaryPickUpPointContent.substring(25);
 
     // Get the content for the "Primary Time Frame" field.
     var primaryTimeFrameContent = "";
@@ -231,25 +226,16 @@ function fileContentToArrayO09() {
       primaryTimeFrameContent = primaryTimeFrameContent + arrayWithoutEmptyElements[i] + "\n";
     }
     var primaryTimeFrameElement = document.getElementById("primarytimeframe0");
-    primaryTimeFrameElement.value = primaryTimeFrameContent.substring(24);
+    primaryTimeFrameElement.value = primaryTimeFrameContent.substring(19);
 
     // Get the content for the "Secondary Time Frame" field.
     var SecondaryTimeFrameContent = "";
-    secondaryTimeframeIndexEnd = linkUpProcedureIndexStart - 1;
+    secondaryTimeframeIndexEnd = meansOfCommunicationIndexStart - 1;
     for (var i = secondaryTimeframeIndexStart; i <= secondaryTimeframeIndexEnd; i++) {
       SecondaryTimeFrameContent = SecondaryTimeFrameContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var secondaryTimeframeElement = document.getElementById("seconddarytimeframe0");
-    secondaryTimeframeElement.value = SecondaryTimeFrameContent.substring(24);
-
-    // Get the content for the "Link Up Procedure" field.
-    var linkUpProcedureContent = "";
-    linkUpProcedureIndexEnd = meansOfCommunicationIndexStart - 1;
-    for (var i = linkUpProcedureIndexStart; i <= linkUpProcedureIndexEnd; i++) {
-      linkUpProcedureContent = linkUpProcedureContent + arrayWithoutEmptyElements[i] + "\n";
-    }
-    var linkUpProcedureElement= document.getElementById("linkupProcedure");
-    linkUpProcedureElement.value = linkUpProcedureContent.substring(24);
+    var secondaryTimeframeElement = document.getElementById("secondarytimeframe0");
+    secondaryTimeframeElement.value = SecondaryTimeFrameContent.substring(21);
 
     // Get the content for the "Communication means" field.
     var communicationContent = "";
@@ -257,8 +243,8 @@ function fileContentToArrayO09() {
     for (var i = meansOfCommunicationIndexStart; i <= meansOfCommunicationIndexEnd; i++) {
       communicationContent = communicationContent + arrayWithoutEmptyElements[i] + "\n";
     }
-    var communicationElement = document.getElementById("primarypickuppoint0");
-    communicationElement.value = communicationContent.substring(24);
+    var communicationElement = document.getElementById("meansofcoms0");
+    communicationElement.value = communicationContent.substring(38);
 
         // Get the content for the ID long field.
         var idLongContent = "";
@@ -285,7 +271,7 @@ function fileContentToArrayO09() {
           authenticationWordContent = authenticationWordContent + arrayWithoutEmptyElements[i] + "\n";
         }
         var authenticationWordElement = document.getElementById("authenticationword0");
-        authenticationWordElement.value = authenticationWordContent.substring(19);
+        authenticationWordElement.value = authenticationWordContent.substring(21);
         
         // Get the content for the action if link-up failed field.
         var actionIfLinkUpFailedContent = "";
@@ -293,8 +279,8 @@ function fileContentToArrayO09() {
         for (var i = actionIfLinkUpFailedIndexStart; i <= actionIfLinkUpFailedIndexEnd; i++) {
           actionIfLinkUpFailedContent = actionIfLinkUpFailedContent + arrayWithoutEmptyElements[i] + "\n";
         }
-        var actionIfLinkUpFailedElement = document.getElementById("actioniflinkupfailed0");
-        actionIfLinkUpFailedElement.value = actionIfLinkUpFailedContent.substring(24);
+        var actionIfLinkUpFailedElement = document.getElementById("actioniflupfailed0");
+        actionIfLinkUpFailedElement.value = actionIfLinkUpFailedContent.substring(26);
         
         // Get the content for the additional info field.
         var additionalInfoContent = "";
@@ -303,7 +289,7 @@ function fileContentToArrayO09() {
           additionalInfoContent = additionalInfoContent + arrayWithoutEmptyElements[i] + "\n";
         }
         var additionalInfoElement = document.getElementById("additionalinfo0");
-        additionalInfoElement.value = additionalInfoContent.substring(23);
+        additionalInfoElement.value = additionalInfoContent.substring(24);
       
     
 }, false);

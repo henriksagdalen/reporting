@@ -1,0 +1,173 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>O-07</title>
+    <link rel="icon" href="../ressurser/radar.png">
+    <link rel="stylesheet" href="../css/Header.css">
+    <link rel="stylesheet" href="../css/Home.css">
+    <link rel="stylesheet" href="../css/static-values.css">
+    <link rel="stylesheet" href="../css/default-rapport.css">
+    <link rel="stylesheet" href="../css/gradering.css">
+    <link rel="stylesheet" href="../css/oscar-rapporter.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <script src="/scripts/dropdowns.js"></script>
+    <script src="/scripts/disabletextarea.js"></script>
+    <script src="/scripts/saveFileO07.js"></script>
+    <script src="/scripts/Set&getLocalValues.js"></script>
+    <script src="/scripts/uploadFromFileO-07.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-master">
+  
+          <div class="header-left">
+
+            <div class="navigation">
+  
+              <ul class="menu">
+  
+                <li class="menu-item">
+                  <a class="sub-button" href="index-alpha.html">Alpha</a>
+                  <ul class="sub-menu">
+                    <li class="sub-item"> <a href="A-01.html">A-01 MEDEVAC</a></li>
+                    <li class="sub-item"> <a href="A-02.html">A-02 MEDREP</a></li>
+                    <li class="sub-item"> <a href="A-03.html">A-03 RESUPREQ</a></li>
+                    <li class="sub-item"> <a href="A-04.html">A-04</a></li>
+                    <li class="sub-item"> <a href="A-05.html">A-05</a></li>
+                  </ul>
+                </li>
+  
+                <li class="menu-item">
+                  <a class="sub-button" href="index-india.html">
+                    India
+                  </a>
+                  <ul class="sub-menu">
+                    <li class="sub-item"> <a href="I-01.html">I-01</a></li>
+                    <li class="sub-item"> <a href="I-02.html">I-02</a></li>
+                    <li class="sub-item"> <a href="I-03.html">I-03</a></li>
+                    <li class="sub-item"> <a href="I-04.html">I-04</a></li>
+                    <li class="sub-item"> <a href="I-05.html">I-05</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <a class="sub-button" href="index-oscar.html">Oscar
+                  </a>
+                  <ul class="sub-menu">
+                    <li class="sub-item"> <a href="O-01.html">O-01</a></li>
+                    <li class="sub-item"> <a href="O-02.html">O-02</a></li>
+                    <li class="sub-item"> <a href="O-03.html">O-03</a></li>
+                    <li class="sub-item"> <a href="O-04.html">O-04</a></li>
+                    <li class="sub-item"> <a href="O-05.html">O-05</a></li>
+                    <li class="sub-item"> <a href="O-06.html">O-06 AGTCONREP</a></li>
+                    <li class="sub-item"> <a href="O-07.html">O-07</a></li>
+                    <li class="sub-item"> <a href="O-08.html">O-08</a></li>
+                    <li class="sub-item"> <a href="O-09.html">O-09</a></li>
+                    <li class="sub-item"> <a href="O-10.html">O-10</a></li>
+                  </ul>
+                </li>
+              </ul>
+  
+            </div>
+  
+          </div>
+          <div class="header-right">   
+            <a class="home-button" href="../Homepage.html">
+              <img src="../ressurser/home-icon.png" class="home-icon">
+            </a>
+            <a class="home-button" href="../wiki/index-wiki.html">
+              <img src="../ressurser/question-mark.png" class="question-mark">
+            </a>
+          </div>
+        </div>
+      </header>
+    <section>
+      <form id="oscar07form" onsubmit="event.preventDefault();">
+      <div class="page-title">
+        <div class="page-title-text">O-07 DLB report</div> 
+      </div>
+      <div class="cont_select_center">
+        <div class="classification" data-mate-select="active" >
+          <select onclick="return false;" id="">
+            <option value="">Classification</option>
+            <option value="(B)">Classification 1</option>
+            <option value="(K)">Classification 2</option>
+            <option value="(H)" selected>Classification 3</option>
+            <option value="(NR)">Classification 4</option>
+            <option value="(NS)">Classification 5</option>
+          </select>
+          <p class="selectoption"  onclick="open_select(this)" ></p>
+          <span onclick="open_select(this)" class="icon_select_mate" >
+            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24">
+              <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+              <path d="M0-.75h24v24H0z" fill="none"/>
+            </svg>
+          </span>
+          <div class="cont_list_select_mate">
+            <ul class="cont_select_int">  </ul> 
+          </div>
+        </div>
+      </div>
+      <br><br><br>
+        <div class="staticvalues">
+            <div class="static-box">
+                <label for="from"><b>From:</b></label><br>
+                <input type="text" placeholder="From callsign" name="from" id="from" required>
+            </div>
+            <div class="static-box">
+                <label for="to"><b>To:</b></label><br>
+                <input type="text" placeholder="To callsign" name="to" id="to">
+            </div>
+            <div class="static-box">
+                <label for="writeroperator"><b>Writer:</b></label><br>
+                <input type="text" placeholder="Initials" name="writeroperator" id="writeroperator">
+            </div>
+            <div class="static-box">
+                <label for="ownposition"><b>Own position:</b></label><br>
+                <input type="text" placeholder="MGRS" name="ownposition" id="ownposition" required>
+            </div>
+            <div class="static-box">
+              <label for="dtg"><b>DTG:</b></label><br>
+              <input name="dtg" id="dtg0" type="text" placeholder="DTG"></input><br>
+            </div>
+        </div>
+
+        <div class="rapport">
+          <div class="input-box">
+              <label for="posdlb"><b>Position of DLB:</b></label><br>
+              <textarea name="posdlb" id="posdlb0" required></textarea>
+          </div>
+          <div class="input-box">
+              <label for="descriptionofdlb"><b>Description of DLB:</b></label><br>
+              <textarea name="descriptionofdlb" id="descriptionofdlb0"></textarea><br>
+          </div>
+          <div class="input-box">
+              <label for="timeframedlb"><b>Timeframe of opening of DLB:</b></label><br>
+              <textarea name="timeframedlb" id="timeframedlb0"></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="proceduredlb"><b>Procedure of opening the DLB:</b></label><br>
+            <textarea name="proceduredlb" id="proceduredlb0"></textarea><br>
+          </div>
+          <div class="input-box">
+            <label for="autenicationdlb"><b>Autentication of content in DLB:</b></label><br>
+            <textarea name="autenicationdlb" id="autenicationdlb0"></textarea><br>
+          </div>
+          <br><hr><br>
+          <div class="input-box">
+            <label for="additionalinfo"><b>Additional information:</b></label><br>
+            <textarea name="additionalinfo" id="additionalinfo0"></textarea><br>
+          </div>
+
+
+        </form>
+        </section>
+        <button id="save-button" onclick="saveToLocal()">Save Values</button>
+
+        <input type="submit" id="mysaveToFile" value="Save to file" onclick="saveToFileO07();" />
+        
+        <div class="uploadfilebutton">
+            <div class="uploadbuttondesign">Upload file</div>
+            <input type="file" id="uploadFromFile" onchange="uploadFromFileO07()" /><br><br><br><br>
+        </div>
+    </body>
+</html>
