@@ -121,7 +121,7 @@ function fileContentToArrayO09() {
       
       // Iterate through all the elements in the array, and find the starting indexes of all the different contents.
       for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
-        if (arrayWithoutEmptyElements[i].substring(0, 4) == "DTG:") {
+        if (arrayWithoutEmptyElements[i].substring(0, 20) == "OP effective to DTG:") {
           opEffectiveToDTGIndexStart = i;
         }
         if (arrayWithoutEmptyElements[i].substring(0, 13) == "Exfil method:") {
@@ -171,7 +171,7 @@ function fileContentToArrayO09() {
       opEffectiveToDTGContent = opEffectiveToDTGContent + arrayWithoutEmptyElements[i] + "\n";
     }
     var opEffectiveToDTGElement = document.getElementById("opeffectivedtg0");
-    opEffectiveToDTGElement.value = opEffectiveToDTGContent.substring(5);
+    opEffectiveToDTGElement.value = opEffectiveToDTGContent.substring(21);
 
     // Get the content for the "exfil method" field.
     var exfilMethodContent = "";
