@@ -116,7 +116,7 @@ for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
   if (arrayWithoutEmptyElements[i].substring(0, 27) == "Grid primary link-up point:") {
     GridPrimaryLinkUpPointIndexStart = i;
   }
-  if (arrayWithoutEmptyElements[i].substring(0, 29) == "Grid Secondary link-up point:") {
+  if (arrayWithoutEmptyElements[i].substring(0, 29) == "Grid secondary link-up point:") {
     GridSecondaryLinkUpPointIndexStart = i;
   }
   if (arrayWithoutEmptyElements[i].substring(0, 29) == "Direction into link-up point:") {

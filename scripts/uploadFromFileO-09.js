@@ -101,7 +101,6 @@ function fileContentToArrayO09() {
       var secondaryTimeframeIndexStart;
       var secondaryTimeframeIndexEnd;
       
-      
       var meansOfCommunicationIndexStart;
       var meansOfCommunicationIndexEnd;
       
@@ -185,12 +184,12 @@ function fileContentToArrayO09() {
 
     // Get the content for the "route" field.
     var routeContent = "";
-    routeIndexEnd = extractionMethodIndexStart - 1;
+    routeIndexEnd = extractionMethodIndexStart - 2;
     for (var i = routeIndexStart; i <= routeIndexEnd; i++) {
       routeContent = routeContent + arrayWithoutEmptyElements[i] + "\n";
     }
     var routeElement = document.getElementById("exfilroute0");
-    routeElement.value = routeContent.substring(7);
+    routeElement.value = routeContent.substring(13);
 
     // Get the content for the "extraction method" field.
     var extractionMethodContent = "";
@@ -230,7 +229,7 @@ function fileContentToArrayO09() {
 
     // Get the content for the "Secondary Time Frame" field.
     var SecondaryTimeFrameContent = "";
-    secondaryTimeframeIndexEnd = meansOfCommunicationIndexStart - 1;
+    secondaryTimeframeIndexEnd = meansOfCommunicationIndexStart - 2;
     for (var i = secondaryTimeframeIndexStart; i <= secondaryTimeframeIndexEnd; i++) {
       SecondaryTimeFrameContent = SecondaryTimeFrameContent + arrayWithoutEmptyElements[i] + "\n";
     }
@@ -249,6 +248,7 @@ function fileContentToArrayO09() {
         // Get the content for the ID long field.
         var idLongContent = "";
         idLongIndexEnd = idShortIndexStart - 1;
+        console.log(idLongIndexEnd);
         for (var i = idLongIndexStart; i <= idLongIndexEnd; i++) {
           idLongContent = idLongContent + arrayWithoutEmptyElements[i] + "\n";
         }

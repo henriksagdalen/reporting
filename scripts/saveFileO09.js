@@ -46,7 +46,7 @@ function saveToFileO09() {
       + "Means of communication/freq/callsign: " + meansOfComs + "\n"
       + "ID Long: " + idLong + "\n"
       + "ID Short: " + idShort + "\n"
-      + "Autentication word: " + authenticationWord + "\n"
+      + "Authentication word: " + authenticationWord + "\n"
       + "Action if link-up failed: " + actionIfLupFailed + "\n"
       + "Additional information: " + additionalInfo + "\n"
 
