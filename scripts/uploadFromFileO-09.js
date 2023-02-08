@@ -150,10 +150,10 @@ function fileContentToArrayO09() {
         }
         if (arrayWithoutEmptyElements[i].substring(0, 8) == "ID long:") {
           idLongIndexStart = i;
-        }
-        if (arrayWithoutEmptyElements[i].substring(0, 9) == "ID short:") {
+      }
+      if (arrayWithoutEmptyElements[i].substring(0, 9) == "ID short:") {
           idShortIndexStart = i;
-        }
+      }
         if (arrayWithoutEmptyElements[i].substring(0, 20) == "Authentication word:") {
           authenticationWordIndexStart = i;
         }
@@ -248,7 +248,6 @@ function fileContentToArrayO09() {
         // Get the content for the ID long field.
         var idLongContent = "";
         idLongIndexEnd = idShortIndexStart - 1;
-        console.log(idLongIndexEnd);
         for (var i = idLongIndexStart; i <= idLongIndexEnd; i++) {
           idLongContent = idLongContent + arrayWithoutEmptyElements[i] + "\n";
         }

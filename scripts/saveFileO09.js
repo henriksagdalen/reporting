@@ -44,10 +44,10 @@ function saveToFileO09() {
       + "Secondary timeframe: " + secondaryTimeframe + "\n\n"
       + "Link-up procedure" + "\n"
       + "Means of communication/freq/callsign: " + meansOfComs + "\n"
-      + "ID Long: " + idLong + "\n"
-      + "ID Short: " + idShort + "\n"
+      + "ID long: " + idLong + "\n"
+      + "ID short: " + idShort + "\n"
       + "Authentication word: " + authenticationWord + "\n"
-      + "Action if link-up failed: " + actionIfLupFailed + "\n"
+      + "Action if link-up failed: " + actionIfLupFailed + "\n\n"
       + "Additional information: " + additionalInfo + "\n"
 
   // Get the date and time from the local computer.
