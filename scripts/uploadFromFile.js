@@ -45,6 +45,19 @@ function uploadFromFile() {
 //#endregion
 
 //#region STATIC VALUES
+      function staticValues(variableName, elementID, arrayIndex, sliceNumber) {
+        var variableName = document.getElementById(elementID);
+        variableName.value = arrayWithoutEmptyElements[arrayIndex].slice(sliceNumber);
+      }
+
+      staticValues(from, "from", 1, 6);
+      staticValues(to, "to", 2, 4);
+      staticValues(writeroperator, "writeroperator", 3, 17);
+      staticValues(ownposition, "ownposition", 4, 14);
+      staticValues(naitai, "naitai", 5, 9);
+      staticValues(dtgfrom, "dtgfrom", 6, 10);
+      staticValues(dtgto, "dtgto", 7, 8)
+/*
       // Get the "from" value from the report, and put it in the from-field. 
       var from = document.getElementById("from");
       from.value = arrayWithoutEmptyElements[1].slice(6);
@@ -72,9 +85,23 @@ function uploadFromFile() {
       // Get the "DTG to" the report, and put it in the DTG-to field.
       var dtgTo = document.getElementById("dtgto");
       dtgTo.value = arrayWithoutEmptyElements[7].slice(8);
+*/
 //#endregion
 
 //#region BLUF
+      function findIndex(variableName, keyword) {
+        var variableName = "";
+        for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
+          if (arrayWithoutEmptyElements[i] == keyword) {
+            variableName = i + 1;
+            return variableName;
+          }
+        }
+      }
+
+      var blufindex = findIndex(blufstartindex, "Bottom Line Up Front:");
+      console.log(blufindex);
+
       // Find the array elements that contains the BLUF information. Probably excessive because bluf will always start at array-index 8 for now.
       var blufStartsAtIndex = "";
       for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
