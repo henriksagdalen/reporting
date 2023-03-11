@@ -45,6 +45,11 @@ function uploadFromFile() {
 //#endregion
 
 //#region STATIC VALUES
+      /*Declaring the function for retrieving the static values
+        ElementID: The HTML-id for the element that is assigned a value from the report.
+        arrayIndex: The array index of where the content is stored.
+        sliceNumber: The length of the title of the static value. For example: "DTG:" is slice value 4.
+      */
       function staticValues(elementID, arrayIndex, sliceNumber) {
         var variableName = document.getElementById(elementID);
         variableName.value = arrayWithoutEmptyElements[arrayIndex].slice(sliceNumber);
@@ -60,7 +65,7 @@ function uploadFromFile() {
 
 //#endregion
 
-//#region BLUF
+//#region textbox-content
       function textboxContent(keyword, keyword2){
         let indexstart;
         let indexend;
