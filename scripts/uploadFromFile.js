@@ -45,68 +45,53 @@ function uploadFromFile() {
 //#endregion
 
 //#region STATIC VALUES
-      function staticValues(variableName, elementID, arrayIndex, sliceNumber) {
+      function staticValues(elementID, arrayIndex, sliceNumber) {
         var variableName = document.getElementById(elementID);
         variableName.value = arrayWithoutEmptyElements[arrayIndex].slice(sliceNumber);
       }
 
-      staticValues(from, "from", 1, 6);
-      staticValues(to, "to", 2, 4);
-      staticValues(writeroperator, "writeroperator", 3, 17);
-      staticValues(ownposition, "ownposition", 4, 14);
-      staticValues(naitai, "naitai", 5, 9);
-      staticValues(dtgfrom, "dtgfrom", 6, 10);
-      staticValues(dtgto, "dtgto", 7, 8)
-/*
-      // Get the "from" value from the report, and put it in the from-field. 
-      var from = document.getElementById("from");
-      from.value = arrayWithoutEmptyElements[1].slice(6);
+      staticValues("from", 1, 6);
+      staticValues("to", 2, 4);
+      staticValues("writeroperator", 3, 17);
+      staticValues("ownposition", 4, 14);
+      staticValues("naitai", 5, 9);
+      staticValues("dtgfrom", 6, 10);
+      staticValues("dtgto", 7, 8)
 
-      // Get the "to" value from the report, and put it in the to-field.
-      var to = document.getElementById("to");
-      to.value = arrayWithoutEmptyElements[2].slice(4);
-
-      // Get the "writer/operator" from the report, and put it in the writer/operator field.
-      var writerOperator = document.getElementById("writeroperator");
-      writerOperator.value = arrayWithoutEmptyElements[3].slice(17);
-
-      // Get the "own position" from the report, and put it in the "own position" field.
-      var ownPosition = document.getElementById("ownposition");
-      ownPosition.value = arrayWithoutEmptyElements[4].slice(14);
-
-      // Get the NAI/TAI from the report, and put it in the NAI/TAI position field.
-      var naitai = document.getElementById("naitai");
-      naitai.value = arrayWithoutEmptyElements[5].slice(9);
-
-      // Get the "DTG from" the report, and put it in the DTG-from field.
-      var dtgFrom = document.getElementById("dtgfrom");
-      dtgFrom.value = arrayWithoutEmptyElements[6].slice(10);
-
-      // Get the "DTG to" the report, and put it in the DTG-to field.
-      var dtgTo = document.getElementById("dtgto");
-      dtgTo.value = arrayWithoutEmptyElements[7].slice(8);
-*/
 //#endregion
 
 //#region BLUF
-      function findIndex(variableName, keyword) {
-        var variableName = "";
-        for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
-          if (arrayWithoutEmptyElements[i] == keyword) {
-            variableName = i + 1;
-            return variableName;
+      function textboxContent(keyword, keyword2){
+        let indexstart;
+        let indexend;
+        var content = "";
+        for (var i = 0; i < arrayWithoutEmptyElements.length; i++){
+          if (arrayWithoutEmptyElements[i] === keyword) {
+            indexstart = i + 1;
           }
         }
+        for (var i = 0; i < arrayWithoutEmptyElements.length; i++){
+          if (arrayWithoutEmptyElements[i] === keyword2) {
+            indexend = i;
+          }
+        }
+        for (var i = indexstart; i < indexend; i++){
+          content = content + arrayWithoutEmptyElements[i] + "\n";
+        }
+      return content;
       }
 
-      var blufindex = findIndex(blufstartindex, "Bottom Line Up Front:");
-      console.log(blufindex);
+      var blufContent = textboxContent("Bottom Line Up Front:", "Pattern of life:");
+      console.log(blufContent);
+      var polContent = textboxContent("Pattern of life:", "Static units in NAI:");
+      console.log(polContent);
 
+/*
       // Find the array elements that contains the BLUF information. Probably excessive because bluf will always start at array-index 8 for now.
       var blufStartsAtIndex = "";
-      for (var i = 0; i < arrayWithoutEmptyElements.length; i++) {
-        if (arrayWithoutEmptyElements[i] == "Bottom Line Up Front:") {
-          blufStartsAtIndex = i + 1;
+      for(var i=0;i<arrayWithoutEmptyElements.length;i++){
+        if(arrayWithoutEmptyElements[i]=="Bottom Line Up Front:"){
+          blufStartsAtIndex=i + 1;
         }
       }
       
@@ -128,6 +113,7 @@ function uploadFromFile() {
       // Input the string in the BLUF-field in the report.
       var bluf = document.getElementById("bluf");
       bluf.value = blufContent;
+
 //#endregion
 
 //#region PATTERN OF LIFE
@@ -152,6 +138,7 @@ function uploadFromFile() {
       // Input the string in the POL-field in the report. 
       var patternOfLife = document.getElementById("patternoflife");
       patternOfLife.value = polContent;
+  */
 //#endregion
 
 //#region STATIC UNITS IN NAI
